@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Another awesome Statamic site">
+  <title>{{ title ensure_right=" / " }}{{ site_name }}</title>
+  <link rel="stylesheet" href="{{ css_path }}/tes.css">
+</head>
+<body class="section-{{ segment_1 or "home" }}">
+  {{ partial:nav }}
+  {{ template_content }}
+  <footer>&copy; {{ now format="Y" }}</footer>
+  <script src="{{ js_path }}/tes.js"></script>
+</body>
+</html>

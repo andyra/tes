@@ -1,0 +1,25 @@
+{
+  "name": "tes",
+  "title": "This Evening's Show",
+  "author": "Andy Smith",
+  "url": "http://thiseveningsshow.com",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/andyra/plate.git"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^2.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-svgmin": "^5.0.0",
+    "grunt-svgstore": "^1.0.0",
+    "load-grunt-tasks": "^4.0.0"
+  }
+}

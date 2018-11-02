@@ -1,0 +1,9 @@
+<div class="centered">{{ content }}</div>
+
+<article>
+	{{ collection:blog :limit="posts" scope="tag" }}
+		{{ partial:block }}
+	{{ /collection:blog }}
+</article>
+
+<a href="{{ link to='blog' }}">Read the rest of the blog</a>
