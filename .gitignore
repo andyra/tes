@@ -6,9 +6,3 @@ local/cache/*
 local/storage/*
 local/temp/*
 installer.php
-
-# Not including these right now, because why?
-statamic/
-local/
-please
-phpunit.xml

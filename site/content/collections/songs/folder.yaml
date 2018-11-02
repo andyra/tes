@@ -1,0 +1,7 @@
+title: Songs
+fieldset: songs
+template: song
+columns:
+  - title
+  - amazon_id
+  - slug
