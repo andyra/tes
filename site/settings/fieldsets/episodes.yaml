@@ -1,0 +1,34 @@
+title: Episodes
+create_title: 'New Episode'
+hide: true
+sections:
+  main:
+    display: Main
+    fields:
+      title:
+        type: text
+        display: Title
+        width: 66
+        localizable: true
+      slug:
+        type: text
+        width: 33
+      soundcloud_url:
+        display: 'Soundcloud URL'
+        type: text
+      music_album:
+        max_items: '1'
+        collection:
+          - albums
+        mode: tags
+        type: collection
+        instructions: 'Select the album that has the songs from this Episode'
+        display: 'Music Album'
+      wiki_entries:
+        collection:
+          - wiki
+        mode: tags
+        type: collection
+        instructions: 'Choose wiki articles referenced in this episode'
+        display: 'Wiki Entries'
+taxonomies: true

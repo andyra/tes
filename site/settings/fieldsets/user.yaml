@@ -19,6 +19,3 @@ fields:
     type: text
     display: Last Name
     width: 50
-  content:
-    type: textarea
-    display: Biography

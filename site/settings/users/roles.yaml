@@ -2,3 +2,30 @@ d32e14fb-08c9-44c2-aaf8-21200852bafd:
   title: Admin
   permissions:
     - super
+5c0eef8a-f2f0-4246-9ca5-1def75a81212:
+  title: Editor
+  slug: editor
+  permissions:
+    - 'cp:access'
+    - 'content:view_drafts_on_frontend'
+    - resolve_duplicates
+    - 'collections:albums:view'
+    - 'collections:albums:edit'
+    - 'collections:albums:create'
+    - 'collections:albums:delete'
+    - 'collections:episodes:view'
+    - 'collections:episodes:edit'
+    - 'collections:episodes:create'
+    - 'collections:episodes:delete'
+    - 'collections:songs:view'
+    - 'collections:songs:edit'
+    - 'collections:songs:create'
+    - 'collections:songs:delete'
+    - 'collections:wiki:view'
+    - 'collections:wiki:edit'
+    - 'collections:wiki:create'
+    - 'collections:wiki:delete'
+    - 'taxonomies:tags:view'
+    - 'taxonomies:tags:edit'
+    - 'taxonomies:tags:create'
+    - 'taxonomies:tags:delete'
