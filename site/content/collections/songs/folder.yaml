@@ -1,7 +1,8 @@
 title: Songs
 fieldset: songs
+order: date
 template: song
 columns:
   - title
-  - amazon_id
   - slug
+  - date

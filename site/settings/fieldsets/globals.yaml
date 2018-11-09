@@ -1,8 +1,26 @@
-title: Default Globals
+title: 'Default Globals'
 hide: true
-fields:
-  site_name:
-    type: text
-    display: Website Name
-    instructions: The name of your website
-    localizable: true
+sections:
+  contact:
+    display: 'Contact Info'
+    fields:
+      site_name:
+        display: 'Website Name'
+        type: text
+      address_city:
+        display: City
+        type: textarea
+      phone:
+        display: 'Call-in Phone Number'
+        type: text
+      email:
+        display: Email
+        type: text
+  web:
+    display: Web
+    fields:
+      podcast_rss:
+        display: 'Podcast RSS Feed'
+        type: text
+        validate: active_url
+taxonomies: true

@@ -1,17 +1,33 @@
 title: Songs
-create_title: Add New Song
-hide: true
-fields:
-  title:
-    type: text
-    display: Title
-    width: 66
-  slug:
-    type: text
-    width: 33
-  amazon_id:
-    display: Amazon Product ID
-    type: text
-  photo:
-    display: Image URL
-    type: text
+create_title: 'New Song'
+taxonomies: false
+sections:
+  sidebar:
+    fields:
+      slug:
+        type: text
+        validate: required
+      author:
+        display: Author
+        type: users
+        default: current
+        max_items: 1
+        validate: required
+  main:
+    fields:
+      title:
+        type: text
+        display: Title
+        localizable: true
+        validate: required
+      content:
+        display: Musical Notes
+        type: markdown
+      wiki_entries:
+        display: 'Wiki Entries'
+        label: '{{ title }}'
+        collection:
+          - wiki
+        mode: tags
+        type: collection
+        instructions: 'Select wiki entries referenced in this song'

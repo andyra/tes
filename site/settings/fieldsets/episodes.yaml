@@ -1,34 +1,42 @@
 title: Episodes
 create_title: 'New Episode'
-hide: true
+taxonomies: false
 sections:
+  sidebar:
+    fields:
+      slug:
+        type: text
+        validate: required
+      author:
+        display: Author
+        type: users
+        default: current
+        max_items: 1
+        validate: required
   main:
-    display: Main
     fields:
       title:
         type: text
         display: Title
         width: 66
         localizable: true
-      slug:
-        type: text
-        width: 33
       soundcloud_url:
         display: 'Soundcloud URL'
         type: text
-      music_album:
+        validate: active_url
+      album:
+        display: 'Music Album'
+        instructions: 'Select the album with the songs from this Episode'
         max_items: '1'
         collection:
           - albums
         mode: tags
         type: collection
-        instructions: 'Select the album that has the songs from this Episode'
-        display: 'Music Album'
       wiki_entries:
+        display: 'Wiki Entries'
+        label: '{{ title }}'
         collection:
           - wiki
         mode: tags
         type: collection
-        instructions: 'Choose wiki articles referenced in this episode'
-        display: 'Wiki Entries'
-taxonomies: true
+        instructions: 'Select wiki entries referenced in this episode'
