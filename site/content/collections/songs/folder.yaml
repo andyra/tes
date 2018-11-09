@@ -1,6 +1,6 @@
 title: Songs
-order: date
-fieldset: songs
+order: title
+fieldset: song
 columns:
   - title
   - slug

@@ -2,18 +2,8 @@ title: Album
 create_title: 'New Album'
 taxonomies: false
 sections:
-  sidebar:
-    fields:
-      slug:
-        type: text
-        validate: required
-      author:
-        display: Author
-        type: users
-        default: current
-        max_items: 1
-        validate: required
   main:
+    display: Main
     fields:
       title:
         display: Title
@@ -44,3 +34,15 @@ sections:
             display: 'Soundcloud Link'
             validate: active_url
             width: 50
+  sidebar:
+    display: Sidebar
+    fields:
+      slug:
+        type: text
+        validate: required
+      author:
+        display: Author
+        type: users
+        default: current
+        max_items: 1
+        validate: required
