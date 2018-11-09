@@ -1,0 +1,18 @@
+song
+<h1>{{ title }}</h1>
+
+<h3>Related Albums</h3>
+<ul>
+  {{ collection:albums scope="album" }}
+    {{ tracklist }}
+      {{ if song == page:id }}
+        <li>
+          <a href="{{ url }}">{{ title }}</a> •
+          <a href="{{ soundcloud_url }}">Play</a>
+        </li>
+      {{ /if }}
+    {{ /tracklist }}
+  {{ /collection:albums }}
+</ul>
+
+Note: It would be nice to create an array of these so we can check if it exists or not first.

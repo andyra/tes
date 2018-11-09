@@ -1,6 +1,7 @@
 title: Albums
 order: date
 fieldset: album
+template: album
 columns:
   - title
   - slug

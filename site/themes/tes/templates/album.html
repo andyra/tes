@@ -1,0 +1,12 @@
+album
+<h1>{{ title }}</h1>
+<h2>{{ id }}</h2>
+
+{{ tracklist }}
+  <li>
+    {{ relate:song }}
+      {{ title }}
+    {{ /relate:song }}
+    {{ soundcloud_url }}
+  </li>
+{{ /tracklist }}

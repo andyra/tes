@@ -1,6 +1,7 @@
 title: Songs
 order: title
 fieldset: song
+template: song
 columns:
   - title
   - slug
