@@ -1,1 +1,7 @@
+title: Songs
 order: date
+fieldset: songs
+columns:
+  - title
+  - slug
+  - date

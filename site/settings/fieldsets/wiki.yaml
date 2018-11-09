@@ -1,45 +1,58 @@
 title: Wiki
-create_title: New Wiki Article
-hide: true
-fields:
-  title:
-    type: text
-    display: Title
-    width: 66
-  slug:
-    type: text
-    width: 33
-  content:
-    type: bard
-    display: Article
-    sets:
-      image:
-        display: Image
-        fields:
-          photo:
-            display: Photo
-            type: assets
-            container: main
-            folder: img
-            max_files: 1
-          caption:
-            type: text
-          size:
-            type: radio
-            default: Normal
-            options:
-              - Normal
-              - Oversized
-      quote:
-        display: Pull Quote
-        fields:
+create_title: 'New Wiki Article'
+sections:
+  main:
+    display: Main
+    fields:
+      title:
+        type: text
+        display: Title
+        width: 66
+        localizable: true
+      slug:
+        type: text
+        width: 33
+      content:
+        type: bard
+        display: Article
+        sets:
+          image:
+            display: Image
+            fields:
+              photo:
+                display: Photo
+                type: assets
+                container: main
+                folder: img
+                max_files: 1
+              caption:
+                type: text
+              size:
+                type: radio
+                default: Normal
+                options:
+                  Normal: Normal
+                  Oversized: Oversized
           quote:
-            display: Quote
-            type: markdown
-  images:
-    type: assets
-    container: main
-    max_files: 10
-  tags:
-    display: Tags
-    type: tags
+            display: 'Pull Quote'
+            fields:
+              quote:
+                display: Quote
+                type: markdown
+      images:
+        type: assets
+        container: main
+        max_files: 10
+  sidebar:
+    display: Sidebar
+    fields:
+      slug:
+        type: text
+        validate: required
+      author:
+        display: Author
+        type: users
+        default: current
+        max_items: 1
+        validate: required
+taxonomies: true

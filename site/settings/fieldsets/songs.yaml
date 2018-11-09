@@ -1,8 +1,27 @@
 title: Songs
 create_title: 'New Song'
-taxonomies: false
 sections:
+  main:
+    display: Main
+    fields:
+      title:
+        type: text
+        display: Title
+        localizable: true
+        validate: required
+      content:
+        display: 'Musical Notes'
+        type: markdown
+      wiki_entries:
+        display: 'Wiki Entries'
+        label: '{{ title }}'
+        collection:
+          - wiki
+        mode: tags
+        type: collection
+        instructions: 'Select wiki entries referenced in this song'
   sidebar:
+    display: Sidebar
     fields:
       slug:
         type: text
@@ -13,21 +32,3 @@ sections:
         default: current
         max_items: 1
         validate: required
-  main:
-    fields:
-      title:
-        type: text
-        display: Title
-        localizable: true
-        validate: required
-      content:
-        display: Musical Notes
-        type: markdown
-      wiki_entries:
-        display: 'Wiki Entries'
-        label: '{{ title }}'
-        collection:
-          - wiki
-        mode: tags
-        type: collection
-        instructions: 'Select wiki entries referenced in this song'
