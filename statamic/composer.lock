@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "67f83f8a118988ad29cacf0b152e75bc",
+    "content-hash": "d7478369c621b4e7738fe419e6417c4a",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -452,6 +452,23 @@
                 "composer"
             ],
             "time": "2016-12-23T18:15:30+00:00"
+        },
+        {
+            "name": "goellner/statamic-exportit",
+            "version": "dev-develop",
+            "dist": {
+                "type": "path",
+                "url": "../site/addons/Exportit",
+                "reference": "0cb94655cebac54806d5eaf458645717b9801d8a",
+                "shasum": null
+            },
+            "require": {
+                "league/csv": "^8.0"
+            },
+            "type": "library",
+            "transport-options": {
+                "symlink": false
+            }
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -4204,8 +4221,7 @@
             "authors": [
                 {
                     "name": "Chris Boulton",
-                    "homepage": "http://github.com/chrisboulton",
-                    "role": "Original developer"
+                    "homepage": "http://github.com/chrisboulton"
                 }
             ],
             "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",
@@ -5312,7 +5328,8 @@
         "league/flysystem-ziparchive": 20,
         "mustangostang/spyc": 20,
         "michelf/php-smartypants": 20,
-        "netcarver/textile": 20
+        "netcarver/textile": 20,
+        "goellner/statamic-exportit": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

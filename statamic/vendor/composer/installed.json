@@ -3901,5 +3901,24 @@
             }
         ],
         "description": "A Laravel 5 package to output to the console from outside of command classes"
+    },
+    {
+        "name": "goellner/statamic-exportit",
+        "version": "dev-develop",
+        "version_normalized": "dev-develop",
+        "dist": {
+            "type": "path",
+            "url": "../site/addons/Exportit",
+            "reference": "0cb94655cebac54806d5eaf458645717b9801d8a",
+            "shasum": null
+        },
+        "require": {
+            "league/csv": "^8.0"
+        },
+        "type": "library",
+        "installation-source": "dist",
+        "transport-options": {
+            "symlink": false
+        }
     }
 ]

@@ -1,0 +1,6 @@
+{
+    "name": "goellner/statamic-exportit",
+    "require": {
+        "league/csv": "^8.0"
+    }
+}
