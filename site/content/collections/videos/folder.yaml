@@ -2,3 +2,8 @@ title: Videos
 create_title: 'New Video'
 order: date
 fieldset: video
+columns:
+  - title
+  - slug
+  - date
+  - author.username

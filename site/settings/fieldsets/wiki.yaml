@@ -48,8 +48,12 @@ sections:
     display: Sidebar
     fields:
       slug:
+        display: Slug
         type: text
         validate: required
+      date:
+        display: Date
+        type: date
       author:
         display: Author
         type: users

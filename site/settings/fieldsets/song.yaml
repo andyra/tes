@@ -31,8 +31,21 @@ sections:
     display: Sidebar
     fields:
       slug:
+        display: Slug
         type: text
         validate: required
+      date:
+        display: Date
+        type: date
+        allow_time: false
+        width: 50
+      author:
+        display: Author
+        type: users
+        default: current
+        max_items: 1
+        validate: required
+        width: 50
       tags:
         display: Wiki Tags
         instructions: 'People, places, etc. referenced in this song'

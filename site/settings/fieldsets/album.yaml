@@ -10,10 +10,6 @@ sections:
         type: text
         validate: required
         width: 66
-      date:
-        display: Release Date
-        type: date
-        width: 33
       soundcloud_url:
         display: 'Soundcloud URL'
         type: text
@@ -52,5 +48,18 @@ sections:
     display: Sidebar
     fields:
       slug:
+        display: Slug
         type: text
         validate: required
+      date:
+        display: 'Release Date'
+        type: date
+        allow_time: false
+        width: 50
+      author:
+        display: Author
+        type: users
+        default: current
+        max_items: 1
+        validate: required
+        width: 50

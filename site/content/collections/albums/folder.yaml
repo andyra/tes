@@ -6,3 +6,4 @@ columns:
   - title
   - slug
   - date
+  - author.username

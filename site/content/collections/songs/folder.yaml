@@ -1,8 +1,9 @@
 title: Songs
-order: title
+order: date
 fieldset: song
 template: song
 columns:
   - title
   - slug
   - date
+  - author.username

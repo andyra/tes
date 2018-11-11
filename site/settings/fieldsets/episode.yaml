@@ -10,10 +10,6 @@ sections:
         display: Title
         width: 66
         localizable: true
-      date:
-        display: 'Release Date'
-        type: date
-        width: 33
       soundcloud_url:
         display: 'Soundcloud URL'
         type: text
@@ -41,7 +37,7 @@ sections:
         add_row: 'Add Song'
         fields:
           song:
-            display: Track
+            display: Songs
             type: collection
             collection:
               - songs
@@ -55,13 +51,25 @@ sections:
         max_items: '1'
         collection:
           - albums
-        width: 50
+        width: 66
   sidebar:
     display: Sidebar
     fields:
       slug:
         type: text
         validate: required
+      date:
+        display: Release Date
+        type: date
+        allow_time: false
+        width: 50
+      author:
+        display: Author
+        type: users
+        default: current
+        max_items: 1
+        validate: required
+        width: 50
       tags:
         display: Wiki Tags
         type: collection
