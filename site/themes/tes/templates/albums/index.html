@@ -1,0 +1,12 @@
+<h1>Albums</h1>
+
+<ol>
+  {{ collection:albums}}
+    <li>
+      {{ title }}
+      {{ if ! tracklist }}
+        <mark>Tracklist</mark>
+      {{ /if }}
+    </li>
+  {{ /collection:albums }}
+</ol>
