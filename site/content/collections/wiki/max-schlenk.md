@@ -1,0 +1,5 @@
+title: 'Max Schlenk'
+slug: max-schlenk
+author: 7077c6bb-43d8-42d0-ab31-76c9eaa342ee
+import_id: 30dc92fb-4956-479b-a43c-99fdf4ce4837
+id: f727d193-19bb-4d7e-b8ae-3f8a0b37d1ce

@@ -1,0 +1,5 @@
+title: 'Adobe College of the Desert'
+slug: adobe-college-of-the-desert
+author: 7328c14f-7ec2-4511-a24d-29a1c5ce23eb
+import_id: 30dc92fb-4956-479b-a43c-99fdf4ce4837
+id: 51ed25da-27a7-46c9-a10b-70bddafb1e34

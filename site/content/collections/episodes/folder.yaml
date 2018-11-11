@@ -1,6 +1,7 @@
 title: Episodes
 order: date
-fieldset: episodes
+fieldset: episode
+template: episode
 columns:
   - title
   - slug

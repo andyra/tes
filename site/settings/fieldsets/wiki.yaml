@@ -1,5 +1,6 @@
 title: Wiki
-create_title: 'New Wiki Article'
+create_title: 'New Article'
+taxonomies: false
 sections:
   main:
     display: Main
@@ -55,4 +56,3 @@ sections:
         default: current
         max_items: 1
         validate: required
-taxonomies: true

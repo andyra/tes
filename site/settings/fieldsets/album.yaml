@@ -8,12 +8,26 @@ sections:
       title:
         display: Title
         type: text
-        localizable: true
         validate: required
+        width: 66
+      date:
+        display: Release Date
+        type: date
+        width: 33
       soundcloud_url:
         display: 'Soundcloud URL'
         type: text
         validate: active_url
+        width: 66
+      image:
+        display: Cover Art
+        type: assets
+        instructions: 'At least 1400 × 1400'
+        container: s3
+        folder: cover-art
+        max_files: 1
+        validate: "ext:jpg,png"
+        width: 33
       tracklist:
         display: Tracklist
         type: grid
@@ -28,21 +42,15 @@ sections:
               - songs
             max_items: '1'
             mode: tags
-            width: 50
+            width: 33
           soundcloud_url:
             type: text
             display: 'Soundcloud Link'
             validate: active_url
-            width: 50
+            width: 66
   sidebar:
     display: Sidebar
     fields:
       slug:
         type: text
-        validate: required
-      author:
-        display: Author
-        type: users
-        default: current
-        max_items: 1
         validate: required

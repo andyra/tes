@@ -1,0 +1,5 @@
+title: 'Hurricane Chelsea'
+slug: hurricane-chelsea
+author: 7328c14f-7ec2-4511-a24d-29a1c5ce23eb
+import_id: 30dc92fb-4956-479b-a43c-99fdf4ce4837
+id: 81259106-2dd4-42e9-b5f1-2e6201b758ca

@@ -1,0 +1,5 @@
+title: 'Gilbert Tangent'
+slug: gilbert-tangent-1
+author: 7077c6bb-43d8-42d0-ab31-76c9eaa342ee
+import_id: 30dc92fb-4956-479b-a43c-99fdf4ce4837
+id: cfd23d21-0b1f-49b8-8a0f-99add7f2c7d7

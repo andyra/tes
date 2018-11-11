@@ -11,7 +11,7 @@ sections:
         display: City
         type: textarea
       phone:
-        display: 'Call-in Phone Number'
+        display: Phone
         type: text
       email:
         display: Email

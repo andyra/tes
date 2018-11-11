@@ -1,0 +1,5 @@
+title: 'Duck on the Moon'
+slug: duck-on-the-moon
+author: 7328c14f-7ec2-4511-a24d-29a1c5ce23eb
+import_id: 30dc92fb-4956-479b-a43c-99fdf4ce4837
+id: dbf832d9-a38a-4446-a0c6-820cf0c9c41a

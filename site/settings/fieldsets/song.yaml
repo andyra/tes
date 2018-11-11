@@ -1,5 +1,6 @@
-title: Songs
+title: Song
 create_title: 'New Song'
+taxonomies: false
 sections:
   main:
     display: Main
@@ -7,28 +8,35 @@ sections:
       title:
         type: text
         display: Title
-        localizable: true
         validate: required
-      content:
-        display: 'Musical Notes'
+        width: 66
+        localizable: true
+      notes:
+        display: Notes
         type: markdown
-      wiki_entries:
-        display: 'Wiki Entries'
-        label: '{{ title }}'
-        collection:
-          - wiki
-        mode: tags
-        type: collection
-        instructions: 'Select wiki entries referenced in this song'
+        instructions: 'Lyrics, written notation, etc.'
+        width: 50
+        cheatsheet: false
+        restrict_assets: false
+      lead_sheets:
+        container: s3
+        folder: songs
+        restrict: true
+        mode: grid
+        type: assets
+        width: 50
+        display: 'Lead Sheets'
+        instructions: 'If you have any images of the music'
   sidebar:
     display: Sidebar
     fields:
       slug:
         type: text
         validate: required
-      author:
-        display: Author
-        type: users
-        default: current
-        max_items: 1
-        validate: required
+      tags:
+        display: Wiki Tags
+        instructions: 'People, places, etc. referenced in this song (links to the wiki)'
+        collection:
+          - wiki
+        mode: tags
+        type: collection

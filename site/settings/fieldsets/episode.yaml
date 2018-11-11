@@ -1,0 +1,71 @@
+title: Episode
+create_title: 'New Episode'
+taxonomies: false
+sections:
+  main:
+    display: Main
+    fields:
+      title:
+        type: text
+        display: Title
+        width: 66
+        localizable: true
+      date:
+        display: 'Release Date'
+        type: date
+        width: 33
+      soundcloud_url:
+        display: 'Soundcloud URL'
+        type: text
+        validate: active_url
+        width: 66
+      description:
+        display: Description
+        type: markdown
+        instructions: 'What happens in this episode?'
+        width: 66
+      image:
+        display: 'Cover Art'
+        type: assets
+        instructions: 'At least 1400 × 1400'
+        container: s3
+        folder: cover-art
+        max_files: 1
+        validate: 'ext:jpg,png'
+        width: 33
+      tracklist:
+        display: 'Songs on This Episode'
+        type: grid
+        mode: table
+        min_rows: 1
+        add_row: 'Add Song'
+        fields:
+          song:
+            display: Track
+            type: collection
+            collection:
+              - songs
+            max_items: '1'
+            mode: tags
+      album:
+        display: 'Episode Album'
+        type: collection
+        mode: tags
+        instructions: 'The album with the music from this episode'
+        max_items: '1'
+        collection:
+          - albums
+        width: 50
+  sidebar:
+    display: Sidebar
+    fields:
+      slug:
+        type: text
+        validate: required
+      tags:
+        display: Wiki Tags
+        type: collection
+        mode: tags
+        instructions: 'People, places, etc. referenced in this song (links to the wiki)'
+        collection:
+          - wiki

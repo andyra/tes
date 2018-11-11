@@ -1,0 +1,5 @@
+title: 'Jason Dudley-Nathan'
+slug: jason-dudley-nathan-1
+author: 7077c6bb-43d8-42d0-ab31-76c9eaa342ee
+import_id: 30dc92fb-4956-479b-a43c-99fdf4ce4837
+id: 4d09a25d-4748-4173-b2d6-a71ee0842d8f

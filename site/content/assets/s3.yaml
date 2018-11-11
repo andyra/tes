@@ -1,0 +1,7 @@
+title: 'S3 Assets'
+driver: s3
+key: AKIAJWLQSWRI3NMXYKZA
+secret: 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
+bucket: thiseveningsshow
+region: us-east-1
+cache: 120

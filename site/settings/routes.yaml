@@ -3,6 +3,7 @@ collections:
   things: '/things/{slug}'
   songs: '/songs/{slug}'
   albums: '/albums/{slug}'
+  episodes: '/episodes/{slug}'
 taxonomies:
   tags: '/blog/tags/{slug}'
 routes:
