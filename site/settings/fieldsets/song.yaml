@@ -35,7 +35,7 @@ sections:
         validate: required
       tags:
         display: Wiki Tags
-        instructions: 'People, places, etc. referenced in this song (links to the wiki)'
+        instructions: 'People, places, etc. referenced in this song'
         collection:
           - wiki
         mode: tags

@@ -1,0 +1,35 @@
+title: Video
+create_title: 'New Video'
+taxonomies: false
+sections:
+  main:
+    display: Main
+    fields:
+      title:
+        type: text
+        display: Title
+        validate: required
+        width: 66
+        localizable: true
+      date:
+        display: Date
+        type: date
+        width: 33
+      url:
+        display: 'Video URL'
+        type: text
+        validate: active_url
+        width: 66
+  sidebar:
+    display: Sidebar
+    fields:
+      slug:
+        type: text
+        validate: required
+      tags:
+        display: Wiki Tags
+        instructions: 'People, places, etc. referenced in this video'
+        collection:
+          - wiki
+        mode: tags
+        type: collection

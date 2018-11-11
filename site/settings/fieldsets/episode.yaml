@@ -66,6 +66,6 @@ sections:
         display: Wiki Tags
         type: collection
         mode: tags
-        instructions: 'People, places, etc. referenced in this song (links to the wiki)'
+        instructions: 'People, places, etc. referenced in this episode'
         collection:
           - wiki
