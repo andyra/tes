@@ -8,60 +8,47 @@
 <hr>
 <h2>Wiki Tags</h2>
 <ul>
-  {{ wiki_tags scope="foo"}}
+  {{ wiki_tags scope="gravu" }}
+    <li>{{ gravu:title }}</li>
     <li>{{ value }}</li>
     <!-- <li><a href="{{ url }}">{{ title }}</a></li> -->
   {{ /wiki_tags }}
 </ul>
+<ul>
+  {{ wiki_tags }}
+    <li>{{ value }} {{ title }}</li>
+    <!-- <li><a href="{{ url }}">{{ title }}</a></li> -->
+  {{ /wiki_tags }}
+</ul>
+
+<ul>
+  {{ wiki_tags_raw }}
+    <li>{{ value }}</li>
+    <!-- <li><a href="{{ url }}">{{ title }}</a></li> -->
+  {{ /wiki_tags_raw }}
+</ul>
 
 <hr>
+
 <h2>Referenced in</h2>
 
-<h3>Albums</h3>
+<h3>Episodes</h3>
 <ul>
-  {{ collection:albums }}
-    {{ relate:wiki }}
-      {{ if id == page:id }}
-        <li><a href="{{ url }}">{{ title }}</a></li>
-      {{ /if }}
-    {{ /relate:wiki }}
-  {{ /collection:albums }}
+  {{ collection:episodes wikis:contains=page:id scope="episode" }}
+    <li><a href="{{ episode:url }}"><mark>{{ episode:title }}</mark></a></li>
+  {{ /collection:episodes }}
 </ul>
 
 <h3>Songs</h3>
 <ul>
-  {{ collection:songs }}
-    {{ relate:wiki }}
-      {{ if id == page:id }}
-        <li><a href="{{ url }}">{{ title }}</a></li>
-      {{ /if }}
-    {{ /relate:wiki }}
+  {{ collection:songs wikis:contains=page:id scope="song" }}
+    <li><a href="{{ song:url }}"><mark>{{ song:title }}</mark></a></li>
   {{ /collection:songs }}
-</ul>
-
-<h3>Episodes</h3>
-<ul>
-  {{ collection:episodes scope="episode" }}
-    {{ relate:wiki }}
-      {{ if id == page:id }}
-        <li>
-          <a href="{{ episode:url }}">
-            <img src="{{ episode:cover_art }}" style="max-width: 12rem;" />
-            {{ episode:title }}
-          </a>
-        </li>
-      {{ /if }}
-    {{ /relate:wiki }}
-  {{ /collection:episodes }}
 </ul>
 
 <h3>Videos</h3>
 <ul>
-  {{ collection:videos }}
-    {{ relate:wiki }}
-      {{ if id == page:id }}
-        <li><a href="{{ url }}">{{ title }}</a></li>
-      {{ /if }}
-    {{ /relate:wiki }}
+  {{ collection:videos wikis:contains=page:id scope="video" }}
+    <li><a href="{{ video:url }}"><mark>{{ video:title }}</mark></a></li>
   {{ /collection:videos }}
 </ul>

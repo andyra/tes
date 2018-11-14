@@ -32,7 +32,7 @@ sections:
         max_items: 1
         validate: required
         width: 50
-      tags:
+      wikis:
         display: Wiki Tags
         instructions: 'People, places, etc. referenced in this video'
         collection:

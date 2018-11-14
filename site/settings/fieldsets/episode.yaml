@@ -71,7 +71,7 @@ sections:
         max_items: 1
         validate: required
         width: 50
-      wiki:
+      wikis:
         display: 'Wiki References'
         instructions: 'People, places, etc. referenced in this episode'
         type: collection
