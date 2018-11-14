@@ -9,41 +9,15 @@ sections:
         type: text
         display: Title
         width: 66
-        localizable: true
-      slug:
-        type: text
-        width: 33
       content:
-        type: bard
-        display: Article
-        sets:
-          image:
-            display: Image
-            fields:
-              photo:
-                display: Photo
-                type: assets
-                container: main
-                folder: img
-                max_files: 1
-              caption:
-                type: text
-              size:
-                type: radio
-                default: Normal
-                options:
-                  Normal: Normal
-                  Oversized: Oversized
-          quote:
-            display: 'Pull Quote'
-            fields:
-              quote:
-                display: Quote
-                type: markdown
+        display: Content
+        type: markdown
+        width: 66
       images:
         type: assets
         container: main
         max_files: 10
+        width: 33
   sidebar:
     display: Sidebar
     fields:
@@ -60,3 +34,7 @@ sections:
         default: current
         max_items: 1
         validate: required
+      wiki_tags:
+        display: Category
+        type: taxonomy
+        taxonomy: wiki-tags

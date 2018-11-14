@@ -2,8 +2,10 @@ title: Songs
 order: date
 fieldset: song
 template: songs/song
+taxonomies: false
 columns:
   - title
   - slug
   - date
   - author.username
+  - last_modified

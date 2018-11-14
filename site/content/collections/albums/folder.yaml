@@ -2,8 +2,10 @@ title: Albums
 order: date
 fieldset: album
 template: albums/album
+taxonomies: false
 columns:
   - title
   - slug
   - date
   - author.username
+  - last_modified

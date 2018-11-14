@@ -1,10 +1,12 @@
+start_page: dashboard
+date_format: Y/n/d
+pagination_size: 50
 widgets:
   -
     type: collection
-    collection: blog
+    collection: episodes
     limit: 5
   -
     type: collection
-    collection: things
+    collection: wiki
     limit: 5
-

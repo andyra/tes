@@ -20,15 +20,16 @@ sections:
         type: markdown
         instructions: 'What happens in this episode?'
         width: 66
-      image:
+      cover_art:
         display: 'Cover Art'
         type: assets
         instructions: 'At least 1400 × 1400'
         container: s3
-        folder: cover-art
+        folder: episodes
         max_files: 1
         validate: 'ext:jpg,png'
         width: 33
+        restrict: true
       tracklist:
         display: 'Songs on This Episode'
         type: grid
@@ -59,7 +60,7 @@ sections:
         type: text
         validate: required
       date:
-        display: Release Date
+        display: 'Release Date'
         type: date
         allow_time: false
         width: 50
@@ -70,10 +71,10 @@ sections:
         max_items: 1
         validate: required
         width: 50
-      tags:
-        display: Wiki Tags
+      wiki:
+        display: 'Wiki References'
+        instructions: 'People, places, etc. referenced in this episode'
         type: collection
         mode: tags
-        instructions: 'People, places, etc. referenced in this episode'
         collection:
           - wiki

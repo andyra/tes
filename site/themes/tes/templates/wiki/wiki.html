@@ -1,0 +1,67 @@
+<h1>{{ title }}</h1>
+
+<h2>Content</h2>
+{{ content | markdown }}
+
+<h3>Images</h3>
+
+<hr>
+<h2>Wiki Tags</h2>
+<ul>
+  {{ wiki_tags scope="foo"}}
+    <li>{{ value }}</li>
+    <!-- <li><a href="{{ url }}">{{ title }}</a></li> -->
+  {{ /wiki_tags }}
+</ul>
+
+<hr>
+<h2>Referenced in</h2>
+
+<h3>Albums</h3>
+<ul>
+  {{ collection:albums }}
+    {{ relate:wiki }}
+      {{ if id == page:id }}
+        <li><a href="{{ url }}">{{ title }}</a></li>
+      {{ /if }}
+    {{ /relate:wiki }}
+  {{ /collection:albums }}
+</ul>
+
+<h3>Songs</h3>
+<ul>
+  {{ collection:songs }}
+    {{ relate:wiki }}
+      {{ if id == page:id }}
+        <li><a href="{{ url }}">{{ title }}</a></li>
+      {{ /if }}
+    {{ /relate:wiki }}
+  {{ /collection:songs }}
+</ul>
+
+<h3>Episodes</h3>
+<ul>
+  {{ collection:episodes scope="episode" }}
+    {{ relate:wiki }}
+      {{ if id == page:id }}
+        <li>
+          <a href="{{ episode:url }}">
+            <img src="{{ episode:cover_art }}" style="max-width: 12rem;" />
+            {{ episode:title }}
+          </a>
+        </li>
+      {{ /if }}
+    {{ /relate:wiki }}
+  {{ /collection:episodes }}
+</ul>
+
+<h3>Videos</h3>
+<ul>
+  {{ collection:videos }}
+    {{ relate:wiki }}
+      {{ if id == page:id }}
+        <li><a href="{{ url }}">{{ title }}</a></li>
+      {{ /if }}
+    {{ /relate:wiki }}
+  {{ /collection:videos }}
+</ul>

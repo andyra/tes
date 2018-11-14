@@ -1,13 +1,4 @@
-collections:
-  blog: '/blog/{year}/{month}/{day}/{slug}'
-  things: '/things/{slug}'
-  songs: '/songs/{slug}'
-  albums: '/albums/{slug}'
-  episodes: '/episodes/{slug}'
-taxonomies:
-  tags: '/blog/tags/{slug}'
 routes:
-  /blog/tags: blog/taxonomies
   /search: search
   /users: user/index
   '/users/{username}': user/profile
@@ -20,7 +11,13 @@ routes:
     layout: feed
     template: feeds/blog
     content_type: atom
-  /things/feed:
-    layout: feed
-    template: feeds/things
-    content_type: atom
+collections:
+  albums: '/albums/{slug}'
+  episodes: '/episodes/{slug}'
+  songs: '/songs/{slug}'
+  videos: '/videos/{slug}'
+  wiki: '/wiki/{slug}'
+taxonomies:
+  wiki-tags: '/wiki/tags/{slug}'
+  song-tag: 'songs/tags/{slug}'
+  album-tags: 'albums/tags/{slug}'

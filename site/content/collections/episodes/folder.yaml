@@ -1,9 +1,11 @@
 title: Episodes
 order: date
 fieldset: episode
-template: episode
+template: episodes/episode
+taxonomies: false
 columns:
   - title
   - slug
   - date
   - author.username
+  - last_modified

@@ -3,9 +3,9 @@
 <ol>
   {{ collection:albums}}
     <li>
-      {{ title }}
-      {{ if ! tracklist }}
-        <mark>Tracklist</mark>
+      <a href="{{ url }}">{{ title }}</a>
+      {{ if ! image }}
+        <mark>Cover</mark>
       {{ /if }}
     </li>
   {{ /collection:albums }}

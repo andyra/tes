@@ -9,20 +9,40 @@ sections:
         display: Title
         type: text
         validate: required
-        width: 66
+        width: 50
+        localizable: true
+      album_type:
+        display: 'Album Type'
+        type: taxonomy
+        taxonomy: album-tags
+        max_items: 1
+        label: '{{ title }}'
+        default: album-tags/studio
+        validate: required
+        width: 25
+      performance_date:
+        allow_blank: false
+        allow_time: false
+        require_time: false
+        earliest_date: 'January 1, 1900'
+        type: date
+        width: 25
+        display: 'Performance Date'
+        show_when:
+          album_type: album-tags/live-set
       soundcloud_url:
         display: 'Soundcloud URL'
         type: text
         validate: active_url
         width: 66
       image:
-        display: Cover Art
+        display: 'Cover Art'
         type: assets
-        instructions: 'At least 1400 × 1400'
+        instructions: 'JPG at least 1400×1400px'
         container: s3
         folder: cover-art
         max_files: 1
-        validate: "ext:jpg,png"
+        validate: 'required|ext:jpg'
         width: 33
       tracklist:
         display: Tracklist
