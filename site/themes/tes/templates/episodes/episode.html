@@ -7,12 +7,21 @@ Episode
 <h2>Cover Art</h2>
 <img src="{{ cover_art }}" style="max-width: 12rem;" />
 
-<h2> Description</h2>
-<div>
-  {{ description | markdown }}
-</div>
+<h2>Minutes</h2>
+{{ if description }}
+  {{ description | markdown | wikilinks }}
+{{ else }}
+  (Not available)
+{{ /if }}
 
-<h2>Music from this Episode</h2>
+<h2>Companion Album</h2>
+{{ if album }}
+  {{ relate:album }}
+    <a href="{{ url }}">{{ title }}</a>
+  {{ /relate:album }}
+{{ else }}
+  (Not available)
+{{ /if }}
 <ul>
   {{ tracklist }}
     {{ relate:song }}
@@ -20,14 +29,14 @@ Episode
     {{ /relate:song }}
   {{ /tracklist }}
 </ul>
-<h3>Album</h3>
-{{ relate:album }}
-  <a href="{{ url }}">{{ title }}</a>
-{{ /relate:album }}
 
-<h2>In this Episode</h2>
-<ul>
-  {{ relate:wikis }}
-    <li><a href="{{ url }}">{{ title }}</a></li>
-  {{ /relate:wikis }}
-</ul>
+<h2>Learn More from this Episode</h2>
+{{ if wikis }}
+  <ul>
+    {{ relate:wikis }}
+      <li><a href="{{ url }}">{{ title }}</a></li>
+    {{ /relate:wikis }}
+  </ul>
+{{ else }}
+  (Not available)
+{{ /if }}
