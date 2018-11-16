@@ -11,11 +11,22 @@ sections:
         validate: required
         width: 66
         localizable: true
+      type:
+        options:
+          original: Original
+          cover: Cover
+          segment: Segment
+        inline: false
+        type: radio
+        width: 33
+        display: Type
+        validate: required
+        default: original
       notes:
         display: Notes
         type: markdown
         instructions: 'Lyrics, written notation, etc.'
-        width: 50
+        width: 66
         cheatsheet: false
         restrict_assets: false
       lead_sheets:
@@ -24,7 +35,7 @@ sections:
         restrict: true
         mode: grid
         type: assets
-        width: 50
+        width: 33
         display: 'Lead Sheets'
         instructions: 'If you have any images of the music'
   sidebar:
@@ -47,7 +58,7 @@ sections:
         validate: required
         width: 50
       wikis:
-        display: Wiki Tags
+        display: 'Wiki References'
         instructions: 'People, places, etc. referenced in this song'
         collection:
           - wiki

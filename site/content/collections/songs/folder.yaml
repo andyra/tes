@@ -6,6 +6,5 @@ taxonomies: false
 columns:
   - title
   - slug
-  - date
   - author.username
   - last_modified
