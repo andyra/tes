@@ -7,10 +7,6 @@ routes:
   /register: auth/register
   /forgot-password: auth/password-forgot
   /reset-password: auth/password-reset
-  /blog/feed:
-    layout: feed
-    template: feeds/blog
-    content_type: atom
 collections:
   albums: '/albums/{slug}'
   episodes: '/episodes/{slug}'
