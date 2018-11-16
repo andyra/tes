@@ -30,6 +30,23 @@ sections:
         validate: 'ext:jpg,png'
         width: 33
         restrict: true
+      wikis:
+        display: 'Wiki References'
+        instructions: 'People, places, etc. referenced in this episode'
+        type: collection
+        mode: tags
+        collection:
+          - wiki
+        width: 66
+      album:
+        display: 'Episode Album'
+        type: collection
+        mode: tags
+        instructions: 'The album with the music from this episode'
+        max_items: '1'
+        collection:
+          - albums
+        width: 33
       tracklist:
         display: 'Songs on This Episode'
         type: grid
@@ -44,15 +61,6 @@ sections:
               - songs
             max_items: '1'
             mode: tags
-      album:
-        display: 'Episode Album'
-        type: collection
-        mode: tags
-        instructions: 'The album with the music from this episode'
-        max_items: '1'
-        collection:
-          - albums
-        width: 66
   sidebar:
     display: Sidebar
     fields:
@@ -71,10 +79,3 @@ sections:
         max_items: 1
         validate: required
         width: 50
-      wikis:
-        display: 'Wiki References'
-        instructions: 'People, places, etc. referenced in this episode'
-        type: collection
-        mode: tags
-        collection:
-          - wiki
