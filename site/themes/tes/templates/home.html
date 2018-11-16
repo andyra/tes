@@ -2,4 +2,10 @@
 
 <div>{{ content }}</div>
 
-<a href="{{ link to='songs' }}">See the songs</a>
+<ul>
+  {{ nav from="/{segment_1}" max_depth="2" }}
+    <li>
+      <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>{{ title }}</a>
+    </li>
+  {{ /nav }}
+</ul>
