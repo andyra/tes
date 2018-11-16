@@ -35,12 +35,12 @@ sections:
         type: text
         validate: active_url
         width: 66
-      image:
+      cover_art:
         display: 'Cover Art'
         type: assets
         instructions: 'JPG at least 1400×1400px'
         container: s3
-        folder: cover-art
+        folder: albums
         max_files: 1
         validate: 'required|ext:jpg'
         width: 33

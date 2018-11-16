@@ -23,7 +23,7 @@ sections:
       cover_art:
         display: 'Cover Art'
         type: assets
-        instructions: 'At least 1400 × 1400'
+        instructions: 'JPG at least 1400×1400px'
         container: s3
         folder: episodes
         max_files: 1
