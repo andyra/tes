@@ -1,6 +1,5 @@
 title: Wiki
 create_title: 'New Article'
-taxonomies: false
 sections:
   main:
     display: Main
@@ -9,6 +8,7 @@ sections:
         type: text
         display: Title
         width: 66
+        localizable: true
       content:
         display: Content
         type: markdown
@@ -25,16 +25,19 @@ sections:
         display: Slug
         type: text
         validate: required
-      date:
-        display: Date
-        type: date
       author:
         display: Author
         type: users
         default: current
         max_items: 1
         validate: required
-      wiki_tags:
-        display: Category
+        width: 50
+      date:
+        display: Date
+        type: date
+        width: 50
+      tags:
+        taxonomy: tags
         type: taxonomy
-        taxonomy: wiki-tags
+        display: Tags
+        validate: required

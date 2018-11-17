@@ -11,15 +11,16 @@ sections:
         validate: required
         width: 50
         localizable: true
-      album_type:
-        display: 'Album Type'
-        type: taxonomy
-        taxonomy: album-tags
-        max_items: 1
-        label: '{{ title }}'
-        default: album-tags/studio
-        validate: required
+      type:
+        options:
+          studio: Studio
+          live: 'Live Set'
+        inline: false
+        type: radio
         width: 25
+        display: Type
+        validate: required
+        default: studio
       performance_date:
         allow_blank: false
         allow_time: false
@@ -29,7 +30,7 @@ sections:
         width: 25
         display: 'Performance Date'
         show_when:
-          album_type: album-tags/live-set
+          type: live
       soundcloud_url:
         display: 'Soundcloud URL'
         type: text

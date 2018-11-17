@@ -2,6 +2,7 @@ title: Videos
 create_title: 'New Video'
 order: date
 fieldset: video
+template: videos/video
 taxonomies: false
 columns:
   - title

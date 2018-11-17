@@ -1,7 +1,0 @@
-routes:
-  /:
-    as: addons.exportit
-    uses: index
-  post@/:
-    uses: exportdata
-    as: exportit.exportdata

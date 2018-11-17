@@ -1,4 +1,5 @@
 routes:
+  wiki/tags: wiki/tags
   /search: search
   /users: user/index
   '/users/{username}': user/profile
@@ -14,6 +15,4 @@ collections:
   videos: '/videos/{slug}'
   wiki: '/wiki/{slug}'
 taxonomies:
-  wiki-tags: '/wiki/tags/{slug}'
-  song-tag: 'songs/tags/{slug}'
-  album-tags: 'albums/tags/{slug}'
+  tags: '/wiki/tags/{slug}'

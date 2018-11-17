@@ -4,7 +4,7 @@ album
 <a href="{{ soundcloud_url }}">{{ soundcloud_url }}</a>
 
 <h2>Cover Art</h2>
-<img src="{{ cover_art }}" style="max-width: 12rem;" />
+<img src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
 
 {{ tracklist }}
   <li>

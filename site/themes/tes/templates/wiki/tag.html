@@ -1,0 +1,17 @@
+<header>
+  <h1>Tag: {{ title }}</h1>
+  <h2>{{ content }}</h2>
+</header>
+
+<ol class="list">
+  {{ collection:wiki taxonomy="true" paginate="true" as="wikis" limit="10" }}
+    {{ if no_resolts }}
+      <p>No "{{ title }}" wikis.</p>
+    {{ /if }}
+    {{ wikis scope="tag" }}
+      <li><a href="{{ url }}">{{ title }}</a></li>
+    {{ /wikis }}
+  {{ /collection:wiki }}
+</ul>
+
+</section>

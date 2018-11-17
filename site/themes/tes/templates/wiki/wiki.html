@@ -1,33 +1,18 @@
 <h1>{{ title }}</h1>
 
 <h2>Content</h2>
-{{ content | markdown }}
+{{ content | wikilinks | markdown }}
 
 <h3>Images</h3>
+{{ images }}
+  <img src="{{ glide:value width='300' height='300' }}" alt="{{ title }}" />
+{{ /images }}
 
 <hr>
 <h2>Wiki Tags</h2>
-<ul>
-  {{ wiki_tags scope="gravu" }}
-    <li>{{ gravu:title }}</li>
-    <li>{{ value }}</li>
-    <!-- <li><a href="{{ url }}">{{ title }}</a></li> -->
-  {{ /wiki_tags }}
-</ul>
-<ul>
-  {{ wiki_tags }}
-    <li>{{ value }} {{ title }}</li>
-    <!-- <li><a href="{{ url }}">{{ title }}</a></li> -->
-  {{ /wiki_tags }}
-</ul>
-
-<ul>
-  {{ wiki_tags_raw }}
-    <li>{{ value }}</li>
-    <!-- <li><a href="{{ url }}">{{ title }}</a></li> -->
-  {{ /wiki_tags_raw }}
-</ul>
-
+{{ tags }}
+  <li>???</li>
+{{ /tags }}
 <hr>
 
 <h2>Referenced in</h2>

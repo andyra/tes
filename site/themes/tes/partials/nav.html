@@ -1,0 +1,5 @@
+<nav>
+  {{ nav from="/" max_depth="2" include_home="true" }}
+    <a href="{{ url }}"{{ if is_current || is_parent }} class="active"{{ /if }}>{{ title }}</a>
+  {{ /nav }}
+</nav>

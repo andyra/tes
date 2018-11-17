@@ -1,6 +1,21 @@
 <h1>Wiki</h1>
 
-<ol>
+<style>
+  .wiki-columns {
+    columns: 3;
+  }
+</style>
+
+Tags:
+<ul>
+{{ taxonomy:tags sort="title" }}
+  <li><a href="{{ url }}">{{ title }}</a></li>
+{{ /taxonomy:tags }}
+</ul>
+
+<hr>
+
+<ol class="wiki-columns">
   {{ collection:wiki}}
     <li>
       <a href="{{ url }}">{{ title }}</a>
