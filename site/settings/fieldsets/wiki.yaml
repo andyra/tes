@@ -39,5 +39,5 @@ sections:
       tags:
         taxonomy: tags
         type: taxonomy
-        display: Tags
+        display: Categories
         validate: required

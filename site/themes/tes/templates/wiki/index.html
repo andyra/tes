@@ -18,7 +18,12 @@ Tags:
 <ol class="wiki-columns">
   {{ collection:wiki}}
     <li>
-      <a href="{{ url }}">{{ title }}</a>
-    </li>
+    <a href="{{ url }}">
+      {{ title }}
+      {{ if ! content }}
+        <mark>Content</mark>
+      {{ /if }}
+    </a>
+  </li>
   {{ /collection:wiki }}
 </ol>

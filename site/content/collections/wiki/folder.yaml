@@ -1,10 +1,10 @@
 title: Wiki
 fieldset: wiki
 template: wiki/wiki
-order: date
+order: title
 columns:
   - title
   - slug
-  - date
   - author.username
+  - date
   - last_modified

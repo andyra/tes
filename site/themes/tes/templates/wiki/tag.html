@@ -4,7 +4,7 @@
 </header>
 
 <ol class="list">
-  {{ collection:wiki taxonomy="true" paginate="true" as="wikis" limit="10" }}
+  {{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
     {{ if no_resolts }}
       <p>No "{{ title }}" wikis.</p>
     {{ /if }}

@@ -7,7 +7,7 @@
 
 <h2>Minutes</h2>
 {{ if description }}
-  {{ description | markdown }}
+  {{ description | markdown | wikilinks }}
 {{ else }}
   (Not available)
 {{ /if }}
