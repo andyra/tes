@@ -52,6 +52,7 @@ class ComposerStaticInite05e96764f65b956905507c586b1c858
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Routing\\' => 26,
             'Symfony\\Component\\Process\\' => 26,
+            'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\Lock\\' => 23,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
@@ -177,6 +178,10 @@ class ComposerStaticInite05e96764f65b956905507c586b1c858
         'Symfony\\Component\\Process\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/process',
+        ),
+        'Symfony\\Component\\OptionsResolver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/options-resolver',
         ),
         'Symfony\\Component\\Lock\\' => 
         array (
@@ -395,6 +400,13 @@ class ComposerStaticInite05e96764f65b956905507c586b1c858
             'JakubOnderka\\PhpConsoleColor' => 
             array (
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
+            ),
+        ),
+        'I' => 
+        array (
+            'ImageOptimizer' => 
+            array (
+                0 => __DIR__ . '/..' . '/ps/image-optimizer/src',
             ),
         ),
         'D' => 
@@ -1483,6 +1495,19 @@ class ComposerStaticInite05e96764f65b956905507c586b1c858
         'Illuminate\\View\\View' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/View.php',
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'ImageOptimizer\\ChainOptimizer' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/ChainOptimizer.php',
+        'ImageOptimizer\\Command' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/Command.php',
+        'ImageOptimizer\\CommandOptimizer' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/CommandOptimizer.php',
+        'ImageOptimizer\\Exception\\CommandNotFound' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/Exception/CommandNotFound.php',
+        'ImageOptimizer\\Exception\\Exception' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/Exception/Exception.php',
+        'ImageOptimizer\\Optimizer' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/Optimizer.php',
+        'ImageOptimizer\\OptimizerFactory' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/OptimizerFactory.php',
+        'ImageOptimizer\\SmartOptimizer' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/SmartOptimizer.php',
+        'ImageOptimizer\\SuppressErrorOptimizer' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/SuppressErrorOptimizer.php',
+        'ImageOptimizer\\TypeGuesser\\ExtensionTypeGuesser' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/TypeGuesser/ExtensionTypeGuesser.php',
+        'ImageOptimizer\\TypeGuesser\\GdTypeGuesser' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/TypeGuesser/GdTypeGuesser.php',
+        'ImageOptimizer\\TypeGuesser\\SmartTypeGuesser' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/TypeGuesser/SmartTypeGuesser.php',
+        'ImageOptimizer\\TypeGuesser\\TypeGuesser' => __DIR__ . '/..' . '/ps/image-optimizer/src/ImageOptimizer/TypeGuesser/TypeGuesser.php',
         'Intervention\\Image\\AbstractColor' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractColor.php',
         'Intervention\\Image\\AbstractDecoder' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractDecoder.php',
         'Intervention\\Image\\AbstractDriver' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractDriver.php',
@@ -2555,8 +2580,6 @@ class ComposerStaticInite05e96764f65b956905507c586b1c858
         'Statamic\\Addons\\Dump\\DumpTags' => __DIR__ . '/../..' . '/bundles/Dump/DumpTags.php',
         'Statamic\\Addons\\Entries\\EntriesTags' => __DIR__ . '/../..' . '/bundles/Entries/EntriesTags.php',
         'Statamic\\Addons\\Env\\EnvTags' => __DIR__ . '/../..' . '/bundles/Env/EnvTags.php',
-        'Statamic\\Addons\\Exportit\\ExportitController' => __DIR__ . '/../..' . '/../site/addons/Exportit/ExportitController.php',
-        'Statamic\\Addons\\Exportit\\ExportitListener' => __DIR__ . '/../..' . '/../site/addons/Exportit/ExportitListener.php',
         'Statamic\\Addons\\Fields\\FieldsFieldtype' => __DIR__ . '/../..' . '/bundles/Fields/FieldsFieldtype.php',
         'Statamic\\Addons\\Fieldset\\FieldsetFieldtype' => __DIR__ . '/../..' . '/bundles/Fieldset/FieldsetFieldtype.php',
         'Statamic\\Addons\\Form\\FormFieldtype' => __DIR__ . '/../..' . '/bundles/Form/FormFieldtype.php',
@@ -2569,6 +2592,9 @@ class ComposerStaticInite05e96764f65b956905507c586b1c858
         'Statamic\\Addons\\Glide\\GlideTags' => __DIR__ . '/../..' . '/bundles/Glide/GlideTags.php',
         'Statamic\\Addons\\Grid\\GridFieldtype' => __DIR__ . '/../..' . '/bundles/Grid/GridFieldtype.php',
         'Statamic\\Addons\\Hidden\\HiddenFieldtype' => __DIR__ . '/../..' . '/bundles/Hidden/HiddenFieldtype.php',
+        'Statamic\\Addons\\ImageOptimizer\\Commands\\ImageOptimizerCommand' => __DIR__ . '/../..' . '/../site/addons/ImageOptimizer/Commands/ImageOptimizerCommand.php',
+        'Statamic\\Addons\\ImageOptimizer\\ImageOptimizer' => __DIR__ . '/../..' . '/../site/addons/ImageOptimizer/ImageOptimizer.php',
+        'Statamic\\Addons\\ImageOptimizer\\ImageOptimizerListener' => __DIR__ . '/../..' . '/../site/addons/ImageOptimizer/ImageOptimizerListener.php',
         'Statamic\\Addons\\In\\InAPI' => __DIR__ . '/../..' . '/bundles/In/InAPI.php',
         'Statamic\\Addons\\In\\InTags' => __DIR__ . '/../..' . '/bundles/In/InTags.php',
         'Statamic\\Addons\\Increment\\IncrementTags' => __DIR__ . '/../..' . '/bundles/Increment/IncrementTags.php',
@@ -2663,6 +2689,7 @@ class ComposerStaticInite05e96764f65b956905507c586b1c858
         'Statamic\\Addons\\Users\\UsersTags' => __DIR__ . '/../..' . '/bundles/Users/UsersTags.php',
         'Statamic\\Addons\\Video\\VideoFieldtype' => __DIR__ . '/../..' . '/bundles/Video/VideoFieldtype.php',
         'Statamic\\Addons\\Widont\\WidontTags' => __DIR__ . '/../..' . '/bundles/Widont/WidontTags.php',
+        'Statamic\\Addons\\Wikilinks\\WikilinksModifier' => __DIR__ . '/../..' . '/../site/addons/wikilinks/WikilinksModifier.php',
         'Statamic\\Addons\\Yaml\\YamlFieldtype' => __DIR__ . '/../..' . '/bundles/Yaml/YamlFieldtype.php',
         'Statamic\\Addons\\Yields\\YieldsTags' => __DIR__ . '/../..' . '/bundles/Yields/YieldsTags.php',
         'Statamic\\Application' => __DIR__ . '/../..' . '/core/Application.php',
@@ -3604,6 +3631,18 @@ class ComposerStaticInite05e96764f65b956905507c586b1c858
         'Symfony\\Component\\Lock\\Strategy\\ConsensusStrategy' => __DIR__ . '/..' . '/symfony/lock/Strategy/ConsensusStrategy.php',
         'Symfony\\Component\\Lock\\Strategy\\StrategyInterface' => __DIR__ . '/..' . '/symfony/lock/Strategy/StrategyInterface.php',
         'Symfony\\Component\\Lock\\Strategy\\UnanimousStrategy' => __DIR__ . '/..' . '/symfony/lock/Strategy/UnanimousStrategy.php',
+        'Symfony\\Component\\OptionsResolver\\Debug\\OptionsResolverIntrospector' => __DIR__ . '/..' . '/symfony/options-resolver/Debug/OptionsResolverIntrospector.php',
+        'Symfony\\Component\\OptionsResolver\\Exception\\AccessException' => __DIR__ . '/..' . '/symfony/options-resolver/Exception/AccessException.php',
+        'Symfony\\Component\\OptionsResolver\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/options-resolver/Exception/ExceptionInterface.php',
+        'Symfony\\Component\\OptionsResolver\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/symfony/options-resolver/Exception/InvalidArgumentException.php',
+        'Symfony\\Component\\OptionsResolver\\Exception\\InvalidOptionsException' => __DIR__ . '/..' . '/symfony/options-resolver/Exception/InvalidOptionsException.php',
+        'Symfony\\Component\\OptionsResolver\\Exception\\MissingOptionsException' => __DIR__ . '/..' . '/symfony/options-resolver/Exception/MissingOptionsException.php',
+        'Symfony\\Component\\OptionsResolver\\Exception\\NoConfigurationException' => __DIR__ . '/..' . '/symfony/options-resolver/Exception/NoConfigurationException.php',
+        'Symfony\\Component\\OptionsResolver\\Exception\\NoSuchOptionException' => __DIR__ . '/..' . '/symfony/options-resolver/Exception/NoSuchOptionException.php',
+        'Symfony\\Component\\OptionsResolver\\Exception\\OptionDefinitionException' => __DIR__ . '/..' . '/symfony/options-resolver/Exception/OptionDefinitionException.php',
+        'Symfony\\Component\\OptionsResolver\\Exception\\UndefinedOptionsException' => __DIR__ . '/..' . '/symfony/options-resolver/Exception/UndefinedOptionsException.php',
+        'Symfony\\Component\\OptionsResolver\\Options' => __DIR__ . '/..' . '/symfony/options-resolver/Options.php',
+        'Symfony\\Component\\OptionsResolver\\OptionsResolver' => __DIR__ . '/..' . '/symfony/options-resolver/OptionsResolver.php',
         'Symfony\\Component\\Process\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/process/Exception/ExceptionInterface.php',
         'Symfony\\Component\\Process\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/symfony/process/Exception/InvalidArgumentException.php',
         'Symfony\\Component\\Process\\Exception\\LogicException' => __DIR__ . '/..' . '/symfony/process/Exception/LogicException.php',

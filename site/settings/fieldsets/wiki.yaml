@@ -15,9 +15,11 @@ sections:
         width: 66
       images:
         type: assets
-        container: main
+        container: s3
         max_files: 10
         width: 33
+        restrict: false
+        folder: wiki
   sidebar:
     display: Sidebar
     fields:
@@ -41,3 +43,4 @@ sections:
         type: taxonomy
         display: Categories
         validate: required
+taxonomies: true

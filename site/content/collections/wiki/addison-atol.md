@@ -1,7 +1,7 @@
 ---
 title: 'Addison Atol'
 images:
-  - /assets/addison-atol.png
+  - 'https://thiseveningsshow.s3.amazonaws.com/wiki/addison-atol.png'
 author: 7328c14f-7ec2-4511-a24d-29a1c5ce23eb
 id: c98cd3c7-7c63-4cb8-bd56-dbd186618092
 tags:
