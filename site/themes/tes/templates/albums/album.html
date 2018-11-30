@@ -1,4 +1,11 @@
-album
+<br>
+<hr>
+
+<button data-audio="play">Play</button>
+<button data-audio="pause">Pause</button>
+<button data-audio="prev">Prev</button>
+<button data-audio="next">Next</button>
+
 <h1>{{ title }}</h1>
 <time>{{ date }}</time>
 <a href="{{ soundcloud_url }}">{{ soundcloud_url }}</a>
@@ -6,11 +13,12 @@ album
 <h2>Cover Art</h2>
 <img src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
 
+<ol>
 {{ tracklist }}
-  <li>
+  <li data-url="{{ soundcloud_url }}">
     {{ relate:song }}
       {{ title }}
     {{ /relate:song }}
-    {{ soundcloud_url }}
   </li>
 {{ /tracklist }}
+</ol>

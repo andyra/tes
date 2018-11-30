@@ -1,0 +1,10 @@
+<h1>Search Results</h1>
+
+<ul>
+{{ search:results }}
+	{{ if no_results }}
+		No results.
+	{{ /if }}
+	<li><a href="{{ url }}">{{ title }}</a></li>
+{{ /search:results }}
+</ul>

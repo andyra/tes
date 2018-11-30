@@ -2,4 +2,9 @@
   {{ nav from="/" max_depth="2" include_home="true" }}
     <a href="{{ url }}"{{ if is_current || is_parent }} class="active"{{ /if }}>{{ title }}</a>
   {{ /nav }}
+
+  <form action="/search-results" method="GET">
+    <input type="text" name="q" value="{{ get:q }}" placeholder="Search" />
+    <button>Search</button>
+  </form>
 </nav>
