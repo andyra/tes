@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAIA,IAAK,CACH,WAAW,CAAE,iEAAiE",
-"sources": ["3-core/base.scss"],
+"mappings": "AAIA,IAAK,CACH,gBAAgB,CCDV,OAAiB,CDEvB,KAAK,CCDC,OAAkB,CDExB,WAAW,CEFM,yFAA6F,CCDhH,CAAE,CACA,KAAK,CFAC,OAAkB,CECxB,eAAe,CAAE,SAAS,CAE1B,OAAQ,CACN,gBAAgB,CAAE,oBAAgB",
+"sources": ["3-core/_base.scss","1-settings/_colors.scss","1-settings/_type.scss","3-core/_type.scss"],
 "names": [],
 "file": "tes.css"
 }
