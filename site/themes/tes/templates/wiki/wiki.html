@@ -37,3 +37,10 @@
     <li><a href="{{ video:url }}"><mark>{{ video:title }}</mark></a></li>
   {{ /collection:videos }}
 </ul>
+
+<h3>Wiki</h3>
+<ul>
+  {{ collection:wiki wikis:contains=page:id scope="article" }}
+    <li><a href="{{ article:url }}"><mark>{{ article:title }}</mark></a></li>
+  {{ /collection:wiki }}
+</ul>

@@ -10,4 +10,4 @@ tags:
 The Ball Ranch Flamingo Farm is a wildlife preserve established with the aim of educating flamingos to be productive members in their own society. It is maintained by an android who "has no rememberance of former things."
 
 ## Educational Methodology
-The Ranch's educational style can be described as a marriage between traditional Montessori (champtioned by [Mr. Galdiola], the head avian professor), and brute force intimidation via chainsaws. Birds that don't graduate from the program are often eaten by visitors to the Ranch's cafeteria.
+The Ranch's educational style can be described as a marriage between traditional Montessori (champtioned by [Mr. Gladiola], the head avian professor), and brute force intimidation via chainsaws. Birds that don't graduate from the program are often eaten by visitors to the Ranch's cafeteria.

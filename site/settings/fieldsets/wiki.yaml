@@ -1,5 +1,6 @@
 title: Wiki
 create_title: 'New Article'
+taxonomies: false
 sections:
   main:
     display: Main
@@ -43,4 +44,10 @@ sections:
         type: taxonomy
         display: Categories
         validate: required
-taxonomies: true
+      wikis:
+        display: 'Cross Reference'
+        instructions: 'People, places, etc. referenced in this article.'
+        type: collection
+        mode: tags
+        collection:
+          - wiki

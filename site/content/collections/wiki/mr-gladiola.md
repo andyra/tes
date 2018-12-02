@@ -6,4 +6,4 @@ tags:
   - people
   - professors
 ---
-Educational instructor for flamingos at the [Ball Vintage Flamingo Ranch].
+Educational instructor for flamingos at the [Ball Ranch Flamingo Farm].

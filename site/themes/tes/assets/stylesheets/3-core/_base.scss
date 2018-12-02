@@ -5,5 +5,22 @@
 body {
   background-color: $paper;
   color: $ink;
-  font-family: $font-family-base;
+  font-family: $font-base;
+}
+
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  border: 1px solid $ink;
+  padding: 6vmin;
+}
+
+img { filter: grayscale(1) contrast(.75) brightness(1.25); }
+
+ul {
+  font-family: $font-base2;
+}
+
+ol {
+  font-family: $font-camera;
 }

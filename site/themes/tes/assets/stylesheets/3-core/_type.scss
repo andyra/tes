@@ -2,11 +2,25 @@
 // Base Styles
 // ============================================================================
 
+// Headings
+// ----------------------------------------------------------------------------
+
+h1 {
+  font-family: $font-block;
+}
+
+h2, h3 {
+  font-family: $font-wide;
+}
+
+// Links
+// ----------------------------------------------------------------------------
+
 a {
   color: $ink;
   text-decoration: underline;
 
   &:hover {
-    background-color: rgba($ink, 0.15);
+    background-color: rgb(255, 255, 0);
   }
 }

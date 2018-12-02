@@ -3,4 +3,12 @@
 // ============================================================================
 
 // Typefaces
-$font-family-base: "Merchant Copy Doublesize", "system", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue";
+$font-system: "system", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue";
+$font-base: "HypermarketW00-Regular", $font-system;
+$font-base2: "Merchant Copy Doublesize", $font-system;
+$font-base3: "Fake Receipt", $font-system;
+$font-wide: "Merchant Copy Wide", $font-system;
+$font-sign: "Futura", $font-system;
+$font-camera: "57-nao", $font-system;
+$font-drafting: "Instruction", $font-system;
+$font-block: "Marche", $font-system;
