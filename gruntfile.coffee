@@ -15,11 +15,14 @@ module.exports = (grunt) ->
         ]
         dest: "<%= jsPath %>/tes.js"
 
+    # Note: disabling for now since it doesn't support ES6. And I'm confused
+    # what that means.
     uglify:
       public:
         src: "<%= concat.public.dest %>"
         dest: "<%= concat.public.dest %>" # Stomp over the file
 
+    # This is turned off for now as well. Was in the Watch chain
     jshint:
       options:
         curly: true
@@ -66,7 +69,7 @@ module.exports = (grunt) ->
           "<%= jsPath %>/shared/**/*.js"
           "<%= jsPath %>/pages/**/*.js"
         ]
-        tasks: ["jshint", "concat", "uglify"]
+        tasks: ["concat"]
 
     svg_sprite:
       basic:
@@ -101,7 +104,7 @@ module.exports = (grunt) ->
   require("load-grunt-tasks") grunt
 
   # Register tasks
-  grunt.registerTask "default", ["concat", "uglify", "sass", "autoprefixer", "watch"]
-  grunt.registerTask "scripts", ["concat", "uglify"]
+  grunt.registerTask "default", ["concat", "sass", "autoprefixer", "watch"]
+  grunt.registerTask "scripts", ["concat"]
   grunt.registerTask "styles", ["sass", "autoprefixer"]
   grunt.registerTask "sprite", ["svgstore", "svgmin"]

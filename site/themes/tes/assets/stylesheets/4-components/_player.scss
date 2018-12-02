@@ -1,0 +1,25 @@
+// ============================================================================
+// Audio Player
+// ============================================================================
+
+.player {
+  padding: 1rem;
+  border: 1px solid $ink;
+  max-width: 320px;
+}
+
+.player__progress {
+  border: 1px solid $ink;
+  height: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.player__progress-bar {
+  background-color: $ink;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
