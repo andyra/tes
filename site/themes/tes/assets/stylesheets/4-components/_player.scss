@@ -2,11 +2,39 @@
 // Audio Player
 // ============================================================================
 
+// Base
+// ----------------------------------------------------------------------------
+
 .player {
   padding: 1rem;
   border: 1px solid $ink;
   max-width: 320px;
 }
+
+.player--disabled {
+  pointer-events: none;
+
+  .player__title,
+  .player__time--total  { opacity: 0; }
+  .player__spinner      { opacity: 1; }
+  .player__button       { opacity: 0.5; }
+}
+
+// Elements
+// ----------------------------------------------------------------------------
+
+.player__spinner,
+.player__title,
+.player__time--total {
+  transition: opacity 150ms ease-out;
+}
+
+.player__spinner {
+  opacity: 0;
+}
+
+// Progress
+// ----------------------------------------------------------------------------
 
 .player__progress {
   border: 1px solid $ink;
@@ -22,4 +50,8 @@
   position: absolute;
   top: 0;
   width: 0;
+}
+
+.player__time--total {
+  float: right;
 }

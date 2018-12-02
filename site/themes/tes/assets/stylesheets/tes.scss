@@ -7,8 +7,14 @@
 //   |__|  |_____|  \___|    |__|\_||__|__||_____||____| \___/
 
 // Settings
-@import "1-settings/colors";
 @import "1-settings/type";
+@import "1-settings/spacing";
+@import "1-settings/colors";
+
+// Tools
+@import "2-tools/convert-unit";
+@import "2-tools/size";
+@import "2-tools/strip-unit";
 
 // Core
 @import "3-core/base";
@@ -16,3 +22,4 @@
 
 // Components
 @import "4-components/player";
+@import "4-components/spinners";

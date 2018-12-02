@@ -2,6 +2,14 @@
 // Typography
 // ============================================================================
 
+
+// Root Sizes (default pixel sizes for different screens)
+$font-size-root-sm: 14px;
+$font-size-root:    18px;
+
+// Font Sizes
+$font-size-base:    1rem;
+
 // Typefaces
 $font-system: "system", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue";
 $font-base: "HypermarketW00-Regular", $font-system;

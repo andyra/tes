@@ -1,25 +1,14 @@
-<br>
-<hr>
-
-<div class="player" data-player>
-  <button data-player="play">Play</button>
-  <button data-player="pause">Pause</button>
-  <button data-player="prev">Prev</button>
-  <button data-player="next">Next</button>
-  <div class="player__progress" data-player="seek">
-    <div class="player__progress-bar" data-player="progress"></div>
-  </div>
-</div>
-
-<div data-foo>Foo</div>
-
 <h1>{{ title }}</h1>
 <time>{{ date }}</time>
 <a href="{{ soundcloud_url }}">{{ soundcloud_url }}</a>
 
+<h2>Player</h2>
+{{ partial:player }}
+
 <h2>Cover Art</h2>
 <img src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
 
+<h2>Tracklist</h2>
 <ol>
 {{ tracklist }}
   <li data-url="{{ soundcloud_url }}">

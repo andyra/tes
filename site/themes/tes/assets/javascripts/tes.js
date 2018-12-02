@@ -22,13 +22,18 @@ function ready(fn) {
 SC.initialize({
   client_id: 'f11f2d447ec7f20fa47ac2ea94db415e'
 });
-var trackUrl    = 'https://soundcloud.com/thiseveningsshow/vampire-squid?in=thiseveningsshow/sets/shakespeares-tomb-87';
+
+// For development
 var playlistUrl = 'https://soundcloud.com/thiseveningsshow/sets/moon-base-98';
 
 // Elements
-var audioPlayer = document.querySelector('[data-player]');
-var audioSeek = document.querySelector('[data-player="seek"]');
-var audioProgress = document.querySelector('[data-player="progress"]');
+var player = document.querySelector('[data-player]');
+var playerSeek = document.querySelector('[data-player="seek"]');
+var playerProgress = document.querySelector('[data-player="progress"]');
+var playerTitle = document.querySelector('[data-player="title"]');
+var playerCurrentTime = document.querySelector('[data-player="current-time"]');
+var playerTotalTime = document.querySelector('[data-player="total-time"]');
+var playerSpinner = document.querySelector('[data-player="spinner"]');
 
 // Global State
 var globalPlaylist = [];
@@ -46,16 +51,36 @@ var initPlaylist = function(playlistUrl) {
   });
 }
 
+var setPlayerState = function(state) {
+  if (state === "ready") {
+    player.classList.remove('player--disabled');
+    playerTitle.setAttribute('aria-hidden', false);
+    playerTotalTime.setAttribute('aria-hidden', false);
+    playerSpinner.setAttribute('hidden', false);
+  } else {
+    player.classList.add('player--disabled');
+    playerTitle.setAttribute('aria-hidden', true);
+    playerTotalTime.setAttribute('aria-hidden', true);
+    playerSpinner.setAttribute('hidden', true);
+  }
+}
+
 var initTrack = function(track, playNow) {
   SC.stream('/tracks/' + track.id).then(function(player) {
     globalPlayer = player;
+    playerTitle.textContent = track.title;
+    playerTotalTime.textContent = formatTime(track.duration);
 
+    setPlayerState("ready");
+
+    // Play or pause
     if (playNow) {
       globalPlayer.play().then(function() { console.log("Play"); });
     } else {
       console.log("Ready");
     }
 
+    // Update time on play
     globalPlayer.on("time", function() {
       updateProgress(globalPlayer.currentTime());
     });
@@ -67,6 +92,7 @@ var currentTrackPosition = function() {
 }
 
 var skipTrack = function(direction) {
+  console.log("Skip " + direction);
   globalPlayer.kill();
   var skipPosition = currentTrackPosition() + direction;
 
@@ -78,20 +104,42 @@ var skipTrack = function(direction) {
   }
 }
 
+var updatePlaylist = function(track) {
+  // On init, the playlist is normal.
+  // When a track is initialized/played, put a Pause icon next to the title.
+}
+
 var seekTrack = function(e) {
   var mousePosition = e.clientX;
-  var progressOffset = audioSeek.getBoundingClientRect().left;
-  var progressWidth = audioSeek.getBoundingClientRect().width;
+  var progressOffset = playerSeek.getBoundingClientRect().left;
+  var progressWidth = playerSeek.getBoundingClientRect().width;
   var factor = (mousePosition - progressOffset) / progressWidth;
   var time = globalTrack.duration * factor;
 
   globalPlayer.seek(time);
-  audioProgress.style.width = (factor * 100) + "%";
+  updateProgress(time, factor);
 }
 
-var updateProgress = function(ms) {
-  factor = globalPlayer.currentTime() / globalTrack.duration;
-  audioProgress.style.width = (factor * 100) + "%";
+var updateProgress = function(duration, factor) {
+  var factor = (factor) ? factor : globalPlayer.currentTime() / globalTrack.duration;
+  var percent = (factor * 100) + "%";
+
+  playerProgress.style.width = percent;
+  playerCurrentTime.textContent = formatTime(duration);
+}
+
+function formatTime(duration) {
+  var seconds = parseInt((duration / 1000) % 60);
+  var minutes = parseInt((duration / (1000 * 60)) % 60);
+  var hours = parseInt((duration / (1000 * 60 * 60)) % 24);
+
+  minutes = (hours > 1 && minutes < 10) ? "0" + minutes : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+  time = (hours > 0) ? hours + ":" : "";
+  time += minutes + ":" + seconds;
+
+  return time;
 }
 
 // Events
@@ -102,30 +150,26 @@ ready(function() {
 
   // Listeners
   // Need to set loading state. If you click before loading is done, etc.
-  audioPlayer.addEventListener('click', function(e) {
+  player.addEventListener('click', function(e) {
     if (e.target !== e.currentTarget) { // Ensure it's a click on a child
       action = e.target.getAttribute('data-player');
 
-      if (action === "play") {
-        globalPlayer.play().then(function() { console.log("Play"); });
-      }
-
-      if (action === "pause") {
-        globalPlayer.pause().then(function() { console.log("Pause"); });
-      }
-
-      if (action === "next") {
-        console.log("Next");
-        skipTrack(1);
-      }
-
-      if (action === "prev") {
-        console.log("Prev");
-        skipTrack(-1);
-      }
-
-      if (action === "seek" || action === "progress") {
-        seekTrack(e);
+      switch (action) {
+        case "play":
+          globalPlayer.play().then(function() { console.log("Play"); });;
+          break;
+        case "pause":
+          globalPlayer.pause().then(function() { console.log("Pause"); });;
+          break;
+        case "next":
+          skipTrack(1);
+          break;
+        case "prev":
+          skipTrack(-1);
+          break;
+        case "seek" || "progress":
+          seekTrack(e);
+          break;
       }
     }
     e.stopPropagation();
