@@ -24,3 +24,19 @@ a {
     background-color: rgb(255, 255, 0);
   }
 }
+
+// Reset Button
+// ----------------------------------------------------------------------------
+
+.button-reset {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 0;
+}

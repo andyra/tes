@@ -1,0 +1,66 @@
+// ============================================================================
+// Tracklist
+// ============================================================================
+
+$button-width:  $component-size-lg;
+$button-height: $component-size-base;
+
+.tracklist {
+  counter-reset: i;
+  padding-left: 0;
+}
+
+.tracklist__item {
+  align-items: center;
+  border-top: dotted $border-width-sm $ink;
+  counter-increment: i;
+  display: flex;
+  position: relative;
+
+  &:last-child {
+    border-bottom: dotted $border-width-sm $ink;
+  }
+
+  &:before {
+    align-items: center;
+    content: counter(i)".";
+    display: flex;
+    flex: 0 0 $button-width;
+    height: $button-height;
+    padding-right: $spacer-sm;
+  }
+
+  &[data-track-state="init"] {
+    .tracklist__button--play  { opacity: 0; }
+    .tracklist__button--pause { display: none; }
+
+    &:hover {
+      .tracklist__button--play { opacity: 1; }
+      &:before {
+        opacity: 0;
+      }
+    }
+  }
+
+  &[data-track-state="playing"] {
+    .tracklist__button--play { display: none; }
+  }
+
+  &[data-track-state="paused"] {
+    .tracklist__button--pause { display: none; }
+  }
+}
+
+.tracklist__button {
+  // @include size($component-size-base);
+  bottom: 0;
+  // cursor: pointer;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tracklist__title {
+  flex: 1;
+}

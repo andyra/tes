@@ -1,10 +1,18 @@
-<div class="player player--disabled" data-player>
-  <div class="player__spinner spinner spinner--wave" data-player="spinner"></div>
+<div class="player" data-player data-player-url={{ playlist_url }} data-player-state="disabled" aria-disabled="true">
+  <div class="player__spinner spinner" data-player="spinner"></div>
   <div class="player__title" data-player="title" aria-hidden="true">Title</div>
-  <button class="player__button player__button--play" data-player="play">Play</button>
-  <button class="player__button player__button--pause" data-player="pause">Pause</button>
-  <button class="player__button player__button--prev" data-player="prev">Prev</button>
-  <button class="player__button player__button--next" data-player="next">Next</button>
+  <button class="player__button player__button--play button-reset" data-player="play" aria-title="Play">
+    {{ site:sprite id="play" width="32" height="24" }}
+  </button>
+  <button class="player__button player__button--pause button-reset" data-player="pause" aria-title="Pause">
+    {{ site:sprite id="pause" width="28" height="24" }}
+  </button>
+  <button class="player__button player__button--prev button-reset" data-player="prev" aria-title="Prev">
+    {{ site:sprite id="prev" width="64" height="24" }}
+  </button>
+  <button class="player__button player__button--next button-reset" data-player="next" aria-title="Next">
+    {{ site:sprite id="next" width="64" height="24" }}
+  </button>
   <div class="player__progress" data-player="seek">
     <div class="player__progress-bar" data-player="progress"></div>
   </div>

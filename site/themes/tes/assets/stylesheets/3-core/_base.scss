@@ -9,7 +9,7 @@ body {
 }
 
 .main {
-  max-width: 960px;
+  max-width: 800px;
   margin: 0 auto;
   border: 1px solid $ink;
   padding: 6vmin;
@@ -17,10 +17,3 @@ body {
 
 img { filter: grayscale(1) contrast(.75) brightness(1.25); }
 
-ul {
-  font-family: $font-base2;
-}
-
-ol {
-  font-family: $font-camera;
-}

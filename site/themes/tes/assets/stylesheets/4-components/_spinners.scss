@@ -1,35 +1,27 @@
 // ============================================================================
-// Spinners
+// spinners
 // ============================================================================
 
 // Base
 // ----------------------------------------------------------------------------
 
-$spinner-size: $font-size-base;
+$spinner-size:   $font-size-base;
+$spinner-speed:  0.5s;
 
-.spinner {
-  @include size($spinner-size);
-}
-
-// Wave
-// ----------------------------------------------------------------------------
-
-$wave-size:  $unit * 2;
-$wave-speed: 0.5s;
-
-@keyframes waveAfter {
+@keyframes spinnerAfter {
   from { transform: scale(0.5, 0.5); opacity: 0; }
   to   { transform: scale(1, 1);     opacity: 1; }
 }
 
-@keyframes waveBefore {
+@keyframes spinnerBefore {
   from  { transform: scale(1, 1);     opacity: 1; }
   to    { transform: scale(1.5, 1.5); opacity: 0; }
 }
 
-.spinner--wave {
+.spinner {
+  @include size($spinner-size);
   border-radius: 50%;
-  position: relative;
+  position: absolute;
 
   &:before,
   &:after  {
@@ -43,15 +35,14 @@ $wave-speed: 0.5s;
   }
 
   &:before {
-    animation: waveBefore $wave-speed infinite linear;
+    animation: spinnerBefore $spinner-speed infinite linear;
     opacity: 1;
     transform: scale(1, 1);
   }
 
   &:after {
-    animation: waveAfter $wave-speed infinite linear;
+    animation: spinnerAfter $spinner-speed infinite linear;
     opacity: 0;
     transform: scale(0, 0);
   }
 }
-

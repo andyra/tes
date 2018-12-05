@@ -23,9 +23,6 @@ SC.initialize({
   client_id: 'f11f2d447ec7f20fa47ac2ea94db415e'
 });
 
-// For development
-var playlistUrl = 'https://soundcloud.com/thiseveningsshow/sets/moon-base-98';
-
 // Elements
 var player = document.querySelector('[data-player]');
 var playerSeek = document.querySelector('[data-player="seek"]');
@@ -36,6 +33,7 @@ var playerTotalTime = document.querySelector('[data-player="total-time"]');
 var playerSpinner = document.querySelector('[data-player="spinner"]');
 
 // Global State
+var playlistUrl = player.getAttribute('data-player-url');
 var globalPlaylist = [];
 var globalTrack = null;
 var globalPlayer = null;
@@ -52,16 +50,24 @@ var initPlaylist = function(playlistUrl) {
 }
 
 var setPlayerState = function(state) {
-  if (state === "ready") {
-    player.classList.remove('player--disabled');
-    playerTitle.setAttribute('aria-hidden', false);
-    playerTotalTime.setAttribute('aria-hidden', false);
-    playerSpinner.setAttribute('hidden', false);
+  if (state === "paused") {
+    player
+      .setAttribute('data-player-state', 'paused')
+      .setAttribute('aria-disabled', false);
   } else {
-    player.classList.add('player--disabled');
-    playerTitle.setAttribute('aria-hidden', true);
-    playerTotalTime.setAttribute('aria-hidden', true);
-    playerSpinner.setAttribute('hidden', true);
+    player
+      .setAttribute('data-player-state', 'disabled')
+      .setAttribute('aria-disabled', true);
+  }
+}
+
+var setTracklistState = function(el, state) {
+  if (state === "paused") {
+    el.setAttribute('data-track-state', 'paused');
+  } else if (state === "playing") {
+    el.setAttribute('data-track-state', 'disabled');
+  } else {
+    el.setAttribute('data-track-state', 'init');
   }
 }
 
@@ -71,19 +77,28 @@ var initTrack = function(track, playNow) {
     playerTitle.textContent = track.title;
     playerTotalTime.textContent = formatTime(track.duration);
 
-    setPlayerState("ready");
-
-    // Play or pause
     if (playNow) {
-      globalPlayer.play().then(function() { console.log("Play"); });
+      globalPlayer.play().then(function() {
+        console.log('Playing');
+        setPlayerState("playing");
+        setTracklistState("playing");
+      });
     } else {
-      console.log("Ready");
+      console.log('Ready');
+      setPlayerState("paused");
     }
 
-    // Update time on play
-    globalPlayer.on("time", function() {
+    globalPlayer.on('time', function() {
       updateProgress(globalPlayer.currentTime());
     });
+
+    // globalPlayer.on('play', function() {
+    //   console.log("On Play");
+    // });
+
+    // globalPlayer.on('pause', function() {
+    //   console.log("On Pause");
+    // });
   });
 }
 
@@ -93,12 +108,14 @@ var currentTrackPosition = function() {
 
 var skipTrack = function(direction) {
   console.log("Skip " + direction);
-  globalPlayer.kill();
+  var playNow = (globalPlayer.isPlaying()) ? true : false;
   var skipPosition = currentTrackPosition() + direction;
+  globalPlayer.kill();
 
+  // Ensure you aren't at the beginning/end of a playlist
   if (0 <= skipPosition && skipPosition <= globalPlaylist.length) {
-    globalTrack.id = globalPlaylist[skipPosition].id;
-    initTrack(globalTrack, true);
+    globalTrack = globalPlaylist[skipPosition];
+    initTrack(globalTrack, playNow);
   } else {
     console.log("First or Last track reached");
   }
@@ -128,7 +145,7 @@ var updateProgress = function(duration, factor) {
   playerCurrentTime.textContent = formatTime(duration);
 }
 
-function formatTime(duration) {
+var formatTime = function(duration) {
   var seconds = parseInt((duration / 1000) % 60);
   var minutes = parseInt((duration / (1000 * 60)) % 60);
   var hours = parseInt((duration / (1000 * 60 * 60)) % 24);
@@ -156,10 +173,12 @@ ready(function() {
 
       switch (action) {
         case "play":
-          globalPlayer.play().then(function() { console.log("Play"); });;
+          globalPlayer.play().then(function() { console.log("Play"); });
+          player.setAttribute('data-player-state', 'playing');
           break;
         case "pause":
-          globalPlayer.pause().then(function() { console.log("Pause"); });;
+          globalPlayer.pause().then(function() { console.log("Pause"); });
+          player.setAttribute('data-player-state', 'paused');
           break;
         case "next":
           skipTrack(1);

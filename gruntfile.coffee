@@ -71,16 +71,6 @@ module.exports = (grunt) ->
         ]
         tasks: ["concat"]
 
-    svg_sprite:
-      basic:
-        expand: true
-        cwd: "public/assets/images/sprite"
-        src: [ "**/*.svg" ]
-        dest: "public/assets/images"
-        options:
-          mode:
-            symbol: true
-
     svgmin:
       options:
         plugins: [
@@ -94,6 +84,7 @@ module.exports = (grunt) ->
 
     svgstore:
       options:
+        cleanup: ['fill']
         formatting:
           indent_size: 2
       default:

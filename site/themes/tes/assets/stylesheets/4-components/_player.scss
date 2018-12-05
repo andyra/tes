@@ -6,19 +6,30 @@
 // ----------------------------------------------------------------------------
 
 .player {
-  padding: 1rem;
   border: 1px solid $ink;
   max-width: 320px;
+  padding: 1rem;
+  position: relative;
+
+  &[data-player-state="disabled"] {
+    pointer-events: none;
+
+    .player__title,
+    .player__time--total    { opacity: 0; }
+    .player__spinner        { opacity: 1; }
+    .player__button         { opacity: 0.5; }
+    .player__button--pause  { display: none; }
+  }
+
+  &[data-player-state="playing"] {
+    .player__button--play  { display: none; }
+  }
+
+  &[data-player-state="paused"] {
+    .player__button--pause { display: none; }
+  }
 }
 
-.player--disabled {
-  pointer-events: none;
-
-  .player__title,
-  .player__time--total  { opacity: 0; }
-  .player__spinner      { opacity: 1; }
-  .player__button       { opacity: 0.5; }
-}
 
 // Elements
 // ----------------------------------------------------------------------------
@@ -31,6 +42,28 @@
 
 .player__spinner {
   opacity: 0;
+  position: absolute;
+}
+
+.player__button {
+  align-items: center;
+  border-radius: $border-radius-base;
+  border: $border-base;
+  cursor: pointer;
+  display: inline-flex;
+  height: $component-size-sm;
+  justify-content: center;
+  width: $component-size-lg;
+
+  &:hover {
+    background-color: rgba($color-primary, 0.15);
+  }
+
+  .sprite {
+    fill: currentColor;
+    height: 0.5rem;
+    pointer-events: none;
+  }
 }
 
 // Progress

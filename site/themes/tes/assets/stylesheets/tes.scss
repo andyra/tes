@@ -10,6 +10,7 @@
 @import "1-settings/type";
 @import "1-settings/spacing";
 @import "1-settings/colors";
+@import "1-settings/components";
 
 // Tools
 @import "2-tools/convert-unit";
@@ -21,5 +22,6 @@
 @import "3-core/type";
 
 // Components
-@import "4-components/player";
 @import "4-components/spinners";
+@import "4-components/player";
+@import "4-components/tracklist";
