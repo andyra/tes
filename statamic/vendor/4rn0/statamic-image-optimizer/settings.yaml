@@ -1,9 +1,0 @@
-fields:
-  handle_assets:
-    type: toggle
-    width: 50
-  handle_glide:
-    type: toggle
-    width: 50
-  log_optimizer:
-    type: toggle
