@@ -1,7 +1,23 @@
 <h1>{{ title }}</h1>
+{{ user:can permission="cp:access" }}
+  <a href="{{ edit_url }}">Edit</a>
+{{ /user:can }}
 
 <h2>Content</h2>
-{{ content | wikilinks | markdown }}
+{{ content2 }}
+  {{ if type == "text" }}
+    <div class="text">
+      {{ text }}
+    </div>
+  {{ elseif type == "image" }}
+    <img src="{{ image }}" alt="" >
+  {{ /if }}
+{{ /content2 }}
+
+<h2>Old Content</h2>
+<section>
+  {{ content | markdown }}
+</section>
 
 <h3>Images</h3>
 {{ images }}

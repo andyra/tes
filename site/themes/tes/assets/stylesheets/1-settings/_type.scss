@@ -16,7 +16,7 @@ $font-size-xl:      u(24px, rem);
 
 // Typefaces
 $font-system: "system", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue";
-$font-base: "HypermarketW00-Regular", $font-system;
+$font-base: $font-system, "HypermarketW00-Regular", $font-system;
 $font-base2: "Merchant Copy Doublesize", $font-system;
 $font-base3: "Fake Receipt", $font-system;
 $font-wide: "Merchant Copy Wide", $font-system;

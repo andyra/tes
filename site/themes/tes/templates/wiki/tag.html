@@ -5,11 +5,18 @@
 
 <ol class="list">
   {{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
-    {{ if no_resolts }}
+    {{ if no_results }}
       <p>No "{{ title }}" wikis.</p>
     {{ /if }}
     {{ wikis scope="tag" }}
-      <li><a href="{{ url }}">{{ title }}</a></li>
+      <li>
+        <a href="{{ url }}">{{ title }}</a>
+        {{ if content }}
+          {{ if ! images }}
+            <mark>Image</mark>
+          {{ /if }}
+        {{ /if }}
+      </li>
     {{ /wikis }}
   {{ /collection:wiki }}
 </ul>

@@ -10,10 +10,42 @@ sections:
         display: Title
         width: 66
         localizable: true
-      content:
-        display: Content
-        type: markdown
+      content2:
+        buttons:
+          - h2
+          - h3
+          - bold
+          - italic
+          - unorderedlist
+          - orderedlist
+          - quote
+          - anchor
+        style: sans
+        spellcheck: true
+        allow_source: true
+        allow_internal_links: true
+        link_noopener: false
+        link_noreferrer: false
+        target_blank: false
+        semantic_elements: true
+        container: s3
+        folder: wiki
+        restrict_assets: true
+        sets:
+          image:
+            display: Image
+            fields:
+              image:
+                container: s3
+                folder: wiki
+                restrict: true
+                max_files: 1
+                mode: grid
+                type: assets
+                display: Image
+        type: bard
         width: 66
+        display: Content
       images:
         type: assets
         container: s3
@@ -21,6 +53,11 @@ sections:
         width: 33
         restrict: false
         folder: wiki
+        display: 'Featured Image'
+      content:
+        display: Content
+        type: markdown
+        width: 66
   sidebar:
     display: Sidebar
     fields:
@@ -44,10 +81,3 @@ sections:
         type: taxonomy
         display: Categories
         validate: required
-      wikis:
-        display: 'Cross Reference'
-        instructions: 'People, places, etc. referenced in this article.'
-        type: collection
-        mode: tags
-        collection:
-          - wiki

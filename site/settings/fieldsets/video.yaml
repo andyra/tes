@@ -33,7 +33,7 @@ sections:
         validate: required
         width: 50
       wikis:
-        display: Wiki Tags
+        display: 'Wiki Tags'
         instructions: 'People, places, etc. referenced in this video'
         collection:
           - wiki

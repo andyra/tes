@@ -1,5 +1,7 @@
 ---
 title: 'Wilson Sidearm'
+images:
+  - 'https://thiseveningsshow.s3.amazonaws.com/wiki/wilson-sidearm.png'
 author: 7328c14f-7ec2-4511-a24d-29a1c5ce23eb
 id: 1bb51633-0ecf-4dd5-acef-67d34eb7c849
 tags:
