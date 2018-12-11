@@ -16,14 +16,23 @@ Tags:
 <hr>
 
 <ol class="wiki-columns">
-  {{ collection:wiki}}
+  {{ collection:wiki content2:doesnt_exist="true" }}
     <li>
     <a href="{{ url }}">
-      {{ title }}
-      {{ if ! content }}
-        <mark>Content</mark>
-      {{ /if }}
+      {{ title }} <mark>Content</mark>
     </a>
   </li>
   {{ /collection:wiki }}
 </ol>
+
+<ol class="wiki-columns">
+  {{ collection:wiki content2:exists="true" }}
+    <li>
+    <a href="{{ url }}">
+      {{ title }}
+    </a>
+  </li>
+  {{ /collection:wiki }}
+</ol>
+
+
