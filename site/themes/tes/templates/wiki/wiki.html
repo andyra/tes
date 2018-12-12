@@ -14,15 +14,8 @@
   {{ /if }}
 {{ /content2 }}
 
-<h2>Old Content</h2>
-<section>
-  {{ content | markdown }}
-</section>
-
 <h3>Images</h3>
-{{ images }}
-  <img src="{{ glide:value width='300' height='300' }}" alt="{{ title }}" />
-{{ /images }}
+<img src="{{ glide:images width='300' height='300' }}" alt="{{ title }}" />
 
 <hr>
 <h2>Wiki Tags</h2>

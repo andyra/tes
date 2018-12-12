@@ -4,21 +4,32 @@
 </header>
 
 <ol class="list">
-  {{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
+  {{ collection:wiki content2:exists="true" images:exists="true" taxonomy="true" paginate="true" as="wikis" }}
+    {{ if no_results }}
+      <p>No "{{ title }}" wikis.</p>
+    {{ /if }}
+    {{ wikis }}
+      <li>
+        <a href="{{ url }}">
+          <img src="{{ images }}" style="max-width: 6rem;">
+          {{ title }}
+        </a>
+      </li>
+    {{ /wikis }}
+  {{ /collection:wiki }}
+</ul>
+<ol class="list">
+  {{ collection:wiki content2:exists="true" images:doesnt_exist="true" taxonomy="true" paginate="true" as="wikis" }}
     {{ if no_results }}
       <p>No "{{ title }}" wikis.</p>
     {{ /if }}
     {{ wikis scope="tag" }}
       <li>
         <a href="{{ url }}">{{ title }}</a>
-        {{ if content }}
-          {{ if ! images }}
-            <mark>Image</mark>
-          {{ /if }}
-        {{ /if }}
+        <mark>Image</mark>
       </li>
     {{ /wikis }}
   {{ /collection:wiki }}
-</ul>
+</ol>
 
 </section>

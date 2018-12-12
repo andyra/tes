@@ -49,15 +49,11 @@ sections:
       images:
         type: assets
         container: s3
-        max_files: 10
+        max_files: 1
         width: 33
         restrict: false
         folder: wiki
         display: 'Featured Image'
-      content:
-        display: Content
-        type: markdown
-        width: 66
   sidebar:
     display: Sidebar
     fields:
