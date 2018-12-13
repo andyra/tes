@@ -1,5 +1,5 @@
 title: 'Sports Tree'
-content2:
+article:
   -
     type: text
     text: '<p>A business owned and operated by <a href="{{ link:0cfadc11-c1ca-40dc-9cc0-5d03097529a9 }}">Brent Ko</a>&nbsp;that retails all-natural sports equipment harvested from the <a href="{{ link:9aa7269c-2bd0-4eeb-a0cb-3fcc169d338e }}">Sports Tree</a>.</p>'

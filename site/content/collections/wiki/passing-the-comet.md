@@ -1,5 +1,5 @@
 title: 'Passing the Comet'
-content2:
+article:
   -
     type: text
     text: '<p>A task famously performed in from of a live Jr. High audience by <a href="{{ link:d0a0b40d-0d87-4d79-bc24-65dd21a3d3ab }}">Daniel Dalmationman</a> to raise money to refinish the school''s basketball court.</p><p>It is also routinely performed by <a href="{{ link:27d626e1-a49e-4a12-8906-5b72fcd655ca }}">hobos</a>&nbsp;as a means of entertainment.</p>'

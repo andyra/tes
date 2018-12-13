@@ -1,5 +1,5 @@
 title: 'Wilson Sidearm'
-content2:
+article:
   -
     type: text
     text: '<p><a href="{{ link:18cc7b05-f596-4bf8-a8f8-04c17964512e }}">Crater Lake High School</a> History Coach who was amusingly, and non-fatally, hit by a school bus after jumping off of another school bus.</p>'

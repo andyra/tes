@@ -1,5 +1,5 @@
 title: 'Addison Atol'
-content2:
+article:
   -
     type: text
     text: '<p>A surveryor working for the city of <a href="{{ link:20e35b3a-534f-42e6-a402-597d774ecc5a }}">Adobe Skyscraper</a>. He has a peculiar way of walking in which he only steps on integer-based coordinates values, based on survey measurements. His favorite coordinate in any project is <code>0 0 0</code> because it represents what he calls the "provenance of understanding."</p>'

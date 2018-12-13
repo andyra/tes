@@ -1,5 +1,5 @@
 title: 'J.P. Spline'
-content2:
+article:
   -
     type: text
     text: '<p>Jiles Pine (J.P.) Spline co-hosts the radio show <a href="{{ link:b025fc54-b6a4-463d-a92a-133e21907bdb }}">Morning Spa</a> with <a href="{{ link:e3ec6629-7fa4-4e6a-bbdd-f80022e8476f }}">Harold Kellog</a>.</p>'

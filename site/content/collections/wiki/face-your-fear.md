@@ -1,5 +1,5 @@
 title: 'Face Your Fear'
-content2:
+article:
   -
     type: text
     text: '<p>A radio gameshow wherein contestants must choose between three disguised containers, one of which features something the contestant is deathly afraid of.</p>'

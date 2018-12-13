@@ -1,5 +1,5 @@
 title: 'The Dad Show'
-content2:
+article:
   -
     type: text
     text: '<p>A radio show that promotes the sanctity and authority of fatherhood. It is funded by <a href="{{ link:16e2a7cf-36bc-4ec4-89a2-2f6f9119e309 }}">Chuck Dadz</a> and is widely regarded as propaganda.</p>'

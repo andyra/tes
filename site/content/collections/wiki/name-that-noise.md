@@ -1,5 +1,5 @@
 title: 'Name That Noise'
-content2:
+article:
   -
     type: text
     text: '<p>A gameshow where contestants have to guess what a certain noice is in order to win a sash.</p>'

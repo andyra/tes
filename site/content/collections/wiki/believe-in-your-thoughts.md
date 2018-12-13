@@ -1,5 +1,5 @@
 title: 'Believe in Your Thoughts'
-content2:
+article:
   -
     type: text
     text: '<p>A radio show hosted by <a href="{{ link:9b5a30be-7668-4044-a151-e025b37ef64f }}">Jeremy Rhinolander</a>&nbsp;in which callers are encouraged to trust in even the wildest versions of their thoughts. It is a welcoming show, if not a very productive one.</p>'

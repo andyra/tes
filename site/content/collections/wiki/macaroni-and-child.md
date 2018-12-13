@@ -1,5 +1,5 @@
 title: 'Macaroni and Child'
-content2:
+article:
   -
     type: text
     text: '<p><a href="{{ link:9ae9cc70-9978-4ced-a545-7cf67cb7a0a3 }}">Gert''s</a> favorite food.</p>'

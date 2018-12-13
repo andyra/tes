@@ -1,5 +1,5 @@
 title: 'Amos Motor City Sales'
-content2:
+article:
   -
     type: text
     text: '<p>Car lot owned and operated by <a href="{{ link:350c5eee-e072-4fad-8de2-20f7d7b1371d }}">Marty Fitzpatrick</a>.</p>'

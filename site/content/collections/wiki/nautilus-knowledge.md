@@ -1,5 +1,5 @@
 title: 'Nautilus Knowledge'
-content2:
+article:
   -
     type: text
     text: '<p>A radio show hosted by <a href="{{ link:c1db95eb-b207-43b2-afc9-7653f5b67d73 }}">Captain Clarkbeard</a> and <a href="{{ link:0c60dcee-445b-48dd-86fa-201baac9401b }}">Captain Leanbeard</a>, classified by the Radio Review Board as a Public Service Program (PSP) meant to distribute information on navigating the high seas.</p>'

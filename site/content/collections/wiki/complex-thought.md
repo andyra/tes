@@ -1,5 +1,5 @@
 title: 'Complex Thought'
-content2:
+article:
   -
     type: text
     text: '<p>A radio show where your hosts field some of the nation''s most complicated ideas and attempt to hold them in their minds'' minds without cracking.</p>'

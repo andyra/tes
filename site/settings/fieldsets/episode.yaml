@@ -15,11 +15,6 @@ sections:
         type: text
         validate: active_url
         width: 66
-      description:
-        display: Description
-        type: markdown
-        instructions: 'What happens in this episode?'
-        width: 66
       cover_art:
         display: 'Cover Art'
         type: assets
@@ -31,20 +26,42 @@ sections:
         width: 33
         restrict: true
       tracklist:
-        display: 'Songs on This Episode'
-        type: grid
         mode: table
         min_rows: 1
-        add_row: 'Add Song'
-        width: 66
+        add_row: 'Add Track'
         fields:
+          description:
+            type: textarea
+            width: 25
+            display: Description
+            validate: required
           song:
-            display: Songs
-            type: collection
+            max_items: '1'
             collection:
               - songs
-            max_items: '1'
             mode: tags
+            type: collection
+            width: 25
+            display: Song
+          soundcloud_url:
+            type: text
+            width: 25
+            display: 'Soundcloud URL'
+            validate: active_url
+          wikis:
+            collection:
+              - wiki
+            mode: tags
+            type: collection
+            width: 25
+            display: Wikis
+        type: grid
+        display: Tracklist
+      description:
+        display: Description
+        type: markdown
+        instructions: 'What happens in this episode?'
+        width: 66
       album:
         display: 'Episode Album'
         type: collection

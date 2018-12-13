@@ -1,5 +1,5 @@
 title: 'Mr. Gladiola'
-content2:
+article:
   -
     type: text
     text: '<p>Educational instructor for flamingos at the <a href="{{ link:9fcc00ff-8b0c-4fba-8134-9a5b6db1fc93 }}">Ball Ranch Flamingo Farm</a>.</p>'

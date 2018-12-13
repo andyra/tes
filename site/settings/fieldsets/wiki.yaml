@@ -10,7 +10,7 @@ sections:
         display: Title
         width: 66
         localizable: true
-      content2:
+      article:
         buttons:
           - h2
           - h3

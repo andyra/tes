@@ -1,5 +1,5 @@
 title: 'Hold Down the Emperor'
-content2:
+article:
   -
     type: text
     text: '<p>A <a href="{{ link:d7e77f32-553f-4110-a507-fb1538bb1095 }}">Black MIDI</a> band known best for popularizing the "Incomprehensable Sound."</p>'

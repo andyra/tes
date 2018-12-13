@@ -1,5 +1,5 @@
 title: 'Wind, Plate, and Table'
-content2:
+article:
   -
     type: text
     text: '<p>An all-keyboard <a href="{{ link:1bf6e305-0519-40e2-bd6a-cd5a49cefaa0 }}">Grocery Jazz</a> band fronted by Steve Dago. They oftentimes perform in the basement of the <a href="{{ link:70419f48-1ac9-48b9-a9fb-45f9a15ca278 }}">Yakov Tinktur Mall</a>.</p>'

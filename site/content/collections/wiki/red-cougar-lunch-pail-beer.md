@@ -1,5 +1,5 @@
 title: 'Red Cougar Lunch Pail Beer'
-content2:
+article:
   -
     type: text
     text: '<p>A brand of beer that is known as the world''s first "lunchtime only" beer, sold exclusively in vending machines. It is meant to be served at room temperature.</p>'

@@ -1,5 +1,5 @@
 title: 'Abandoned Monorail Station'
-content2:
+article:
   -
     type: text
     text: |

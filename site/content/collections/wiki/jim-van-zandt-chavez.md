@@ -1,5 +1,5 @@
 title: 'Jim Van Zandt Chavez'
-content2:
+article:
   -
     type: text
     text: '<p>The world''s best dog trainer.</p>'

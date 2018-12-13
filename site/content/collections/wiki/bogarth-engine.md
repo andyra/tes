@@ -1,5 +1,5 @@
 title: 'Bogarth Engine'
-content2:
+article:
   -
     type: text
     text: |

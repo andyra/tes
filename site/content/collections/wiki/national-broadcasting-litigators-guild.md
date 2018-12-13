@@ -1,5 +1,5 @@
 title: 'National Broadcasting Litigators Guild'
-content2:
+article:
   -
     type: text
     text: '<p>A self-appointed governing body (not recognized by the state) that monitors the content of radio stations and distributes quarterly admonishments in order to keep the airwaves clean from filth. Its most high profile case was its decision to deport <a href="{{ link:a450b003-bf9c-4e8d-84d0-bcab12b1ceb9 }}">Ben Soto</a> from the mainland in 1963.</p>'

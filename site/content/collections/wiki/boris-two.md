@@ -1,5 +1,5 @@
 title: 'Boris Two'
-content2:
+article:
   -
     type: text
     text: '<p>Lead guitar for <a href="{{ link:7df96035-d30a-412c-997e-7e643ed9f058 }}">Hail Seizure</a>.</p>'

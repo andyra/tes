@@ -1,5 +1,5 @@
 title: 'Harold Kellogg'
-content2:
+article:
   -
     type: text
     text: '<p>Co-host of <a href="{{ link:b025fc54-b6a4-463d-a92a-133e21907bdb }}">Morning Spa</a> with <a href="{{ link:b3da4159-e021-4554-b850-026473408855 }}">J.P. Spline</a>.</p>'

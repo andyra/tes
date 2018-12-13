@@ -1,5 +1,5 @@
 title: 'Captain Leanbeard'
-content2:
+article:
   -
     type: text
     text: '<p>Hosts <a href="{{ link:b352f7ca-a79c-415d-9b54-bcd1b7fafc04 }}">Nautilus Knowledge</a> with <a href="{{ link:c1db95eb-b207-43b2-afc9-7653f5b67d73 }}">Captain Clarkbeard]</a>.</p>'

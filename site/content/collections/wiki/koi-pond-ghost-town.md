@@ -1,5 +1,5 @@
 title: 'Koi Pond Ghost Town'
-content2:
+article:
   -
     type: text
     text: '<p>A gigantic, thriving koi pond near the <a href="{{ link:726aa452-135c-43ba-8e68-adbaa7750aba }}">abandoned monorail station</a>. Reported to be <a href="{{ link:bd605970-57bb-4129-ac11-8660ffd9dffe }}">John Starboard''s</a> favorite contemplation spot.</p>'

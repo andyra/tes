@@ -16,7 +16,7 @@ Tags:
 <hr>
 
 <ol class="wiki-columns">
-  {{ collection:wiki content2:exists="true" }}
+  {{ collection:wiki article:exists="true" }}
     <li>
     <a href="{{ url }}">
       {{ title }}
@@ -26,7 +26,7 @@ Tags:
 </ol>
 
 <ol class="wiki-columns">
-  {{ collection:wiki content2:doesnt_exist="true" }}
+  {{ collection:wiki article:doesnt_exist="true" }}
   <li>
     <a href="{{ url }}">
       {{ title }} <mark>Content</mark>

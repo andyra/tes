@@ -1,5 +1,5 @@
 title: 'Sanjay Arrow'
-content2:
+article:
   -
     type: text
     text: '<p>Acting manager of fresh hamburger restaurant <a href="{{ link:ed1b6913-57bc-453a-a6f0-27537e167712 }}">City Burger</a>.</p>'

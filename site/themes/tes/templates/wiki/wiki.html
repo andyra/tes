@@ -1,10 +1,14 @@
 <h1>{{ title }}</h1>
+<h2>37ebd120-0cab-4851-82d8-8e9bdc96db7a</h2>
+<h2>{{ page:id }}</h2>
+
 {{ user:can permission="cp:access" }}
   <a href="{{ edit_url }}">Edit</a>
 {{ /user:can }}
 
-<h2>Content</h2>
-{{ content2 }}
+<img src="{{ glide:images width='300' height='300' }}" alt="{{ title }}" />
+
+{{ article }}
   {{ if type == "text" }}
     <div class="text">
       {{ text }}
@@ -12,16 +16,14 @@
   {{ elseif type == "image" }}
     <img src="{{ image }}" alt="" >
   {{ /if }}
-{{ /content2 }}
-
-<h3>Images</h3>
-<img src="{{ glide:images width='300' height='300' }}" alt="{{ title }}" />
+{{ /article }}
 
 <hr>
 <h2>Wiki Tags</h2>
 {{ tags }}
   <li><a href="{{ url }}">{{ title }}</a></li>
 {{ /tags }}
+
 <hr>
 
 <h2>Referenced in</h2>
@@ -30,6 +32,22 @@
 <ul>
   {{ collection:episodes wikis:contains=page:id scope="episode" }}
     <li><a href="{{ episode:url }}"><mark>{{ episode:title }}</mark></a></li>
+  {{ /collection:episodes }}
+</ul>
+
+<h3>Episode Track</h3>
+<ul>
+  {{ collection:episodes scope="episode" }}
+    {{ episode:tracklist scope="track" }}
+      {{ relate:track:wikis scope="wiki" }}
+        {{ if wiki:id == page:id }}
+          <li>
+            <a href="{{ episode:url }}">{{ episode:title }}</a>
+            <a href="{{ track:soundcloud_url }}">{{ track:description }}</a>
+          </li>
+        {{ /if }}
+      {{ /relate:track:wikis }}
+    {{ /episode:tracklist }}
   {{ /collection:episodes }}
 </ul>
 

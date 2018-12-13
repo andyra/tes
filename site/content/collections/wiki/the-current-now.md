@@ -1,5 +1,5 @@
 title: 'The Current Now'
-content2:
+article:
   -
     type: text
     text: '<p>A radio show on <a href="{{ link:39baa257-910a-4131-bb49-7205ca290245 }}">CKNWR</a> hosted by investigative reporter Bob Robart, who considers current events from the perspective of a future historian.</p>'
