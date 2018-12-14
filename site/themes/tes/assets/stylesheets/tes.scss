@@ -11,21 +11,34 @@
 @import "1-settings/spacing";
 @import "1-settings/colors";
 @import "1-settings/components";
+@import "1-settings/breakpoints";
 
 // Tools
-@import "2-tools/convert-unit";
-@import "2-tools/size";
-@import "2-tools/strip-unit";
+@import "2-tools/functions/convert-unit";
+@import "2-tools/functions/strip-unit";
+@import "2-tools/mixins/font-smoothing";
+@import "2-tools/mixins/size";
 
 // Core
 @import "3-core/base";
+@import "3-core/images";
+@import "3-core/flex";
+@import "3-core/margins";
 @import "3-core/type";
 
 // Components
+@import "4-components/breadcrumbs";
+@import "4-components/buttons";
 @import "4-components/spinners";
+@import "4-components/page";
+@import "4-components/page-header";
 @import "4-components/player";
 @import "4-components/tags";
 @import "4-components/tracklist";
+@import "4-components/wiki-tags";
+
+// Layouts
+@import "5-layouts/default";
 
 // Pages
 @import "6-pages/wiki";

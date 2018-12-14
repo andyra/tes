@@ -1,0 +1,29 @@
+// ============================================================================
+// Breadcrumbs
+// ============================================================================
+
+.breadcrumbs {
+  display: flex;
+  font-size: $font-size-sm;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs__item {
+  display: flex;
+
+  + .breadcrumbs__item {
+    margin-left: 0.25em;
+
+    &:before {
+      content: "›";
+      opacity: 0.35;
+      margin-right: 0.25em;
+    }
+  }
+}
+
+.breadcrumbs__current {
+  opacity: 0.5;
+}

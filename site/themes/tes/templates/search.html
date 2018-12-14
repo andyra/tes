@@ -5,6 +5,8 @@
 	{{ if no_results }}
 		No results.
 	{{ /if }}
-	<li><a href="{{ url }}">{{ title }}</a></li>
+	<li>
+    {{ collection }}: <a href="{{ url }}">{{ title }}</a>
+  </li>
 {{ /search:results }}
 </ul>

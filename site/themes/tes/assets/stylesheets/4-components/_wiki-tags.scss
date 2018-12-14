@@ -1,0 +1,81 @@
+// ============================================================================
+// Wiki Tags
+// ============================================================================
+
+// Base
+// ----------------------------------------------------------------------------
+
+.wiki-tags {
+  display: grid;
+  grid-gap: $spacer;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 2fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wiki-tags__item {
+  background-color: $color-primary;
+  color: $paper;
+  display: block;
+  font-size: $font-size-lg;
+  padding: $spacer;
+  min-height: $component-size-lg;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+    box-shadow: inset 0 0 0 4px currentColor;
+    background-color: transparent;
+  }
+}
+
+.wiki-tags__item--static:hover {
+  color: $paper;
+  background-color: $color-primary;
+  box-shadow: none;
+}
+
+// Colors
+// ----------------------------------------------------------------------------
+
+$tag-colors: (
+  ($beige, $blush),
+  ($lemon, $ink),
+  ($blue, $gray-darkest),
+  ($ocean, $seashell),
+  ($red, $sky),
+  ($gray-light, $billiard),
+  ($daphne, $red),
+  ($maroon, $neon-green),
+  ($gray-darker, $neon-cyan),
+  ($billiard, $beige),
+  ($blush, $lemon),
+  ($gray-darkest, $blue),
+  ($ink, $ocean),
+  ($neon-cyan, $red),
+  ($neon-green, $gray-light),
+  ($red, $daphne),
+  ($seashell, $maroon),
+  ($sky, $gray-darker),
+);
+
+$tag-colors-length: length($tag-colors);
+
+.wiki-tags li {
+  @for $i from 1 through $tag-colors-length {
+    $array: nth($tag-colors, $i);
+    $color1: nth($array, 1);
+    $color2: nth($array, 2);
+
+    &:nth-child(#{$tag-colors-length}n+#{$i}) a {
+      // background-color: $color1;
+      // color: $color2;
+
+      &:hover {
+        background-color: $color2;
+        color: $color1;
+      }
+    }
+  }
+}

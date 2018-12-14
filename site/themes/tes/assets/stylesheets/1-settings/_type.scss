@@ -2,8 +2,24 @@
 // Typography
 // ============================================================================
 
-@import "../2-tools/convert-unit";
-@import "../2-tools/strip-unit";
+@import "../2-tools/functions/convert-unit";
+@import "../2-tools/functions/strip-unit";
+
+// Typefaces
+// ----------------------------------------------------------------------------
+
+$font-system:   "system", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue";
+$font-base:     $font-system, "HypermarketW00-Regular", $font-system;
+$font-base2:    "Merchant Copy Doublesize", $font-system;
+$font-base3:    "Fake Receipt", $font-system;
+$font-wide:     "Merchant Copy Wide", $font-system;
+$font-sign:     "Futura", $font-system;
+$font-camera:   "57-nao", $font-system;
+$font-drafting: "Instruction", $font-system;
+$font-block:    "Marche", $font-system;
+
+// Sizes
+// ----------------------------------------------------------------------------
 
 // Root Sizes (default pixel sizes for different screens)
 $font-size-root-sm: 14px;
@@ -14,15 +30,11 @@ $font-size-xs:      u(12px, rem);
 $font-size-sm:      u(15px, rem);
 $font-size-base:    u($font-size-root, rem);
 $font-size-lg:      u(21px, rem);
-$font-size-xl:      u(24px, rem);
+$font-size-xl:      u(32px, rem);
 
-// Typefaces
-$font-system: "system", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue";
-$font-base: $font-system, "HypermarketW00-Regular", $font-system;
-$font-base2: "Merchant Copy Doublesize", $font-system;
-$font-base3: "Fake Receipt", $font-system;
-$font-wide: "Merchant Copy Wide", $font-system;
-$font-sign: "Futura", $font-system;
-$font-camera: "57-nao", $font-system;
-$font-drafting: "Instruction", $font-system;
-$font-block: "Marche", $font-system;
+// Line heights
+// ----------------------------------------------------------------------------
+
+$line-height-lg:        1.5;
+$line-height-base:      1.35;
+$line-height-sm:        1.25;

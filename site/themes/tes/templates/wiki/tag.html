@@ -1,53 +1,35 @@
 <header>
-  <h1>Tag: {{ title }}</h1>
-  <h2>{{ content }}</h2>
+  <ul class="breadcrumbs">
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="{{ link to='wiki' }}">Wiki</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__current">{{ title }}</span>
+    </li>
+  </ul>
+  <ul class="wiki-tags">
+    <li class="wiki-tags__item wiki-tags__item--static">{{ title }}</li>
+  </ul>
 </header>
 
-<style>
-  .grid-thing {
-    list-style: none;
-    margin: 0;
-    padding:  0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 2fr));
-    grid-gap: 1rem;
-  }
-
-  .grid-thing a {
-    background-color: white;
-    border-radius:  4px;
-    padding:  1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .grid-thing a:hover {
-    background-color: yellow;
-  }
-
-  .grid-thing img {
-    margin-bottom: 1rem;
-  }
-
-</style>
-
-<div class="grid-thing">
-  {{ collection:wiki article:exists="true" images:exists="true" taxonomy="true" paginate="true" as="wikis" }}
-    {{ if no_results }}
-      <p>No "{{ title }}" wikis.</p>
-    {{ /if }}
-    {{ wikis }}
-      <a href="{{ url }}">
-        <img src="{{ images }}" style="max-width: 6rem;">
-        <span>{{ title }}</span>
-      </a>
+<ul class="church-directory">
+  {{ collection:wiki article:exists="true" featured_image:exists="true" taxonomy="true" paginate="true" as="wikis" }}
+    {{ wikis scope="wiki" }}
+      <li class="church-directory__item">
+        <a class="church-directory__link" href="{{ wiki:url }}">
+          <img
+            class="church-directory__image"
+            src="{{ glide:wiki:featured_image width='200' height='200' }}"
+            alt="{{ title }}"
+          >
+          <span class="church-directory__title">{{ wiki:title }}</span>
+        </a>
+      </li>
     {{ /wikis }}
   {{ /collection:wiki }}
-</div>
+</ul>
 <ol>
-  {{ collection:wiki article:exists="true" images:doesnt_exist="true" taxonomy="true" paginate="true" as="wikis" }}
+  {{ collection:wiki article:exists="true" featured_image:doesnt_exist="true" taxonomy="true" paginate="true" as="wikis" }}
     {{ if no_results }}
       <p>No "{{ title }}" wikis.</p>
     {{ /if }}

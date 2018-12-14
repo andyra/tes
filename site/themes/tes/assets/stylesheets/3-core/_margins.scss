@@ -1,0 +1,41 @@
+// ============================================================================
+// Margins
+// ============================================================================
+
+// Note: `margin-[foo]--[bar] is deprecated. Use `m-[foo]-[bar]` instead
+@each $size, $value in $spacing-sizes {
+  .m-x-#{$size} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+
+  .m-y-#{$size} {
+    margin-bottom: $value;
+    margin-top: $value;
+  }
+
+  @each $side in $sides {
+    .m-#{$side}-#{$size},
+    .margin-#{$side}--#{$size} {
+      margin-#{$side}: $value;
+    }
+  }
+}
+
+@each $side in $sides {
+  // Zero margins
+  .m-#{$side}-0 {
+    margin-#{$side}: 0;
+  }
+
+  // Auto Margins
+  .m-#{$side}-auto {
+    margin-#{$side}: auto;
+  }
+}
+
+// Center horizontally
+.m-x-auto {
+  margin-left: auto;
+  margin-right: auto;
+}

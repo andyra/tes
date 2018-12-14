@@ -1,0 +1,30 @@
+// ============================================================================
+// Breakpoints
+// Screen size breakpoints to use with media queries across the project
+// ============================================================================
+
+// Sizes
+$screen-xxs:       320px;
+$screen-xs:        480px;
+$screen-sm:        640px;
+$screen-base:      800px;
+$screen-md:        960px;
+$screen-lg:        1200px;
+$screen-xl:        1600px;
+
+// Presets
+$screen-xxs-down:  "screen and (max-width: #{$screen-xxs})";
+$screen-xs-down:   "screen and (max-width: #{$screen-xs})";
+$screen-sm-down:   "screen and (max-width: #{$screen-sm})";
+$screen-base-down: "screen and (max-width: #{$screen-base})";
+$screen-md-down:   "screen and (max-width: #{$screen-md})";
+$screen-lg-down:   "screen and (max-width: #{$screen-lg})";
+$screen-xl-down:   "screen and (max-width: #{$screen-xl})";
+
+$screen-xxs-up:    "screen and (min-width: #{$screen-xxs  + 1px})";
+$screen-xs-up:     "screen and (min-width: #{$screen-xs   + 1px})";
+$screen-sm-up:     "screen and (min-width: #{$screen-sm   + 1px})";
+$screen-base-up:   "screen and (min-width: #{$screen-base + 1px})";
+$screen-md-up:     "screen and (min-width: #{$screen-md   + 1px})";
+$screen-lg-up:     "screen and (min-width: #{$screen-lg   + 1px})";
+$screen-xl-up:     "screen and (min-width: #{$screen-xl   + 1px})";

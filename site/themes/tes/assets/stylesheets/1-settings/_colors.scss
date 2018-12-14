@@ -2,10 +2,78 @@
 // Colors
 // ============================================================================
 
-$paper: hsl(40, 60%, 98%);
-$ink:   hsl(218, 84%, 31%);
+// B&W
+$black:           hsl(0, 0%,   0%);
+$white:           hsl(0, 0%, 100%);
+
+// Grays
+$gray-darkest:    hsl(0, 0%, 15%);
+$gray-darker:     hsl(0, 0%, 25%);
+$gray-dark:       hsl(0, 0%, 45%);
+$gray:            hsl(0, 0%, 62%);
+$gray-light:      hsl(0, 0%, 80%);
+$gray-lighter:    hsl(0, 0%, 91%);
+$gray-lightest:   hsl(0, 0%, 96%);
+
+// Neons
+$neon-green:     rgb(0, 255, 0);
+$neon-cyan:      rgb(0, 255, 255);
+
+// Brights
+$red:            hsl(15, 88%, 57%);
+$yellow:         hsl(54, 100%, 50%);
+$lemon:          hsl(63, 100%, 76%);
+$green:          hsl(121, 81%, 67%);
+$aqua:           hsl(173, 100%, 43%);
+$blue:           hsl(204, 73%, 47%);
+
+// Darks
+$brown:          hsl(22, 100%, 30%);
+$maroon:         hsl(352, 42%, 34%);
+$ocean:          hsl(194, 100%, 20%);
+$ink:            hsl(218, 84%, 31%);
+$blush:          hsl(352, 47%, 50%);
+$billiard:       hsl(106, 45%, 30%);
+
+// Pastels
+$alabaster:      hsl(40, 60%, 98%);
+$daphne:         hsl(195, 50%, 93%);
+$mint:           hsl(116, 100%, 97%);
+$paper:          hsl(40, 60%, 98%);
+$seashell:       hsl(15, 43%, 95%);
+$sky:            hsl(168, 33%, 97%);
+$beige:          hsl(34, 33%, 70%);
 
 // Abstractions
 // ----------------------------------------------------------------------------
 
-$color-primary: $ink;
+$color-primary:   $ink;
+
+$bright-colors: (
+  red:    $red,
+  yellow: $yellow,
+  lemon:  $lemon,
+  green:  $green,
+  aqua:   $aqua,
+  blue:   $blue,
+);
+
+$neon-colors: (
+  neon-green: $neon-green,
+  neon-cyan:  $neon-cyan,
+);
+
+$dark-colors: (
+  brown:  $brown,
+  maroon: $maroon,
+  ocean:  $ocean,
+  ink:    $ink,
+);
+
+$pastel-colors: (
+  daphne:    $daphne,
+  alabaster: $alabaster,
+  mint:      $mint,
+  sky:       $sky,
+  seashell:  $seashell,
+);

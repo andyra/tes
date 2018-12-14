@@ -1,0 +1,17 @@
+<h1>Wiki</h1>
+
+<form action="{{ link to='wiki/search' }}" method="GET">
+  <input type="text" name="q" value="{{ get:q }}" placeholder="Find something" />
+  <button>Search</button>
+</form>
+
+<ul>
+{{ search:results collection="wiki" }}
+  {{ if no_results }}
+    No results.
+  {{ /if }}
+  <li>
+    <a href="{{ url }}">{{ title }}</a>
+  </li>
+{{ /search:results }}
+</ul>

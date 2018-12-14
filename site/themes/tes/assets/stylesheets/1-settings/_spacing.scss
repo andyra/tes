@@ -2,16 +2,31 @@
 // ----------------------------------------------------------------------------
 
 // Dependencies
-@import "../2-tools/convert-unit";
-@import "../2-tools/strip-unit";
+@import "../2-tools/functions/convert-unit";
+@import "../2-tools/functions/strip-unit";
 
 // 8px Grid
-$unit:                  u(8px, rem);
+$unit:       u(8px, rem);
 
 // Spacers for consistent margins, padding, etc.
-$spacer-xs:             $unit / 2;  // 4px
-$spacer-sm:             $unit * 1;  // 8px
-$spacer:                $unit * 2;  // 16px
-$spacer-md:             $unit * 3;  // 24px
-$spacer-lg:             $unit * 4;  // 32px
-$spacer-xl:             $unit * 6;  // 48px
+$spacer-xs:  $unit / 2;  // 4px
+$spacer-sm:  $unit * 1;  // 8px
+$spacer:     $unit * 2;  // 16px
+$spacer-md:  $unit * 3;  // 24px
+$spacer-lg:  $unit * 4;  // 32px
+$spacer-xl:  $unit * 6;  // 48px
+
+$spacing-sizes: (
+  xs:   $spacer-xs,
+  sm:   $spacer-sm,
+  base: $spacer,
+  md:   $spacer-md,
+  lg:   $spacer-lg,
+  xl:   $spacer-xl,
+);
+
+$vmin-xs:    1vmin;
+$vmin-sm:    2vmin;
+$vmin:       4vmin;
+$vmin-lg:    8vmin;
+$vmin-xl:    16vmin;

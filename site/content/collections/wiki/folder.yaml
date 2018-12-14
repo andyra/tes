@@ -2,6 +2,9 @@ title: Wiki
 fieldset: wiki
 template: wiki/wiki
 order: title
+searchable:
+  - title
+  - article
 columns:
   - title
   - slug

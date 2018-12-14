@@ -46,7 +46,7 @@ sections:
         type: bard
         width: 66
         display: Content
-      images:
+      featured_image:
         type: assets
         container: s3
         max_files: 1

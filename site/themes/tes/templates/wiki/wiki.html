@@ -1,78 +1,83 @@
-<h1>{{ title }}</h1>
-{{ user:can permission="cp:access" }}
-  <a href="{{ edit_url }}">Edit</a>
-{{ /user:can }}
+<section class="page">
+  <header class="page-header">
+    <h1 class="page-header__title">{{ title }}</h1>
+    {{ user:can permission="cp:access" }}
+      <a class="button" href="{{ edit_url }}">Edit</a>
+    {{ /user:can }}
+  </header>
 
-{{ if images }}
-  <img src="{{ glide:images width='300' height='300' }}" alt="{{ title }}" />
-{{ /if }}
-
-{{ article }}
-  {{ if type == "text" }}
-    <div class="text">
-      {{ text }}
-    </div>
-  {{ elseif type == "image" }}
-    <img src="{{ image }}" alt="" >
+  {{ if featured_image }}
+    <img src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
   {{ /if }}
-{{ /article }}
 
-<hr>
-<h2>Filed As</h2>
-{{ tags }}
-  <li><a href="{{ url }}">{{ title }}</a></li>
-{{ /tags }}
+  {{ article }}
+    {{ if type == "text" }}
+      <div class="text">
+        {{ text }}
+      </div>
+    {{ elseif type == "image" }}
+      <img src="{{ image }}" alt="" >
+    {{ /if }}
+  {{ /article }}
+</section>
 
-<hr>
+<aside class="sidebar">
+  <h2>File Under</h2>
+  <ul class="wiki-tags">
+    {{ tags }}
+      <li><a class="wiki-tags__item" href="{{ url }}">{{ title }}</a></li>
+    {{ /tags }}
+  </ul>
 
-<h2>Referenced in</h2>
+  <h2>Referenced in</h2>
 
-<h3>Episodes</h3>
-<ul>
-{{ collection:episodes scope="episode" }}
-  {{ episode:tracklist scope="track" }}
-    {{ relate:track:wikis scope="wiki" }}
-      {{ if wiki:id == page:id }}
-        <li>
-          <img src="{{ glide:episode:cover_art width='80' height='80' }}" alt="{{ episode:title }}" />
-          <a href="{{ episode:url }}">{{ episode:title }}</a>: {{ track:description }}•
-          <a href="{{ track:soundcloud_url }}">Play</a>
-        </li>
-      {{ /if }}
-    {{ /relate:track:wikis }}
-  {{ /episode:tracklist }}
-{{ /collection:episodes }}
-</ul>
+  <h3>Episodes</h3>
+  <ul>
+  {{ collection:episodes scope="episode" }}
+    {{ episode:tracklist scope="track" }}
+      {{ relate:track:wikis scope="wiki" }}
+        {{ if wiki:id == page:id }}
+          <li>
+            <img src="{{ glide:episode:cover_art width='80' height='80' }}" alt="{{ episode:title }}" />
+            <a href="{{ episode:url }}">{{ episode:title }}</a>: {{ track:description }}•
+            <a href="{{ track:soundcloud_url }}">Play</a>
+          </li>
+        {{ /if }}
+      {{ /relate:track:wikis }}
+    {{ /episode:tracklist }}
+  {{ /collection:episodes }}
+  </ul>
 
-{{ collection:songs wikis:contains=page:id as="songs" }}
-  {{ if songs }}
-    <h3>Songs</h3>
-    <ul>
-    {{ songs scope="song" }}
-      <li><a href="{{ song:url }}">{{ song:title }}</a></li>
-    {{ /songs }}
-    </ul>
-  {{ /if }}
-{{ /collection:songs }}
+  {{ collection:songs wikis:contains=page:id as="songs" }}
+    {{ if songs }}
+      <h3>Songs</h3>
+      <ul>
+      {{ songs scope="song" }}
+        <li><a href="{{ song:url }}">{{ song:title }}</a></li>
+      {{ /songs }}
+      </ul>
+    {{ /if }}
+  {{ /collection:songs }}
 
-{{ collection:videos wikis:contains=page:id as="videos" }}
-  {{ if videos }}
-    <h3>Videos</h3>
-    <ul>
-    {{ videos scope="video" }}
-      <li><a href="{{ video:url }}">{{ video:title }}</a></li>
-    {{ /videos }}
-    </ul>
-  {{ /if }}
-{{ /collection:videos }}
+  {{ collection:videos wikis:contains=page:id as="videos" }}
+    {{ if videos }}
+      <h3>Videos</h3>
+      <ul>
+      {{ videos scope="video" }}
+        <li><a href="{{ video:url }}">{{ video:title }}</a></li>
+      {{ /videos }}
+      </ul>
+    {{ /if }}
+  {{ /collection:videos }}
 
-{{ collection:wiki wikis:contains=page:id as="articles" }}
-  {{ if articles }}
-    <h3>Wiki Cross-references</h3>
-    <ul>
-      {{ articles scope="article" }}
-        <li><a href="{{ article:url }}">{{ article:title }}</a></li>
-      {{ /articles }}
-    </ul>
-  {{ /if }}
-{{ /collection:wiki }}
+  {{ collection:wiki wikis:contains=page:id as="articles" }}
+    {{ if articles }}
+      <h3>Wiki Cross-references</h3>
+      <ul>
+        {{ articles scope="article" }}
+          <li><a href="{{ article:url }}">{{ article:title }}</a></li>
+        {{ /articles }}
+      </ul>
+    {{ /if }}
+  {{ /collection:wiki }}
+</aside>
