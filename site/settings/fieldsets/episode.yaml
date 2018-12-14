@@ -26,9 +26,11 @@ sections:
         width: 33
         restrict: true
       tracklist:
+        display: Minutes
         mode: table
         min_rows: 1
-        add_row: 'Add Track'
+        add_row: Add
+        type: grid
         fields:
           description:
             type: textarea
@@ -55,8 +57,6 @@ sections:
             type: collection
             width: 25
             display: Wikis
-        type: grid
-        display: Tracklist
       description:
         display: Description
         type: markdown
@@ -71,6 +71,103 @@ sections:
         collection:
           - albums
         width: 33
+      field_7:
+        mode: table
+        fields:
+          field_1:
+            buttons:
+              - h2
+              - h3
+              - bold
+              - italic
+              - unorderedlist
+              - orderedlist
+              - removeformat
+              - quote
+              - anchor
+            style: sans
+            spellcheck: true
+            allow_source: true
+            allow_internal_links: true
+            link_noopener: false
+            link_noreferrer: false
+            target_blank: false
+            semantic_elements: false
+            restrict_assets: false
+            type: bard
+            width: 25
+            display: 'Field 1'
+          field_2:
+            buttons:
+              - h2
+              - h3
+              - bold
+              - italic
+              - unorderedlist
+              - orderedlist
+              - removeformat
+              - quote
+              - anchor
+            style: sans
+            spellcheck: true
+            allow_source: true
+            allow_internal_links: true
+            link_noopener: false
+            link_noreferrer: false
+            target_blank: false
+            semantic_elements: false
+            restrict_assets: false
+            type: bard
+            width: 25
+            display: 'Field 2'
+          field_3:
+            buttons:
+              - h2
+              - h3
+              - bold
+              - italic
+              - unorderedlist
+              - orderedlist
+              - removeformat
+              - quote
+              - anchor
+            style: sans
+            spellcheck: true
+            allow_source: true
+            allow_internal_links: true
+            link_noopener: false
+            link_noreferrer: false
+            target_blank: false
+            semantic_elements: false
+            restrict_assets: false
+            type: bard
+            width: 25
+            display: 'Field 3'
+          field_4:
+            buttons:
+              - h2
+              - h3
+              - bold
+              - italic
+              - unorderedlist
+              - orderedlist
+              - removeformat
+              - quote
+              - anchor
+            style: sans
+            spellcheck: true
+            allow_source: true
+            allow_internal_links: true
+            link_noopener: false
+            link_noreferrer: false
+            target_blank: false
+            semantic_elements: false
+            restrict_assets: false
+            type: bard
+            width: 25
+            display: 'Field 4'
+        type: grid
+        display: 'Field 7'
   sidebar:
     display: Sidebar
     fields:

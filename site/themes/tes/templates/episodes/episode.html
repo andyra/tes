@@ -2,23 +2,8 @@
 <time>{{ date }}</time>
 <a href="{{ soundcloud_url }}">{{ soundcloud_url }}</a>
 
-<h2>Test</h2>
-{{ tracklist scope="track" }}
-  {{ relate:track:wikis scope="wiki" }}
-    {{ wiki:title }}
-  {{ /relate:track:wikis }}
-{{ /tracklist }}
-
-
 <h2>Cover Art</h2>
 <img src="{{ cover_art }}" style="max-width: 12rem;" />
-
-<h2>Minutes</h2>
-{{ if description }}
-  {{ description | markdown | wikilinks }}
-{{ else }}
-  (Not available)
-{{ /if }}
 
 <h2>Companion Album</h2>
 {{ if album }}
@@ -28,21 +13,38 @@
 {{ else }}
   (Not available)
 {{ /if }}
-<ul>
-  {{ tracklist }}
-    {{ relate:song }}
-      <li><a href="{{ url }}">{{ title }}</a></li>
-    {{ /relate:song }}
-  {{ /tracklist }}
-</ul>
 
-<h2>Learn More from this Episode</h2>
-{{ if wikis }}
-  <ul>
-    {{ relate:wikis }}
-      <li><a href="{{ url }}">{{ title }}</a></li>
-    {{ /relate:wikis }}
-  </ul>
+<h2>Minutes</h2>
+{{ if tracklist }}
+  <ol class="tracklist">
+  {{ tracklist scope="track" }}
+    <li
+      class="tracklist__item"
+      {{ if track:soundcloud }}
+        data-url="{{ track:soundcloud_url }}"
+        data-track-state="init"
+      {{ /if }}
+    >
+      {{ if track:soundcloud_url }}
+        <button class="player__button tracklist__button tracklist__button--play button-reset" data-tracklist="play">
+          {{ site:sprite id="play" width="32" height="24" }}
+        </button>
+        <button class="player__button tracklist__button tracklist__button--pause button-reset" data-player="pause" aria-title="Pause">
+          {{ site:sprite id="pause" width="28" height="24" }}
+        </button>
+      {{ /if }}
+      <div class="tracklist__title">
+        {{ if song }}
+          {{ relate:song scope="song" }}
+            ♫ <a href="{{ song:url }}">{{ song:title }}</a>
+          {{ /relate:song }}
+        {{ else }}
+          {{ track:description | wikilinks }}
+        {{ /if }}
+      </div>
+    </li>
+  {{ /tracklist }}
+  </ol>
 {{ else }}
   (Not available)
 {{ /if }}

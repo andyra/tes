@@ -2,6 +2,8 @@
 // Typography
 // ============================================================================
 
+@import "../2-tools/convert-unit";
+@import "../2-tools/strip-unit";
 
 // Root Sizes (default pixel sizes for different screens)
 $font-size-root-sm: 14px;
