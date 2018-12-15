@@ -11,16 +11,21 @@
   <title>{{ title ensure_right=" / " }}{{ site_name }}</title>
   <link rel="stylesheet" href="{{ css_path }}/tes.css">
 </head>
-<body class="section-{{ segment_1 or "home" }}">
+<body class="body--{{ segment_1 or 'home' }} body--{{ template replace='/|-' }} body--{{ last_segment }} {{ yield:body_class }}">
+
   {{ partial:nav }}
 
-  <main class="main">
+  <main class="main container {{ yield:container_class }}container--base{{ /yield:container_class }}">
     {{ template_content }}
-    <footer>&copy; {{ now format="Y" }}</footer>
   </main>
+
+  <footer>
+    &copy; {{ now format="Y" }}
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/3.0.0-beta.2/cash.min.js"></script>
   <script src="https://connect.soundcloud.com/sdk/sdk-3.3.1.js"></script>
   <script src="{{ js_path }}/tes.js"></script>
+
 </body>
 </html>

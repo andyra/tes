@@ -2,7 +2,48 @@
 // Default Layout
 // ============================================================================
 
+// Global Nav
+// ----------------------------------------------------------------------------
+
+.global-nav {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.global-nav__item {
+  padding: component-size($component-base) 0.5em;
+}
+
+// Content
+// ----------------------------------------------------------------------------
+
 .main {
-  max-width: $screen-base;
-  margin: 0 auto;
+  align-items: flex-start;
+  display: flex;
+  padding-bottom: $vmin;
+  padding-top: $vmin;
+}
+
+.main__content {
+  flex: 1;
+}
+
+.main__sidebar {
+  flex-basis: 25%;
+  margin-left: $vmin;
+}
+
+// Smaller Screens
+// ----------------------------------------------------------------------------
+
+@media #{$screen-sm-down} {
+  .main {
+    flex-flow: wrap;
+  }
+
+  .main__sidebar {
+    flex-basis: 100%;
+    margin: $vmin 0 0 0;
+  }
 }

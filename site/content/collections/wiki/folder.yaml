@@ -1,6 +1,6 @@
 title: Wiki
 fieldset: wiki
-template: wiki/wiki
+template: wiki/entry
 order: title
 searchable:
   - title

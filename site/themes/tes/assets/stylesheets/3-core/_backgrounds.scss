@@ -1,0 +1,22 @@
+// ============================================================================
+// Backgrounds
+// ============================================================================
+
+// Colors
+// ----------------------------------------------------------------------------
+
+.bg--alabaster  { background-color: $alabaster; }
+.bg--daphne     { background-color: $daphne; }
+.bg--mint       { background-color: $mint; }
+.bg--paper      { background-color: $paper; }
+.bg--seashell   { background-color: $seashell; }
+.bg--sky        { background-color: $sky; }
+.bg--beige      { background-color: $beige; }
+
+// Textures
+// ----------------------------------------------------------------------------
+
+.bg--notebook {
+  background-image: url("../images/backgrounds/notebook-dark.png");
+  background-repeat: repeat;
+}

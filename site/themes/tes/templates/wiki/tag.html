@@ -1,16 +1,4 @@
-<header>
-  <ul class="breadcrumbs">
-    <li class="breadcrumbs__item">
-      <a class="breadcrumbs__link" href="{{ link to='wiki' }}">Wiki</a>
-    </li>
-    <li class="breadcrumbs__item">
-      <span class="breadcrumbs__current">{{ title }}</span>
-    </li>
-  </ul>
-  <ul class="wiki-tags">
-    <li class="wiki-tags__item wiki-tags__item--static">{{ title }}</li>
-  </ul>
-</header>
+{{ partial:breadcrumbs include_home="true" }}
 
 <ul class="church-directory">
   {{ collection:wiki article:exists="true" featured_image:exists="true" taxonomy="true" paginate="true" as="wikis" }}

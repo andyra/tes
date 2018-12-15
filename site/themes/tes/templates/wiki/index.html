@@ -1,19 +1,14 @@
 <h1>Wiki</h1>
 
-<form action="{{ link to='wiki/search' }}" method="GET">
-  <input type="text" name="q" value="{{ get:q }}" placeholder="Find something" />
-  <button>Search</button>
-</form>
+{{ partial:wiki-search }}
 
 <p class="text--lg">The Grand Library of all things Akabius. Learn about <a href="{{ link to='wiki/medieval-wig' }}">Medieval Wig</a>, <a href="{{ link to='wiki/wake-up-jazz' }}">Wake-Up Jazz</a>, <a href="{{ link to='wiki/the-adobe-skyscraper' }}">The Adobe Skyscraper</a>, Geap Fireshows, and the Board Game Guru.</p>
 
-<ul class="wiki-tags">
+<section class="wiki-tags">
 {{ taxonomy:tags sort="title" }}
-  <li>
-    <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
-  </li>
+  <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
 {{ /taxonomy:tags }}
-</ul>
+</section>
 
 <hr>
 

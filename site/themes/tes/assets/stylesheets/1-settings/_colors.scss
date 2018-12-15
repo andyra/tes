@@ -19,13 +19,14 @@ $gray-lightest:   hsl(0, 0%, 96%);
 $neon-green:     rgb(0, 255, 0);
 $neon-cyan:      rgb(0, 255, 255);
 
-// Brights
+// Lights
 $red:            hsl(15, 88%, 57%);
-$yellow:         hsl(54, 100%, 50%);
+$yellow:         hsl(60, 100%, 50%);
 $lemon:          hsl(63, 100%, 76%);
 $green:          hsl(121, 81%, 67%);
 $aqua:           hsl(173, 100%, 43%);
 $blue:           hsl(204, 73%, 47%);
+$slate:          hsl(200, 35%, 84%);
 
 // Darks
 $brown:          hsl(22, 100%, 30%);
@@ -34,6 +35,7 @@ $ocean:          hsl(194, 100%, 20%);
 $ink:            hsl(218, 84%, 31%);
 $blush:          hsl(352, 47%, 50%);
 $billiard:       hsl(106, 45%, 30%);
+$mustard:        hsl(32, 59%, 51%);
 
 // Pastels
 $alabaster:      hsl(40, 60%, 98%);
@@ -64,16 +66,21 @@ $neon-colors: (
 );
 
 $dark-colors: (
-  brown:  $brown,
-  maroon: $maroon,
-  ocean:  $ocean,
-  ink:    $ink,
+  brown:    $brown,
+  maroon:   $maroon,
+  ocean:    $ocean,
+  ink:      $ink,
+  blush:    $blush,
+  billiard: $billiard,
+  mustard:  $mustard
 );
 
 $pastel-colors: (
-  daphne:    $daphne,
-  alabaster: $alabaster,
-  mint:      $mint,
-  sky:       $sky,
-  seashell:  $seashell,
+  alabaster:  $alabaster,
+  daphne:     $daphne,
+  mint:       $mint,
+  paper:      $paper,
+  seashell:   $seashell,
+  sky:        $sky,
+  beige:      $beige
 );

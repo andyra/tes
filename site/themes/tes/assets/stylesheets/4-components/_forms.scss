@@ -1,0 +1,34 @@
+// ============================================================================
+// Forms
+// ============================================================================
+
+// Base
+// ----------------------------------------------------------------------------
+
+.input {
+  @include font-smoothing();
+  background-color: $white;
+  background-image: none; // https://github.com/necolas/normalize.css/issues/214.
+  border-radius: $border-radius-base;
+  border: $border-width-sm solid $color-primary;
+  box-shadow: none;
+  color: inherit;
+  display: block;
+  font-family: inherit;
+  font-size: $font-size-base;
+  margin: 0;
+  padding: component-size($component-base, $borders: 2) 0.5em;
+  width: 100%;
+
+  // Placeholders
+  &::placeholder {
+    color: rgba($text-color-base, 0.45);
+    opacity: 1;
+  }
+
+  &:focus {
+    // border-color: $yellow;
+    box-shadow: 0 0 0 $border-width-lg rgba($yellow, 1);
+    outline: none;
+  }
+}

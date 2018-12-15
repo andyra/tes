@@ -1,0 +1,23 @@
+// ============================================================================
+// Container Sizes
+// ============================================================================
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacer;
+  padding-right: $spacer;
+  width: 100%;
+
+  @media #{$screen-md-down} {
+    padding-left: $spacer-sm;
+    padding-right: $spacer-sm;
+  }
+}
+
+// Sizes
+.container--xs    { max-width: $screen-xs; }
+.container--sm    { max-width: $screen-sm; }
+.container--base  { max-width: $screen-base; }
+.container--md    { max-width: $screen-md; }
+.container--lg    { max-width: $screen-lg; }

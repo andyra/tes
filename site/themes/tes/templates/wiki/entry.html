@@ -1,13 +1,14 @@
-<section class="page">
-  <header class="page-header">
-    <h1 class="page-header__title">{{ title }}</h1>
-    {{ user:can permission="cp:access" }}
-      <a class="button" href="{{ edit_url }}">Edit</a>
-    {{ /user:can }}
-  </header>
+{{ if tags | contains:People }}
+  {{ section:body_class }}body--wiki-people{{ /section:body_class }}
+{{ /if }}
+
+<section class="main__content bg--notebook bg--seashell">
+  {{ partial:breadcrumbs include_home="false" }}
+
+  <h1>{{ title }}</h1>
 
   {{ if featured_image }}
-    <img src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
+    <img class="wiki-entry__featured-image" src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
   {{ /if }}
 
   {{ article }}
@@ -21,15 +22,18 @@
   {{ /article }}
 </section>
 
-<aside class="sidebar">
-  <h2>File Under</h2>
-  <ul class="wiki-tags">
+<aside class="main__sidebar">
+  {{ user:can permission="cp:access" }}
+    <a class="button" href="{{ edit_url }}">Edit This Thing</a>
+  {{ /user:can }}
+  <h3>File Under</h3>
+  <div class="wiki-tags">
     {{ tags }}
-      <li><a class="wiki-tags__item" href="{{ url }}">{{ title }}</a></li>
+      <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
     {{ /tags }}
-  </ul>
+  </div>
 
-  <h2>Referenced in</h2>
+  <h3>Referenced in</h3>
 
   <h3>Episodes</h3>
   <ul>
@@ -81,3 +85,4 @@
     {{ /if }}
   {{ /collection:wiki }}
 </aside>
+

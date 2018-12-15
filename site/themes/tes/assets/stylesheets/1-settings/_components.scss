@@ -5,17 +5,17 @@
 // Borders
 // ----------------------------------------------------------------------------
 
-$border-width-sm:       1px;
-$border-width-base:     2px;
-$border-width-lg:       4px;
-$border-width-xl:       8px;
+$border-width-sm:       u(1px, rem);
+$border-width-base:     u(2px, rem);
+$border-width-lg:       u(4px, rem);
+$border-width-xl:       u(8px, rem);
 
 $border-base:           solid $border-width-sm $color-primary;
 
 // Radius
-$border-radius-sm:      2px;
-$border-radius-base:    4px;
-$border-radius-lg:      8px;
+$border-radius-sm:      u(2px, rem);
+$border-radius-base:    u(4px, rem);
+$border-radius-lg:      u(8px, rem);
 
 // Component Sizes
 // ----------------------------------------------------------------------------
@@ -27,31 +27,26 @@ $component-size-lg:   $unit * 6;  // 48
 $component-size-xl:   $unit * 7;  // 56
 
 $component-xs: (
-  border-radius: $border-radius-base,
   height: $component-size-xs,
   font-size: $font-size-xs
 );
 
 $component-sm: (
-  border-radius: $border-radius-base,
   height: $component-size-sm,
   font-size: $font-size-sm
 );
 
 $component-base: (
-  border-radius: $border-radius-base,
   height: $component-size-base,
   font-size: $font-size-base
 );
 
 $component-lg: (
-  border-radius: $border-radius-base,
   height: $component-size-lg,
   font-size: $font-size-lg
 );
 
 $component-xl: (
-  border-radius: $border-radius-base,
   height: $component-size-xl,
   font-size: $font-size-xl
 );
