@@ -8,3 +8,4 @@ id: 0c60dcee-445b-48dd-86fa-201baac9401b
 tags:
   - people
   - radio-hosts
+  - pirates

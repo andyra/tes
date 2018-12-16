@@ -1,33 +1,45 @@
-{{ partial:breadcrumbs include_home="true" }}
+{{ section:header }}
+<header class="main__header">
+  {{ partial:wiki-search }}
+</header>
+{{ /section:header }}
 
-<ul class="church-directory">
-  {{ collection:wiki article:exists="true" featured_image:exists="true" taxonomy="true" paginate="true" as="wikis" }}
-    {{ wikis scope="wiki" }}
-      <li class="church-directory__item">
-        <a class="church-directory__link" href="{{ wiki:url }}">
-          <img
-            class="church-directory__image"
-            src="{{ glide:wiki:featured_image width='200' height='200' }}"
-            alt="{{ title }}"
-          >
-          <span class="church-directory__title">{{ wiki:title }}</span>
-        </a>
-      </li>
-    {{ /wikis }}
-  {{ /collection:wiki }}
-</ul>
-<ol>
-  {{ collection:wiki article:exists="true" featured_image:doesnt_exist="true" taxonomy="true" paginate="true" as="wikis" }}
-    {{ if no_results }}
-      <p>No "{{ title }}" wikis.</p>
-    {{ /if }}
-    {{ wikis scope="tag" }}
-      <li>
-        <a href="{{ url }}">{{ title }}</a>
-        <mark>Image</mark>
-      </li>
-    {{ /wikis }}
-  {{ /collection:wiki }}
-</ol>
+<h1>
+  {{ if parent_tag }}
+    {{ relate:parent_tag }}
+      {{ title }} ›
+    {{ /relate:parent_tag }}
+  {{ /if }}
+  {{ title }}
+</h1>
 
-</section>
+{{ if slug == "people" or parent_tag == 'tags/people' }}
+<div class="wiki-grid wiki-people">
+{{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
+  {{ wikis scope="wiki" }}
+    <a class="wiki-people__item" href="{{ wiki:url }}">
+      {{ if featured_image }}
+        <img
+          class="wiki-people__image"
+          src="{{ glide:wiki:featured_image width='200' height='200' }}"
+          alt="{{ title }}"
+        >
+      {{ else }}
+        <div class="wiki-people__empty">No Image on File</div>
+      {{ /if }}
+      <span class="wiki-people__title">{{ wiki:title }}</span>
+    </a>
+  {{ /wikis }}
+{{ /collection:wiki }}
+</div>
+{{ else }}
+<div class="wiki-grid wiki-articles">
+{{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
+  {{ wikis scope="wiki" }}
+    <a class="wiki-articles__item" href="{{ wiki:url }}">
+      <span class="wiki-articles__title">{{ wiki:title }}</span>
+    </a>
+  {{ /wikis }}
+{{ /collection:wiki }}
+</div>
+{{ /if }}

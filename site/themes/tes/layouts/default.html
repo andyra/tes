@@ -16,10 +16,16 @@
   {{ partial:nav }}
 
   <main class="main container {{ yield:container_class }}container--base{{ /yield:container_class }}">
-    {{ template_content }}
+    {{ yield:header }}
+
+    <section class="main__content {{ yield:main_content_class }}">
+      {{ template_content }}
+    </section>
+
+    {{ yield:sidebar }}
   </main>
 
-  <footer>
+  <footer class="footer">
     &copy; {{ now format="Y" }}
   </footer>
 

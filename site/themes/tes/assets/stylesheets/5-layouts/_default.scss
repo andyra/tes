@@ -21,8 +21,14 @@
 .main {
   align-items: flex-start;
   display: flex;
+  flex-flow: wrap;
   padding-bottom: $vmin;
   padding-top: $vmin;
+}
+
+.main__header {
+  flex-basis: 100%;
+  margin-bottom: $vmin;
 }
 
 .main__content {
@@ -38,10 +44,6 @@
 // ----------------------------------------------------------------------------
 
 @media #{$screen-sm-down} {
-  .main {
-    flex-flow: wrap;
-  }
-
   .main__sidebar {
     flex-basis: 100%;
     margin: $vmin 0 0 0;

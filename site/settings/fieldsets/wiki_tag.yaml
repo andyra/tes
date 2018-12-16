@@ -1,0 +1,16 @@
+sections:
+  main:
+    display: Main
+    fields: {  }
+  sidebar:
+    display: Sidebar
+    fields:
+      parent_tag:
+        max_items: 1
+        taxonomy: tags
+        mode: tags
+        type: taxonomy
+        display: 'Parent Category'
+taxonomies: false
+hide: true
+title: 'Wiki Tag'

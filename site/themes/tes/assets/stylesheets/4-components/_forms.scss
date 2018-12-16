@@ -2,6 +2,8 @@
 // Forms
 // ============================================================================
 
+$input-border: inset 0 0 0 $border-width-sm $color-primary;
+
 // Base
 // ----------------------------------------------------------------------------
 
@@ -10,8 +12,8 @@
   background-color: $white;
   background-image: none; // https://github.com/necolas/normalize.css/issues/214.
   border-radius: $border-radius-base;
-  border: $border-width-sm solid $color-primary;
-  box-shadow: none;
+  border: none;
+  box-shadow: $input-border;
   color: inherit;
   display: block;
   font-family: inherit;
@@ -27,8 +29,19 @@
   }
 
   &:focus {
-    // border-color: $yellow;
-    box-shadow: 0 0 0 $border-width-lg rgba($yellow, 1);
+    box-shadow: 0 0 0 $border-width-lg rgba($yellow, 1), $input-border;
     outline: none;
+  }
+}
+
+// Forms
+// ----------------------------------------------------------------------------
+
+.form--search {
+  display: flex;
+
+  .input {
+    @include round-corners(right, 0, false);
+    flex: 1
   }
 }

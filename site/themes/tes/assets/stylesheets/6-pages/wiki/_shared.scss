@@ -1,0 +1,114 @@
+// ============================================================================
+// Shared Wiki Styles
+// ============================================================================
+
+// Grid
+// ----------------------------------------------------------------------------
+
+.wiki-grid {
+  display: grid;
+  grid-gap: $spacer;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 2fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Wiki Tags
+// ----------------------------------------------------------------------------
+
+$tag-colors: (
+  rgba($red, 0.5),
+  $lemon,
+  $neon-green,
+  rgba($blue, 0.65),
+  $beige,
+  rgba($green, 0.5),
+  $mustard,
+  $aqua,
+  $slate,
+  $neon-cyan
+);
+
+$tag-colors-length: length($tag-colors);
+
+.wiki-tags__item {
+  background-color: $color-primary;
+  color: $gray-light;
+  display: block;
+  font-family: $font-windsor;
+  font-size: $font-size-lg;
+  height: 100%;
+  padding: $spacer;
+  text-decoration: none;
+
+  &:hover {
+    color: $gray-darkest;
+  }
+
+  @for $i from 1 through $tag-colors-length {
+    $color: nth($tag-colors, $i);
+    $bg: lighten($color-primary, randomNum(0, 8));
+    @if randomNum(0, 3) % 2 == 0 {
+      $bg: darken($color-primary, randomNum(0, 8));
+    }
+
+    &:nth-child(#{$tag-colors-length}n+#{$i}) {
+      background-color: $bg;
+      &:hover { background-color: $color; }
+    }
+  }
+}
+
+// Articles
+// ----------------------------------------------------------------------------
+
+.wiki-articles__item {
+  border: dashed $border-width-sm $color-primary;
+  padding: $spacer;
+  font-size: $font-size-sm;
+
+  &:hover {
+    // box-shadow: inset 0 0 0 $border-width-lg $color-primary;
+    background-color: $yellow;
+  }
+}
+
+// Directory
+// ----------------------------------------------------------------------------
+
+.wiki-people {
+  background-color: $paper;
+}
+
+.wiki-people__item {
+  align-items: center;
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $spacer;
+
+  &:hover {
+    box-shadow: inset 0 0 0 $border-width-base $ink;
+  }
+}
+
+.wiki-people__image {
+  filter: grayscale(1);
+  max-height: 120px;
+  max-width: 100px;
+  mix-blend-mode: multiply;
+}
+
+.wiki-people__title {
+  font-size: $font-size-xs;
+  margin-top: $spacer-sm;
+  text-align: center;
+}
+
+.wiki-people__empty {
+  font-size: $font-size-sm;
+  opacity: 0.15;
+  text-decoration: none;
+}

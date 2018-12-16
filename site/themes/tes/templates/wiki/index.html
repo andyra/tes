@@ -1,35 +1,22 @@
-<h1>Wiki</h1>
+{{ section:header }}
+<header class="main__header">
+  <h1 class="m-top-0">Wiki</h1>
+  {{ partial:wiki-search }}
+  <p class="text--lg">The Grand Library of all things Akabius. Learn about <a href="{{ link to='wiki/medieval-wig' }}">Medieval Wig</a>, <a href="{{ link to='wiki/wake-up-jazz' }}">Wake-Up Jazz</a>, <a href="{{ link to='wiki/the-adobe-skyscraper' }}">The Adobe Skyscraper</a>, Geap Fireshows, and the Board Game Guru.</p>
+</header>
+{{ /section:header }}
 
-{{ partial:wiki-search }}
-
-<p class="text--lg">The Grand Library of all things Akabius. Learn about <a href="{{ link to='wiki/medieval-wig' }}">Medieval Wig</a>, <a href="{{ link to='wiki/wake-up-jazz' }}">Wake-Up Jazz</a>, <a href="{{ link to='wiki/the-adobe-skyscraper' }}">The Adobe Skyscraper</a>, Geap Fireshows, and the Board Game Guru.</p>
-
-<section class="wiki-tags">
+<section class="wiki-grid wiki-tags">
 {{ taxonomy:tags sort="title" }}
   <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
 {{ /taxonomy:tags }}
 </section>
 
-<hr>
-
-<ol class="wiki-columns">
-  {{ collection:wiki article:exists="true" }}
-    <li>
-    <a href="{{ url }}">
-      {{ title }}
-    </a>
-  </li>
-  {{ /collection:wiki }}
-</ol>
-
-<ol class="wiki-columns">
+{{ user:can permission="cp:access" }}
+<h3>Empty articles</h3>
+<section class="wiki-grid wiki-articles">
   {{ collection:wiki article:doesnt_exist="true" }}
-  <li>
-    <a href="{{ url }}">
-      {{ title }} <mark>Content</mark>
-    </a>
-  </li>
+  <a class="wiki-articles__item" href="{{ url }}">{{ title }}</a>
   {{ /collection:wiki }}
-</ol>
-
-
+</section>
+{{ /user:can }}

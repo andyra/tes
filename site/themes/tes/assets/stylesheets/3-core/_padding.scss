@@ -1,0 +1,60 @@
+// ============================================================================
+// Padding
+// ============================================================================
+
+// Fixed Padding
+// ----------------------------------------------------------------------------
+
+@each $name, $value in $spacing-sizes {
+  .p-#{$name} {
+    padding: $value;
+  }
+
+  .p-x-#{$name} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+
+  .p-y-#{$name} {
+    padding-bottom: $value;
+    padding-top: $value;
+  }
+
+  @each $side in $sides {
+    .p-#{$side}-#{$name} {
+      padding-#{$side}: $value;
+    }
+  }
+}
+
+// Variable Padding
+// ----------------------------------------------------------------------------
+
+@each $name, $value in $vmin-sizes {
+  .p-#{$name} {
+    padding: $value;
+  }
+
+  .p-x-#{$name} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+
+  .p-y-#{$name} {
+    padding-bottom: $value;
+    padding-top: $value;
+  }
+
+  @each $side in $sides {
+    .p-#{$side}-#{$name} {
+      padding-#{$side}: $value;
+    }
+  }
+}
+
+// Zero
+// ----------------------------------------------------------------------------
+
+@each $side in $sides {
+  .p-#{$side}-0 { padding-#{$side}: 0; }
+}

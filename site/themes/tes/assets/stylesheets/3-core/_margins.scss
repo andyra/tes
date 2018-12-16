@@ -2,39 +2,56 @@
 // Margins
 // ============================================================================
 
-// Note: `margin-[foo]--[bar] is deprecated. Use `m-[foo]-[bar]` instead
-@each $size, $value in $spacing-sizes {
-  .m-x-#{$size} {
+// Fixed Margins
+// ----------------------------------------------------------------------------
+
+@each $name, $value in $spacing-sizes {
+  @each $side in $sides {
+    .m-#{$side}-#{$name} {
+      margin-#{$side}: $value;
+    }
+  }
+
+  .m-x-#{$name} {
     margin-left: $value;
     margin-right: $value;
   }
 
-  .m-y-#{$size} {
+  .m-y-#{$name} {
     margin-bottom: $value;
     margin-top: $value;
   }
+}
 
+// Variable Margins
+// ----------------------------------------------------------------------------
+
+@each $name, $value in $vmin-sizes {
   @each $side in $sides {
-    .m-#{$side}-#{$size},
-    .margin-#{$side}--#{$size} {
+    .m-#{$side}-#{$name} {
       margin-#{$side}: $value;
     }
   }
+
+  .m-x-#{$name} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+
+  .m-y-#{$name} {
+    margin-bottom: $value;
+    margin-top: $value;
+  }
 }
+
+// Zero and Auto
+// ----------------------------------------------------------------------------
 
 @each $side in $sides {
-  // Zero margins
-  .m-#{$side}-0 {
-    margin-#{$side}: 0;
-  }
-
-  // Auto Margins
-  .m-#{$side}-auto {
-    margin-#{$side}: auto;
-  }
+  .m-#{$side}-0 { margin-#{$side}: 0; }
+  .m-#{$side}-auto { margin-#{$side}: auto; }
 }
 
-// Center horizontally
 .m-x-auto {
   margin-left: auto;
   margin-right: auto;

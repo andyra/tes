@@ -20,6 +20,7 @@
 @import "2-tools/functions/random-number";
 @import "2-tools/mixins/font-face";
 @import "2-tools/mixins/font-smoothing";
+@import "2-tools/mixins/round-corners";
 @import "2-tools/mixins/size";
 
 // Core
@@ -33,6 +34,8 @@
 @import "3-core/containers";
 @import "3-core/flex";
 @import "3-core/margins";
+@import "3-core/padding";
+@import "3-core/text";
 
 // Components
 @import "4-components/breadcrumbs";
@@ -44,10 +47,11 @@
 @import "4-components/player";
 @import "4-components/tags";
 @import "4-components/tracklist";
-@import "4-components/wiki-tags";
 
 // Layouts
 @import "5-layouts/default";
 
 // Pages
-@import "6-pages/wiki";
+@import "6-pages/wiki/shared";
+@import "6-pages/wiki/entry";
+@import "6-pages/wiki/tag";
