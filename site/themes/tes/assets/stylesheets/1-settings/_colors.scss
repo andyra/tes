@@ -15,15 +15,12 @@ $gray-light:      hsl(0, 0%, 80%);
 $gray-lighter:    hsl(0, 0%, 91%);
 $gray-lightest:   hsl(0, 0%, 96%);
 
-// Neons
-$neon-green:     rgb(0, 255, 0);
-$neon-cyan:      rgb(0, 255, 255);
-
-// Lights
+// Brights
 $red:            hsl(15, 88%, 57%);
 $yellow:         hsl(60, 100%, 50%);
 $lemon:          hsl(63, 100%, 76%);
-$green:          hsl(121, 81%, 67%);
+$green:          rgb(0, 255, 0);
+$cyan:           rgb(0, 255, 255);
 $aqua:           hsl(173, 100%, 43%);
 $blue:           hsl(204, 73%, 47%);
 $slate:          hsl(200, 35%, 84%);
@@ -52,35 +49,32 @@ $beige:          hsl(34, 33%, 70%);
 $color-primary:   $ink;
 
 $bright-colors: (
-  red:    $red,
-  yellow: $yellow,
-  lemon:  $lemon,
-  green:  $green,
-  aqua:   $aqua,
-  blue:   $blue,
-);
-
-$neon-colors: (
-  neon-green: $neon-green,
-  neon-cyan:  $neon-cyan,
+  "red":    $red,
+  "yellow": $yellow,
+  "lemon":  $lemon,
+  "green":  $green,
+  "cyan":   $cyan,
+  "aqua":   $aqua,
+  "blue":   $blue,
+  "slate":  $slate
 );
 
 $dark-colors: (
-  brown:    $brown,
-  maroon:   $maroon,
-  ocean:    $ocean,
-  ink:      $ink,
-  blush:    $blush,
-  billiard: $billiard,
-  mustard:  $mustard
+  "brown":    $brown,
+  "maroon":   $maroon,
+  "ocean":    $ocean,
+  "ink":      $ink,
+  "blush":    $blush,
+  "billiard": $billiard,
+  "mustard":  $mustard
 );
 
 $pastel-colors: (
-  alabaster:  $alabaster,
-  daphne:     $daphne,
-  mint:       $mint,
-  paper:      $paper,
-  seashell:   $seashell,
-  sky:        $sky,
-  beige:      $beige
+  "alabaster":  $alabaster,
+  "daphne":     $daphne,
+  "mint":       $mint,
+  "paper":      $paper,
+  "seashell":   $seashell,
+  "sky":        $sky,
+  "beige":      $beige
 );

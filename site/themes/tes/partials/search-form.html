@@ -1,0 +1,5 @@
+<form class="form form--search m-bottom-base" action="{{ link to='search' }}" method="GET">
+  <input type="hidden" value="{{ scope }}" name="collection">
+  <input class="input" type="text" name="q" value="{{ get:q }}" placeholder="{{ placeholder }}" />
+  <button class="button" type="submit">Search</button>
+</form>

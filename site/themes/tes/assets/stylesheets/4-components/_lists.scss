@@ -1,0 +1,30 @@
+// ============================================================================
+// Lists
+// ============================================================================
+
+.list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+// Variants
+// ----------------------------------------------------------------------------
+
+.list--divided li {
+  border-top: dotted $border-width-sm rgba($color-primary, 0.5);
+
+  &:last-child {
+    border-bottom: dotted $border-width-sm rgba($color-primary, 0.5);
+  }
+}
+
+.list--links a {
+  display: block;
+  padding: component-size($component-sm) 0;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $lemon;
+  }
+}

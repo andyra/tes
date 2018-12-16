@@ -20,14 +20,14 @@
 $tag-colors: (
   rgba($red, 0.5),
   $lemon,
-  $neon-green,
+  $green,
   rgba($blue, 0.65),
   $beige,
   rgba($green, 0.5),
   $mustard,
   $aqua,
   $slate,
-  $neon-cyan
+  $cyan
 );
 
 $tag-colors-length: length($tag-colors);

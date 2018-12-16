@@ -1,12 +1,12 @@
 {{ section:header }}
   <header class="main__header">
-    <h1 class="m-top-0">Wiki</h1>
-    {{ partial:search results="wiki/search" placeholder="Find something" }}
+    <h1 class="m-top-0">Songs</h1>
+    {{ partial:search results="songs/search" placeholder="Find a song" }}
   </header>
 {{ /section:header }}
 
 <ul class="list list--divided list--links">
-{{ search:results collection="wiki" }}
+{{ search:results collection="songs" }}
   {{ if no_results }}
     No results.
   {{ /if }}

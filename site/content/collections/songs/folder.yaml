@@ -1,7 +1,7 @@
 title: Songs
 order: date
 fieldset: song
-template: songs/song
+template: songs/entry
 taxonomies: false
 columns:
   - title

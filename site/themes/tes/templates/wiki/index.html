@@ -1,14 +1,16 @@
 {{ section:header }}
 <header class="main__header">
   <h1 class="m-top-0">Wiki</h1>
-  {{ partial:wiki-search }}
+  {{ partial:search results="wiki/search" }}
   <p class="text--lg">The Grand Library of all things Akabius. Learn about <a href="{{ link to='wiki/medieval-wig' }}">Medieval Wig</a>, <a href="{{ link to='wiki/wake-up-jazz' }}">Wake-Up Jazz</a>, <a href="{{ link to='wiki/the-adobe-skyscraper' }}">The Adobe Skyscraper</a>, Geap Fireshows, and the Board Game Guru.</p>
 </header>
 {{ /section:header }}
 
 <section class="wiki-grid wiki-tags">
 {{ taxonomy:tags sort="title" }}
+  {{ if ! parent_tag }}
   <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
+  {{ /if }}
 {{ /taxonomy:tags }}
 </section>
 

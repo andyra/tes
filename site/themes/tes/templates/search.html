@@ -1,12 +1,23 @@
-<h1>Search Results</h1>
+{{ section:header }}
+<header class="main__header">
+  <h1>Search Results</h1>
+  {{ partial:search-form placeholer="Search" }}
+</header>
+{{ /section:header }}
 
-<ul>
 {{ search:results }}
-	{{ if no_results }}
-		No results.
-	{{ /if }}
-	<li>
-    {{ collection }}: <a href="{{ url }}">{{ title }}</a>
+  {{ if no_results }}
+    No results.
+  {{ /if }}
+  {{ if first }}
+    Results: {{ total_results }}
+    <ul class="list list--divided list--links">
+  {{ /if }}
+	<li class="flex flex--align-center">
+    <a class="flex__1" href="{{ url }}">{{ title }}</a>
+    <span>{{ collection }}</span>
   </li>
+  {{ if last }}
+    </ul>
+  {{ /if }}
 {{ /search:results }}
-</ul>

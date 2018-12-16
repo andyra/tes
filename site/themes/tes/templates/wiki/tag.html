@@ -4,14 +4,27 @@
 </header>
 {{ /section:header }}
 
-<h1>
+<nav class="breadcrumbs">
+  <a class="breadcrumbs__item" href="{{ link to='wiki' }}">Wiki</a>
   {{ if parent_tag }}
     {{ relate:parent_tag }}
-      {{ title }} ›
+      <a class="breadcrumbs__item" href="{{ url }}">{{ title }}</a>
     {{ /relate:parent_tag }}
   {{ /if }}
-  {{ title }}
-</h1>
+  <span class="breadcrumbs__item breadcrumbs__item--current">{{ title }}</span>
+</nav>
+
+<h1>{{ title }}</h1>
+
+{{ if slug == "people" }}
+  <section class="wiki-grid wiki-tags">
+  {{ taxonomy:tags sort="title" }}
+    {{ if parent_tag }}
+      <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
+    {{ /if }}
+  {{ /taxonomy:tags }}
+  </section>
+{{ /if }}
 
 {{ if slug == "people" or parent_tag == 'tags/people' }}
 <div class="wiki-grid wiki-people">

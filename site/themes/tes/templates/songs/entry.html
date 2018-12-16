@@ -1,0 +1,58 @@
+{{ section:header }}
+<header class="main__header">
+  {{ partial:breadcrumbs include_home="false" }}
+  <h1>{{ title }}</h1>
+</header>
+{{ /section:header }}
+
+{{ section:sidebar }}
+  <aside class="main__sidebar sidebar">
+    {{ user:can permission="cp:access" }}
+      <section class="sidebar__section">
+        <a class="button" href="{{ edit_url }}">Edit Song</a>
+      </section>
+    {{ /user:can }}
+    <section class="sidebar__section">
+      <h3>Wikis</h3>
+      {{ if wikis }}
+        <ul class="sidebar__list">
+          {{ relate:wikis }}
+            <li>
+              <a href="{{ url }}">{{ title }}</a>
+            </li>
+          {{ /relate:wikis }}
+        </ul>
+      {{ else }}
+        Nothing to see here
+      {{ /if }}
+    </section>
+  </aside>
+{{ /section:sidebar }}
+
+<h3>Albums</h3>
+<ul>
+  {{ collection:albums scope="album" }}
+    {{ tracklist }}
+      {{ if song == page:id }}
+        <li>
+          <a href="{{ url }}">{{ title }}</a> •
+          <a href="{{ soundcloud_url }}">Play</a>
+        </li>
+      {{ /if }}
+    {{ /tracklist }}
+  {{ /collection:albums }}
+</ul>
+
+<h3>Episodes</h3>
+<ul>
+  {{ collection:episodes scope="episode" }}
+    {{ tracklist }}
+      {{ if song == page:id }}
+        <li>
+          <a href="{{ url }}">{{ title }}</a> •
+          <a href="{{ soundcloud_url }}">Play</a>
+        </li>
+      {{ /if }}
+    {{ /tracklist }}
+  {{ /collection:episodes }}
+</ul>

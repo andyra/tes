@@ -5,7 +5,6 @@
 {{ section:header }}
   <header class="main__header">
     {{ partial:wiki-search }}
-    {{ partial:breadcrumbs include_home="false" }}
   </header>
 {{ /section:header }}
 
@@ -28,67 +27,70 @@
 </div>
 
 {{ section:sidebar }}
-  <aside class="main__sidebar">
+  <aside class="main__sidebar sidebar">
     {{ user:can permission="cp:access" }}
-      <a class="button" href="{{ edit_url }}">Edit This Thing</a>
+      <section class="sidebar__section">
+        <a class="button" href="{{ edit_url }}">Edit This Thing</a>
+      </section>
     {{ /user:can }}
-    <h3>File Under</h3>
-    <div class="wiki-tags">
-      {{ tags }}
-        <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
-      {{ /tags }}
-    </div>
 
-    <h3>Referenced in</h3>
+    <section class="sidebar__section">
+      <h3 class="sidebar__heading">File Under</h3>
+      <div class="wiki-grid wiki-tags">
+        {{ tags }}
+          <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
+        {{ /tags }}
+      </div>
+    </section>
 
-    <h3>Episodes</h3>
-    <ul>
-    {{ collection:episodes scope="episode" }}
-      {{ episode:tracklist scope="track" }}
-        {{ relate:track:wikis scope="wiki" }}
-          {{ if wiki:id == page:id }}
-            <li>
-              <img src="{{ glide:episode:cover_art width='80' height='80' }}" alt="{{ episode:title }}" />
-              <a href="{{ episode:url }}">{{ episode:title }}</a>: {{ track:description }}•
-              <a href="{{ track:soundcloud_url }}">Play</a>
-            </li>
-          {{ /if }}
-        {{ /relate:track:wikis }}
-      {{ /episode:tracklist }}
-    {{ /collection:episodes }}
-    </ul>
+    <section class="sidebar__section">
+      <h3 class="sidebar__heading">Cross-References</h3>
+      <div class="sidebar__section">
+        <h4 class="sidebar__subheading">Episodes</h4>
+        <div class="sidebar__grid">
+        {{ collection:episodes scope="episode" }}
+          {{ episode:tracklist scope="track" }}
+            {{ relate:track:wikis scope="wiki" }}
+              {{ if wiki:id == page:id }}
+                <a href="{{ episode:url }}" title="{{ episode:title }}">
+                  {{ if episode:cover_art }}
+                    <img src="{{ glide:episode:cover_art width='80' height='80' }}" alt="{{ episode:title }}" />
+                  {{ else }}
+                    <img src="http://placehold.it/80x80" alt="No cover art">
+                  {{ /if }}
+                </a>
+              {{ /if }}
+            {{ /relate:track:wikis }}
+          {{ /episode:tracklist }}
+        {{ /collection:episodes }}
+        </div>
+      </div>
 
-    {{ collection:songs wikis:contains=page:id as="songs" }}
-      {{ if songs }}
-        <h3>Songs</h3>
-        <ul>
-        {{ songs scope="song" }}
-          <li><a href="{{ song:url }}">{{ song:title }}</a></li>
-        {{ /songs }}
-        </ul>
-      {{ /if }}
-    {{ /collection:songs }}
+      {{ collection:songs wikis:contains=page:id as="songs" }}
+        {{ if songs }}
+          <div class="sidebar__section">
+            <h4 class="sidebar__subheading">Songs</h4>
+            <ul class="sidebar__list">
+            {{ songs scope="song" }}
+              <li><a href="{{ song:url }}">{{ song:title }}</a></li>
+            {{ /songs }}
+            </ul>
+          </div>
+        {{ /if }}
+      {{ /collection:songs }}
 
-    {{ collection:videos wikis:contains=page:id as="videos" }}
-      {{ if videos }}
-        <h3>Videos</h3>
-        <ul>
-        {{ videos scope="video" }}
-          <li><a href="{{ video:url }}">{{ video:title }}</a></li>
-        {{ /videos }}
-        </ul>
-      {{ /if }}
-    {{ /collection:videos }}
-
-    {{ collection:wiki wikis:contains=page:id as="articles" }}
-      {{ if articles }}
-        <h3>Wiki Cross-references</h3>
-        <ul>
-          {{ articles scope="article" }}
-            <li><a href="{{ article:url }}">{{ article:title }}</a></li>
-          {{ /articles }}
-        </ul>
-      {{ /if }}
-    {{ /collection:wiki }}
+      {{ collection:videos wikis:contains=page:id as="videos" }}
+        {{ if videos }}
+          <div class="sidebar__section">
+            <h4 class="sidebar__subheading">Videos</h4>
+            <ul class="sidebar__list">
+            {{ videos scope="video" }}
+              <li><a href="{{ video:url }}">{{ video:title }}</a></li>
+            {{ /videos }}
+            </ul>
+          </div>
+        {{ /if }}
+      {{ /collection:videos }}
+    </section>
   </aside>
 {{ /section:sidebar }}
