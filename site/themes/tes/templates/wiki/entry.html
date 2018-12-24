@@ -3,12 +3,12 @@
 {{ /if }}
 
 {{ section:header }}
-  <header class="main__header">
-    {{ partial:wiki-search }}
-  </header>
+<header class="page-header">
+  {{ partial:search-form scope="wiki" placeholer="testing" }}
+</header>
 {{ /section:header }}
 
-<div class="wiki-article bg--notebook bg--seashell">
+<div class="wiki-article bg--notebook bg--daphne">
   <h1 class="m-top-0">{{ title }}</h1>
 
   {{ if featured_image }}
@@ -30,13 +30,13 @@
   <aside class="main__sidebar sidebar">
     {{ user:can permission="cp:access" }}
       <section class="sidebar__section">
-        <a class="button" href="{{ edit_url }}">Edit This Thing</a>
+        <a class="button" href="{{ edit_url }}">Edit</a>
       </section>
     {{ /user:can }}
 
     <section class="sidebar__section">
       <h3 class="sidebar__heading">File Under</h3>
-      <div class="grid wiki-tags">
+      <div class="grid grid--gap wiki-tags rando-bg-hover">
         {{ tags }}
           <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
         {{ /tags }}
