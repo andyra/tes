@@ -2,35 +2,45 @@
 // Shared Wiki Styles
 // ============================================================================
 
-// Grid
+// Rando Hover BG Colors
 // ----------------------------------------------------------------------------
 
-.wiki-grid {
-  display: grid;
-  grid-gap: $spacer;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 2fr));
-  list-style: none;
-  margin: 0;
-  padding: 0;
+$rando-colors: (
+  rgba($red, 0.5),
+  $lemon,
+  $green,
+  rgba($blue, 0.45),
+  $beige,
+  rgba($green, 0.5),
+  rgba($cyan, 0.1),
+  rgba($mustard, 0.65),
+  $aqua,
+  $slate,
+  $cyan,
+  rgba($blush, 0.25),
+  $yellow,
+  rgba(magenta, 0.3),
+  rgba($ocean, 0.35)
+);
+
+$rando-colors-length: length($rando-colors);
+
+.rando-bg-hover {
+  @for $i from 1 through $rando-colors-length {
+    $color: nth($rando-colors, $i);
+    $bg: lighten($color-primary, randomNum(0, 8));
+    @if randomNum(0, 3) % 2 == 0 {
+      $bg: darken($color-primary, randomNum(0, 8));
+    }
+
+    > *:nth-child(#{$rando-colors-length}n+#{$i}):hover {
+      background-color: $color;
+    }
+  }
 }
 
 // Wiki Tags
 // ----------------------------------------------------------------------------
-
-$tag-colors: (
-  rgba($red, 0.5),
-  $lemon,
-  $green,
-  rgba($blue, 0.65),
-  $beige,
-  rgba($green, 0.5),
-  $mustard,
-  $aqua,
-  $slate,
-  $cyan
-);
-
-$tag-colors-length: length($tag-colors);
 
 .wiki-tags__item {
   background-color: $color-primary;
@@ -45,57 +55,40 @@ $tag-colors-length: length($tag-colors);
   &:hover {
     color: $gray-darkest;
   }
-
-  @for $i from 1 through $tag-colors-length {
-    $color: nth($tag-colors, $i);
-    $bg: lighten($color-primary, randomNum(0, 8));
-    @if randomNum(0, 3) % 2 == 0 {
-      $bg: darken($color-primary, randomNum(0, 8));
-    }
-
-    &:nth-child(#{$tag-colors-length}n+#{$i}) {
-      background-color: $bg;
-      &:hover { background-color: $color; }
-    }
-  }
 }
 
 // Articles
 // ----------------------------------------------------------------------------
 
 .wiki-articles__item {
-  border: dashed $border-width-sm $color-primary;
-  padding: $spacer;
+  border: solid $border-width-sm $gray-darkest;
+  color: $gray-darkest;
   font-size: $font-size-sm;
+  padding: $spacer;
+  text-decoration: none;
+}
 
-  &:hover {
-    // box-shadow: inset 0 0 0 $border-width-lg $color-primary;
-    background-color: $yellow;
-  }
+.wiki-articles__item--empty {
+  border-style: dashed;
 }
 
 // Directory
 // ----------------------------------------------------------------------------
 
 .wiki-people {
-  background-color: $paper;
+  background-color: $paper; // required for mix-blend-mode
 }
 
 .wiki-people__item {
-  align-items: center;
   display: flex;
-  flex-basis: 100%;
   flex-direction: column;
   justify-content: space-between;
-  padding: $spacer;
-
-  &:hover {
-    box-shadow: inset 0 0 0 $border-width-base $ink;
-  }
 }
 
 .wiki-people__image {
+  align-self: center;
   filter: grayscale(1);
+  margin-top: $spacer-sm;
   max-height: 120px;
   max-width: 100px;
   mix-blend-mode: multiply;
@@ -108,7 +101,7 @@ $tag-colors-length: length($tag-colors);
 }
 
 .wiki-people__empty {
-  font-size: $font-size-sm;
+  font-size: 11vmin;
   opacity: 0.15;
-  text-decoration: none;
+  text-align: center;
 }

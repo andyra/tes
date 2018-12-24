@@ -6,13 +6,33 @@
 // ----------------------------------------------------------------------------
 
 .global-nav {
-  align-items: center;
+  align-items: stretch;
+  background-color: $paper;
+  border-bottom: solid $border-width-base $ink;
   display: flex;
-  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: $z-global-nav;
 }
 
 .global-nav__item {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
   padding: component-size($component-base) 0.5em;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $cyan;
+    color: $gray;
+    text-decoration: none;
+  }
+
+  &.active {
+    background-color: $ink;
+    color: $white;
+  }
 }
 
 // Content
@@ -24,11 +44,6 @@
   flex-flow: wrap;
   padding-bottom: $vmin;
   padding-top: $vmin;
-}
-
-.main__header {
-  flex-basis: 100%;
-  margin-bottom: $vmin;
 }
 
 .main__content {

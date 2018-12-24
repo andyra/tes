@@ -1,9 +1,14 @@
-<h1>Episodes</h1>
+{{ section:header }}
+<header class="page-header">
+  <h1 class="page-header__title text-outline--daphne font--windsor color--daphne tracking--loose case--upper">Episodes</h1>
+</header>
+{{ /section:header }}
 
-<ol>
-  {{ collection:episodes}}
-    <li>
-      <a href="{{ url }}">{{ title }}</a>
-    </li>
+<section class="invoice bg--white">
+  {{ collection:episodes }}
+    <a class="invoice__item invoice__link" href="{{ url }}">
+      <span class="invoice__cell">{{ title }}</span>
+      <time class="invoice__cell invoice__cell--shaded invoice__date text--xxs">{{ datestamp }}</time>
+    </a>
   {{ /collection:episodes }}
-</ol>
+</section>

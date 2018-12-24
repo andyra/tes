@@ -3,12 +3,14 @@
 // ============================================================================
 
 .page-header {
-  align-items: center;
-  display: flex;
   margin-bottom: $vmin;
+  width: 100%;
 }
 
 .page-header__title {
   margin: 0;
-  flex: 1;
+
+  @media #{$screen-xs-up} {
+    font-size: 8vmin;
+  }
 }

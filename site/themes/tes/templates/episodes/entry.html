@@ -1,6 +1,8 @@
-<h1>{{ title }}</h1>
+<h1 class="text--vmin-lg font--windsor case--normal">{{ title }}</h1>
 <time>{{ date }}</time>
-<a href="{{ soundcloud_url }}">{{ soundcloud_url }}</a>
+<a href="{{ soundcloud_url }}">View on SoundClown</a>
+
+{{ partial:player playlist_url=soundcloud_url }}
 
 <h2>Cover Art</h2>
 <img src="{{ cover_art }}" style="max-width: 12rem;" />

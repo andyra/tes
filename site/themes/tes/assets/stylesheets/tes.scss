@@ -40,7 +40,10 @@
 // Components
 @import "4-components/breadcrumbs";
 @import "4-components/buttons";
+@import "4-components/cover-art";
 @import "4-components/forms";
+@import "4-components/grid";
+@import "4-components/invoice";
 @import "4-components/lists";
 @import "4-components/spinners";
 @import "4-components/page";
@@ -54,6 +57,7 @@
 @import "5-layouts/sidebar";
 
 // Pages
+@import "6-pages/albums/index";
 @import "6-pages/wiki/shared";
 @import "6-pages/wiki/entry";
 @import "6-pages/wiki/tag";

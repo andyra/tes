@@ -1,7 +1,7 @@
 title: Episodes
 order: date
 fieldset: episode
-template: episodes/episode
+template: episodes/entry
 taxonomies: false
 columns:
   - title

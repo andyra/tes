@@ -1,12 +1,18 @@
 {{ section:header }}
-<header class="main__header">
-  <h1 class="m-top-0">Wiki</h1>
+<header class="page-header">
+  <h1 class="page-header__title font--klang tracking--loose case--upper weight--normal">Wiki</h1>
   {{ partial:search results="wiki/search" }}
-  <p class="text--lg">The Grand Library of all things Akabius. Learn about <a href="{{ link to='wiki/medieval-wig' }}">Medieval Wig</a>, <a href="{{ link to='wiki/wake-up-jazz' }}">Wake-Up Jazz</a>, <a href="{{ link to='wiki/the-adobe-skyscraper' }}">The Adobe Skyscraper</a>, Geap Fireshows, and the Board Game Guru.</p>
+  <p class="text--lg">
+    The Grand Library of all things Akabius. Learn about, for instance,
+    {{ collection:wiki article:exists="true" limit="3" sort="random" scope="rando" }}
+      {{ if last }}and {{ /if }}
+      <a href="{{ rando:url }}">{{ rando:title }}</a>{{ if ! last }},{{ /if }}{{ if last }}.{{ /if }}
+    {{ /collection:wiki }}
+  </p>
 </header>
 {{ /section:header }}
 
-<section class="wiki-grid wiki-tags">
+<section class="grid grid--gap wiki-tags rando-bg-hover">
 {{ taxonomy:tags sort="title" }}
   {{ if ! parent_tag }}
   <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
@@ -16,9 +22,9 @@
 
 {{ user:can permission="cp:access" }}
 <h3>Empty articles</h3>
-<section class="wiki-grid wiki-articles">
+<section class="grid grid--gap wiki-articles">
   {{ collection:wiki article:doesnt_exist="true" }}
-  <a class="wiki-articles__item" href="{{ url }}">{{ title }}</a>
+  <a class="wiki-articles__item wiki-articles__item--empty" href="{{ url }}">{{ title }}</a>
   {{ /collection:wiki }}
 </section>
 {{ /user:can }}

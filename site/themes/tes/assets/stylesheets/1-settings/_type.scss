@@ -8,17 +8,27 @@
 // Typefaces
 // ----------------------------------------------------------------------------
 
-$font-system:   "system", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue";
-$font-base:     $font-system, "HypermarketW00-Regular", $font-system;
-$font-base2:    "Merchant Copy Doublesize", $font-system;
-$font-base3:    "Fake Receipt", $font-system;
-$font-wide:     "Merchant Copy Wide", $font-system;
-$font-sign:     "Futura", $font-system;
-$font-camera:   "57-nao", $font-system;
-$font-drafting: "Instruction", $font-system;
-$font-block:    "Marche", $font-system;
+$font-system:             "system", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue";
+$font-duospace:           "duospace", $font-system;
+$font-windsor:            "windsor", $font-system;
+$font-styrene:            "styrene", $font-system;
+$font-hypermarket:        "hypermarket", $font-system;
+$font-hypermarket-exp:    "hypermarket-exp", $font-system;
+$font-klang:              "klang", $font-system;
+$font-marche:             "marche", $font-system;
+$font-merchant-copy:      "merchant-copy", $font-system;
+$font-futura:             "futura", $font-system;
+$font-eurostile:          "eurostile", $font-system;
+$font-quattro:            "quattro", $font-system;
+$font-syne:               "syne", $font-system;
+$font-terminal-grotesque: "terminal-grotesque", $font-system;
+$font-triplicate:         "triplicate", $font-system;
 
-$font-windsor:  "Windsor", $font-system;
+$font-base:               $font-quattro;
+
+$font-camera:             "57-nao", $font-system;
+$font-drafting:           "Instruction", $font-system;
+
 
 // Sizes
 // ----------------------------------------------------------------------------
@@ -28,11 +38,13 @@ $font-size-root-sm: 14px;
 $font-size-root:    18px;
 
 // Font Sizes
+$font-size-xxs:     u(9px, rem);
 $font-size-xs:      u(12px, rem);
 $font-size-sm:      u(15px, rem);
 $font-size-base:    u($font-size-root, rem);
 $font-size-lg:      u(21px, rem);
 $font-size-xl:      u(32px, rem);
+$font-size-xxl:     u(42px, rem);
 
 // Line heights
 // ----------------------------------------------------------------------------

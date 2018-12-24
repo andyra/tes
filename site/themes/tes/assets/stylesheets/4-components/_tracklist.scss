@@ -6,30 +6,30 @@ $button-width:  $component-size-lg;
 $button-height: $component-size-base;
 
 .tracklist {
-  counter-reset: i;
-  padding-left: 0;
+  // counter-reset: i;
+  // padding-left: 0;
 }
 
 .tracklist__item {
-  align-items: center;
-  border-top: dotted $border-width-sm $ink;
-  counter-increment: i;
-  display: flex;
-  min-height: $component-size-base;
-  padding: $spacer-sm 0;
-  position: relative;
+  // align-items: center;
+  // border-top: dotted $border-width-sm $ink;
+  // counter-increment: i;
+  // display: flex;
+  // min-height: $component-size-base;
+  // padding: $spacer-sm 0;
+  // position: relative;
 
-  &:last-child {
-    border-bottom: dotted $border-width-sm $ink;
-  }
+  // &:last-child {
+  //   border-bottom: dotted $border-width-sm $ink;
+  // }
 
-  &:before {
-    align-items: center;
-    content: counter(i)".";
-    display: flex;
-    flex: 0 0 $button-width;
-    padding-right: $spacer-sm;
-  }
+  // &:before {
+  //   align-items: center;
+  //   content: counter(i)".";
+  //   display: flex;
+  //   flex: 0 0 $button-width;
+  //   padding-right: $spacer-sm;
+  // }
 
   &[data-track-state="init"] {
     .tracklist__button--play  { opacity: 0; }
@@ -52,16 +52,28 @@ $button-height: $component-size-base;
   }
 }
 
-.tracklist__button {
-  // @include size($component-size-base);
-  bottom: 0;
-  // cursor: pointer;
-  left: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.tracklist__count {
+  position: relative;
+  text-align: center;
+  width: $button-width + $spacer;
 }
 
-.tracklist__title {
-  flex: 1;
+.tracklist__button {
+  background-color: $daphne;
+  border-radius: none;
+  border: none;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &:hover {
+    background-color: $yellow;
+  }
 }
+
+// .tracklist__title {
+//   flex: 1;
+// }

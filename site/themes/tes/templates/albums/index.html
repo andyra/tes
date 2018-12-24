@@ -1,12 +1,14 @@
-<h1>Albums</h1>
+{{ section:header }}
+<header class="page-header">
+  <h1 class="page-header__title text-outline--seashell font--syne case--upper">Albums</h1>
+</header>
+{{ /section:header }}
 
-<ol>
-  {{ collection:albums}}
-    <li>
-      <a href="{{ url }}">{{ title }}</a>
-      {{ if ! image }}
-        <mark>Cover</mark>
-      {{ /if }}
-    </li>
-  {{ /collection:albums }}
-</ol>
+<section class="grid grid--gap album-grid">
+{{ collection:albums}}
+  <a class="album-grid__item" href="{{ url }}">
+    <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
+    {{ title }}
+  </a>
+{{ /collection:albums }}
+</section>

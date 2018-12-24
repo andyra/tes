@@ -1,5 +1,11 @@
 <nav class="global-nav">
-  {{ nav from="/" max_depth="2" include_home="true" }}
-    <a class="global-nav__item" href="{{ url }}"{{ if is_current || is_parent }} class="active"{{ /if }}>{{ title }}</a>
+  <a class="global-nav__item case--upper tracking--looser text--xs" href="/"><strong>This Evening's Show</strong></a>
+  {{ nav from="/" max_depth="2" include_home="false" }}
+    <a
+      class="global-nav__item case--upper tracking--looser text--xs{{ if is_current || is_parent }} active{{ /if }}"
+      href="{{ url }}"
+    >
+      {{ title }}
+    </a>
   {{ /nav }}
 </nav>

@@ -28,3 +28,45 @@
     background-color: $lemon;
   }
 }
+
+// Table List
+// ----------------------------------------------------------------------------
+
+$dotted-border: dotted $border-width-sm $ink;
+
+.table-list {
+  border: $dotted-border;
+  display: table;
+  list-style: none;
+  width: 100%;
+  background-color: $white;
+}
+
+.table-list__item {
+  display: table-row;
+}
+
+.table-list__date {
+  display: table-cell;
+  padding: 0 0.25em;
+  text-align: right;
+  vertical-align: middle;
+  border-right: $dotted-border;
+  border-top: $dotted-border;
+  font-family: $font-hypermarket;
+  font-size: $font-size-xs;
+}
+
+.table-list__link {
+  border-top: $dotted-border;
+  display: table-cell;
+  font-family: $font-triplicate;
+  height: $component-size-base;
+  padding: 0 0.5em;
+  text-decoration: none;
+  vertical-align: middle;
+
+  &:hover {
+    background-color: $lemon;
+  }
+}

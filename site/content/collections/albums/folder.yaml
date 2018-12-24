@@ -1,7 +1,7 @@
 title: Albums
 order: date
 fieldset: album
-template: albums/album
+template: albums/entry
 taxonomies: false
 columns:
   - title

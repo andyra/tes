@@ -1,23 +1,21 @@
 {{ section:header }}
-<header class="main__header">
+<header class="page-header">
+  <nav class="breadcrumbs">
+    <a class="breadcrumbs__item" href="{{ link to='wiki' }}">Wiki</a>
+    {{ if parent_tag }}
+      {{ relate:parent_tag }}
+        <a class="breadcrumbs__item" href="{{ url }}">{{ title }}</a>
+      {{ /relate:parent_tag }}
+    {{ /if }}
+    <span class="breadcrumbs__item breadcrumbs__item--current">{{ title }}</span>
+  </nav>
+  <h1 class="page-header__title font--klang tracking--loose case--upper weight--normal">{{ title }}</h1>
   {{ partial:wiki-search }}
 </header>
 {{ /section:header }}
 
-<nav class="breadcrumbs">
-  <a class="breadcrumbs__item" href="{{ link to='wiki' }}">Wiki</a>
-  {{ if parent_tag }}
-    {{ relate:parent_tag }}
-      <a class="breadcrumbs__item" href="{{ url }}">{{ title }}</a>
-    {{ /relate:parent_tag }}
-  {{ /if }}
-  <span class="breadcrumbs__item breadcrumbs__item--current">{{ title }}</span>
-</nav>
-
-<h1>{{ title }}</h1>
-
 {{ if slug == "people" }}
-  <section class="wiki-grid wiki-tags">
+  <section class="grid grid--gap wiki-tags rando-bg-hover m-bottom-lg">
   {{ taxonomy:tags sort="title" }}
     {{ if parent_tag }}
       <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
@@ -27,10 +25,11 @@
 {{ /if }}
 
 {{ if slug == "people" or parent_tag == 'tags/people' }}
-<div class="wiki-grid wiki-people">
+<div class="grid wiki-articles wiki-people rando-bg-hover">
 {{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
   {{ wikis scope="wiki" }}
-    <a class="wiki-people__item" href="{{ wiki:url }}">
+    <a class="wiki-articles__item wiki-people__item" href="{{ wiki:url }}">
+      <span class="wiki-articles__title">{{ wiki:title }}</span>
       {{ if featured_image }}
         <img
           class="wiki-people__image"
@@ -38,15 +37,14 @@
           alt="{{ title }}"
         >
       {{ else }}
-        <div class="wiki-people__empty">No Image on File</div>
+        <div class="wiki-people__empty">?</div>
       {{ /if }}
-      <span class="wiki-people__title">{{ wiki:title }}</span>
     </a>
   {{ /wikis }}
 {{ /collection:wiki }}
 </div>
 {{ else }}
-<div class="wiki-grid wiki-articles">
+<div class="grid wiki-articles rando-bg-hover">
 {{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
   {{ wikis scope="wiki" }}
     <a class="wiki-articles__item" href="{{ wiki:url }}">
