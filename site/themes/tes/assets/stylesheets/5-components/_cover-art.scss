@@ -1,0 +1,18 @@
+// ============================================================================
+// Cover Art
+// ============================================================================
+
+.cover-art {
+  border-radius: $border-radius-lg;
+}
+
+.cover-art--empty {
+  align-items: center;
+  background: $gray-lightest url("../images/backgrounds/noise.png");
+  background-blend-mode: luminosity;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100%;
+  width: 100%;
+}

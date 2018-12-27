@@ -1,23 +1,23 @@
 {{ section:header }}
 <header class="page-header">
-  <h1>Search Results</h1>
-  {{ partial:search-form placeholer="Search" }}
+  <h1 class="page-header__title font--windsor">Look For</h1>
+  {{ partial:search-form }}
 </header>
 {{ /section:header }}
 
-{{ search:results }}
+{{ search:results collection=get:collection }}
   {{ if no_results }}
     No results.
   {{ /if }}
   {{ if first }}
-    Results: {{ total_results }}
-    <ul class="list list--divided list--links">
+    <p class="text--sm">Results: {{ total_results }}</p>
+    <div class="table">
   {{ /if }}
-	<li class="flex flex--align-center">
-    <a class="flex__1" href="{{ url }}">{{ title }}</a>
-    <span>{{ collection }}</span>
-  </li>
+  <a class="table__row table__link" href="{{ url }}">
+    <span class="table__cell">{{ title }}</span>
+    <span class="table__cell table__cell--collapse table__cell--shaded text--sm">{{ collection }}</span>
+  </a>
   {{ if last }}
-    </ul>
+    </div>
   {{ /if }}
 {{ /search:results }}

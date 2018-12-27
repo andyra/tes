@@ -121,6 +121,9 @@ var skipTrack = function(direction) {
   }
 }
 
+// TODO:
+// Skip tracks needs to diable the prev when at the first in the tracklist, etc.
+
 var updatePlaylist = function(track) {
   // On init, the playlist is normal.
   // When a track is initialized/played, put a Pause icon next to the title.
@@ -166,24 +169,29 @@ ready(function() {
   initPlaylist(playlistUrl);
 
   // Listeners
-  // Need to set loading state. If you click before loading is done, etc.
   player.addEventListener('click', function(e) {
+    console.log("Player clicked");
     if (e.target !== e.currentTarget) { // Ensure it's a click on a child
       action = e.target.getAttribute('data-player');
 
       switch (action) {
-        case "play":
-          globalPlayer.play().then(function() { console.log("Play"); });
-          player.setAttribute('data-player-state', 'playing');
-          break;
-        case "pause":
-          globalPlayer.pause().then(function() { console.log("Pause"); });
-          player.setAttribute('data-player-state', 'paused');
+        case "control":
+          console.log("Control clicked");
+          if (player.getAttribute('data-player-state') == "paused") {
+            globalPlayer.play().then(function() { console.log("Play"); });
+            player.setAttribute('data-player-state', 'playing');
+          }
+          if (player.getAttribute('data-player-state') == "playing") {
+            globalPlayer.pause().then(function() { console.log("Pause"); });
+            player.setAttribute('data-player-state', 'paused');
+          }
           break;
         case "next":
+          console.log("Next clicked");
           skipTrack(1);
           break;
         case "prev":
+          console.log("Prev clicked");
           skipTrack(-1);
           break;
         case "seek" || "progress":

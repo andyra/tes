@@ -1,0 +1,27 @@
+// ============================================================================
+// Borders
+// ============================================================================
+
+// Solid
+// ----------------------------------------------------------------------------
+
+.b-sm   { border: solid $border-width-sm $ink; }
+.b-base { border: solid $border-width-base $ink; }
+.b-lg   { border: solid $border-width-lg $ink; }
+
+@each $side in $sides {
+  .b-#{$side}-sm    { border-#{$side}: solid $border-width-sm $ink; }
+  .b-#{$side}-base  { border-#{$side}: solid $border-width-base $ink; }
+  .b-#{$side}-lg    { border-#{$side}: solid $border-width-lg $ink; }
+}
+
+// Dashed & Dotted
+// ----------------------------------------------------------------------------
+
+.b-dashed  { border: dashed $border-width-sm $ink; }
+.b-dotted  { border: dotted $border-width-sm $ink; }
+
+@each $side in $sides {
+  .b-#{$side}-dashed { border-#{$side}: dashed $border-width-sm $ink; }
+  .b-#{$side}-dotted { border-#{$side}: dotted $border-width-sm $ink; }
+}

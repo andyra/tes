@@ -1,0 +1,29 @@
+// ============================================================================
+// Collection
+// For albums and episodes
+// ============================================================================
+
+.collection {
+  display: flex;
+}
+
+@media #{$screen-sm-up} {
+  .collection__main {
+    flex: 1;
+    padding-right: 2vmin;
+  }
+
+  .collection__sidebar {
+    padding-left: 2vmin;
+    flex: 0 1 33%;
+  }
+}
+
+@media #{$screen-sm-down} {
+  .collection {
+    flex-direction: column;
+  }
+
+  .collection__sidebar  { order: 0; }
+  .collection__main     { order: 1; }
+}

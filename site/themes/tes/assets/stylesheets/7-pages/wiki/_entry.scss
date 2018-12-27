@@ -1,0 +1,54 @@
+// ============================================================================
+// Wiki Entry
+// ============================================================================
+
+// Base
+// ----------------------------------------------------------------------------
+
+.wiki-article {
+  border-radius: $vmin;
+}
+
+.wiki-article__title {
+  border-bottom: dashed 1px $ink;
+  font-family: $font-futura;
+  font-size: $font-size-xl;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: $vmin;
+  text-transform: uppercase;
+}
+
+.wiki-article__content {
+  padding: $vmin;
+
+  h2 {
+    font-family: $font-futura;
+    font-size: $font-size-base;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: $vmin;
+  }
+
+  a {
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+    background-color: $mint;
+    border-bottom: solid $border-width-base rgba($ink, 0.15);
+    font-family: "Courier", "Courier New", monospace;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $seashell;
+      border-color: $red;
+      color: $red;
+    }
+  }
+}
+
+.wiki-article__sidebar {
+  background-color: rgba($ink, 0.025);
+  border-left: dotted $border-width-sm $ink;
+  flex-basis: 320px;
+  padding: $vmin;
+}

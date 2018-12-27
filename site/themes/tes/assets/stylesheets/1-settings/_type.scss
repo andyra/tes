@@ -8,26 +8,29 @@
 // Typefaces
 // ----------------------------------------------------------------------------
 
-$font-system:             "system", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue";
-$font-duospace:           "duospace", $font-system;
-$font-windsor:            "windsor", $font-system;
-$font-styrene:            "styrene", $font-system;
-$font-hypermarket:        "hypermarket", $font-system;
-$font-hypermarket-exp:    "hypermarket-exp", $font-system;
-$font-klang:              "klang", $font-system;
-$font-marche:             "marche", $font-system;
-$font-merchant-copy:      "merchant-copy", $font-system;
-$font-futura:             "futura", $font-system;
-$font-eurostile:          "eurostile", $font-system;
-$font-quattro:            "quattro", $font-system;
-$font-syne:               "syne", $font-system;
-$font-terminal-grotesque: "terminal-grotesque", $font-system;
-$font-triplicate:         "triplicate", $font-system;
+$sans: "system", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue";
+$mono: Consolas, "Andale Mono", "Lucida Console", Monaco, Courier, "Courier New", monospace;
+
+$font-57-nao:             "57-nao", $mono;
+$font-duospace:           "duospace", $mono;
+$font-eurostile:          "eurostile", $sans;
+$font-futura:             "futura", $sans;
+$font-hypermarket-exp:    "hypermarket-exp", $mono;
+$font-hypermarket:        "hypermarket", $mono;
+$font-klang:              "klang", $sans;
+$font-marche:             "marche", $sans;
+$font-merchant-copy:      "merchant-copy", $sans;
+$font-operator-mono:      "operator-mono", $mono;
+$font-pantograph:         "pantograph", $mono;
+$font-quattro:            "quattro", $sans;
+$font-syne:               "syne", $sans;
+$font-terminal-grotesque: "terminal-grotesque", $sans;
+$font-titling-gothic:     "titling-gothic", $sans;
+$font-triplicate:         "triplicate", $sans;
+$font-windsor:            "windsor", $sans;
 
 $font-base:               $font-quattro;
 
-$font-camera:             "57-nao", $font-system;
-$font-drafting:           "Instruction", $font-system;
 
 
 // Sizes

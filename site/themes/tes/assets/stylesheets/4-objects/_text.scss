@@ -1,0 +1,146 @@
+// ============================================================================
+// Text
+// ============================================================================
+
+// Alignment
+// ----------------------------------------------------------------------------
+
+.align--left   { text-align: left; }
+.align--center { text-align: center; }
+.align--right  { text-align: right; }
+
+// Sizes
+// ----------------------------------------------------------------------------
+
+.text--xxs  { font-size: $font-size-xxs; }
+.text--xs   { font-size: $font-size-xs; }
+.text--sm   { font-size: $font-size-sm; }
+.text--base { font-size: $font-size-base; }
+.text--lg   { font-size: $font-size-lg; }
+.text--xl   { font-size: $font-size-xl; }
+.text--xxl  { font-size: $font-size-xxl; }
+
+.text--vmin-xs  { font-size: $vmin-xs; }
+.text--vmin-sm  { font-size: $vmin-sm; }
+.text--vmin     { font-size: $vmin; }
+.text--vmin-lg  { font-size: $vmin-lg; }
+.text--vmin-xl  { font-size: $vmin-xl; }
+
+// Weights
+// ----------------------------------------------------------------------------
+
+.weight--normal { font-weight: normal; }
+.weight--bold   { font-weight: bold; }
+
+// Cases
+// ----------------------------------------------------------------------------
+
+.case--normal { text-transform: none; }
+.case--upper  { text-transform: uppercase; }
+
+// Colors
+// ----------------------------------------------------------------------------
+
+@each $name, $color in $dark-colors   { .color--#{$name} { color: $color; } }
+@each $name, $color in $bright-colors { .color--#{$name} { color: $color; } }
+@each $name, $color in $pastel-colors { .color--#{$name} { color: $color; } }
+
+// Outlines
+// ----------------------------------------------------------------------------
+
+@mixin text-outline($fill, $width: 2px, $outline: $ink) {
+  -webkit-text-fill-color: $fill;
+  -webkit-text-stroke-width: $width;
+  -webkit-text-stroke-color: $outline;
+}
+
+@each $name, $color in $pastel-colors {
+  .text-outline--#{$name} { @include text-outline($color); }
+}
+
+// Tracking
+// ----------------------------------------------------------------------------
+
+.tracking--normal   { letter-spacing: 0; }
+.tracking--loose    { letter-spacing: 0.05em; }
+.tracking--looser   { letter-spacing: 0.1em; }
+.tracking--loosest  { letter-spacing: 0.2em; }
+
+// Fonts
+// ----------------------------------------------------------------------------
+
+// 57 Nao
+@include font-face("57-nao", "../fonts/57-nao/57-nao", regular, $exts: woff woff2);
+.font--57-nao { font-family: $font-57-nao; }
+
+// Duospace
+@include font-face("duospace", "../fonts/duospace/duospace-regular", regular, $exts: woff woff2);
+@include font-face("duospace", "../fonts/duospace/duospace-itlic", regular, italic, $exts: woff woff2);
+@include font-face("duospace", "../fonts/duospace/duospace-bold", bold, $exts: woff woff2);
+@include font-face("duospace", "../fonts/duospace/duospace-bold-italic", bold, italic, $exts: woff woff2);
+.font--duospace { font-family: $font-duospace; }
+
+// Eurostile
+@include font-face("eurostile", "../fonts/eurostile/eurostileext-black", regular, $exts: woff woff2);
+.font--eurostile { font-family: $font-eurostile; }
+
+// Futura
+@include font-face("futura", "../fonts/futura/futura-bold", regular, $exts: woff woff2);
+.font--futura { font-family: $font-futura; }
+
+// Hypermarket
+@include font-face("hypermarket", "../fonts/hypermarket/hypermarket-regular", regular, $exts: woff woff2);
+@include font-face("hypermarket", "../fonts/hypermarket/hypermarket-bold", bold, $exts: woff woff2);
+@include font-face("hypermarket-exp", "../fonts/hypermarket-exp/hypermarket-exp-regular", regular, $exts: woff woff2);
+@include font-face("hypermarket-exp", "../fonts/hypermarket-exp/hypermarket-exp-bold", bold, $exts: woff woff2);
+.font--hypermarket     { font-family: $font-hypermarket; }
+.font--hypermarket-exp { font-family: $font-hypermarket-exp; }
+
+// Klang
+@include font-face("klang", "../fonts/klang/klang", regular, $exts: woff);
+.font--klang { font-family: $font-klang; }
+
+// Marche
+@include font-face("marche", "../fonts/marche/marche-super", regular, $exts: woff woff2);
+.font--marche { font-family: $font-marche; }
+
+// Merchant-copy
+@include font-face("merchant-copy", "../fonts/merchant-copy/merchant-copy-wide", regular, $exts: woff woff2);
+.font--merchant-copy { font-family: $font-merchant-copy; }
+
+// Klang
+@include font-face("operator-mono", "../fonts/operator-mono/operator-mono-book-italic", regular, $exts: woff woff2);
+.font--operator-mono { font-family: $font-operator-mono; }
+
+// Pantograph
+@include font-face("pantograph", "../fonts/pantograph/pantograph", regular, $exts: woff woff2);
+.font--pantograph { font-family: $font-pantograph; }
+
+// Quattro
+@include font-face("quattro", "../fonts/quattro/quattro-text-5", regular, $exts: woff woff2);
+@include font-face("quattro", "../fonts/quattro/quattro-text-5-italic", regular, italic, $exts: woff woff2);
+@include font-face("quattro", "../fonts/quattro/quattro-bold-5", bold, $exts: woff woff2);
+@include font-face("quattro", "../fonts/quattro/quattro-bold-5-italic", bold, italic, $exts: woff woff2);
+.font--quattro { font-family: $font-quattro; }
+
+// Syne
+@include font-face("syne", "../fonts/syne/syne-extra", regular, $exts: woff woff2);
+.font--syne { font-family: $font-syne; }
+
+// Terminal-grotesque
+@include font-face("terminal-grotesque", "../fonts/terminal-grotesque/terminal-grotesque-open", regular, $exts: woff woff2);
+.font--terminal-grotesque { font-family: $font-terminal-grotesque; }
+
+// Titling Gothic
+@include font-face("titling-gothic", "../fonts/titling-gothic/titling-gothic-wide-black", regular, $exts: woff woff2);
+.font--titling-gothic { font-family: $font-titling-gothic; }
+
+// Triplicate
+@include font-face("triplicate", "../fonts/triplicate/triplicate-t4-poly-regular", regular, $exts: woff woff2);
+@include font-face("triplicate", "../fonts/triplicate/triplicate-t4-poly-itliac", regular, italic, $exts: woff woff2);
+@include font-face("triplicate", "../fonts/triplicate/triplicate-t4-poly-bold", bold, $exts: woff woff2);
+.font--triplicate { font-family: $font-triplicate; }
+
+// Windsor
+@include font-face("windsor", "../fonts/windsor/windsor-bold", bold, $exts: woff);
+.font--windsor { font-family: $font-windsor; }

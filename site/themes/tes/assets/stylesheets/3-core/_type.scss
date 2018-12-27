@@ -2,50 +2,6 @@
 // Base Styles
 // ============================================================================
 
-// Fonts
-// ----------------------------------------------------------------------------
-
-@include font-face("windsor", "../fonts/windsor/windsor-bold", bold, $exts: woff);
-
-@include font-face("duospace", "../fonts/duospace/duospace-regular", regular, $exts: woff woff2);
-@include font-face("duospace", "../fonts/duospace/duospace-itlic", regular, italic, $exts: woff woff2);
-@include font-face("duospace", "../fonts/duospace/duospace-bold", bold, $exts: woff woff2);
-@include font-face("duospace", "../fonts/duospace/duospace-bold-italic", bold, italic, $exts: woff woff2);
-
-@include font-face("styrene", "../fonts/styrene/styreneb-regular", regular, $exts: woff woff2);
-@include font-face("styrene", "../fonts/styrene/styreneb-regular-italic", regular, italic, $exts: woff woff2);
-@include font-face("styrene", "../fonts/styrene/styreneb-bold", bold, $exts: woff woff2);
-@include font-face("styrene", "../fonts/styrene/styreneb-bold-italic", bold, italic, $exts: woff woff2);
-
-@include font-face("hypermarket", "../fonts/hypermarket/hypermarket-regular", regular, $exts: woff woff2);
-@include font-face("hypermarket", "../fonts/hypermarket/hypermarket-bold", bold, $exts: woff woff2);
-
-@include font-face("hypermarket-exp", "../fonts/hypermarket-exp/hypermarket-exp-regular", regular, $exts: woff woff2);
-@include font-face("hypermarket-exp", "../fonts/hypermarket-exp/hypermarket-exp-bold", bold, $exts: woff woff2);
-
-@include font-face("merchant-copy", "../fonts/merchant-copy/merchant-copy-wide", regular, $exts: woff woff2);
-
-@include font-face("futura", "../fonts/futura/futura-bold", regular, $exts: woff woff2);
-
-@include font-face("eurostile", "../fonts/eurostile/eurostileext-black", regular, $exts: woff woff2);
-
-@include font-face("terminal-grotesque", "../fonts/terminal-grotesque/terminal-grotesque-open", regular, $exts: woff woff2);
-
-@include font-face("triplicate", "../fonts/triplicate/triplicate-t4-poly-regular", regular, $exts: woff woff2);
-@include font-face("triplicate", "../fonts/triplicate/triplicate-t4-poly-itliac", regular, italic, $exts: woff woff2);
-@include font-face("triplicate", "../fonts/triplicate/triplicate-t4-poly-bold", bold, $exts: woff woff2);
-
-@include font-face("quattro", "../fonts/quattro/quattro-text-5", regular, $exts: woff woff2);
-@include font-face("quattro", "../fonts/quattro/quattro-text-5-italic", regular, italic, $exts: woff woff2);
-@include font-face("quattro", "../fonts/quattro/quattro-bold-5", bold, $exts: woff woff2);
-@include font-face("quattro", "../fonts/quattro/quattro-bold-5-italic", bold, italic, $exts: woff woff2);
-
-@include font-face("syne", "../fonts/syne/syne-extra", regular, $exts: woff woff2);
-
-@include font-face("marche", "../fonts/marche/marche-super", regular, $exts: woff woff2);
-
-@include font-face("klang", "../fonts/klang/klang", regular, $exts: woff);
-
 // Links
 // ----------------------------------------------------------------------------
 

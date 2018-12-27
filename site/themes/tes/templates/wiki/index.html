@@ -1,8 +1,8 @@
 {{ section:header }}
 <header class="page-header">
   <h1 class="page-header__title font--klang tracking--loose case--upper weight--normal">Wiki</h1>
-  {{ partial:search results="wiki/search" }}
-  <p class="text--lg">
+  {{ partial:search-form scope="wiki" }}
+  <p class="text--lg m-top-base">
     The Grand Library of all things Akabius. Learn about, for instance,
     {{ collection:wiki article:exists="true" limit="3" sort="random" scope="rando" }}
       {{ if last }}and {{ /if }}

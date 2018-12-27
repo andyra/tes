@@ -1,17 +1,17 @@
 {{ section:header }}
 <header class="page-header">
   <h1 class="page-header__title text-outline--mint font--eurostile tracking--loose case--upper">Songs</h1>
-  {{ partial:search-form scope="songs" placeholer="testing" }}
+  {{ partial:search-form scope="songs" }}
 </header>
 {{ /section:header }}
 
 <style>
   .song-columns {
-    columns: 3;
+    columns: 2;
   }
 </style>
 
-{{ collection:songs type:is="original" paginate="true" limit="500" as="songs" }}
+{{ collection:songs type:is="original" as="songs" }}
   <ol class="song-columns">
     {{ songs }}
       <li>

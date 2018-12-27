@@ -4,11 +4,15 @@
 </header>
 {{ /section:header }}
 
-<section class="invoice bg--white">
-  {{ collection:episodes }}
-    <a class="invoice__item invoice__link" href="{{ url }}">
-      <span class="invoice__cell">{{ title }}</span>
-      <time class="invoice__cell invoice__cell--shaded invoice__date text--xxs">{{ datestamp }}</time>
-    </a>
-  {{ /collection:episodes }}
+<section class="grid album-grid">
+{{ collection:episodes}}
+  <a class="album-grid__item" href="{{ url }}">
+    {{ if cover_art }}
+      <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
+    {{ else }}
+      <div class="cover-art cover-art--empty"></div>
+    {{ /if }}
+    {{ title }}
+  </a>
+{{ /collection:episodes }}
 </section>

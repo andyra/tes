@@ -1,0 +1,64 @@
+// ============================================================================
+// Tables
+// ============================================================================
+
+// Settings
+// ----------------------------------------------------------------------------
+
+$table-border:        dotted $border-width-sm $ink;
+$table-cell-padding:  component-size($component-base);
+
+// Base
+// ----------------------------------------------------------------------------
+
+.table {
+  display: table;
+  width: 100%;
+}
+
+.table__row {
+  display: table-row;
+}
+
+// Cells
+// ----------------------------------------------------------------------------
+
+.table__cell {
+  border-top: $table-border;
+  display: table-cell;
+  vertical-align: middle;
+  padding: $table-cell-padding;
+
+  + .table__cell {
+    border-left: $table-border;
+  }
+
+  .table__row:first-child & {
+    border-top: none;
+  }
+}
+
+.table__cell--collapse {
+  width: 1px;
+}
+
+.table__cell--shaded {
+  background-color: rgba($ink, 0.025);
+}
+
+.table__cell--header {
+  background-color: $sky;
+  padding-bottom: component-size($component-sm);
+  padding-top: component-size($component-sm);
+}
+
+// Elements
+// ----------------------------------------------------------------------------
+
+.table__link {
+  text-decoration: none;
+
+  &:hover {
+    background-color: $lemon;
+  }
+}

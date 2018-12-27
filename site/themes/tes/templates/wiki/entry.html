@@ -4,93 +4,92 @@
 
 {{ section:header }}
 <header class="page-header">
+  <div class="page-header__title font--klang tracking--loose case--upper weight--normal">Wiki</div>
   {{ partial:search-form scope="wiki" placeholer="testing" }}
 </header>
 {{ /section:header }}
 
 <div class="wiki-article bg--notebook bg--daphne">
-  <h1 class="m-top-0">{{ title }}</h1>
-
-  {{ if featured_image }}
-    <img class="wiki-entry__featured-image" src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
-  {{ /if }}
-
-  {{ article }}
-    {{ if type == "text" }}
-      <div class="text">
-        {{ text }}
-      </div>
-    {{ elseif type == "image" }}
-      <img src="{{ image }}" alt="" >
-    {{ /if }}
-  {{ /article }}
-</div>
-
-{{ section:sidebar }}
-  <aside class="main__sidebar sidebar">
+  <h1 class="wiki-article__title m-top-0">
+    {{ title }}
     {{ user:can permission="cp:access" }}
-      <section class="sidebar__section">
-        <a class="button" href="{{ edit_url }}">Edit</a>
-      </section>
+      <a class="button" href="{{ edit_url }}">Edit</a>
     {{ /user:can }}
+  </h1>
+  <div class="flex">
+    <section class="wiki-article__content">
+      {{ if featured_image }}
+        <img class="wiki-entry__featured-image" src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
+      {{ /if }}
 
-    <section class="sidebar__section">
-      <h3 class="sidebar__heading">File Under</h3>
-      <div class="grid grid--gap wiki-tags rando-bg-hover">
-        {{ tags }}
-          <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
-        {{ /tags }}
-      </div>
+      {{ article }}
+        {{ if type == "text" }}
+          <div class="text">
+            {{ text }}
+          </div>
+        {{ elseif type == "image" }}
+          <img src="{{ image }}" alt="" >
+        {{ /if }}
+      {{ /article }}
     </section>
-
-    <section class="sidebar__section">
-      <h3 class="sidebar__heading">Cross-References</h3>
-      <div class="sidebar__section">
-        <h4 class="sidebar__subheading">Episodes</h4>
-        <div class="sidebar__grid">
-        {{ collection:episodes scope="episode" }}
-          {{ episode:tracklist scope="track" }}
-            {{ relate:track:wikis scope="wiki" }}
-              {{ if wiki:id == page:id }}
-                <a href="{{ episode:url }}" title="{{ episode:title }}">
-                  {{ if episode:cover_art }}
-                    <img src="{{ glide:episode:cover_art width='80' height='80' }}" alt="{{ episode:title }}" />
-                  {{ else }}
-                    <img src="http://placehold.it/80x80" alt="No cover art">
-                  {{ /if }}
-                </a>
-              {{ /if }}
-            {{ /relate:track:wikis }}
-          {{ /episode:tracklist }}
-        {{ /collection:episodes }}
+    <aside class="wiki-article__sidebar">
+      <section class="sidebar__section">
+        <h3 class="sidebar__heading">File Under</h3>
+        <div class="grid grid--gap wiki-tags rando-bg-hover">
+          {{ tags }}
+            <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
+          {{ /tags }}
         </div>
-      </div>
+      </section>
 
-      {{ collection:songs wikis:contains=page:id as="songs" }}
-        {{ if songs }}
-          <div class="sidebar__section">
-            <h4 class="sidebar__subheading">Songs</h4>
-            <ul class="sidebar__list">
-            {{ songs scope="song" }}
-              <li><a href="{{ song:url }}">{{ song:title }}</a></li>
-            {{ /songs }}
-            </ul>
+      <section class="sidebar__section">
+        <div class="sidebar__section">
+          <h3 class="sidebar__heading">Episodes</h3>
+          <div class="sidebar__grid">
+          {{ collection:episodes scope="episode" }}
+            {{ episode:tracklist scope="track" }}
+              {{ relate:track:wikis scope="wiki" }}
+                {{ if wiki:id == page:id }}
+                  <a href="{{ episode:url }}" title="{{ episode:title }}">
+                    {{ if episode:cover_art }}
+                      <img src="{{ glide:episode:cover_art width='80' height='80' }}" alt="{{ episode:title }}" />
+                    {{ else }}
+                      <img src="http://placehold.it/80x80" alt="No cover art">
+                    {{ /if }}
+                  </a>
+                {{ /if }}
+              {{ /relate:track:wikis }}
+            {{ /episode:tracklist }}
+          {{ /collection:episodes }}
           </div>
-        {{ /if }}
-      {{ /collection:songs }}
+        </div>
 
-      {{ collection:videos wikis:contains=page:id as="videos" }}
-        {{ if videos }}
-          <div class="sidebar__section">
-            <h4 class="sidebar__subheading">Videos</h4>
-            <ul class="sidebar__list">
-            {{ videos scope="video" }}
-              <li><a href="{{ video:url }}">{{ video:title }}</a></li>
-            {{ /videos }}
-            </ul>
-          </div>
-        {{ /if }}
-      {{ /collection:videos }}
-    </section>
-  </aside>
-{{ /section:sidebar }}
+        {{ collection:songs wikis:contains=page:id as="songs" }}
+          {{ if songs }}
+            <div class="sidebar__section">
+              <h3 class="sidebar__heading">Songs</h3>
+              <ul class="sidebar__list">
+              {{ songs scope="song" }}
+                <li><a href="{{ song:url }}">{{ song:title }}</a></li>
+              {{ /songs }}
+              </ul>
+            </div>
+          {{ /if }}
+        {{ /collection:songs }}
+
+        {{ collection:videos wikis:contains=page:id as="videos" }}
+          {{ if videos }}
+            <div class="sidebar__section">
+              <h3 class="sidebar__heading">Videos</h3>
+              <ul class="sidebar__list">
+              {{ videos scope="video" }}
+                <li><a href="{{ video:url }}">{{ video:title }}</a></li>
+              {{ /videos }}
+              </ul>
+            </div>
+          {{ /if }}
+        {{ /collection:videos }}
+      </section>
+    </aside>
+  </div>
+</div>

@@ -1,0 +1,169 @@
+// ============================================================================
+// Audio Player
+// ============================================================================
+
+// Base
+// ----------------------------------------------------------------------------
+
+.player {
+  align-items: stretch;
+  background-color: $white;
+  border: solid $border-width-sm $ink;
+  border-radius: $border-radius-base;
+  display: flex;
+  position: relative;
+}
+
+.player__control {
+  @include round-corners(left);
+  border-right: dotted $border-width-sm $ink;
+  cursor: pointer;
+  flex: 0 0 auto;
+  position: relative;
+  height: 80px;
+  width: 80px;
+
+  &:hover {
+    background-color: rgba($color-primary, 0.15);
+  }
+
+  .spinner,
+  .sprite {
+    left: 50%;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .spinner {
+    opacity: 0;
+  }
+
+  .sprite {
+    fill: currentColor;
+    height: 1rem;
+  }
+}
+
+.player__content {
+  flex: 1;
+  padding: $spacer-sm $spacer;
+}
+
+.player__row {
+  align-items: center;
+  display: flex;
+}
+
+.player__title {
+  font-size: $font-size-sm;
+  font-family: $font-operator-mono;
+  flex: 1;
+  padding-right: $spacer;
+}
+
+.player__duration {
+  display: flex;
+  font-size: $font-size-xs;
+  margin-left: auto;
+}
+
+.player__progress {
+  border: solid $border-width-sm $ink;
+  border-radius: $border-radius-base;
+  height: $spacer;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.player__progress-bar {
+  background-color: $ink;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+.player__skips {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.player__skip {
+  @include size($component-size-sm);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .sprite {
+    fill: currentColor;
+    width: 1em;
+  }
+
+  &[disabled] {
+    opacity: 0.35;
+  }
+}
+
+// States
+// ----------------------------------------------------------------------------
+
+.player__spinner,
+.player__title,
+.player__time--total {
+  transition: opacity 150ms ease-out;
+}
+
+// Disabled
+.player[data-player-state="disabled"] {
+  pointer-events: none;
+
+  .player__spinner  { opacity: 1; }
+  .sprite--play     { opacity: 0; }
+  .sprite--pause    { opacity: 0; }
+
+  .player__title,
+  .player__time--total,
+  .player__button {
+    opacity: 0.35;
+  }
+}
+
+// Paused
+.player[data-player-state="paused"] {
+  .sprite--pause { opacity: 0; }
+}
+
+// Playing
+.player[data-player-state="playing"] {
+  .sprite--play { opacity: 0; }
+}
+
+// Theme
+// ----------------------------------------------------------------------------
+
+.player--dark {
+  background-color: $ink;
+  color: $paper;
+
+  .player__control {
+    border-right-color: $paper;
+
+    &:hover {
+      background-color: $paper;
+      color: $ink;
+    }
+  }
+
+  .player__progress {
+    border-color: $paper;
+  }
+
+  .player__progress-bar {
+    background-color: $paper;
+  }
+}
