@@ -1,0 +1,7 @@
+<nav class="nav music-nav">
+  {{ nav from="/" music_nav:is="true" }}
+    <a class="music-nav__item music-nav__item--{{ slug }} {{ if is_current }} active{{ /if }}" href="{{ url }}">
+      {{ title }}
+    </a>
+  {{ /nav }}
+</nav>

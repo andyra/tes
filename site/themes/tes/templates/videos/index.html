@@ -4,19 +4,13 @@
 </header>
 {{ /section:header }}
 
-<style>
-  .song-columns {
-    columns: 2;
-  }
-</style>
-
-{{ collection:songs type:is="original" sort="title" as="songs" }}
-  <ol class="song-columns text--sm">
-    {{ songs }}
+{{ collection:videos as="videos" }}
+  <ol class="text--sm">
+    {{ videos scope="video" }}
       <li>
-        <a href="{{ url }}">{{ title }}</a>
+        <a href="{{ video:url }}">{{ video:title }}</a>
       </li>
-    {{ /songs }}
+    {{ /videos }}
   </ol>
   {{ paginate }}
     <a href="{{ prev_page }}">⬅ Previous</a>
@@ -26,4 +20,4 @@
 
     <a href="{{ next_page }}">Next ➡</a>
   {{ /paginate }}
-{{ /collection:songs }}
+{{ /collection:videos }}
