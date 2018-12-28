@@ -4,26 +4,67 @@
 // ============================================================================
 
 .collection {
-  display: flex;
+  // display: flex;
 }
 
-@media #{$screen-sm-up} {
-  .collection__main {
-    flex: 1;
-    padding-right: 2vmin;
-  }
+// @media #{$screen-sm-up} {
+//   .collection__main {
+//     flex: 1;
+//     padding-right: 2vmin;
+//   }
 
-  .collection__sidebar {
-    padding-left: 2vmin;
-    flex: 0 1 33%;
-  }
-}
+//   .collection__sidebar {
+//     padding-left: 2vmin;
+//     flex: 0 1 33%;
+//   }
+// }
 
-@media #{$screen-sm-down} {
+// @media #{$screen-sm-down} {
+//   .collection {
+//     flex-direction: column;
+//   }
+
+//   .collection__sidebar  { order: 0; }
+//   .collection__main     { order: 1; }
+// }
+
+@media #{$screen-xs-up} {
   .collection {
+    overflow: hidden;
+  }
+
+  .collection__content {
+    float: left;
+    padding-right: $vmin-sm;
+    width: calc(100% / 3 * 2);
+  }
+
+  .collection__cover-art,
+  .collection__meta {
+    float: right;
+    padding-left: $vmin-sm;
+    width: calc(100% / 3);
+  }
+}
+
+@media #{$screen-xs-down} {
+  .collection {
+    display: flex;
     flex-direction: column;
   }
 
-  .collection__sidebar  { order: 0; }
-  .collection__main     { order: 1; }
+  .collection__header,
+  .collection__cover-art,
+  .collection__content {
+    > .label { display: none; }
+  }
+
+  .collection__header    { order: 0; }
+  .collection__cover-art { order: 1; }
+  .collection__content   { order: 2; }
+  .collection__meta      { order: 3; }
+
+  .collection .cover-art {
+    width: 100%;
+  }
 }

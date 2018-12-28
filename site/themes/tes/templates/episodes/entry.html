@@ -1,12 +1,10 @@
-{{ section:header }}
-<header class="page-header">
-  <span class="label">Episode Named:</span>
-  <h1 class="page-header__title text-outline--white font--windsor b-bottom-dotted">{{ title }}</h1>
-</header>
-{{ /section:header }}
-
 <section class="collection">
-  <div class="collection__main">
+  <header class="collection__header page-header">
+    <span class="label">Episode Named:</span>
+    <h1 class="page-header__title text-outline--white font--windsor b-bottom-dotted">{{ title }}</h1>
+  </header>
+
+  <div class="collection__content">
     <span class="label">Listening Device:</span>
     {{ partial:player playlist_url=soundcloud_url class="player--dark m-bottom-vmin" }}
 
@@ -14,7 +12,7 @@
     {{ if tracklist }}
       <div class="tracklist table text--sm">
         <div class="table__row">
-          <div class="table__cell table__cell--header label align--center">Track#</div>
+          <div class="table__cell table__cell--header align--center">#</div>
           <div class="table__cell table__cell--header label">Descriptor</div>
           <div class="table__cell table__cell--header label">Time</div>
         </div>
@@ -65,10 +63,12 @@
     {{ /if }}
   </div>
 
-  <aside class="collection__sidebar">
+  <figure class="collection__cover-art">
     <span class="label">Visual:</span>
-    <img src="{{ cover_art }}" style="max-width: 12rem;" />
+    <img class="cover-art" src="{{ cover_art }}" />
+  </figure>
 
+  <div class="collection__meta text--sm">
     <div class="m-top-vmin-sm">
       <div class="label">Date of Publishment:</div>
       <div class="b-bottom-dotted"><time datetime="{{ date }}">{{ date }}</time></div>
@@ -85,5 +85,5 @@
       <div class="label">External SRC:</div>
       <a href="{{ soundcloud_url }}" target="_blank">→ SoundClown</a>
     </div>
-  </aside>
+  </div>
 </section>

@@ -2,9 +2,6 @@
 // Tracklist
 // ============================================================================
 
-$button-width:  $component-size-lg;
-$button-height: $component-size-base;
-
 .tracklist__item {
   &[data-track-state="init"] {
     .tracklist__button--play  { opacity: 0; }
@@ -27,7 +24,7 @@ $button-height: $component-size-base;
 .tracklist__count {
   position: relative;
   text-align: center;
-  width: $button-width + $spacer;
+  width: $component-size-lg;
 }
 
 // Wikilinks
@@ -83,5 +80,14 @@ $button-height: $component-size-base;
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+// Smaller Screens
+// ----------------------------------------------------------------------------
+
+@media #{$screen-sm-down} {
+  .tracklist__count {
+    width: 1px;
   }
 }
