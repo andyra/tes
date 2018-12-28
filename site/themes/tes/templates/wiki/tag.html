@@ -14,6 +14,7 @@
 </header>
 {{ /section:header }}
 
+<!-- People Sub-Tags -->
 {{ if slug == "people" }}
   <section class="grid grid--gap wiki-tags rando-bg-hover m-bottom-lg">
   {{ taxonomy:tags sort="title" }}
@@ -24,6 +25,7 @@
   </section>
 {{ /if }}
 
+<!-- Directory -->
 {{ if slug == "people" or parent_tag == 'tags/people' }}
 <div class="grid wiki-articles wiki-people rando-bg-hover">
 {{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
@@ -44,6 +46,7 @@
 {{ /collection:wiki }}
 </div>
 {{ else }}
+<!-- All other wikis -->
 <div class="grid wiki-articles rando-bg-hover">
 {{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
   {{ wikis scope="wiki" }}

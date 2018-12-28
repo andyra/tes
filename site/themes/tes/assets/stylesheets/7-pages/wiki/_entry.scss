@@ -9,13 +9,16 @@
   border-radius: $vmin;
 }
 
-.wiki-article__title {
+.wiki-article__header {
   border-bottom: dashed 1px $ink;
+  padding: $vmin;
+}
+
+.wiki-article__title {
   font-family: $font-futura;
   font-size: $font-size-xl;
   letter-spacing: 0.1em;
   margin: 0;
-  padding: $vmin;
   text-transform: uppercase;
 }
 
@@ -31,11 +34,9 @@
   }
 
   a {
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: none;
-    background-color: $mint;
-    border-bottom: solid $border-width-base rgba($ink, 0.15);
-    font-family: "Courier", "Courier New", monospace;
+    @include font-smoothing(false);
+    border-bottom: solid $border-width-base rgba($green, 0.25);
+    font-family: $font-duospace;
     text-decoration: none;
 
     &:hover {
@@ -46,9 +47,23 @@
   }
 }
 
+.wiki-entry__featured-image {
+  margin: 0 auto $spacer;
+}
+
 .wiki-article__sidebar {
-  background-color: rgba($ink, 0.025);
+  background-color: rgba($sky, 0.5);
   border-left: dotted $border-width-sm $ink;
   flex-basis: 320px;
-  padding: $vmin;
+  mix-blend-mode: multiply;
+  padding: $vmin-sm;
+}
+
+// People
+// ----------------------------------------------------------------------------
+
+.body--wiki-people {
+  .wiki-entry__featured-image {
+    mix-blend-mode: multiply;
+  }
 }

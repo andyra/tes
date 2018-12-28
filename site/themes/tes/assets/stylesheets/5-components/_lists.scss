@@ -60,7 +60,6 @@ $dotted-border: dotted $border-width-sm $ink;
 .table-list__link {
   border-top: $dotted-border;
   display: table-cell;
-  font-family: $font-triplicate;
   height: $component-size-base;
   padding: 0 0.5em;
   text-decoration: none;

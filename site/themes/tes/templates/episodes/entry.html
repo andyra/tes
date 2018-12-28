@@ -1,52 +1,89 @@
-<h1 class="text--vmin-lg font--windsor case--normal">{{ title }}</h1>
-<time>{{ date }}</time>
-<a href="{{ soundcloud_url }}">View on SoundClown</a>
+{{ section:header }}
+<header class="page-header">
+  <span class="label">Episode Named:</span>
+  <h1 class="page-header__title text-outline--white font--windsor b-bottom-dotted">{{ title }}</h1>
+</header>
+{{ /section:header }}
 
-{{ partial:player playlist_url=soundcloud_url }}
+<section class="collection">
+  <div class="collection__main">
+    <span class="label">Listening Device:</span>
+    {{ partial:player playlist_url=soundcloud_url class="player--dark m-bottom-vmin" }}
 
-<h2>Cover Art</h2>
-<img src="{{ cover_art }}" style="max-width: 12rem;" />
-
-<h2>Companion Album</h2>
-{{ if album }}
-  {{ relate:album }}
-    <a href="{{ url }}">{{ title }}</a>
-  {{ /relate:album }}
-{{ else }}
-  (Not available)
-{{ /if }}
-
-<h2>Minutes</h2>
-{{ if tracklist }}
-  <ol class="tracklist">
-  {{ tracklist scope="track" }}
-    <li
-      class="tracklist__item"
-      {{ if track:soundcloud }}
-        data-url="{{ track:soundcloud_url }}"
-        data-track-state="init"
-      {{ /if }}
-    >
-      {{ if track:soundcloud_url }}
-        <button class="player__button tracklist__button tracklist__button--play button-reset" data-tracklist="play">
-          {{ site:sprite id="play" width="32" height="24" }}
-        </button>
-        <button class="player__button tracklist__button tracklist__button--pause button-reset" data-player="pause" aria-title="Pause">
-          {{ site:sprite id="pause" width="28" height="24" }}
-        </button>
-      {{ /if }}
-      <div class="tracklist__title">
-        {{ if song }}
-          {{ relate:song scope="song" }}
-            ♫ <a href="{{ song:url }}">{{ song:title }}</a>
-          {{ /relate:song }}
-        {{ else }}
-          {{ track:description | wikilinks }}
-        {{ /if }}
+    <span class="label">Minutes:</span>
+    {{ if tracklist }}
+      <div class="tracklist table text--sm">
+        <div class="table__row">
+          <div class="table__cell table__cell--header label align--center">Track#</div>
+          <div class="table__cell table__cell--header label">Descriptor</div>
+          <div class="table__cell table__cell--header label">Time</div>
+        </div>
+        {{ tracklist scope="track" }}
+        <div
+          class="tracklist__item table__row"
+          {{ if track:soundcloud }}
+            data-url="{{ track:soundcloud_url }}"
+            data-track-state="init"
+          {{ /if }}
+        >
+          <div class="tracklist__count table__cell">
+            {{ index }}
+            {{ if track:soundcloud_url }}
+              <button class="player__button tracklist__button tracklist__button--play button-reset" data-tracklist="play">
+                {{ site:sprite id="play" width="32" height="24" }}
+              </button>
+              <button class="player__button tracklist__button tracklist__button--pause button-reset" data-player="pause" aria-title="Pause">
+                {{ site:sprite id="pause" width="28" height="24" }}
+              </button>
+            {{ /if }}
+          </div>
+          {{ if song }}
+            {{ relate:song scope="song" }}
+              <div class="tracklist__title table__cell">
+                <a href="{{ song:url }}">♫ {{ song:title }}</a>
+              </div>
+            {{ /relate:song }}
+          {{ else }}
+            <div class="tracklist__title table__cell">{{ track:description | wikilinks }}</div>
+          {{ /if }}
+          {{ if track:soundcloud_url }}
+            <div class="text--xs table__cell table__cell--shaded table__cell--collapse align--right">0:00</div>
+          {{ else }}
+            <div class="text--xs table__cell table__cell--shaded table__cell--collapse align--center">
+              <span class="o-33">&mdash;</span>
+            </div>
+          {{ /if }}
+        </div>
+        {{ /tracklist }}
       </div>
-    </li>
-  {{ /tracklist }}
-  </ol>
-{{ else }}
-  (Not available)
-{{ /if }}
+    {{ else }}
+      <div class="table">
+        <div class="table__row">
+          <div class="table__cell">(Not available)</div>
+        </div>
+      </div>
+    {{ /if }}
+  </div>
+
+  <aside class="collection__sidebar">
+    <span class="label">Visual:</span>
+    <img src="{{ cover_art }}" style="max-width: 12rem;" />
+
+    <div class="m-top-vmin-sm">
+      <div class="label">Date of Publishment:</div>
+      <div class="b-bottom-dotted"><time datetime="{{ date }}">{{ date }}</time></div>
+    </div>
+    {{ if album }}
+      <div class="m-top-vmin-sm">
+        <div class="label">Companion Album</div>
+        {{ relate:album }}
+          <a href="{{ url }}">{{ title }}</a>
+        {{ /relate:album }}
+      </div>
+    {{ /if }}
+    <div class="m-top-vmin-sm">
+      <div class="label">External SRC:</div>
+      <a href="{{ soundcloud_url }}" target="_blank">→ SoundClown</a>
+    </div>
+  </aside>
+</section>

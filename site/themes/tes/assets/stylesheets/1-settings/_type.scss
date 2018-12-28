@@ -11,27 +11,23 @@
 $sans: "system", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue";
 $mono: Consolas, "Andale Mono", "Lucida Console", Monaco, Courier, "Courier New", monospace;
 
-$font-57-nao:             "57-nao", $mono;
-$font-duospace:           "duospace", $mono;
-$font-eurostile:          "eurostile", $sans;
-$font-futura:             "futura", $sans;
-$font-hypermarket-exp:    "hypermarket-exp", $mono;
-$font-hypermarket:        "hypermarket", $mono;
-$font-klang:              "klang", $sans;
-$font-marche:             "marche", $sans;
-$font-merchant-copy:      "merchant-copy", $sans;
-$font-operator-mono:      "operator-mono", $mono;
-$font-pantograph:         "pantograph", $mono;
-$font-quattro:            "quattro", $sans;
-$font-syne:               "syne", $sans;
-$font-terminal-grotesque: "terminal-grotesque", $sans;
-$font-titling-gothic:     "titling-gothic", $sans;
-$font-triplicate:         "triplicate", $sans;
-$font-windsor:            "windsor", $sans;
+$font-57-nao:         "57-nao", $mono;
+$font-duospace:       "duospace", $mono;
+$font-eurostile:      "eurostile", $sans;
+$font-futura:         "futura", $sans;
+$font-hypermarket-exp:"hypermarket-exp", $mono;
+$font-hypermarket:    "hypermarket", $mono;
+$font-klang:          "klang", $sans;
+$font-marche:         "marche", $sans;
+$font-merchant-copy:  "merchant-copy", $sans;
+$font-operator-mono:  "operator-mono", $mono;
+$font-pantograph:     "pantograph", $mono;
+$font-quattro:        "quattro", $sans;
+$font-syne:           "syne", $sans;
+$font-titling-gothic: "titling-gothic", $sans;
+$font-windsor:        "windsor", $sans;
 
-$font-base:               $font-quattro;
-
-
+$font-base:           $font-quattro;
 
 // Sizes
 // ----------------------------------------------------------------------------
@@ -54,4 +50,4 @@ $font-size-xxl:     u(42px, rem);
 
 $line-height-lg:        1.5;
 $line-height-base:      1.35;
-$line-height-sm:        1.25;
+$line-height-sm:        1.15;

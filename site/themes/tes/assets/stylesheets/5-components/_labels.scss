@@ -3,6 +3,9 @@
 // ============================================================================
 
 .label {
+  @include font-smoothing(none);
+  display: block;
   font-family: $font-operator-mono;
   font-size: $font-size-xs;
+  margin-bottom: $spacer-sm;
 }

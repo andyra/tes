@@ -55,7 +55,9 @@
 }
 
 @each $name, $color in $pastel-colors {
-  .text-outline--#{$name} { @include text-outline($color); }
+  @media #{$screen-xs-up} {
+    .text-outline--#{$name} { @include text-outline($color, $width: 2px); }
+  }
 }
 
 // Tracking
@@ -127,19 +129,9 @@
 @include font-face("syne", "../fonts/syne/syne-extra", regular, $exts: woff woff2);
 .font--syne { font-family: $font-syne; }
 
-// Terminal-grotesque
-@include font-face("terminal-grotesque", "../fonts/terminal-grotesque/terminal-grotesque-open", regular, $exts: woff woff2);
-.font--terminal-grotesque { font-family: $font-terminal-grotesque; }
-
 // Titling Gothic
 @include font-face("titling-gothic", "../fonts/titling-gothic/titling-gothic-wide-black", regular, $exts: woff woff2);
 .font--titling-gothic { font-family: $font-titling-gothic; }
-
-// Triplicate
-@include font-face("triplicate", "../fonts/triplicate/triplicate-t4-poly-regular", regular, $exts: woff woff2);
-@include font-face("triplicate", "../fonts/triplicate/triplicate-t4-poly-itliac", regular, italic, $exts: woff woff2);
-@include font-face("triplicate", "../fonts/triplicate/triplicate-t4-poly-bold", bold, $exts: woff woff2);
-.font--triplicate { font-family: $font-triplicate; }
 
 // Windsor
 @include font-face("windsor", "../fonts/windsor/windsor-bold", bold, $exts: woff);

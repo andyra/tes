@@ -9,13 +9,18 @@
 </header>
 {{ /section:header }}
 
-<div class="wiki-article bg--notebook bg--daphne">
-  <h1 class="wiki-article__title m-top-0">
-    {{ title }}
-    {{ user:can permission="cp:access" }}
-      <a class="button" href="{{ edit_url }}">Edit</a>
-    {{ /user:can }}
-  </h1>
+<div class="wiki-article bg--notebook bg--sky">
+  <header class="wiki-article__header">
+    <div class="flex">
+      <div class="label">Title</div>
+      {{ user:can permission="cp:access" }}
+        <a class="wiki-article__edit m-left-auto" href="{{ edit_url }}">Edit</a>
+      {{ /user:can }}
+    </div>
+    <h1 class="wiki-article__title m-top-0">
+      {{ title }}
+    </h1>
+  </header>
   <div class="flex">
     <section class="wiki-article__content">
       {{ if featured_image }}

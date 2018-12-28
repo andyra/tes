@@ -1,0 +1,27 @@
+// ============================================================================
+// Home
+// ============================================================================
+
+.body--home .main {
+  padding: 0;
+}
+
+.home__masthead,
+.home__intro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home__masthead {
+  background: $ink url("../images/zooming.gif") no-repeat;
+  background-position: center 35%;
+  background-size: cover;
+  height: 50vh;
+  color: $white;
+}
+
+.home__intro {
+  height: 50vh;
+}

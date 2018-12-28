@@ -1,7 +1,8 @@
 {{ section:header }}
 <header class="page-header">
   {{ partial:breadcrumbs include_home="false" }}
-  <h1>{{ title }}</h1>
+  <div class="label">Song Called:</div>
+  <h1 class="page-header__title font--titling-gothic case--caps">{{ title }}</h1>
 </header>
 {{ /section:header }}
 
@@ -29,30 +30,16 @@
   </aside>
 {{ /section:sidebar }}
 
-<h3>Albums</h3>
-<ul>
-  {{ collection:albums scope="album" }}
-    {{ tracklist }}
-      {{ if song == page:id }}
-        <li>
-          <a href="{{ url }}">{{ title }}</a> •
-          <a href="{{ soundcloud_url }}">Play</a>
-        </li>
-      {{ /if }}
-    {{ /tracklist }}
-  {{ /collection:albums }}
-</ul>
-
-<h3>Episodes</h3>
-<ul>
-  {{ collection:episodes scope="episode" }}
-    {{ tracklist }}
-      {{ if song == page:id }}
-        <li>
-          <a href="{{ url }}">{{ title }}</a> •
-          <a href="{{ soundcloud_url }}">Play</a>
-        </li>
-      {{ /if }}
-    {{ /tracklist }}
-  {{ /collection:episodes }}
-</ul>
+<h3>Appears on</h3>
+<section class="grid album-grid">
+{{ collection from="albums|episodes" }}
+  {{ tracklist }}
+    {{ if song == page:id }}
+      <a class="album-grid__item" href="{{ url }}">
+        <div><img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" /></div>
+        {{ title }}
+      </a>
+    {{ /if }}
+  {{ /tracklist }}
+{{ /collection }}
+</section>

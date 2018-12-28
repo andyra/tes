@@ -11,8 +11,6 @@ $button-height: $component-size-base;
     .tracklist__button--pause { display: none; }
 
     &:hover {
-      background-color: $mint;
-      // .tracklist__title { text-decoration: underline; }
       .tracklist__button--play { opacity: 1; }
     }
   }
@@ -32,6 +30,31 @@ $button-height: $component-size-base;
   width: $button-width + $spacer;
 }
 
+// Wikilinks
+.tracklist__title a {
+  border-bottom: solid $border-width-sm rgba($aqua, 0.5);
+  font-family: $font-duospace;
+  text-decoration: none;
+
+  &:hover {
+    border-color: $mustard;
+    color: $mustard;
+  }
+}
+.tracklist .table__cell:nth-child(2) {
+  position: relative;
+
+  &:before {
+    background-color: rgba($ink, 0.15);
+    content: "";
+    height: 100%;
+    left: 2px;
+    position: absolute;
+    top: 0;
+    width: 2px;
+  }
+}
+
 .tracklist__button {
   background-color: $mint;
   border-radius: 0;
@@ -45,7 +68,13 @@ $button-height: $component-size-base;
 
   &:hover {
     background-color: $mint;
-    color: $red;
+    background-color: darken($mint, 5%);
+    // color: $red;
+  }
+
+  .sprite {
+    fill: currentColor;
+    height: 0.5rem;
   }
 }
 

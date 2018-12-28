@@ -33,8 +33,8 @@ $table-cell-padding:  component-size($component-base);
     border-left: $table-border;
   }
 
-  .table__row:first-child & {
-    border-top: none;
+  .table__row:last-child & {
+    border-bottom: $table-border;
   }
 }
 

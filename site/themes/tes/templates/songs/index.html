@@ -1,7 +1,7 @@
 {{ section:header }}
 <header class="page-header">
   <h1 class="page-header__title text-outline--mint font--eurostile tracking--loose case--upper">Songs</h1>
-  {{ partial:search-form scope="songs" }}
+  {{ partial:search-form scope="songs" placeholder="Find a song"}}
 </header>
 {{ /section:header }}
 
@@ -12,7 +12,7 @@
 </style>
 
 {{ collection:songs type:is="original" as="songs" }}
-  <ol class="song-columns">
+  <ol class="song-columns text--sm">
     {{ songs }}
       <li>
         <a href="{{ url }}">{{ title }}</a>

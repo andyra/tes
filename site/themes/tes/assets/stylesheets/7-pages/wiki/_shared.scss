@@ -60,8 +60,10 @@ $rando-colors-length: length($rando-colors);
 // Articles
 // ----------------------------------------------------------------------------
 
+$border: dotted $border-width-sm $gray-darkest;
+
 .wiki-articles__item {
-  border: solid $border-width-sm $gray-darkest;
+  border: $border;
   color: $gray-darkest;
   font-size: $font-size-sm;
   padding: $spacer;
