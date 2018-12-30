@@ -1,9 +1,0 @@
-<nav class="breadcrumbs">
-  <a class="breadcrumbs__item" href="{{ link to='wiki' }}">Wiki</a>
-  {{ if parent_tag }}
-    {{ relate:parent_tag }}
-      <a class="breadcrumbs__item" href="{{ url }}">{{ title }}</a>
-    {{ /relate:parent_tag }}
-  {{ /if }}
-  <span class="breadcrumbs__item breadcrumbs__item--current">{{ title }}</span>
-</nav>

@@ -1,0 +1,17 @@
+{{ section:header }}
+<header class="page-header">
+  <div class="flex">
+    {{ partial:breadcrumbs include_home="false" }}
+    {{ user:can permission="cp:access" }}
+      <a class="button m-left-auto" href="{{ edit_url }}">Edit</a>
+    {{ /user:can }}
+  </div>
+  <div class="label">Title:</div>
+  <h1 class="page-header__title font--duospace">{{ title }}</h1>
+</header>
+{{ /section:header }}
+
+<div class="label">Look:</div>
+<div class="video-embed">
+  <iframe class="video-embed__item" src="{{ vimeo_link:url | video_embed }}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>

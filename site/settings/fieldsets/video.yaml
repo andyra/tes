@@ -10,10 +10,10 @@ sections:
         display: Title
         validate: required
         localizable: true
-      url:
-        display: 'Video URL'
-        type: text
-        validate: active_url
+      vimeo_link:
+        type: video_embed
+        display: 'Vimeo Link'
+        validate: required
   sidebar:
     display: Sidebar
     fields:

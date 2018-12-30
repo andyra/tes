@@ -1,6 +1,6 @@
 {{ section:header }}
 <header class="page-header">
-  <nav class="breadcrumbs">
+  <nav class="breadcrumbs m-bottom-base">
     <a class="breadcrumbs__item" href="{{ link to='wiki' }}">Wiki</a>
     {{ if parent_tag }}
       {{ relate:parent_tag }}
@@ -10,7 +10,7 @@
     <span class="breadcrumbs__item breadcrumbs__item--current">{{ title }}</span>
   </nav>
   <h1 class="page-header__title font--klang tracking--loose case--upper weight--normal">{{ title }}</h1>
-  {{ partial:search-form scope="wiki" }}
+  {{ partial:wiki-search-form }}
 </header>
 {{ /section:header }}
 

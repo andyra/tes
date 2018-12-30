@@ -1,0 +1,14 @@
+{{ section:container_class }}container--sm{{ /section:container_class }}
+<p class="text--lg">This Evening's Show is recorded from a studio in Abilene, TX, formerly <a class="font--duospace" href="" target="_blank">Castle Sound Productions</a>.</p>
+
+<address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+  <div itemprop="streetAddress">{{ street_address }}</div>
+  <span itemprop="addressLocality">{{ city }}, {{ state }}</span>
+  <span itemprop="postalCode">{{ zip }}</span>
+</address>
+
+<section class="contact-section p-vmin b-base align--center">
+  Call-Ins Welcome
+  <div class="contact-section__phone font--windsor tracking--loose">{{ phone }}</div>
+  <a href="mailto:{{ email }}" target="_blank" class="font--duospace tracking--loose">{{ email }}</a>
+</section>

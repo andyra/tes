@@ -1,0 +1,73 @@
+// ============================================================================
+// Random hover colors
+// ============================================================================
+
+// BG Colors
+// ----------------------------------------------------------------------------
+
+$rando-bg-colors: (
+  rgba($red, 0.5),
+  $lemon,
+  $green,
+  rgba($blue, 0.45),
+  $beige,
+  rgba($green, 0.5),
+  rgba($cyan, 0.1),
+  rgba($mustard, 0.65),
+  $aqua,
+  $slate,
+  $cyan,
+  rgba($blush, 0.25),
+  $yellow,
+  rgba(magenta, 0.3),
+  rgba($ocean, 0.35)
+);
+
+$rando-bg-colors-length: length($rando-bg-colors);
+
+.rando-bg-hover {
+  @for $i from 1 through $rando-bg-colors-length {
+    $color: nth($rando-bg-colors, $i);
+    $bg: lighten($color-primary, randomNum(0, 8));
+    @if randomNum(0, 3) % 2 == 0 {
+      $bg: darken($color-primary, randomNum(0, 8));
+    }
+
+    > *:nth-child(#{$rando-bg-colors-length}n+#{$i}):hover {
+      background-color: $color;
+    }
+  }
+}
+
+// Text colors
+// ----------------------------------------------------------------------------
+
+$rando-colors: (
+  $red,
+  $billiard,
+  $yellow,
+  $green,
+  $aqua,
+  $blue,
+  $slate,
+  $maroon,
+  $blush,
+  $cyan,
+  $mustard
+);
+
+$rando-colors-length: length($rando-colors);
+
+.rando-hover {
+  @for $i from 1 through $rando-colors-length {
+    $color: nth($rando-colors, $i);
+    $bg: lighten($color-primary, randomNum(0, 8));
+    @if randomNum(0, 3) % 2 == 0 {
+      $bg: darken($color-primary, randomNum(0, 8));
+    }
+
+    > *:nth-child(#{$rando-colors-length}n+#{$i}):hover {
+      color: $color;
+    }
+  }
+}

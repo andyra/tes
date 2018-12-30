@@ -47,6 +47,7 @@
 @import "5-components/grid";
 @import "5-components/labels";
 @import "5-components/lists";
+@import "5-components/rando-hover";
 @import "5-components/spinners";
 @import "5-components/page";
 @import "5-components/page-header";
@@ -54,15 +55,17 @@
 @import "5-components/tables";
 @import "5-components/tags";
 @import "5-components/tracklist";
+@import "5-components/videos";
 
 // Layouts
 @import "6-layouts/default";
 @import "6-layouts/collection";
 @import "6-layouts/music-nav";
-@import "6-layouts/sidebar";
 
 // Pages
 @import "7-pages/albums/index";
+@import "7-pages/contact";
 @import "7-pages/home";
+@import "7-pages/songs/index";
 @import "7-pages/wiki/shared";
 @import "7-pages/wiki/entry";

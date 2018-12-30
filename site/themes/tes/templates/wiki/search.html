@@ -1,17 +1,23 @@
 {{ section:header }}
 <header class="page-header">
-  <h1 class="m-top-0">Wiki</h1>
-  {{ partial:search-form scope="wiki" }}
+  <h1 class="page-header__title font--windsor">Look For</h1>
+  {{ partial:search-form }}
 </header>
 {{ /section:header }}
 
-<ul class="list list--divided list--links">
 {{ search:results collection="wiki" }}
   {{ if no_results }}
     No results.
   {{ /if }}
-  <li>
-    <a href="{{ url }}">{{ title }}</a>
-  </li>
+  {{ if first }}
+    <p class="text--sm">Results: {{ total_results }}</p>
+    <div class="table">
+  {{ /if }}
+  <a class="table__row table__link" href="{{ url }}">
+    <span class="table__cell">{{ title }}</span>
+    <span class="table__cell table__cell--collapse table__cell--shaded text--sm">{{ collection }}</span>
+  </a>
+  {{ if last }}
+    </div>
+  {{ /if }}
 {{ /search:results }}
-</ul>

@@ -1,12 +1,12 @@
 {{ section:header }}
 <header class="page-header">
   <h1 class="page-header__title font--klang tracking--loose case--upper weight--normal">Wiki</h1>
-  {{ partial:search-form scope="wiki" }}
+  {{ partial:wiki-search-form }}
   <p class="text--lg m-top-base">
     The Grand Library of all things Akabius. Learn about, for instance,
     {{ collection:wiki article:exists="true" limit="3" sort="random" scope="rando" }}
       {{ if last }}and {{ /if }}
-      <a href="{{ rando:url }}">{{ rando:title }}</a>{{ if ! last }},{{ /if }}{{ if last }}.{{ /if }}
+      <a class="font--duospace" href="{{ rando:url }}">{{ rando:title }}</a>{{ if ! last }},{{ /if }}{{ if last }}.{{ /if }}
     {{ /collection:wiki }}
   </p>
 </header>

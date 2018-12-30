@@ -1,0 +1,45 @@
+// ============================================================================
+// Songs • Index
+// ============================================================================
+
+.song-index {
+  counter-reset: i;
+  display: grid;
+  grid-column-gap: $spacer;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 2fr));
+  list-style: none;
+  padding-left: 0;
+}
+
+.song-index__item {
+  counter-increment: i;
+
+  &:nth-child(3n+1) a:hover { background-color: $seashell; }
+  &:nth-child(3n+2) a:hover { background-color: rgba($lemon, 0.5); }
+  &:nth-child(3n+3) a:hover { background-color: $daphne; }
+}
+
+.song-index__link {
+  align-items: baseline;
+  border-bottom: dotted $border-width-sm $ink;
+  display: flex;
+  height: 100%;
+  padding: component-size($component-sm) 0;
+  text-decoration: none;
+  width: 100%;
+
+  &:hover {
+    color: $brown;
+
+    &:before {
+      color: $ink;
+    }
+  }
+
+  &:before {
+    font-family: $font-operator-mono;
+    content: counter(i)". ";
+    font-size: $font-size-xs;
+    margin-right: $spacer-sm;
+  }
+}

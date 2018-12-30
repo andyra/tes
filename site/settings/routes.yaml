@@ -1,5 +1,6 @@
 routes:
   wiki/tags: wiki/tags
+  wiki/search: wiki/search
   /search: search
   /users: user/index
   '/users/{username}': user/profile

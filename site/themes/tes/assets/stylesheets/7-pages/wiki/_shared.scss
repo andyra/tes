@@ -2,43 +2,6 @@
 // Shared Wiki Styles
 // ============================================================================
 
-// Rando Hover BG Colors
-// ----------------------------------------------------------------------------
-
-$rando-colors: (
-  rgba($red, 0.5),
-  $lemon,
-  $green,
-  rgba($blue, 0.45),
-  $beige,
-  rgba($green, 0.5),
-  rgba($cyan, 0.1),
-  rgba($mustard, 0.65),
-  $aqua,
-  $slate,
-  $cyan,
-  rgba($blush, 0.25),
-  $yellow,
-  rgba(magenta, 0.3),
-  rgba($ocean, 0.35)
-);
-
-$rando-colors-length: length($rando-colors);
-
-.rando-bg-hover {
-  @for $i from 1 through $rando-colors-length {
-    $color: nth($rando-colors, $i);
-    $bg: lighten($color-primary, randomNum(0, 8));
-    @if randomNum(0, 3) % 2 == 0 {
-      $bg: darken($color-primary, randomNum(0, 8));
-    }
-
-    > *:nth-child(#{$rando-colors-length}n+#{$i}):hover {
-      background-color: $color;
-    }
-  }
-}
-
 // Wiki Tags
 // ----------------------------------------------------------------------------
 

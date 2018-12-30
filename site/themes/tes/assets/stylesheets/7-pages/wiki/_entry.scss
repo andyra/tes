@@ -2,28 +2,24 @@
 // Wiki Entry
 // ============================================================================
 
+.body--wiki-entry .form--search {
+  border-bottom: dashed $border-width-sm $ink;
+  padding-bottom: $vmin;
+}
 // Base
 // ----------------------------------------------------------------------------
 
-.wiki-article {
-  border-radius: $vmin;
-}
-
 .wiki-article__header {
-  border-bottom: dashed 1px $ink;
-  padding: $vmin;
-}
-
-.wiki-article__title {
-  font-family: $font-futura;
-  font-size: $font-size-xl;
-  letter-spacing: 0.1em;
-  margin: 0;
-  text-transform: uppercase;
+  margin-bottom: $vmin;
 }
 
 .wiki-article__content {
-  padding: $vmin;
+  flex: 1;
+  padding-right: $vmin-sm;
+
+  figure {
+    background-color: $paper;
+  }
 
   h2 {
     font-family: $font-futura;
@@ -34,8 +30,7 @@
   }
 
   a {
-    @include font-smoothing(false);
-    border-bottom: solid $border-width-base rgba($green, 0.25);
+    border-bottom: solid $border-width-base rgba($green, 0.75);
     font-family: $font-duospace;
     text-decoration: none;
 
@@ -51,12 +46,52 @@
   margin: 0 auto $spacer;
 }
 
+// Sidebar
+// ----------------------------------------------------------------------------
+
 .wiki-article__sidebar {
-  background-color: rgba($sky, 0.5);
   border-left: dotted $border-width-sm $ink;
-  flex-basis: 320px;
-  mix-blend-mode: multiply;
-  padding: $vmin-sm;
+  flex: 0 1 240px;
+  padding-left: $vmin-sm;
+}
+
+.wiki-sidebar__section {
+  + .wiki-sidebar__section {
+    margin-top: $vmin;
+  }
+}
+
+.wiki-sidebar__grid {
+  display: grid;
+  grid-gap: $spacer;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 2fr));
+}
+
+$list-border: dotted $border-width-sm $ink;
+
+.wiki-sidebar__list {
+  font-size: $font-size-sm;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    border-top: $list-border;
+
+    &:last-child {
+      border-bottom: $list-border;
+    }
+  }
+
+  a {
+    display: block;
+    padding: component-size($component-sm) 0;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $yellow;
+    }
+  }
 }
 
 // People

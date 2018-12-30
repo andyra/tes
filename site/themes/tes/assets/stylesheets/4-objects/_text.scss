@@ -125,6 +125,10 @@
 @include font-face("quattro", "../fonts/quattro/quattro-bold-5-italic", bold, italic, $exts: woff woff2);
 .font--quattro { font-family: $font-quattro; }
 
+// Roberta
+@include font-face("roberta", "../fonts/roberta/roberta", regular, $exts: woff woff2);
+.font--roberta { font-family: $font-roberta; }
+
 // Syne
 @include font-face("syne", "../fonts/syne/syne-extra", regular, $exts: woff woff2);
 .font--syne { font-family: $font-syne; }
@@ -132,6 +136,10 @@
 // Titling Gothic
 @include font-face("titling-gothic", "../fonts/titling-gothic/titling-gothic-wide-black", regular, $exts: woff woff2);
 .font--titling-gothic { font-family: $font-titling-gothic; }
+
+// Victor Moscoso
+@include font-face("victor-moscoso", "../fonts/victor-moscoso/victor-moscoso", regular, $exts: woff woff2);
+.font--victor-moscoso { font-family: $font-victor-moscoso; }
 
 // Windsor
 @include font-face("windsor", "../fonts/windsor/windsor-bold", bold, $exts: woff);

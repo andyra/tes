@@ -1,5 +1,5 @@
-<nav class="breadcrumbs">
-{{ nav:breadcrumbs }}
+<nav class="breadcrumbs {{ class }}">
+{{ nav:breadcrumbs include_home="false" }}
   <a class="breadcrumbs__item{{ if is_current }} breadcrumbs__item--current{{ /if }}" href="{{ url }}">{{ title }}</a>
 {{ /nav:breadcrumbs }}
 </nav>

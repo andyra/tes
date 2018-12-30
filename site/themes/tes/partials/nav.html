@@ -1,7 +1,7 @@
 <nav class="global-nav">
   <a class="global-nav__item case--upper tracking--looser text--xs" href="/"><strong>This Evening's Show</strong></a>
   {{ nav from="/" is_hidden:isnt="true" }}
-    <a class="global-nav__item case--upper tracking--looser text--xs{{ if is_current || title == page:active_on }} active{{ /if }}" href="{{ url }}">
+    <a class="global-nav__item case--upper tracking--looser text--xs{{ if is_current || is_parent || title == page:active_on }} active{{ /if }}" href="{{ url }}">
       {{ if title == "Albums" }}
         Music
       {{ else }}
