@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit0e2a1c61d40ac6c0e79762b6c7388d79
+class ComposerStaticInit02d4f4f6fb780ee13747132214c8ee96
 {
     public static $files = array (
         '95a22d2145ae40de20dc7ea7be07a610' => __DIR__ . '/../..' . '/bootstrap/helpers.php',
@@ -26,6 +26,7 @@ class ComposerStaticInit0e2a1c61d40ac6c0e79762b6c7388d79
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '04c6c5c2f7095ccf6c481d3e53e1776f' => __DIR__ . '/..' . '/mustangostang/spyc/Spyc.php',
+        '3d52f551daf8fb18ca65f91322628905' => __DIR__ . '/..' . '/statamic/stringy/src/Create.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -221,6 +222,7 @@ class ComposerStaticInit0e2a1c61d40ac6c0e79762b6c7388d79
         'Stringy\\' => 
         array (
             0 => __DIR__ . '/..' . '/danielstjules/stringy/src',
+            1 => __DIR__ . '/..' . '/statamic/stringy/src',
         ),
         'Statamic\\SiteHelpers\\' => 
         array (
@@ -3772,11 +3774,11 @@ class ComposerStaticInit0e2a1c61d40ac6c0e79762b6c7388d79
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit0e2a1c61d40ac6c0e79762b6c7388d79::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit0e2a1c61d40ac6c0e79762b6c7388d79::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit0e2a1c61d40ac6c0e79762b6c7388d79::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit0e2a1c61d40ac6c0e79762b6c7388d79::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit0e2a1c61d40ac6c0e79762b6c7388d79::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit02d4f4f6fb780ee13747132214c8ee96::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit02d4f4f6fb780ee13747132214c8ee96::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit02d4f4f6fb780ee13747132214c8ee96::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit02d4f4f6fb780ee13747132214c8ee96::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit02d4f4f6fb780ee13747132214c8ee96::$classMap;
 
         }, null, ClassLoader::class);
     }
