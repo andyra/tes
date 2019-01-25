@@ -65,6 +65,9 @@ sections:
             display: 'Soundcloud Link'
             validate: active_url
             width: 66
+          audio_file:
+            type: assets_organized
+            display: 'Audio File'
   sidebar:
     display: Sidebar
     fields:

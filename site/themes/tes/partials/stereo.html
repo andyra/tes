@@ -1,7 +1,17 @@
-<div class="stereo {{ class }}"
-  data-stereo="player"
-  data-stereo-state="disabled"
-  data-stereo-url="{{ playlist_url }}"
-  aria-disabled="true"
->
+<div id="stereo" class="{{ class }} b-base br-base p-base m-bottom-xl">
+  <div id="title">[Title]</div>
+  <div id="timer">0:00</div>
+  <div id="duration">0:00</div>
+
+  <div id="loading"></div>
+
+  <button id="playButton">Play</button>
+  <button id="pauseButton">Pause</button>
+
+  <button id="prevButton">Prev</button>
+  <button id="nextButton">Next</button>
+
+  <button id="slowButton">Slow</button>
+
+  <progress id="progress" max="100" value="0"></progress>
 </div>
