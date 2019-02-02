@@ -1,0 +1,48 @@
+title: '29 Just Bump It!'
+release_date: '2018-03-17'
+cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/29-just-bump-it/29-just-bump-it.jpg'
+tracklist:
+  -
+    wikis:
+      - 0361ef61-5370-44a1-bab3-25ba31271a26
+description: |
+  - Bacon Flay commercial
+  - Song: Wysteria Mysterium
+  - News anchorRather Carks announces the demise ofMox Proximus
+  - TES: Charlie Dust andJohn Starboard broadcast from the site ofMox Proximus's computer center in theModal Desert
+  - Advert for thePleidon Valley HOA Annual Squirrell Shoot
+  - Interview with computer scientist Mü Lisp
+  - Song: Thanksgiving (?)
+  - ID-a-Bite
+  - Song: Skateboard Patrol
+  - Question of the Day: A human on the earth or a duck on the moon?
+  - Song: ???
+  - Song: Judge Leroy Theme
+  - 1930s Cartoon Music
+  - Brev Reev of theSkateboard Patrol explains how to handle a "dead man"
+  - Song: Bump It!
+  - Chris K'Kola tells you how to maintain your Season Watch
+  - Fecal Fashion Show withConstance Chaitsworth
+  - Song: The Tingle Man Knows
+  - Radioball broadcast
+  - Song: Brave and Free (?)
+  - Deep Thought fields a caller fromCerealtown and introduces his video game, Canyon Slip
+  - Song: Technodome (?)
+author: 7328c14f-7ec2-4511-a24d-29a1c5ce23eb
+wikis:
+  - 2f960cef-5ec5-413f-a967-cd1c43d0650a
+  - 4d5cfb04-c0cf-4a66-a6de-f7e32aea87fd
+  - 143d26a3-ede7-48a1-845e-9e74c75dc689
+  - bd605970-57bb-4129-ac11-8660ffd9dffe
+  - 4594b182-2faa-42ed-89e8-3b77db887772
+  - 73ce5f24-4d30-41cd-94a8-7981f44447cc
+  - f28e4f72-09e6-440d-b75d-1ad4495fa773
+  - b0c28d32-bab8-442a-86c8-d61f62585377
+  - 417210d8-2c39-48eb-b704-5aa2e48ff88b
+  - 5d0c2a60-eff3-416e-a029-edfd4d640261
+  - 4a7a0ed3-424b-441b-bbcb-5a254b265e58
+  - 08ad174f-a6c9-48cf-8612-abc06c8173f1
+  - 1e89410f-5b33-4158-bb77-a17b07b82614
+  - 4ad9ed0b-15e3-4700-bcbd-f63e04e6ab10
+  - ebd3293f-3737-4e16-9f17-221d72649666
+id: 1a6bd49f-b62d-48c7-82bb-de12ad3d6a31

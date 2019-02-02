@@ -19,7 +19,7 @@ sections:
         validate: 'required|ext:jpg'
         width: 33
         restrict: true
-      date:
+      release_date:
         display: 'Release Date'
         type: date
         allow_time: false

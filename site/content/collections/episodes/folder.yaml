@@ -1,5 +1,5 @@
 title: Episodes
-order: date
+order: release_date
 fieldset: episode
 template: episodes/entry
 taxonomies: false
@@ -7,6 +7,5 @@ columns:
   - value: title
     width: 50
   - value: cover_art.null
-    width: 10
   - album.title
-  - date
+  - release_date

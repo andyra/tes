@@ -1,0 +1,5 @@
+title: '24 Live from Deli-Hana Beach!'
+soundcloud_url: 'https://soundcloud.com/thiseveningsshow/24-live-from-deli-hana-beach'
+author: 7328c14f-7ec2-4511-a24d-29a1c5ce23eb
+id: 2e3313d3-bd0e-4a06-bf56-75e1bbee29cc
+release_date: '2016-06-20'

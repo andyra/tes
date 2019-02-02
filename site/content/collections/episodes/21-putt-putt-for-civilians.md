@@ -1,0 +1,5 @@
+title: '21 Putt-Putt for Civilians'
+soundcloud_url: 'https://soundcloud.com/thiseveningsshow/21-putt-putt-for-civilians-1'
+author: 7328c14f-7ec2-4511-a24d-29a1c5ce23eb
+id: 43dbdd02-9b38-4d7f-aee0-8907b57f7573
+release_date: '2016-01-02'

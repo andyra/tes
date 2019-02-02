@@ -1,0 +1,6 @@
+title: '1 Urban Legends of Adobega County'
+soundcloud_url: 'https://soundcloud.com/thiseveningsshow/1-urban-legends-of-adobega-county'
+album: dcdeb10c-6a05-431a-8e9a-34477710897c
+author: 7328c14f-7ec2-4511-a24d-29a1c5ce23eb
+id: e0f30593-f21b-40f3-951e-5f0e1034ff5e
+release_date: '2015-01-14'
