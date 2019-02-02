@@ -1,29 +1,33 @@
-<div class="player {{ class }}" data-player data-player-url={{ playlist_url }} data-player-state="disabled" aria-disabled="true">
-  <button class="player__control player__button button-reset" data-player="control" aria-title="Play">
-    {{ site:sprite id="play" width="32" height="24" }}
-    {{ site:sprite id="pause" width="28" height="24" }}
-    <div class="player__spinner spinner" data-player="spinner"></div>
-  </button>
+<div class="player b-base br-base {{ class }}" data-player="stereo">
+  <div class="player__control">
+    <button class="player__play player__button button-reset" data-player="play" aria-label="play">
+      {{ site:sprite id="play" width="32" height="24" }}
+    </button>
+    <button class="player__pause player__button button-reset" data-player="pause" aria-label="pause">
+      {{ site:sprite id="pause" width="32" height="24" }}
+    </button>
+    <div class="player__loader loader" data-player="loader"></div>
+  </div>
   <div class="player__content">
     <div class="player__row">
-      <div class="player__title" data-player="title" aria-hidden="true">Title</div>
-      <div class="player__duration">
-        <span class="player__time player__time--current" data-player="current-time">0:00</span>/
-        <span class="player__time player__time--total" data-player="total-time" aria-hidden="true">0:00</span>
-      </div>
+      <div class="player__title" data-player="title">[Title]</div>
+      <time class="player__timer player__time" data-player="timer">0:00</time>/
+      <time class="player__duration player__time" data-player="duration">0:00</time>
     </div>
     <div class="player__row">
-      <div class="player__progress" data-player="seek">
-        <div class="player__progress-bar" data-player="progress"></div>
+      <div class="player__progress">
+        <div data-player="progress" class="player__progress-bar"></div>
       </div>
-      <div class="player__skips">
-        <button class="player__skip player__button button-reset" data-player="prev" aria-title="Prev">
-          {{ site:sprite id="prev" width="64" height="24" }}
-        </button>
-        <button class="player__skip player__button button-reset" data-player="next" aria-title="Next">
-          {{ site:sprite id="next" width="64" height="24" }}
-        </button>
-      </div>
+      <button class="player__prev player__skip player__button button-reset" data-player="prev" aria-label="Previous Track">
+        {{ site:sprite id="prev" width="32" height="24" }}
+      </button>
+      <button class="player__next player__skip player__button button-reset" data-player="next" aria-label="Next Track">
+        {{ site:sprite id="next" width="32" height="24" }}
+      </button>
+      <button class="player__speed player__button button-reset" data-player="speed">Slow</button>
     </div>
   </div>
 </div>
+
+<!-- See what classes Bandcamp uses, and how they do the dragger -->
+<!-- If state = playing, show pause. Otherwise, show play -->

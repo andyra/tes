@@ -1,14 +1,20 @@
+{{ section:container_class }}container--full{{ /section:container_class }}
+
 {{ section:header }}
 <header class="page-header">
-  {{ partial:music-nav }}
+  <div class="container--base m-x-auto">
+    {{ partial:music-nav }}
+  </div>
 </header>
 {{ /section:header }}
 
-<section class="grid album-grid">
+<section class="album-grid rando-bg-hover--pastel">
 {{ collection:albums}}
   <a class="album-grid__item" href="{{ url }}">
-    <div><img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" /></div>
-    {{ title }}
+    <h2 class="album-grid__title">{{ title }}</h2>
+    <figure class="album-grid__image">
+      <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
+    </figure>
   </a>
 {{ /collection:albums }}
 </section>

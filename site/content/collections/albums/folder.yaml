@@ -1,11 +1,10 @@
 title: Albums
-order: date
+order: release_date
 fieldset: album
 template: albums/entry
 taxonomies: false
 columns:
   - title
-  - slug
-  - date
-  - author.username
-  - last_modified
+  - artist.title
+  - type
+  - release_date

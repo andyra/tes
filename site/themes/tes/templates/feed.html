@@ -1,0 +1,43 @@
+<channel>
+  <title>{{ site_name }}</title>
+  <link>{{ site_url }}</link>
+  <language>en-us</language>
+  <atom:link href="{{ feed_url }}" rel="self" type="application/rss+xml"/>
+  {{ collection:episodes limit="1" sort="date:desc" }}
+    <pubDate>{{ date format="r"}}</pubDate>
+    <lastBuildDate>{{ date format="r"}}</lastBuildDate>
+  {{ /collection:episodes }}
+  <copyright>All rights reserved</copyright>
+  <webMaster>{{ podcast:owner_email }}</webMaster>
+  <description>{{ podcast:description }}</description>
+  <itunes:subtitle>{{ podcast:description | truncate:50 }}</itunes:subtitle>
+  <itunes:author>{{ site_name }}</itunes:author>
+  <itunes:summary>{{ podcast:description }}</itunes:summary>
+  <itunes:owner>
+    <itunes:name>{{ podcast:owner_name }}</itunes:name>
+    <itunes:email>{{ podcast:owner_email }}</itunes:email>
+  </itunes:owner>
+  <itunes:explicit>no</itunes:explicit>
+  <itunes:category text="Comedy"></itunes:category>
+  <itunes:image href="{{ podcast:cover_art }}" />
+  <image>
+    <url>{{ podcast:cover_art }}</url>
+    <title>{{ site_name }}</title>
+    <link>{{ site_url }}</link>
+  </image>
+  {{ collection:episodes }}
+  <item>
+    <title>{{ title }}</title>
+    <link>{{ permalink }}</link>
+    <guid>{{ permalink }}</guid>
+    <pubDate>{{ date format="r" }}</pubDate>
+    <itunes:summary>{{ description }}</itunes:summary>
+    <itunes:subtitle>{{ description | truncate:50 }}</itunes:subtitle>
+    <description>{{ description }}</description>
+    <enclosure url="{{ audio_file }}" type="audio/mpeg" length="1024"></enclosure>
+    <itunes:author>{{ site_name }}</itunes:author>
+    <itunes:duration>00:59:59</itunes:duration>
+    <itunes:explicit>no</itunes:explicit>
+  </item>
+  {{ /collection:episodes }}
+</channel>

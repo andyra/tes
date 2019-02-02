@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site_name }}</title>
+    <link>{{ site_url }}<link>
+    <language>en-us</language>
+    <atom:link href="{{ feed_url }}" rel="self" type="application/rss+xml"/>
+
+    <pubDate>Sat, 26 Jan 2019 05:20:44 +0000</pubDate>
+    <lastBuildDate>Sat, 26 Jan 2019 05:20:44 +0000</lastBuildDate>
+
+    <copyright>All rights reserved</copyright>
+    <webMaster>{{ podcast:owner_email }}</webMaster>
+    <itunes:subtitle>{{ podcast:description | truncate:50 }}</itunes:subtitle>
+    <itunes:author>{{ site_name }}</itunes:author>
+    <itunes:summary>{{ podcast:description }}</itunes:summary>
+    <description>{{ podcast:description }}</description>
+    <itunes:owner>
+      <itunes:name>{{ podcast:owner_name }}</itunes:name>
+      <itunes:email>{{ podcast:owner_email }}</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:category text="Comedy"/></itunes:category>
+    <itunes:image href="{{ podcast:cover_art }}" />
+    <image>
+      <url>{{ podcast:cover_art }}</url>
+      <title>{{ site_name }}</title>
+      <link>{{ site_url }}</link>
+    </image>
+    {{ entries:listing folder="episodes" scope="episode" }}
+    <item>
+      <title>{{ epsiode:title }}</title>
+      <itunes:summary>{{ epsiode:description }}</itunes:summary>
+      <itunes:subtitle>{{ epsiode:description | truncate:50 }}</itunes:subtitle>
+      <description>{{ epsiode:description }}</description>
+      <link>{{ epsiode:url }}</link>
+      <enclosure url="{{ epsiode:audio_file }}" type="audio/mpeg" length="1024"></enclosure>
+      <pubDate>Thu, 21 Dec 2016 16:01:07 +0000</pubDate>
+      <pubDate>{{ epsiode:date format="r" }}</pubDate>
+      <pubDate>{{ epsiode:date format="D, j M Y" }} 8:00:00 +0000</pubDate>
+      <itunes:author>{{ site_name }}</itunes:author>
+      <itunes:duration>00:59:59</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <guid>{{ episode_url }}</guid>
+    </item>
+    {{ /entries:listing }}
+  </channel>
+</rss>

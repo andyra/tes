@@ -2,18 +2,35 @@
 // Album Index
 // ============================================================================
 
+$hover-offset: $unit;
+
+.album-grid {
+  display: grid;
+  grid-column-gap: $spacer;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 2fr));
+}
+
 .album-grid__item {
-  color: $gray-darkest;
-  font-size: $font-size-xs;
-  line-height: 1.15;
-  padding: $spacer-sm;
+  background-color: $paper;
+  border-top: $border-dotted;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $spacer;
   text-decoration: none;
 
-  img {
-    margin-bottom: $spacer-sm;
-  }
-
   &:hover {
-    box-shadow: inset 0 0 0 $border-width-base $gray-darkest;
+    text-decoration: underline;
   }
+}
+
+.album-grid__title {
+  font-size: $font-size-sm;
+  font-weight: normal;
+  margin: 0 0 $spacer;
+}
+
+.album-grid__image {
+  margin: 0;
+  max-width: $spacer * 5;
 }

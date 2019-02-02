@@ -4,8 +4,9 @@ fieldset: episode
 template: episodes/entry
 taxonomies: false
 columns:
-  - title
-  - slug
+  - value: title
+    width: 50
+  - value: cover_art.null
+    width: 10
+  - album.title
   - date
-  - author.username
-  - last_modified

@@ -20,6 +20,7 @@
 @import "2-tools/functions/random-number";
 @import "2-tools/mixins/font-face";
 @import "2-tools/mixins/font-smoothing";
+@import "2-tools/mixins/line-clamp";
 @import "2-tools/mixins/round-corners";
 @import "2-tools/mixins/size";
 
@@ -46,9 +47,9 @@
 @import "5-components/forms";
 @import "5-components/grid";
 @import "5-components/labels";
+@import "5-components/loaders";
 @import "5-components/lists";
 @import "5-components/rando-hover";
-@import "5-components/spinners";
 @import "5-components/page";
 @import "5-components/page-header";
 @import "5-components/player";

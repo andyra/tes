@@ -13,15 +13,11 @@
 
 .song-index__item {
   counter-increment: i;
-
-  &:nth-child(3n+1) a:hover { background-color: $seashell; }
-  &:nth-child(3n+2) a:hover { background-color: rgba($lemon, 0.5); }
-  &:nth-child(3n+3) a:hover { background-color: $daphne; }
 }
 
 .song-index__link {
   align-items: baseline;
-  border-bottom: dotted $border-width-sm $ink;
+  border-bottom: $border-dotted;
   display: flex;
   height: 100%;
   padding: component-size($component-sm) 0;

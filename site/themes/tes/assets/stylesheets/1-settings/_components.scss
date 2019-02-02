@@ -11,6 +11,7 @@ $border-width-lg:       u(4px, rem);
 $border-width-xl:       u(8px, rem);
 
 $border-base:           solid $border-width-sm $color-primary;
+$border-dotted:         dotted $border-width-sm $ink;
 
 // Radius
 $border-radius-sm:      u(2px, rem);

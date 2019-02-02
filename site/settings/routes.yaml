@@ -9,6 +9,10 @@ routes:
   /register: auth/register
   /forgot-password: auth/password-forgot
   /reset-password: auth/password-reset
+  /feed:
+    layout: feed
+    template: feed
+    content_type: xml
 collections:
   albums: '/albums/{slug}'
   episodes: '/episodes/{slug}'

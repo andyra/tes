@@ -5,7 +5,7 @@
 // BG Colors
 // ----------------------------------------------------------------------------
 
-$rando-bg-colors: (
+$rando-colors: (
   rgba($red, 0.5),
   $lemon,
   $green,
@@ -23,21 +23,46 @@ $rando-bg-colors: (
   rgba($ocean, 0.35)
 );
 
-$rando-bg-colors-length: length($rando-bg-colors);
+$rando-colors-length: length($rando-colors);
 
 .rando-bg-hover {
-  @for $i from 1 through $rando-bg-colors-length {
-    $color: nth($rando-bg-colors, $i);
+  @for $i from 1 through $rando-colors-length {
+    $color: nth($rando-colors, $i);
     $bg: lighten($color-primary, randomNum(0, 8));
     @if randomNum(0, 3) % 2 == 0 {
       $bg: darken($color-primary, randomNum(0, 8));
     }
 
-    > *:nth-child(#{$rando-bg-colors-length}n+#{$i}):hover {
+    > *:nth-child(#{$rando-colors-length}n+#{$i}):hover {
       background-color: $color;
     }
   }
 }
+
+// Rando Pastel
+// ----------------------------------------------------------------------------
+
+$rando-pastels: (
+  $seashell,
+  rgba($lemon, 0.5),
+  $daphne
+);
+
+$rando-pastels-length: length($rando-pastels);
+
+.rando-bg-hover--pastel {
+  @for $i from 1 through $rando-pastels-length {
+    $color: nth($rando-pastels, $i);
+
+    > *:nth-child(#{$rando-pastels-length}n+#{$i}):hover {
+      background-color: $color;
+    }
+  }
+}
+
+// &:nth-child(3n+1) a:hover { background-color: ; }
+//   &:nth-child(3n+2) a:hover { background-color: ; }
+//   &:nth-child(3n+3) a:hover { background-color: ; }
 
 // Text colors
 // ----------------------------------------------------------------------------

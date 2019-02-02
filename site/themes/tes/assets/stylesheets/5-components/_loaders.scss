@@ -1,0 +1,48 @@
+// ============================================================================
+// Loaders
+// ============================================================================
+
+// Base
+// ----------------------------------------------------------------------------
+
+$loader-size:   $font-size-base;
+$loader-speed:  0.5s;
+
+@keyframes loaderAfter {
+  from { transform: scale(0.5, 0.5); opacity: 0; }
+  to   { transform: scale(1, 1);     opacity: 1; }
+}
+
+@keyframes loaderBefore {
+  from  { transform: scale(1, 1);     opacity: 1; }
+  to    { transform: scale(1.5, 1.5); opacity: 0; }
+}
+
+.loader {
+  @include size($loader-size);
+  border-radius: 50%;
+  position: absolute;
+
+  &:before,
+  &:after  {
+    border-radius: 50%;
+    border: solid 1px currentColor;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  &:before {
+    animation: loaderBefore $loader-speed infinite linear;
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+
+  &:after {
+    animation: loaderAfter $loader-speed infinite linear;
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+}

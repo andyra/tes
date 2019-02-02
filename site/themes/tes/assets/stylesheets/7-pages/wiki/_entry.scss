@@ -50,7 +50,7 @@
 // ----------------------------------------------------------------------------
 
 .wiki-article__sidebar {
-  border-left: dotted $border-width-sm $ink;
+  border-left: $border-dotted;
   flex: 0 1 240px;
   padding-left: $vmin-sm;
 }
@@ -67,7 +67,7 @@
   grid-template-columns: repeat(auto-fill, minmax(80px, 2fr));
 }
 
-$list-border: dotted $border-width-sm $ink;
+$list-border: $border-dotted;
 
 .wiki-sidebar__list {
   font-size: $font-size-sm;

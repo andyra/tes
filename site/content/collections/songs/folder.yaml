@@ -5,6 +5,4 @@ template: songs/entry
 taxonomies: false
 columns:
   - title
-  - slug
-  - author.username
-  - last_modified
+  - type

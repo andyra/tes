@@ -17,47 +17,38 @@ function ready(fn) {
 // Elements
 // -----------------------------------------------------------------------------
 
-var elms = ['tracks', 'title', 'timer', 'duration', 'playButton', 'pauseButton', 'prevButton', 'nextButton', 'progress', 'loading', 'playlist', 'list', 'slowButton'];
-elms.forEach(function(elm) {
-  window[elm] = document.getElementById(elm);
+// var elms = ['tracks', 'title', 'timer', 'duration', 'play', 'pause', 'prev', 'next', 'progress', 'loading', 'playlist', 'list', 'slow'];
+// elms.forEach(function(elm) {
+//   window[elm] = document.getElementById(elm);
+// });
+
+var elements = ['stereo', 'title', 'timer', 'duration', 'play', 'pause', 'speed', 'next', 'prev', 'progress', 'loader', 'tracks']
+elements.forEach(function(el) {
+  window[el] = document.querySelector(`[data-player="${el}"]`);
 });
+
+// Tracklist is the DOM element with a bunch of tracks that are converted to a virtual Playlist.
+// The Radio version does not have a tracklist, but will still need to create a virtual Playlist.
+
 
 // Functions
 // -----------------------------------------------------------------------------
 
-/**
- * Player class containing the state of our playlist and where we are in it.
- * Includes all methods for playing, skipping, updating the display, etc.
- * @param {Array} playlist Array of objects with playlist song details ({title, file, howl}).
- */
+
+// Player class containing the state of our playlist and where we are in it.
+// Includes all methods for playing, skipping, updating the display, etc.
+// @param {Array} playlist Array of objects with playlist song details ({title, file, howl}).
 var Player = function(playlist) {
   this.playlist = playlist;
   this.index = 0;
 
   // Display the title of the first track.
   title.innerHTML = playlist[0].title;
-
-  console.log(title);
-  console.log(playlist[0].title);
-
-  // // Setup the playlist display.
-  // // TODO: This is where you have the play buttons in the tracklist
-  // playlist.forEach(function(song) {
-  //   var div = document.createElement('div');
-  //   div.className = 'list-song';
-  //   div.innerHTML = song.title;
-  //   div.onclick = function() {
-  //     player.skipTo(playlist.indexOf(song));
-  //   };
-  //   list.appendChild(div);
-  // });
 };
 
 Player.prototype = {
-  /**
-   * Play a song in the playlist.
-   * @param  {Number} index Index of the song in the playlist (leave empty to play the first or current).
-   */
+  // Play a song in the playlist.
+  // @param  {Number} index Index of the song in the playlist (leave empty to play the first or current).
   play: function(index, url) {
     var self = this;
     var sound;
@@ -80,22 +71,20 @@ Player.prototype = {
           // Start upating the progress of the track.
           requestAnimationFrame(self.step.bind(self));
 
-          // Start the wave animation if we have already loaded
-          pauseButton.style.display = 'block';
+          // Show the pause button
+          pause.style.display = 'block';
         },
         onload: function() {
-          // Start the wave animation.
-          loading.style.display = 'none';
+          loader.style.display = 'none';
         },
         onend: function() {
-          // Stop the wave animation.
           self.skip('next');
         },
         onpause: function() {
-          // Stop the wave animation.
+          // ?
         },
         onstop: function() {
-          // Stop the wave animation.
+          // ?
         },
         onseek: function() {
           // Start upating the progress of the track.
@@ -112,21 +101,19 @@ Player.prototype = {
 
     // Show the pause button.
     if (sound.state() === 'loaded') {
-      playButton.style.display = 'none';
-      pauseButton.style.display = 'block';
+      play.style.display = 'none';
+      pause.style.display = 'block';
     } else {
-      loading.style.display = 'block';
-      playButton.style.display = 'none';
-      pauseButton.style.display = 'none';
+      loader.style.display = 'block';
+      play.style.display = 'none';
+      pause.style.display = 'none';
     }
 
     // Keep track of the index we are currently playing.
     self.index = index;
   },
 
-  /**
-   * Pause the currently playing track.
-   */
+  // Pause the currently playing track.
   pause: function() {
     console.log("pause");
     var self = this;
@@ -138,14 +125,12 @@ Player.prototype = {
     sound.pause();
 
     // Show the play button.
-    playButton.style.display = 'block';
-    pauseButton.style.display = 'none';
+    play.style.display = 'block';
+    pause.style.display = 'none';
   },
 
-  /**
-   * Skip to the next or previous track.
-   * @param  {String} direction 'next' or 'prev'.
-   */
+  // Skip to the next or previous track.
+  // @param  {String} direction 'next' or 'prev'.
   skip: function(direction) {
     console.log("skip");
     var self = this;
@@ -167,10 +152,8 @@ Player.prototype = {
     self.skipTo(index);
   },
 
-  /**
-   * Skip to a specific track based on its playlist index.
-   * @param  {Number} index Index in the playlist.
-   */
+  // Skip to a specific track based on its playlist index.
+  // @param  {Number} index Index in the playlist.
   skipTo: function(index) {
     console.log("skipTo");
     var self = this;
@@ -181,16 +164,14 @@ Player.prototype = {
     }
 
     // Reset progress.
-    progress.setAttribute('value', 0);
+    progress.style.width = '0%';
 
     // Play the new track.
     self.play(index);
   },
 
-  /**
-   * Seek to a new position in the currently playing track.
-   * @param  {Number} per Percentage through the song to skip.
-   */
+  // Seek to a new position in the currently playing track.
+  // @param  {Number} per Percentage through the song to skip.
   seek: function(per) {
     console.log("seek");
     var self = this;
@@ -218,9 +199,7 @@ Player.prototype = {
     }
   },
 
-  /**
-   * The step called within requestAnimationFrame to update the playback position.
-   */
+  // The step called within requestAnimationFrame to update the playback position.
   step: function() {
     var self = this;
 
@@ -230,8 +209,7 @@ Player.prototype = {
     // Determine our current seek position.
     var seek = sound.seek() || 0;
     timer.innerHTML = self.formatTime(Math.round(seek));
-    value = ((seek / sound.duration()) * 100) || 0;
-    progress.setAttribute('value', value);
+    progress.style.width = (((seek / sound.duration()) * 100) || 0) + '%';
 
     // If the sound is still playing, continue stepping.
     if (sound.playing()) {
@@ -239,11 +217,9 @@ Player.prototype = {
     }
   },
 
-  /**
-   * Format the time from seconds to M:SS.
-   * @param  {Number} secs Seconds to format.
-   * @return {String}      Formatted time.
-   */
+  // Format the time from seconds to M:SS.
+  // @param  {Number} secs Seconds to format.
+  // @return {String}      Formatted time.
   formatTime: function(secs) {
     var minutes = Math.floor(secs / 60) || 0;
     var seconds = (secs - minutes * 60) || 0;
@@ -274,40 +250,39 @@ var player = new Player(tracksObj);
 // Bind our player controls.
 // -----------------------------------------------------------------------------
 
-playButton.addEventListener('click', function() {
-  console.log("Event: Play Click");
+play.addEventListener('click', function() {
   player.play();
 });
 
-pauseButton.addEventListener('click', function() {
-  console.log("Event: Pause Click");
+pause.addEventListener('click', function() {
   player.pause();
 });
 
-prevButton.addEventListener('click', function() {
-  console.log("Event: Prev Click");
+prev.addEventListener('click', function() {
   player.skip('prev');
 });
 
-nextButton.addEventListener('click', function() {
-  console.log("Event: Next Click");
+next.addEventListener('click', function() {
   player.skip('next');
 });
 
-slowButton.addEventListener('click', function() {
-  console.log("Event: Slow Click");
-  player.rate('slow');
+speed.addEventListener('click', function() {
+  player.rate(0.5);
 });
 
 tracks.addEventListener('click', function(e) {
   if (e.target !== e.currentTarget) { // Ensure it's a click on a child
     action = e.target.getAttribute('data-track-button');
-
     if (action === 'play') {
       var tracks = Array.from(e.currentTarget.children);
       var track = e.target.closest('li');
       var i = tracks.indexOf(track);
-      player.skipTo(i);
+
+      if (i === player.index) {
+        player.play();
+      } else {
+        player.skipTo(i);
+      }
     }
 
     if (action === 'pause') {
@@ -316,3 +291,22 @@ tracks.addEventListener('click', function(e) {
   }
   e.stopPropagation();
 }, false);
+
+/*
+
+all play buttons on a page have an index and a URL
+when you hit play, it should check if we're resuming or not.
+
+*/
+
+// ID3
+var jsmediatags = window.jsmediatags;
+jsmediatags.read("http://localhost:1234/site/themes/tes/assets/javascripts/test.mp3", {
+  onSuccess: function(tag) {
+    console.log(tag);
+  },
+  onError: function(error) {
+    console.log(error);
+  }
+});
+

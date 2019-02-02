@@ -2,6 +2,8 @@
 // Audio Player
 // ============================================================================
 
+$player-height: $spacer * 5;
+
 // Base
 // ----------------------------------------------------------------------------
 
@@ -11,23 +13,29 @@
   border: solid $border-width-sm $ink;
   border-radius: $border-radius-base;
   display: flex;
+  min-height: $player-height;
   position: relative;
+  width: 100%;
 }
 
+.player__button {
+  .sprite {
+    fill: currentColor;
+    height: 1rem;
+    pointer-events: none;
+  }
+}
+
+// Control
+// ----------------------------------------------------------------------------
+
 .player__control {
-  @include round-corners(left);
-  border-right: dotted $border-width-sm $ink;
-  cursor: pointer;
+  border-right: $border-dotted;
   flex: 0 0 auto;
   position: relative;
-  height: 80px;
-  width: 80px;
+  width: $player-height;
 
-  &:hover {
-    background-color: rgba($color-primary, 0.15);
-  }
-
-  .spinner,
+  .loader,
   .sprite {
     left: 50%;
     pointer-events: none;
@@ -35,16 +43,25 @@
     top: 50%;
     transform: translate(-50%, -50%);
   }
+}
 
-  .spinner {
-    opacity: 0;
-  }
+.player__play,
+.player__pause {
+  height: 100%;
+  width: 100%;
 
-  .sprite {
-    fill: currentColor;
-    height: 1rem;
+  &:hover {
+    background-color: rgba($color-primary, 0.15);
   }
 }
+
+.player__pause,
+.player__loader {
+  display: none; // hide by default
+}
+
+// Content
+// ----------------------------------------------------------------------------
 
 .player__content {
   flex: 1;
@@ -63,11 +80,16 @@
   padding-right: $spacer;
 }
 
-.player__duration {
-  display: flex;
+.player__time {
   font-size: $font-size-xs;
+}
+
+.player__timer {
   margin-left: auto;
 }
+
+// Progress
+// ----------------------------------------------------------------------------
 
 .player__progress {
   border: solid $border-width-sm $ink;
@@ -88,11 +110,6 @@
   width: 0;
 }
 
-.player__skips {
-  display: flex;
-  flex-shrink: 0;
-}
-
 .player__skip {
   @include size($component-size-sm);
   align-items: center;
@@ -109,39 +126,6 @@
   }
 }
 
-// States
-// ----------------------------------------------------------------------------
-
-.player__spinner,
-.player__title,
-.player__time--total {
-  transition: opacity 150ms ease-out;
-}
-
-// Disabled
-.player[data-player-state="disabled"] {
-  pointer-events: none;
-
-  .player__spinner  { opacity: 1; }
-  .sprite--play     { opacity: 0; }
-  .sprite--pause    { opacity: 0; }
-
-  .player__title,
-  .player__time--total,
-  .player__button {
-    opacity: 0.35;
-  }
-}
-
-// Paused
-.player[data-player-state="paused"] {
-  .sprite--pause { opacity: 0; }
-}
-
-// Playing
-.player[data-player-state="playing"] {
-  .sprite--play { opacity: 0; }
-}
 
 // Theme
 // ----------------------------------------------------------------------------
@@ -153,6 +137,10 @@
   .player__control {
     border-right-color: $paper;
 
+  }
+
+  .player__play,
+  .player__pause {
     &:hover {
       background-color: $paper;
       color: $ink;

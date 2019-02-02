@@ -1,0 +1,37 @@
+title: Podcast
+hide: true
+taxonomies: false
+fields:
+  cover_art:
+    display: 'Default Cover Art'
+    type: assets
+    instructions: 'JPG at least 1400×1400px'
+    container: s3
+    folder: episodes
+    max_files: 1
+    validate: 'required|ext:jpg'
+    width: 25
+  field_report_cover_art:
+    display: 'Field Report Cover Art'
+    type: assets
+    instructions: 'JPG at least 1400×1400px'
+    container: s3
+    folder: episodes
+    max_files: 1
+    validate: 'required|ext:jpg'
+    width: 33
+  description:
+    display: Description
+    type: textarea
+    validate: required
+    width: 50
+  owner_name:
+    display: 'Owner Name'
+    type: text
+    validate: required
+    width: 25
+  owner_email:
+    display: 'Owner Email'
+    type: text
+    validate: required
+    width: 25

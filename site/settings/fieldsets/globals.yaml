@@ -1,63 +1,53 @@
 title: Globals
 hide: true
 taxonomies: false
-sections:
-  contact:
-    display: Contact
-    fields:
-      site_name:
-        display: 'Website Name'
-        type: text
-      street_address:
-        display: Street Address
-        type: text
-        width: 25
-      city:
-        display: City
-        type: text
-        width: 25
-      state:
-        display: State
-        type: text
-        width: 25
-        validate: 'size:2|alpha'
-      zip:
-        display: Zip
-        type: text
-        width: 25
-        validate: 'alpha_num|size:5'
-      phone:
-        display: Phone
-        type: text
-        width: 50
-      email:
-        display: Email
-        type: text
-        width: 50
-  sidebar:
-    display: Web
-    fields:
-      podcast_rss:
-        display: 'Podcast RSS Feed'
-        type: text
-        validate: active_url
-      itunes_url:
-        display: 'iTunes Podcast URL'
-        type: text
-        validate: active_url
-      soundcloud_url:
-        display: 'SoundCloud URL'
-        type: text
-        validate: active_url
-      twitter_url:
-        display: 'Twitter URL'
-        type: text
-        validate: active_url
-      facebook_url:
-        display: 'Facebook URL'
-        type: text
-        validate: active_url
-      soundcloud_user_id:
-        display: 'SoundCloud User ID'
-        type: text
-        validate: alpha_num
+fields:
+  site_name:
+    display: 'Website Name'
+    type: text
+  street_address:
+    display: Street Address
+    type: text
+    width: 25
+  city:
+    display: City
+    type: text
+    width: 25
+  state:
+    display: State
+    type: text
+    width: 25
+    validate: 'size:2|alpha'
+  zip:
+    display: Zip
+    type: text
+    width: 25
+    validate: 'alpha_num|size:5'
+  phone:
+    display: Phone
+    type: text
+    width: 50
+  email:
+    display: Email
+    type: text
+    width: 50
+  feed_url:
+    display: 'Podcast RSS Feed'
+    type: text
+    validate: required
+    width: 25
+  itunes_url:
+    display: 'iTunes Podcast URL'
+    type: text
+    validate: active_url
+    width: 25
+  twitter_url:
+    display: 'Twitter URL'
+    type: text
+    validate: active_url
+    width: 25
+  facebook_url:
+    display: 'Facebook URL'
+    type: text
+    validate: active_url
+    width: 25

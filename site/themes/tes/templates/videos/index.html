@@ -1,16 +1,21 @@
+{{ section:container_class }}container--full{{ /section:container_class }}
+
 {{ section:header }}
 <header class="page-header">
-  {{ partial:music-nav }}
+  <div class="container--base m-x-auto">
+    {{ partial:music-nav }}
+  </div>
 </header>
 {{ /section:header }}
-
 
 {{ collection:videos as="videos" }}
   <section class="grid album-grid">
   {{ videos scope="video" }}
     <a class="album-grid__item" href="{{ video:url }}">
-      <img class="cover-art" src="{{ video:vimeo_link:thumbnail_large }}" alt="{{ video:title }}" />
-      {{ video:title }}
+      <h2 class="album-grid__title">{{ video:title }}</h2>
+      <figure class="album-grid__image">
+        <img class="cover-art" src="{{ video:vimeo_link:thumbnail_large }}" alt="{{ video:title }}" />
+      </figure>
     </a>
   {{ /videos }}
   </section>

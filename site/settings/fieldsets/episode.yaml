@@ -8,13 +8,7 @@ sections:
       title:
         type: text
         display: Title
-        width: 66
         localizable: true
-      soundcloud_url:
-        display: 'Soundcloud URL'
-        type: text
-        validate: active_url
-        width: 66
       cover_art:
         display: 'Cover Art'
         type: assets
@@ -22,9 +16,23 @@ sections:
         container: s3
         folder: episodes
         max_files: 1
-        validate: 'ext:jpg,png'
+        validate: 'required|ext:jpg'
         width: 33
         restrict: true
+      date:
+        display: 'Release Date'
+        type: date
+        allow_time: false
+        width: 33
+      album:
+        display: 'Companion Album'
+        type: collection
+        mode: tags
+        instructions: 'The album with the music from this episode'
+        max_items: '1'
+        collection:
+          - albums
+        width: 33
       tracklist:
         display: Minutes
         mode: table
@@ -62,130 +70,17 @@ sections:
         type: markdown
         instructions: 'What happens in this episode?'
         width: 66
-      album:
-        display: 'Episode Album'
-        type: collection
-        mode: tags
-        instructions: 'The album with the music from this episode'
-        max_items: '1'
-        collection:
-          - albums
-        width: 33
-      field_7:
-        mode: table
-        fields:
-          field_1:
-            buttons:
-              - h2
-              - h3
-              - bold
-              - italic
-              - unorderedlist
-              - orderedlist
-              - removeformat
-              - quote
-              - anchor
-            style: sans
-            spellcheck: true
-            allow_source: true
-            allow_internal_links: true
-            link_noopener: false
-            link_noreferrer: false
-            target_blank: false
-            semantic_elements: false
-            restrict_assets: false
-            type: bard
-            width: 25
-            display: 'Field 1'
-          field_2:
-            buttons:
-              - h2
-              - h3
-              - bold
-              - italic
-              - unorderedlist
-              - orderedlist
-              - removeformat
-              - quote
-              - anchor
-            style: sans
-            spellcheck: true
-            allow_source: true
-            allow_internal_links: true
-            link_noopener: false
-            link_noreferrer: false
-            target_blank: false
-            semantic_elements: false
-            restrict_assets: false
-            type: bard
-            width: 25
-            display: 'Field 2'
-          field_3:
-            buttons:
-              - h2
-              - h3
-              - bold
-              - italic
-              - unorderedlist
-              - orderedlist
-              - removeformat
-              - quote
-              - anchor
-            style: sans
-            spellcheck: true
-            allow_source: true
-            allow_internal_links: true
-            link_noopener: false
-            link_noreferrer: false
-            target_blank: false
-            semantic_elements: false
-            restrict_assets: false
-            type: bard
-            width: 25
-            display: 'Field 3'
-          field_4:
-            buttons:
-              - h2
-              - h3
-              - bold
-              - italic
-              - unorderedlist
-              - orderedlist
-              - removeformat
-              - quote
-              - anchor
-            style: sans
-            spellcheck: true
-            allow_source: true
-            allow_internal_links: true
-            link_noopener: false
-            link_noreferrer: false
-            target_blank: false
-            semantic_elements: false
-            restrict_assets: false
-            type: bard
-            width: 25
-            display: 'Field 4'
-        type: grid
-        display: 'Field 7'
   sidebar:
     display: Sidebar
     fields:
       slug:
         type: text
         validate: required
-      date:
-        display: 'Release Date'
-        type: date
-        allow_time: false
-        width: 50
       author:
         display: Author
         type: users
         default: current
         max_items: 1
-        validate: required
-        width: 50
       wikis:
         display: 'Wiki References'
         instructions: 'People, places, etc. referenced in this episode'

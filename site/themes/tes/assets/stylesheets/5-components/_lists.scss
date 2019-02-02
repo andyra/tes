@@ -32,10 +32,8 @@
 // Table List
 // ----------------------------------------------------------------------------
 
-$dotted-border: dotted $border-width-sm $ink;
-
 .table-list {
-  border: $dotted-border;
+  border: $border-dotted;
   display: table;
   list-style: none;
   width: 100%;
@@ -51,14 +49,14 @@ $dotted-border: dotted $border-width-sm $ink;
   padding: 0 0.25em;
   text-align: right;
   vertical-align: middle;
-  border-right: $dotted-border;
-  border-top: $dotted-border;
+  border-right: $border-dotted;
+  border-top: $border-dotted;
   font-family: $font-hypermarket;
   font-size: $font-size-xs;
 }
 
 .table-list__link {
-  border-top: $dotted-border;
+  border-top: $border-dotted;
   display: table-cell;
   height: $component-size-base;
   padding: 0 0.5em;
