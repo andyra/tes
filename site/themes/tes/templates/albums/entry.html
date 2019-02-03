@@ -50,11 +50,11 @@
   <div class="collection__meta text--sm">
     <div class="m-top-base">
       <div class="label">Date of Publishment:</div>
-      <div class="b-bottom-dotted"><time datetime="{{ date }}">{{ date }}</time></div>
+      <div class="b-bottom-dotted"><time datetime="{{ release_date format='r' }}">{{ release_date format="r" }}</time></div>
     </div>
     <div class="m-top-base">
       <div class="label">External SRC:</div>
-      <a href="{{ soundcloud_url }}" target="_blank">→ SoundClown</a>
+      <a href="{{ audio_file }}" target="_blank">↓ Download</a>
     </div>
   </div>
 </section>

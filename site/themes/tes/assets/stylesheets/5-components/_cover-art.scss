@@ -16,3 +16,35 @@
   padding-bottom: 100%;
   width: 100%;
 }
+
+.cover-art--photocopy {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    background-color: $ink;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  img {
+    filter: grayscale(1);
+    mix-blend-mode: screen;
+  }
+}
+
+a.cover-art--photocopy:hover {
+  &:before {
+    opacity: 0;
+  }
+
+  img {
+    filter: none;
+    mix-blend-mode: normal;
+  }
+}

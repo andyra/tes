@@ -47,7 +47,7 @@
               </div>
             {{ /relate:song }}
           {{ else }}
-            <div class="tracklist__title table__cell">{{ track:description | wikilinks }}</div>
+            <div class="tracklist__title table__cell">{{ track:segment | wikilinks }}</div>
           {{ /if }}
           {{ if track:soundcloud_url }}
             <div class="text--xs table__cell table__cell--shaded table__cell--collapse align--right">0:00</div>
@@ -76,19 +76,21 @@
   <div class="collection__meta text--sm">
     <div class="m-top-vmin-sm">
       <div class="label">Date of Publishment:</div>
-      <div class="b-bottom-dotted"><time datetime="{{ date }}">{{ date }}</time></div>
+      <div class="b-bottom-dotted"><time datetime="{{ release_date format='r' }}">{{ release_date format="r" }}</time></div>
     </div>
     {{ if album }}
       <div class="m-top-vmin-sm">
         <div class="label">Companion Album</div>
         {{ relate:album }}
-          <a href="{{ url }}">{{ title }}</a>
+        <a class="collection__cover-art--sm cover-art cover-art--photocopy" href="{{ url }}">
+          <img src="{{ cover_art }}" />
+        </a>
         {{ /relate:album }}
       </div>
     {{ /if }}
     <div class="m-top-vmin-sm">
       <div class="label">External SRC:</div>
-      <a href="{{ soundcloud_url }}" target="_blank">→ SoundClown</a>
+      <a href="{{ audio_file }}" target="_blank">↓ Download</a>
     </div>
   </div>
 </section>

@@ -9,6 +9,25 @@ sections:
         type: text
         display: Title
         localizable: true
+        width: 50
+      audio_file:
+        type: text
+        width: 50
+        display: 'Audio File'
+        validate: required|active_url
+      description:
+        display: Description
+        type: textarea
+        width: 50
+        validate: required
+      release_date:
+        display: 'Release Date'
+        type: date
+        allow_time: false
+        width: 25
+        allow_blank: false
+        require_time: false
+        validate: required
       cover_art:
         display: 'Cover Art'
         type: assets
@@ -17,33 +36,20 @@ sections:
         folder: episodes
         max_files: 1
         validate: 'required|ext:jpg'
-        width: 33
+        width: 25
         restrict: true
-      release_date:
-        display: 'Release Date'
-        type: date
-        allow_time: false
-        width: 33
-      album:
-        display: 'Companion Album'
-        type: collection
-        mode: tags
-        instructions: 'The album with the music from this episode'
-        max_items: '1'
-        collection:
-          - albums
-        width: 33
       tracklist:
         display: Minutes
+        instructions: 'Individual tracks for the episode. Either fill out segment or description—no need to do both.'
         mode: table
         min_rows: 1
         add_row: Add
         type: grid
         fields:
-          description:
+          segment:
             type: textarea
             width: 25
-            display: Description
+            display: Segment
             validate: required
           song:
             max_items: '1'
@@ -53,11 +59,6 @@ sections:
             type: collection
             width: 25
             display: Song
-          soundcloud_url:
-            type: text
-            width: 25
-            display: 'Soundcloud URL'
-            validate: active_url
           wikis:
             collection:
               - wiki
@@ -65,11 +66,19 @@ sections:
             type: collection
             width: 25
             display: Wikis
-      description:
-        display: Description
-        type: markdown
-        instructions: 'What happens in this episode?'
-        width: 66
+          audio_file:
+            type: text
+            width: 25
+            display: 'Audio File'
+            validate: active_url
+      album:
+        display: 'Companion Album'
+        type: collection
+        mode: tags
+        instructions: 'The album with the music from this episode'
+        max_items: '1'
+        collection:
+          - albums
   sidebar:
     display: Sidebar
     fields:
@@ -81,10 +90,3 @@ sections:
         type: users
         default: current
         max_items: 1
-      wikis:
-        display: 'Wiki References'
-        instructions: 'People, places, etc. referenced in this episode'
-        type: collection
-        mode: tags
-        collection:
-          - wiki

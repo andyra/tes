@@ -3,31 +3,6 @@
 // For albums and episodes
 // ============================================================================
 
-.collection {
-  // display: flex;
-}
-
-// @media #{$screen-sm-up} {
-//   .collection__main {
-//     flex: 1;
-//     padding-right: 2vmin;
-//   }
-
-//   .collection__sidebar {
-//     padding-left: 2vmin;
-//     flex: 0 1 33%;
-//   }
-// }
-
-// @media #{$screen-sm-down} {
-//   .collection {
-//     flex-direction: column;
-//   }
-
-//   .collection__sidebar  { order: 0; }
-//   .collection__main     { order: 1; }
-// }
-
 @media #{$screen-xs-up} {
   .collection {
     overflow: hidden;
@@ -44,6 +19,10 @@
     float: right;
     padding-left: $vmin-sm;
     width: calc(100% / 3);
+  }
+
+  .collection__cover-art--sm {
+    max-width: $component-size-xl * 2;
   }
 }
 

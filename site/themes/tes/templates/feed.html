@@ -10,7 +10,7 @@
   <copyright>All rights reserved</copyright>
   <webMaster>{{ podcast:owner_email }}</webMaster>
   <description>{{ podcast:description }}</description>
-  <itunes:subtitle>{{ podcast:description | truncate:50 }}</itunes:subtitle>
+  <itunes:subtitle>{{ podcast:description | safe_truncate:50:... }}</itunes:subtitle>
   <itunes:author>{{ site_name }}</itunes:author>
   <itunes:summary>{{ podcast:description }}</itunes:summary>
   <itunes:owner>
@@ -32,7 +32,7 @@
     <guid>{{ permalink }}</guid>
     <pubDate>{{ date format="r" }}</pubDate>
     <itunes:summary>{{ description }}</itunes:summary>
-    <itunes:subtitle>{{ description | truncate:50 }}</itunes:subtitle>
+    <itunes:subtitle>{{ description | safe_truncate:50:... }}</itunes:subtitle>
     <description>{{ description }}</description>
     <enclosure url="{{ audio_file }}" type="audio/mpeg" length="1024"></enclosure>
     <itunes:author>{{ site_name }}</itunes:author>

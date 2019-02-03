@@ -1,18 +1,25 @@
+{{ section:container_class }}container--full{{ /section:container_class }}
+
 {{ section:header }}
 <header class="page-header">
   <h1 class="page-header__title text-outline--daphne font--windsor tracking--loose case--upper">Episodes</h1>
 </header>
 {{ /section:header }}
 
-<section class="grid album-grid">
-{{ collection:episodes }}
+<section class="album-grid rando-bg-hover--pastel">
+{{ collection:episodes sort="release_date:desc" }}
   <a class="album-grid__item" href="{{ url }}">
-    {{ if cover_art }}
-      <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
-    {{ else }}
-      <div class="cover-art cover-art--empty"></div>
-    {{ /if }}
-    {{ title }}
+    <h2 class="album-grid__title">
+      {{ title }}
+      <time class="album-grid__date">{{ release_date format="j F Y" }}</time>
+    </h2>
+    <figure class="album-grid__image">
+      {{ if cover_art }}
+        <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
+      {{ else }}
+        <div class="cover-art cover-art--empty"></div>
+      {{ /if }}
+    </figure>
   </a>
 {{ /collection:episodes }}
 </section>

@@ -30,7 +30,30 @@ $hover-offset: $unit;
   margin: 0 0 $spacer;
 }
 
+.album-grid__date {
+  display: block;
+  font-family: $font-operator-mono;
+  font-size: $font-size-xs;
+  opacity: 0.5;
+}
+
 .album-grid__image {
   margin: 0;
   max-width: $spacer * 5;
+}
+
+// Small Screens
+// ----------------------------------------------------------------------------
+
+@media (max-width: 512px) {
+  .album-grid__item {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .album-grid__title {
+    order: 2;
+    flex: 1;
+    margin: 0 0 0 $spacer;
+  }
 }

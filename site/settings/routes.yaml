@@ -12,7 +12,7 @@ routes:
   /feed:
     layout: feed
     template: feed
-    content_type: xml
+    content_type: 'application/rss+xml; charset=utf-8'
 collections:
   albums: '/albums/{slug}'
   episodes: '/episodes/{slug}'

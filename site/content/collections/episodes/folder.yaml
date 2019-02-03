@@ -1,11 +1,13 @@
 title: Episodes
-order: release_date
 fieldset: episode
 template: episodes/entry
 taxonomies: false
+order: release_date
 columns:
   - value: title
     width: 50
-  - value: cover_art.null
-  - album.title
-  - release_date
+  - value: album.title
+    header: 'Companion Album'
+    width: 25
+  - value: release_date
+    width: 25

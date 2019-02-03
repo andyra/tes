@@ -9,11 +9,15 @@
 {{ /section:header }}
 
 <section class="album-grid rando-bg-hover--pastel">
-{{ collection:albums}}
+{{ collection:albums }}
   <a class="album-grid__item" href="{{ url }}">
     <h2 class="album-grid__title">{{ title }}</h2>
     <figure class="album-grid__image">
-      <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
+      {{ if cover_art }}
+        <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
+      {{ else }}
+        <div class="cover-art cover-art--empty"></div>
+      {{ /if }}
     </figure>
   </a>
 {{ /collection:albums }}
