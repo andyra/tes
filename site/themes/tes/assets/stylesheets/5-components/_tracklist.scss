@@ -2,23 +2,8 @@
 // Tracklist
 // ============================================================================
 
-.tracklist__item {
-  &[data-track-state="init"] {
-    .tracklist__button--play  { opacity: 0; }
-    .tracklist__button--pause { display: none; }
-
-    &:hover {
-      .tracklist__button--play { opacity: 1; }
-    }
-  }
-
-  &[data-track-state="playing"] {
-    .tracklist__button--play { display: none; }
-  }
-
-  &[data-track-state="paused"] {
-    .tracklist__button--pause { display: none; }
-  }
+.tracklist {
+  padding-left: 0;
 }
 
 .tracklist__count {
@@ -27,8 +12,7 @@
   width: $component-size-lg;
 }
 
-// Wikilinks
-.tracklist__title a {
+.tracklist__title {
   border-bottom: solid $border-width-sm rgba($aqua, 0.5);
   font-family: $font-duospace;
   text-decoration: none;
@@ -38,6 +22,8 @@
     color: $mustard;
   }
 }
+
+// Decorative left border
 .tracklist .table__cell:nth-child(2) {
   position: relative;
 
@@ -66,20 +52,12 @@
   &:hover {
     background-color: $mint;
     background-color: darken($mint, 5%);
-    // color: $red;
   }
 
   .sprite {
     fill: currentColor;
     height: 0.5rem;
-  }
-}
-
-.tracklist__link {
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
+    pointer-events: none;
   }
 }
 

@@ -14,32 +14,33 @@
     {{ partial:player playlist_url=soundcloud_url class="player--dark m-bottom-vmin" }}
 
     <span class="label">Tracklist:</span>
-    <div class="tracklist table text--sm">
-      <div class="table__row">
-        <div class="table__cell table__cell--header align--center">#</div>
-        <div class="table__cell table__cell--header label">Descriptor</div>
-        <div class="table__cell table__cell--header label">Time</div>
-      </div>
-    {{ tracklist }}
-      <div class="tracklist__item table__row" data-url="{{ soundcloud_url }}" data-track-state="init">
-        <div class="tracklist__count table__cell">
+
+    <ol class="tracklist table text--sm" data-player="tracks">
+      <li class="table__row">
+        <span class="table__cell table__cell--header align--center">#</span>
+        <span class="table__cell table__cell--header label">Descriptor</span>
+        <span class="table__cell table__cell--header label">Time</span>
+      </li>
+      {{ tracklist }}
+      <li class="table__row" data-track="{{ audio_file }}">
+        <span class="tracklist__count table__cell">
           {{ index }}
-          <button class="player__button tracklist__button tracklist__button--play button-reset" data-tracklist="play">
+          <button class="tracklist__button button-reset" data-track-button="play">
             {{ site:sprite id="play" width="32" height="24" }}
           </button>
-          <button class="player__button tracklist__button tracklist__button--pause button-reset" data-player="pause" aria-title="Pause">
-            {{ site:sprite id="pause" width="28" height="24" }}
+          <button class="tracklist__button button-reset" data-track-button="pause">
+            {{ site:sprite id="pause" width="32" height="24" }}
           </button>
-        </div>
-        {{ relate:song scope="song" }}
-        <div class="tracklist__title table__cell">
-          <a href="{{ song:url }}">{{ song:title }}</a>
-        </div>
+        </span>
+        <span class="table__cell">
+          {{ relate:song scope="song" }}
+          <a class="tracklist__title" href="{{ song:url }}" data-track-title>{{ song:title }}</a>
+          {{ /relate:song }}
+        </span>
         <div class="text--xs table__cell table__cell--shaded table__cell--collapse">0:00</div>
-        {{ /relate:song }}
-      </div>
-    {{ /tracklist }}
-    </div>
+      </li>
+      {{ /tracklist }}
+    </ol>
   </div>
 
   <figure class="collection__cover-art">
