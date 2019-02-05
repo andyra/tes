@@ -15,19 +15,6 @@ sections:
         width: 50
         display: 'Audio File'
         validate: required|active_url
-      description:
-        display: Description
-        type: textarea
-        width: 50
-        validate: required
-      release_date:
-        display: 'Release Date'
-        type: date
-        allow_time: false
-        width: 25
-        allow_blank: false
-        require_time: false
-        validate: required
       cover_art:
         display: 'Cover Art'
         type: assets
@@ -38,9 +25,22 @@ sections:
         validate: 'required|ext:jpg'
         width: 25
         restrict: true
+      release_date:
+        display: 'Release Date'
+        type: date
+        allow_time: false
+        width: 25
+        allow_blank: false
+        require_time: false
+        validate: required
+      description:
+        display: Description
+        type: textarea
+        width: 50
+        validate: required
       tracklist:
         display: Minutes
-        instructions: 'Individual tracks for the episode. Either fill out segment or description—no need to do both.'
+        instructions: 'Individual tracks for the episode. Either fill out Segment or Song—no need to do both.'
         mode: table
         min_rows: 1
         add_row: Add
@@ -48,7 +48,7 @@ sections:
         fields:
           segment:
             type: textarea
-            width: 25
+            width: 50
             display: Segment
             validate: required
           song:
@@ -57,18 +57,18 @@ sections:
               - songs
             mode: tags
             type: collection
-            width: 25
+            width: 50
             display: Song
           wikis:
             collection:
               - wiki
             mode: tags
             type: collection
-            width: 25
+            width: 50
             display: Wikis
           audio_file:
             type: text
-            width: 25
+            width: 50
             display: 'Audio File'
             validate: active_url
       album:
