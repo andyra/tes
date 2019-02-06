@@ -15,20 +15,20 @@
 
     <span class="label">Tracklist:</span>
 
-    <ol class="tracklist table text--sm" data-player="tracks">
+    <ol class="tracklist table text--sm" data-player="tracklist">
       <li class="table__row">
         <span class="table__cell table__cell--header align--center">#</span>
         <span class="table__cell table__cell--header label">Descriptor</span>
         <span class="table__cell table__cell--header label">Time</span>
       </li>
       {{ tracklist }}
-      <li class="table__row" data-track="{{ audio_file }}">
+      <li class="tracklist__item table__row" data-track="{{ audio_file }}" data-state="init">
         <span class="tracklist__count table__cell">
           {{ index }}
-          <button class="tracklist__button button-reset" data-track-button="play">
+          <button class="tracklist__button tracklist__button--play button-reset" data-track-button="play">
             {{ site:sprite id="play" width="32" height="24" }}
           </button>
-          <button class="tracklist__button button-reset" data-track-button="pause">
+          <button class="tracklist__button tracklist__button--pause button-reset" data-track-button="pause">
             {{ site:sprite id="pause" width="32" height="24" }}
           </button>
         </span>

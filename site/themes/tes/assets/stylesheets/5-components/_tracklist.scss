@@ -59,6 +59,31 @@
     height: 0.5rem;
     pointer-events: none;
   }
+
+  .tracklist__item:hover & {
+    display: block;
+  }
+}
+
+// States
+// ----------------------------------------------------------------------------
+
+.tracklist__item[data-state="init"] {
+  &:hover .tracklist__button--play {
+    display: block;
+  }
+
+  .tracklist__button {
+    display: none;
+  }
+}
+
+.tracklist__item[data-state="playing"] {
+  .tracklist__button--play { display: none; }
+}
+
+.tracklist__item[data-state="paused"] {
+  .tracklist__button--pause { display: none; }
 }
 
 // Smaller Screens

@@ -1,0 +1,7 @@
+deep: false
+enable_api_key: false
+api_key: 1kPKuPZwOAfpToeuxu0SHIHKpXdBqEEYhSYly9trav1Gpn5U05RVdeTHPLEE
+domain_whitelist:
+  - 'http://localhost:1234'
+  - 'http://thiseveningsshow.com'
+  - 'https://thiseveningsshow.com'

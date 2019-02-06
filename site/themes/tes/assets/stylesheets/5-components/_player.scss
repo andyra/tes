@@ -13,6 +13,7 @@ $player-height: $spacer * 5;
   border: solid $border-width-sm $ink;
   border-radius: $border-radius-base;
   display: flex;
+  margin-bottom: $spacer;
   min-height: $player-height;
   position: relative;
   width: 100%;
