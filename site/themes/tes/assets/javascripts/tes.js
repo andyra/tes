@@ -341,6 +341,15 @@
     // Normally we run `var player = new Player(getPlaylist())`, which crates our playlist from the DOM.
     // This time we can run `var player = new Player(radioPlaylist)`
 
+    // The next version can include alternative material.
+    // Once we can get the actual track object via AJAX, we should have acess to all its associated wikis.
+    // Then we can fetch the wiki entry for that track and display their titles with links, plus content.
+    //
+    // Playing: "Conversation with Robert Bogarth"
+    // Pictures of: Robert Bogarth, JP Spline, Harold Kellog (click for more) (wikis:people)
+    // Learn about: Bogarth Engines, Morning SPA (wikis:!people)
+    // See All: Radio Shows, Technology, People, Scientists (tags for each wiki)
+
     virtualPlaylist = [];
 
     if (tracklistItems) {
