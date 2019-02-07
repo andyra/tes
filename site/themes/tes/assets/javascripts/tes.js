@@ -67,7 +67,13 @@
               loader.style.display = 'none';
             },
             onend: function() {
-              self.skip('next');
+              if (tracklistItems.length) {
+                self.skip('next');
+              } else {
+                pushRandomTrack().then(function() {
+                  self.skip('next');
+                });
+              }
             },
             onpause: function() {
               // ?
@@ -132,6 +138,7 @@
             index = self.playlist.length - 1;
           }
         } else {
+          console.log(self.playlist);
           index = self.index + 1;
           if (index >= self.playlist.length) {
             index = 0;
@@ -324,9 +331,9 @@
     }
 
     async function initVirtualPlaylist() {
-      var result = await pushRandomTrack();
-      console.log(result);
-      player = new Player(virtualPlaylist);
+      pushRandomTrack().then(function() {
+        player = new Player(virtualPlaylist);
+      });
     }
 
     if (tracklistItems.length) {
@@ -384,7 +391,14 @@
       player.skip('prev');
     });
     next.addEventListener('click', function() {
-      player.skip('next');
+      // player.skip('next');
+      if (tracklistItems.length) {
+        player.skip('next');
+      } else {
+        pushRandomTrack().then(function() {
+          player.skip('next');
+        });
+      }
     });
     speed.addEventListener('click', function() {
       player.rate(0.5);

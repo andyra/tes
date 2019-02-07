@@ -43,4 +43,8 @@ code {
   outline: none;
   overflow: visible;
   padding: 0;
+
+  &:focus {
+    outline: none;
+  }
 }
