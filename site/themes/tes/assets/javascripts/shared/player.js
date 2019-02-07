@@ -1,5 +1,5 @@
+// DOM Ready
 (function() {
-  console.log("DOM ready");
 
   // DOM Elements
   // ---------------------------------------------------------------------------
@@ -11,6 +11,10 @@
   elements.forEach(function(el) {
     window[el] = document.querySelector(`[data-player="${el}"]`);
   });
+
+  player = {};
+  radioCollections = [];
+  virtualPlaylist = [];
 
   // Player
   // ---------------------------------------------------------------------------
@@ -40,7 +44,6 @@
         // If we already loaded this track, use the current one.
         // Otherwise, setup and load a new Howl.
         if (data.howl) {
-          console.log("ALREADY");
           sound = data.howl;
         } else {
           sound = data.howl = new Howl({
@@ -245,7 +248,7 @@
       e.stopPropagation();
     }
 
-    function getPlaylist() {
+    function playlistFromDOM() {
       // Create a playlist from the DOM
       var playlist = [];
       Array.prototype.forEach.call(tracklistItems, function(el, i) {
@@ -283,8 +286,10 @@
     // Radio
     // -------------------------------------------------------------------------
 
-    radioCollections = [];
-    radioPlaylist = [];
+    function randomMax(max) {
+      var min = 0;
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
 
     async function fetchItems(url) {
       const response = await fetch(`/!/Fetch${url}`, {});
@@ -292,35 +297,46 @@
       return data;
     }
 
-    // Push a track object to the radio playlist
-    function randomTrack() {
-      var tracklist = radioCollections[randomMax(radioCollections.length)].tracklist;
-      var track = tracklist[randomMax(tracklist.length)];
-      console.log(track);
+    function pushRandomTrack() {
+      return new Promise(resolve => {
+        var i = randomMax(radioCollections.length);
+        var n = randomMax(radioCollections[i].tracklist.length);
+        var track = radioCollections[i].tracklist[n];
 
-      // Now that we have the ID, we can fetch the song title
-      // TODO: This is 500-ing
-      // fetchItems(`/entry/${track.song}`).then(data => {
-      //   console.log(data);
+        // Delete the item from the array so we don't get it again
+        radioCollections[i].tracklist.splice(n, 1);
 
-      //   radioPlaylist.push({
-      //     title: 'title',
-      //     file: track.audio_file,
-      //     howl: null
-      //   });
-      // });
+        // Now that we have the ID, we can fetch the song title
+        fetchItems(`/entry/${track.song}`).then(data => {
+          virtualPlaylist.push({
+            title: data.data.title,
+            file: track.audio_file,
+            howl: null
+          });
+        }).then(function() {
+          resolve('Added random track to the virtual playlist!');
+        });
+      });
     }
 
-    function randomMax(max) {
-      var min = 0;
-      return Math.floor(Math.random() * (max - min)) + min;
+    async function initVirtualPlaylist() {
+      var result = await pushRandomTrack();
+      console.log(result);
+      player = new Player(virtualPlaylist);
     }
 
-    // Creates an array one time which we can pull tracks from at random
-    fetchItems('/collection/albums').then(data => {
-      radioCollections = data;
-      randomTrack();
-    });
+    if (tracklistItems.length) {
+      player = new Player(playlistFromDOM());
+    } else {
+      fetchItems('/collection/albums').then(data => {
+        radioCollections = data.data;
+        initVirtualPlaylist();
+      });
+    }
+
+
+
+
 
     // var randoTrackButton = document.querySelector('#rando-track');
     // randoTrackButton.addEventListener('click', function() {
@@ -334,7 +350,7 @@
     // When the song ends (`onend`), push another track to the array and `skipto`.
     // (Same for the "next" button--push a rando track and skip to it)
     // (Skipping back works like normal)
-    // Normally we run `var player = new Player(getPlaylist())`, which crates our playlist from the DOM.
+    // Normally we run `var player = new Player(playlistFromDOM())`, which crates our playlist from the DOM.
     // This time we can run `var player = new Player(radioPlaylist)`
 
     // The next version can include alternative material.
@@ -346,17 +362,10 @@
     // Learn about: Bogarth Engines, Morning SPA (wikis:!people)
     // See All: Radio Shows, Technology, People, Scientists (tags for each wiki)
 
-    virtualPlaylist = [];
 
-    if (tracklistItems) {
-      virtualPlaylist = getPlaylist();
-    } else {
-      // fetchItems('/collection/albums').then(data => {
-      //   radioCollections = data;
-      //   pushRandomTrackToPlaylist();
-      // });
-    }
-    var player = new Player(virtualPlaylist);
+
+
+
 
     // Bind player controls.
     // -------------------------------------------------------------------------
@@ -376,8 +385,11 @@
     speed.addEventListener('click', function() {
       player.rate(0.5);
     });
-    tracklist.addEventListener('click', function(e) {
-      updateTracklist(e);
-    }, false);
+
+    if (tracklistItems.length) {
+      tracklist.addEventListener('click', function(e) {
+        updateTracklist(e);
+      }, false);
+    }
   }
 })(); // end DOM ready

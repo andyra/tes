@@ -8,7 +8,7 @@ class FetchController extends Controller
 {
     private $fetch;
 
-    public function init()
+    public function __construct()
     {
         $this->fetch = new Fetch;
 
@@ -26,6 +26,16 @@ class FetchController extends Controller
     public function postCollection()
     {
         return $this->fetch->collection();
+    }
+
+    public function getEntry()
+    {
+        return $this->fetch->entry();
+    }
+
+    public function postEntry()
+    {
+        return $this->fetch->entry();
     }
 
     public function getPage()
@@ -66,5 +76,15 @@ class FetchController extends Controller
     public function postGlobals()
     {
         return $this->fetch->globals();
+    }
+
+    public function getSearch()
+    {
+        return $this->fetch->search();
+    }
+
+    public function postSearch()
+    {
+        return $this->fetch->search();
     }
 }

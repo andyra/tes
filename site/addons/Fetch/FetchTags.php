@@ -3,7 +3,6 @@
 namespace Statamic\Addons\Fetch;
 
 use Statamic\Extend\Tags;
-use Statamic\API\Collection;
 
 class FetchTags extends Tags
 {
@@ -30,13 +29,13 @@ class FetchTags extends Tags
     }
 
     /**
-     * Handle `{{ fetch collection|page|pages="*"|global|globals="*" }}` tags
+     * Handle `{{ fetch collection|entry|page|pages="*"|global|globals="*" }}` tags
      */
     public function index()
     {
         $this->fetch = new Fetch($this->parameters);
 
-        $types = collect(['collection', 'page', 'pages', 'global', 'globals']);
+        $types = collect(['collection', 'entry', 'page', 'pages', 'global', 'globals']);
 
         $type = $types->first(function ($index, $type) {
             return in_array($type, array_keys($this->parameters));
