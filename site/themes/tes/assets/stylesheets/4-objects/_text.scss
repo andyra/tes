@@ -71,10 +71,6 @@
 // Fonts
 // ----------------------------------------------------------------------------
 
-// 57 Nao
-@include font-face("57-nao", "../fonts/57-nao/57-nao", regular, $exts: woff woff2);
-.font--57-nao { font-family: $font-57-nao; }
-
 // Duospace
 @include font-face("duospace", "../fonts/duospace/duospace-regular", regular, $exts: woff woff2);
 @include font-face("duospace", "../fonts/duospace/duospace-itlic", regular, italic, $exts: woff woff2);
@@ -90,33 +86,13 @@
 @include font-face("futura", "../fonts/futura/futura-bold", regular, $exts: woff woff2);
 .font--futura { font-family: $font-futura; }
 
-// Hypermarket
-@include font-face("hypermarket", "../fonts/hypermarket/hypermarket-regular", regular, $exts: woff woff2);
-@include font-face("hypermarket", "../fonts/hypermarket/hypermarket-bold", bold, $exts: woff woff2);
-@include font-face("hypermarket-exp", "../fonts/hypermarket-exp/hypermarket-exp-regular", regular, $exts: woff woff2);
-@include font-face("hypermarket-exp", "../fonts/hypermarket-exp/hypermarket-exp-bold", bold, $exts: woff woff2);
-.font--hypermarket     { font-family: $font-hypermarket; }
-.font--hypermarket-exp { font-family: $font-hypermarket-exp; }
-
 // Klang
 @include font-face("klang", "../fonts/klang/klang", regular, $exts: woff);
 .font--klang { font-family: $font-klang; }
 
-// Marche
-@include font-face("marche", "../fonts/marche/marche-super", regular, $exts: woff woff2);
-.font--marche { font-family: $font-marche; }
-
-// Merchant-copy
-@include font-face("merchant-copy", "../fonts/merchant-copy/merchant-copy-wide", regular, $exts: woff woff2);
-.font--merchant-copy { font-family: $font-merchant-copy; }
-
-// Klang
+// Operator Mono
 @include font-face("operator-mono", "../fonts/operator-mono/operator-mono-book-italic", regular, $exts: woff woff2);
 .font--operator-mono { font-family: $font-operator-mono; }
-
-// Pantograph
-@include font-face("pantograph", "../fonts/pantograph/pantograph", regular, $exts: woff woff2);
-.font--pantograph { font-family: $font-pantograph; }
 
 // Quattro
 @include font-face("quattro", "../fonts/quattro/quattro-text-5", regular, $exts: woff woff2);
@@ -124,10 +100,6 @@
 @include font-face("quattro", "../fonts/quattro/quattro-bold-5", bold, $exts: woff woff2);
 @include font-face("quattro", "../fonts/quattro/quattro-bold-5-italic", bold, italic, $exts: woff woff2);
 .font--quattro { font-family: $font-quattro; }
-
-// Roberta
-@include font-face("roberta", "../fonts/roberta/roberta", regular, $exts: woff woff2);
-.font--roberta { font-family: $font-roberta; }
 
 // Syne
 @include font-face("syne", "../fonts/syne/syne-extra", regular, $exts: woff woff2);

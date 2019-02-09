@@ -1,0 +1,25 @@
+// ============================================================================
+// Edit Link
+// ============================================================================
+
+.edit-link {
+  -webkit-text-stroke-width: 0;
+  background-color: $lemon;
+  border-radius: $component-size-sm / 2;
+  border: solid 1px $ink;
+  display: inline-block;
+  float: right;
+  font-family: $font-duospace;
+  font-size: $font-size-sm;
+  letter-spacing: 0.05em;
+  line-height: $component-size-sm;
+  margin-left: auto;
+  padding: 0 $spacer;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $mustard;
+    color: $white;
+  }
+}

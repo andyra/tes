@@ -1,0 +1,17 @@
+// ============================================================================
+// Photocopy
+// ============================================================================
+
+.photocopy {
+  background-color: $ink;
+  mix-blend-mode: multiply;
+}
+
+.photocopy__bg {
+  background-color: $white;
+  mix-blend-mode: screen;
+}
+
+.photocopy__image {
+  filter: grayscale(1);
+}

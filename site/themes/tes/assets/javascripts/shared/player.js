@@ -134,7 +134,6 @@
             index = self.playlist.length - 1;
           }
         } else {
-          console.log(self.playlist);
           index = self.index + 1;
           if (index >= self.playlist.length) {
             index = 0;

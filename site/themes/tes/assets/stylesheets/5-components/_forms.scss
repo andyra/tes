@@ -40,9 +40,21 @@ $input-border: inset 0 0 0 $border-width-sm $color-primary;
 .form--search {
   display: flex;
   margin: 0;
+  position: relative;
 
   .input {
     @include round-corners(right, 0, false);
-    flex: 1
+    flex: 1;
+    padding-left: $spacer * 2;
   }
+}
+
+.form--search__icon {
+  @include size(1rem);
+  fill: $ink;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  left: $spacer-sm;
+  transform: translateY(-50%);
 }

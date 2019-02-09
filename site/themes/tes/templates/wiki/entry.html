@@ -1,3 +1,4 @@
+
 {{ if tags | contains:People }}
   {{ section:body_class }}body--wiki-people{{ /section:body_class }}
 {{ /if }}
@@ -12,11 +13,13 @@
 <header class="wiki-article__header">
   <div class="flex flex--align-baseline">
     <span class="label">Title:</span>
-    {{ user:can permission="cp:access" }}
-      <a class="button m-left-auto" href="{{ edit_url }}">Edit</a>
-    {{ /user:can }}
   </div>
-  <h1 class="font--operator-mono m-top-0 m-bottom-0 weight--normal">{{ title }}</h1>
+  <h1 class="font--klang m-top-0 m-bottom-0 flex flex--align-center">
+    {{ title }}
+    {{ user:can permission="cp:access" }}
+      <a class="edit-link" href="{{ edit_url }}">Edit</a>
+    {{ /user:can }}
+  </h1>
 </header>
 
 <div class="flex">
@@ -24,7 +27,11 @@
     <span class="label">Descriptor:</span>
     {{ if featured_image }}
       <figure class="align--center">
-        <img class="wiki-entry__featured-image" src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
+        <div class="photocopy">
+          <div class="photocopy__bg">
+            <img class="wiki-entry__featured-image photocopy__image" src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
+          </div>
+        </div>
         <figcaption class="text--xs case--upper trackling--loose o-50">Fig. 1</figcaption>
       </figure>
     {{ /if }}

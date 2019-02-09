@@ -1,0 +1,77 @@
+// ============================================================================
+// Navigation
+// ============================================================================
+
+// Primary
+// ----------------------------------------------------------------------------
+
+.global-nav {
+  align-items: stretch;
+  background-color: $paper;
+  border-bottom: solid $border-width-base $ink;
+  display: flex;
+  height: $global-nav-height;
+  position: sticky;
+  top: 0;
+  z-index: $z-global-nav;
+}
+
+.global-nav__item {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 0 $spacer-sm;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $lemon;
+    color: $mustard;
+    text-decoration: none;
+  }
+
+  &.active {
+    background-color: $ink;
+    color: $white;
+  }
+
+  .sprite {
+    @include size(1rem);
+    fill: $ink;
+    pointer-events: none;
+  }
+}
+
+.global-nav__item--extra {
+  flex: none;
+  width: $spacer * 3;
+}
+
+// Subnav
+// ----------------------------------------------------------------------------
+
+.subnav {
+  background-color: $paper;
+  border: 2px solid $ink;
+  box-shadow: 0 4px 16px rgba($ink, 0.5);
+  min-width: 12rem;
+  position: absolute;
+  right: 0;
+  top: $global-nav-height;
+}
+
+.subnav--hide {
+  display: none;
+}
+
+.subnav__item {
+  color: $ink;
+  display: block;
+  line-height: $global-nav-height;
+  padding: 0 $spacer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $lemon;
+  }
+}

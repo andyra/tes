@@ -2,10 +2,6 @@
 // Wiki Entry
 // ============================================================================
 
-.body--wiki-entry .form--search {
-  border-bottom: dashed $border-width-sm $ink;
-  padding-bottom: $vmin;
-}
 // Base
 // ----------------------------------------------------------------------------
 
@@ -91,14 +87,5 @@ $list-border: $border-dotted;
     &:hover {
       background-color: $yellow;
     }
-  }
-}
-
-// People
-// ----------------------------------------------------------------------------
-
-.body--wiki-people {
-  .wiki-entry__featured-image {
-    mix-blend-mode: multiply;
   }
 }

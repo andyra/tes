@@ -1,12 +1,15 @@
+
 {{ section:header }}
 <header class="page-header">
   <div class="flex flex--align-baseline">
     <span class="label">A Song Called:</span>
-    {{ user:can permission="cp:access" }}
-      <a class="button m-left-auto" href="{{ edit_url }}">Edit</a>
-    {{ /user:can }}
   </div>
-  <h1 class="page-header__title font--titling-gothic case--upper">{{ title }}</h1>
+  <h1 class="page-header__title font--titling-gothic case--upper">
+    {{ title }}
+    {{ user:can permission="cp:access" }}
+      <a class="edit-link" href="{{ edit_url }}">Edit</a>
+    {{ /user:can }}
+  </h1>
 </header>
 {{ /section:header }}
 

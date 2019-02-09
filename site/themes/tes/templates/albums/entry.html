@@ -2,11 +2,13 @@
   <header class="collection__header page-header">
     <div class="flex flex--align--baseline">
       <span class="label">Title:</span>
-      {{ user:can permission="cp:access" }}
-        <a class="button m-left-auto" href="{{ edit_url }}">Edit</a>
-      {{ /user:can }}
     </div>
-    <h1 class="page-header__title text-outline--white font--windsor b-bottom-dotted">{{ title }}</h1>
+    <h1 class="page-header__title text-outline--white font--windsor b-bottom-dotted">
+      {{ title }}
+      {{ user:can permission="cp:access" }}
+        <a class="edit-link" href="{{ edit_url }}">Edit</a>
+      {{ /user:can }}
+    </h1>
   </header>
 
   <div class="collection__content">

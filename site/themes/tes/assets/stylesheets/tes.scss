@@ -44,6 +44,7 @@
 @import "5-components/breadcrumbs";
 @import "5-components/buttons";
 @import "5-components/cover-art";
+@import "5-components/edit-link";
 @import "5-components/forms";
 @import "5-components/grid";
 @import "5-components/labels";
@@ -52,6 +53,7 @@
 @import "5-components/rando-hover";
 @import "5-components/page";
 @import "5-components/page-header";
+@import "5-components/photocopy";
 @import "5-components/player";
 @import "5-components/tables";
 @import "5-components/tags";
@@ -61,7 +63,7 @@
 // Layouts
 @import "6-layouts/default";
 @import "6-layouts/collection";
-@import "6-layouts/music-nav";
+@import "6-layouts/navigation";
 
 // Pages
 @import "7-pages/albums/index";

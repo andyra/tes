@@ -2,16 +2,17 @@
 
 {{ section:header }}
 <header class="page-header">
-  <div class="container--base m-x-auto">
-    {{ partial:music-nav }}
-  </div>
+  <h1 class="page-header__title font--victor-moscoso case--upper align--center">Albums</h1>
 </header>
 {{ /section:header }}
 
 <section class="album-grid rando-bg-hover--pastel">
-{{ collection:albums }}
+{{ collection:albums sort="release_date:desc" }}
   <a class="album-grid__item" href="{{ url }}">
-    <h2 class="album-grid__title">{{ title }}</h2>
+    <h2 class="album-grid__title">
+      {{ title }}
+      <time class="album-grid__date">{{ release_date format="j F Y" }}</time>
+    </h2>
     <figure class="album-grid__image">
       {{ if cover_art }}
         <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />

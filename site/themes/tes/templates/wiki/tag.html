@@ -1,22 +1,26 @@
+{{ section:container_class }}container--full{{ /section:container_class }}
+
 {{ section:header }}
 <header class="page-header">
-  <nav class="breadcrumbs m-bottom-base">
-    <a class="breadcrumbs__item" href="{{ link to='wiki' }}">Wiki</a>
-    {{ if parent_tag }}
-      {{ relate:parent_tag }}
-        <a class="breadcrumbs__item" href="{{ url }}">{{ title }}</a>
-      {{ /relate:parent_tag }}
-    {{ /if }}
-    <span class="breadcrumbs__item breadcrumbs__item--current">{{ title }}</span>
-  </nav>
-  <h1 class="page-header__title font--klang tracking--loose case--upper weight--normal">{{ title }}</h1>
-  {{ partial:wiki-search-form }}
+  <div class="container container--base">
+    <nav class="breadcrumbs m-bottom-base">
+      <a class="breadcrumbs__item" href="{{ link to='wiki' }}">Wiki</a>
+      {{ if parent_tag }}
+        {{ relate:parent_tag }}
+          <a class="breadcrumbs__item" href="{{ url }}">{{ title }}</a>
+        {{ /relate:parent_tag }}
+      {{ /if }}
+      <span class="breadcrumbs__item breadcrumbs__item--current">{{ title }}</span>
+    </nav>
+    <h1 class="page-header__title font--klang tracking--loose case--upper weight--normal">{{ title }}</h1>
+    {{ partial:wiki-search-form }}
+  </div>
 </header>
 {{ /section:header }}
 
-<!-- People Sub-Tags -->
+<!-- Sub-Tags -->
 {{ if slug == "people" }}
-  <section class="grid grid--gap wiki-tags rando-bg-hover m-bottom-lg">
+  <section class="grid grid--gap wiki-tags rando-bg-hover m-bottom-lg container container--base">
   {{ taxonomy:tags sort="title" }}
     {{ if parent_tag }}
       <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
@@ -25,9 +29,9 @@
   </section>
 {{ /if }}
 
-<!-- Directory -->
+<!-- People -->
 {{ if slug == "people" or parent_tag == 'tags/people' }}
-<div class="grid wiki-articles wiki-people rando-bg-hover">
+<div class="grid grid--gap-x wiki-articles wiki-people rando-bg-hover">
 {{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
   {{ wikis scope="wiki" }}
     <a class="wiki-articles__item wiki-people__item" href="{{ wiki:url }}">
@@ -47,7 +51,7 @@
 </div>
 {{ else }}
 <!-- All other wikis -->
-<div class="grid wiki-articles rando-bg-hover">
+<div class="grid grid--gap-x wiki-articles rando-bg-hover">
 {{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
   {{ wikis scope="wiki" }}
     <a class="wiki-articles__item" href="{{ wiki:url }}">

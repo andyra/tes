@@ -2,39 +2,6 @@
 // Default Layout
 // ============================================================================
 
-// Global Nav
-// ----------------------------------------------------------------------------
-
-.global-nav {
-  align-items: stretch;
-  background-color: $paper;
-  border-bottom: solid $border-width-base $ink;
-  display: flex;
-  position: sticky;
-  top: 0;
-  z-index: $z-global-nav;
-}
-
-.global-nav__item {
-  align-items: center;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  padding: component-size($component-lg) 0.5em;
-  text-decoration: none;
-
-  &:hover {
-    background-color: $lemon;
-    color: $mustard;
-    text-decoration: none;
-  }
-
-  &.active {
-    background-color: $ink;
-    color: $white;
-  }
-}
-
 // Content
 // ----------------------------------------------------------------------------
 

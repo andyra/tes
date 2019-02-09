@@ -6,10 +6,10 @@
 // ----------------------------------------------------------------------------
 
 .wiki-tags__item {
+  @include font-smoothing(none);
   background-color: $color-primary;
-  color: $gray-light;
+  color: $paper;
   display: block;
-  font-family: $font-windsor;
   font-size: $font-size-lg;
   height: 100%;
   padding: $spacer;
@@ -26,15 +26,17 @@
 $border: dotted $border-width-sm $gray-darkest;
 
 .wiki-articles__item {
-  border: $border;
-  color: $gray-darkest;
+  border-top: $border-dotted;
   font-size: $font-size-sm;
   padding: $spacer;
   text-decoration: none;
 }
 
 .wiki-articles__item--empty {
-  border-style: dashed;
+  &:hover {
+    color: $red;
+    border-top: solid $red 1px;
+  }
 }
 
 // Directory

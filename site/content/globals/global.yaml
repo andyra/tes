@@ -6,6 +6,7 @@ zip: '79601'
 phone: 512-731-6063
 email: tes.thiseveningsshow@gmail.com
 feed_url: '{{ site_url }}feed'
+itunes_url: 'https://itunes.apple.com/us/podcast/this-evenings-show/id958245203?mt=2'
 twitter_url: 'https://twitter.com/thiseveningshow'
 facebook_url: 'https://www.facebook.com/ThisEveningsShow/'
 css_path: /site/themes/tes/assets/stylesheets

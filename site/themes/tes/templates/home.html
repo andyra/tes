@@ -1,12 +1,74 @@
 {{ section:container_class }}container--full{{ /section:container_class }}
 
-<section class="home__mastheads">
-  This Evening's Show
+<section class="masthead">
+  <hgroup class="masthead__half masthead__half--title">
+    <div class="masthead__circles">
+      {{ site:sprite id="circles" class="masthead__circle masthead__circle-a" width="128" height="128" }}
+      {{ site:sprite id="circles" class="masthead__circle masthead__circle-b" width="128" height="128" }}
+    </div>
+    <h1 class="masthead__title"><span>This</span> <span>Evening's</span> <span>Show</span></h1>
+  </hgroup>
+  <div class="masthead__half masthead__half--player">
+    <p>Listen to CKNWR RADIO!</p>
+    {{ partial:player }}
+    <a class="subscribe-button button" href="{{ itunes_url }}" target="_blank">
+      <div>{{ site:sprite id="icon-rss" width="16" height="16" }}</div>
+      <div>
+        Subscribe
+        <div class="text--xs case--upper trackling--loose o-50">to the Podcast</div>
+      </div>
+    </a>
+  </div>
 </section>
 
-<section class="home__intro container container--base">
-  {{ partial:player }}
-  <p>This Evening’s Show is a radio broadcast transmitting from an abandoned monorail station outside Adobe Skyscraper. Tune in as your hosts guide you through a cavalcade of bizarre characters, historic factoids, surreal comedy, news stories, interviews, and original music by the Wonderful Land Wonderful Band.</p>
-</section>
+<section class="home__intro">
+  <div class="container container--base">
 
-<button id="rando-track">Get Random Track</button>
+    <div class="what-is">
+      {{ collection:wiki taxonomy:tags="people" limit="1" sort="random" featured_image:exists="true" article:exists="true" }}
+
+      <a class="what-is__link" href="{{ url }}">
+        <figure class="what-is__image photocopy">
+          <div class="photocopy__bg">
+            <img class="photocopy__image" src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
+          </div>
+          {{ site:sprite id="curved-line" width="64" height="48" class="what-is__line" }}
+        </figure>
+        <span class="text--xs case--upper trackling--loose o-50">Fig. 2 • {{ title }}</span>
+      </a>
+
+      {{ /collection:wiki }}
+      <div class="what-is__content">
+        <h2>What Is TES?</h2>
+        {{ podcast:description }}
+      </div>
+    </div>
+
+    <div class="recent-grid">
+      {{ collection:episodes sort="release_date:desc" limit="2" }}
+      <a class="recent-grid__item" href="{{ url }}">
+        <time class="">{{ release_date format="j F Y" }}</time>
+        <figure class="">
+        {{ if cover_art }}
+          <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
+        {{ else }}
+          <div class="cover-art cover-art--empty"></div>
+        {{ /if }}
+        </figure>
+      </a>
+      {{ /collection:episodes }}
+      {{ collection:albums sort="release_date:desc" limit="1" }}
+      <a class="recent-grid__item" href="{{ url }}">
+        <time class="">{{ release_date format="j F Y" }}</time>
+        <figure class="">
+        {{ if cover_art }}
+          <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
+        {{ else }}
+          <div class="cover-art cover-art--empty"></div>
+        {{ /if }}
+        </figure>
+      </a>
+      {{ /collection:albums }}
+    </div>
+  </div>
+</section>

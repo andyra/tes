@@ -1,18 +1,22 @@
+{{ section:container_class }}container--full{{ /section:container_class }}
+
 {{ section:header }}
 <header class="page-header">
-  <h1 class="page-header__title font--klang tracking--loose case--upper weight--normal">Wiki</h1>
-  {{ partial:wiki-search-form }}
-  <p class="text--lg m-top-base">
-    The Grand Library of all things Akabius. Learn about, for instance,
-    {{ collection:wiki article:exists="true" limit="3" sort="random" scope="rando" }}
-      {{ if last }}and {{ /if }}
-      <a class="font--duospace" href="{{ rando:url }}">{{ rando:title }}</a>{{ if ! last }},{{ /if }}{{ if last }}.{{ /if }}
-    {{ /collection:wiki }}
-  </p>
+  <div class="container container--base">
+    <h1 class="page-header__title font--klang tracking--loose case--upper weight--normal">Wiki</h1>
+    {{ partial:wiki-search-form }}
+    <p class="text--lg m-top-base">
+      The Grand Library of all things Akabius. Learn about, for instance,
+      {{ collection:wiki article:exists="true" limit="3" sort="random" scope="rando" }}
+        {{ if last }}and {{ /if }}
+        <a class="font--duospace" href="{{ rando:url }}">{{ rando:title }}</a>{{ if ! last }},{{ /if }}{{ if last }}.{{ /if }}
+      {{ /collection:wiki }}
+    </p>
+  </div>
 </header>
 {{ /section:header }}
 
-<section class="grid grid--gap wiki-tags rando-bg-hover">
+<section class="grid grid--gap wiki-tags rando-bg-hover container container--base">
 {{ taxonomy:tags sort="title" }}
   {{ if ! parent_tag }}
   <a class="wiki-tags__item" href="{{ url }}">{{ title }}</a>
@@ -21,10 +25,15 @@
 </section>
 
 {{ user:can permission="cp:access" }}
-<h3>Empty articles</h3>
-<section class="grid grid--gap wiki-articles">
-  {{ collection:wiki article:doesnt_exist="true" }}
-  <a class="wiki-articles__item wiki-articles__item--empty" href="{{ url }}">{{ title }}</a>
-  {{ /collection:wiki }}
+<section class="p-y-vmin-lg m-top-vmin-lg bg--slate">
+  <h2 class="align--center case--upper tracking--loose font--duospace">
+    Empty articles
+    <div class="text--xs o-50">(Only visible if you're logged in)</div>
+  </h2>
+  <div class="grid grid--gap-x">
+    {{ collection:wiki article:doesnt_exist="true" }}
+    <a class="wiki-articles__item wiki-articles__item--empty" href="{{ url }}">{{ title }}</a>
+    {{ /collection:wiki }}
+  </div>
 </section>
 {{ /user:can }}

@@ -1,5 +1,6 @@
 <form class="form form--search m-bottom-base" action="/wiki/search" method="GET">
   <input name="collection" value="wiki" type="hidden">
   <input class="input" type="text" name="q" value="{{ get:q }}" placeholder="Search the wiki" />
-  <button class="button" type="submit">Look</button>
+  {{ site:sprite id="icon-eye" width="16" height="16" class="form--search__icon" }}
+  <button class="button" type="submit">Search</button>
 </form>

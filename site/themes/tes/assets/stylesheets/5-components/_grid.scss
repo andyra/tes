@@ -11,3 +11,7 @@
 .grid--gap {
   grid-gap: $spacer;
 }
+
+.grid--gap-x {
+  grid-column-gap: $spacer;
+}

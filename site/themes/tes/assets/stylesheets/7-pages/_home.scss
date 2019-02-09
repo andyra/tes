@@ -6,22 +6,193 @@
   padding: 0;
 }
 
-.home__masthead,
-.home__intro {
+// Masthead
+// ----------------------------------------------------------------------------
+
+$masthead-height: 50vmin;
+$circle-size: 115vmax;
+
+@keyframes hypnonis {
+  from { transform: rotate(0deg)   translate(-0.5%) rotate(0deg); }
+  to   { transform: rotate(360deg) translate(-0.5%) rotate(-360deg); }
+}
+
+.masthead {
+  overflow: hidden;
+  position: relative;
+}
+
+.masthead__half {
   align-items: center;
   display: flex;
+  padding: $spacer;
+  position: relative;
+}
+
+.masthead__half--title {
+  align-items: center;
+  align-self: stretch;
+  background: $red;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.masthead__title {
+  color: $white;
+  font-family: $font-windsor;
+  font-size: 11vmin;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  text-shadow: 4px 4px 0 $magenta;
+}
+
+.masthead__circles {
+  @include size($circle-size);
+  left: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.masthead__circle {
+  @include size($circle-size);
+  fill: none;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.masthead__circle-a {
+  animation: hypnonis 8s infinite linear;
+}
+
+.masthead__half--player {
+  background: url("../images/wall.jpg") no-repeat;
+  background-size: cover;
   flex-direction: column;
+  justify-content: center;
+
+  .player {
+    max-width: $spacer * 32;
+  }
+
+  p {
+    color: white;
+  }
+}
+
+.subscribe-button {
+  background-color: $lemon;
+  // color: $magenta;
+  border: none;
+  padding-bottom: $spacer-sm;
+  padding-top: $spacer-sm;
+  height: auto;
+  text-align: left;
+
+  &:hover {
+    background-color: $green;
+  }
+
+  .sprite {
+    @include size(1em);
+    margin-right: $spacer;
+    fill: currentColor;
+  }
+}
+
+.subscribe-button__caption {
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: normal;
+  opacity: 0.5;
+}
+
+
+// Intro
+// ----------------------------------------------------------------------------
+
+.home__intro {
+  background-color: $seashell;
+  padding: 8vmin 0;
+}
+
+.what-is {
+  display: flex;
+  margin-bottom: $vmin-lg;
+}
+
+.what-is__link {
+  flex: 0 1 33%;
+  text-align: center;
+}
+
+.what-is__image {
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+.what-is__line {
+  @include size(64px, 48px);
+  fill: currentColor;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(0, 135%);
+}
+
+.what-is__content {
+  flex: 1;
+  padding-left: $spacer;
+}
+
+
+.recent-grid {
+  display: flex;
   justify-content: center;
 }
 
-.home__masthead {
-  background: $ink url("../images/zooming.gif") no-repeat;
-  background-position: center 35%;
-  background-size: cover;
-  height: 50vh;
-  color: $white;
+.recent-grid__item {
+  flex: 1;
+  padding: $spacer-sm;
 }
 
-.home__intro {
-  height: 50vh;
+// Responsive
+// ----------------------------------------------------------------------------
+
+@media #{$screen-base-up} {
+  .masthead {
+    display: flex;
+    height: $masthead-height;
+  }
+
+  .masthead__half {
+    flex: 0 1 50%;
+  }
+
+  .masthead__title {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+@media #{$screen-base-down} {
+  .masthead__half--title {
+    height: 33vh;
+    text-align: center;
+  }
+
+  .masthead__half--player {
+    height: 33vh;
+  }
+
+  .masthead__title {
+    font-size: 8vmin;
+  }
 }
