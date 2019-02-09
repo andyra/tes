@@ -22,7 +22,7 @@ sections:
         validate: required
       cover_art:
         display: 'Cover Art'
-        type: assets
+        type: assets_organized
         instructions: 'JPG at least 1400×1400px'
         container: s3
         folder: albums
