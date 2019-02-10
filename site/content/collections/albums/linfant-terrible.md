@@ -1,7 +1,7 @@
 title: 'L''Infant Terrible'
 artist: artists/neon-wolf
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/albums/linfant-terrible/linfant-terrible.jpg'
-release_date: '2019-01-28'
+release_date: '2014-05-14'
 type: studio
 tracklist:
   -

@@ -9,6 +9,10 @@
   margin-bottom: $vmin;
 }
 
+.wiki-article__wrapper {
+  display: flex;
+}
+
 .wiki-article__content {
   flex: 1;
   padding-right: $vmin-sm;
@@ -87,5 +91,11 @@ $list-border: $border-dotted;
     &:hover {
       background-color: $yellow;
     }
+  }
+}
+
+@media #{$screen-sm-down} {
+  .wiki-article__wrapper {
+    display: block;
   }
 }

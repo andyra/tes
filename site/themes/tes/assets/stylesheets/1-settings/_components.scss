@@ -21,11 +21,11 @@ $border-radius-lg:      u(8px, rem);
 // Component Sizes
 // ----------------------------------------------------------------------------
 
-$component-size-xs:   $unit * 3;  // 24
-$component-size-sm:   $unit * 4;  // 32
-$component-size-base: $unit * 5;  // 40
-$component-size-lg:   $unit * 6;  // 48
-$component-size-xl:   $unit * 7;  // 56
+$component-size-xs:   $unit * 2;  // 16
+$component-size-sm:   $unit * 3;  // 24
+$component-size-base: $unit * 4;  // 32
+$component-size-lg:   $unit * 5;  // 40
+$component-size-xl:   $unit * 6;  // 48
 
 $component-xs: (
   height: $component-size-xs,

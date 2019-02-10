@@ -1,22 +1,28 @@
 <nav class="global-nav">
   <a class="global-nav__item global-nav__item--home case--upper tracking--looser font--titling-gothic" href="/"><strong>TES</strong></a>
-  {{ nav from="/" subnav:isnt="true" }}
-    <a class="global-nav__item case--upper tracking--looser text--xs{{ if is_current || is_parent || title == page:active_on }} active{{ /if }}" href="{{ url }}">
-      {{ title }}
-    </a>
-  {{ /nav }}
-  <a class="global-nav__item global-nav__item--extra" href="{{ link to='search' }}" title="Search">
-    {{ site:sprite id="icon-eye" height="16" width="16" }}
-  </a>
-  <button class="global-nav__item global-nav__item--extra button-reset" data-toggle-subnav aria-label="More items">
-    {{ site:sprite id="icon-overflow" height="16" width="16" }}
-  </button>
-  <nav class="subnav subnav--hide" data-subnav>
-    {{ nav from="/" subnav:is="true" }}
-      <a class="subnav__item case--upper tracking--looser text--xs{{ if is_current || is_parent || title == page:active_on }} active{{ /if }}" href="{{ url }}">
+  <div class="global-nav__section global-nav__section--desktop" data-mobile-menu>
+    {{ nav from="/" subnav:isnt="true" }}
+      <a class="global-nav__item case--upper tracking--looser text--xs{{ if is_current || is_parent || title == page:active_on }} active{{ /if }}" href="{{ url }}">
         {{ title }}
       </a>
     {{ /nav }}
-    <a class="subnav__item case--upper tracking--looser text--xs b-top-base" href="{{ link to='login' }}">Log In</a>
-  </nav>
+    <div class="subnav" data-subnav-menu>
+      {{ nav from="/" subnav:is="true" }}
+        <a class="subnav__item case--upper tracking--looser text--xs{{ if is_current || is_parent || title == page:active_on }} active{{ /if }}" href="{{ url }}">
+          {{ title }}
+        </a>
+      {{ /nav }}
+      <a class="subnav__item case--upper tracking--looser text--xs b-top-base" href="{{ link to='login' }}">Log In</a>
+    </div>
+  </div>
+
+  <div class="global-nav__section global-nav__section--mobile">
+    <a class="global-nav__item global-nav__item--search" href="{{ link to='search' }}" title="Search">
+      {{ site:sprite id="icon-eye" height="16" width="16" }}
+    </a>
+    <button class="global-nav__item global-nav__item--extra button-reset" data-subnav-toggle aria-label="More items">
+      {{ site:sprite id="icon-overflow" height="16" width="16" }}
+    </button>
+    <button class="global-nav__mobile-toggle button button-reset" data-mobile-toggle>Menu</button>
+  </div>
 </nav>

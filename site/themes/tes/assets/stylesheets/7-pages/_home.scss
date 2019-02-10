@@ -9,7 +9,7 @@
 // Masthead
 // ----------------------------------------------------------------------------
 
-$masthead-height: 50vmin;
+$half-height: calc(50vh - #{$global-nav-height / 2});
 $circle-size: 115vmax;
 
 @keyframes hypnonis {
@@ -86,16 +86,16 @@ $circle-size: 115vmax;
 }
 
 .subscribe-button {
-  background-color: $lemon;
-  // color: $magenta;
-  border: none;
+  background-color: transparent;
+  color: $white;
   padding-bottom: $spacer-sm;
   padding-top: $spacer-sm;
   height: auto;
   text-align: left;
 
   &:hover {
-    background-color: $green;
+    color: $green;
+    border-color: $green;
   }
 
   .sprite {
@@ -119,12 +119,10 @@ $circle-size: 115vmax;
 
 .home__intro {
   background-color: $seashell;
-  padding: 8vmin 0;
 }
 
 .what-is {
   display: flex;
-  margin-bottom: $vmin-lg;
 }
 
 .what-is__link {
@@ -161,6 +159,11 @@ $circle-size: 115vmax;
 .recent-grid__item {
   flex: 1;
   padding: $spacer-sm;
+  text-align: center;
+
+  &:hover .cover-art {
+    box-shadow: 0 0 0 8px $green;
+  }
 }
 
 // Responsive
@@ -169,7 +172,7 @@ $circle-size: 115vmax;
 @media #{$screen-base-up} {
   .masthead {
     display: flex;
-    height: $masthead-height;
+    height: $half-height;
   }
 
   .masthead__half {
@@ -180,19 +183,22 @@ $circle-size: 115vmax;
     display: flex;
     flex-flow: column;
   }
+
+  .home__intro {
+    min-height: $half-height;
+  }
 }
 
 @media #{$screen-base-down} {
+  .masthead__half {
+    min-height: 50vh;
+  }
+
   .masthead__half--title {
-    height: 33vh;
     text-align: center;
   }
 
-  .masthead__half--player {
-    height: 33vh;
-  }
-
   .masthead__title {
-    font-size: 8vmin;
+    font-size: 7vmax;
   }
 }

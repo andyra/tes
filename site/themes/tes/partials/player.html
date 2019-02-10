@@ -1,4 +1,4 @@
-<div class="player b-base br-base {{ class }}" data-player="stereo">
+<div class="player player--loading player--disabled b-base br-base {{ class }}" data-player="stereo">
   <div class="player__control">
     <button class="player__play player__button button-reset" data-player="play" aria-label="play">
       {{ site:sprite id="play" width="32" height="24" }}
@@ -15,19 +15,18 @@
       <time class="player__duration player__time" data-player="duration">0:00</time>
     </div>
     <div class="player__row">
-      <div class="player__progress">
-        <div data-player="progress" class="player__progress-bar"></div>
+      <div class="player__progress" data-player="progress">
+        <div class="player__progress-bar" data-player="progressBar"></div>
       </div>
       <button class="player__prev player__skip player__button button-reset" data-player="prev" aria-label="Previous Track">
-        {{ site:sprite id="prev" width="32" height="24" }}
+        {{ site:sprite id="prev" width="64" height="24" }}
       </button>
       <button class="player__next player__skip player__button button-reset" data-player="next" aria-label="Next Track">
-        {{ site:sprite id="next" width="32" height="24" }}
+        {{ site:sprite id="next" width="64" height="24" }}
       </button>
-      <button class="player__speed player__button button-reset" data-player="speed">Slow</button>
+      <button class="player__slow player__button button-reset" data-player="slow" aria-label="Half Speed">
+        <div class="player__slow-switch"></div>
+      </button>
     </div>
   </div>
 </div>
-
-<!-- See what classes Bandcamp uses, and how they do the dragger -->
-<!-- If state = playing, show pause. Otherwise, show play -->

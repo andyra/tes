@@ -6,7 +6,7 @@
 
   var tracklistItems = document.querySelectorAll('[data-track]');
   var elements = ['stereo', 'title', 'timer', 'duration', 'play', 'pause',
-  'speed', 'next', 'prev', 'progress', 'loader', 'tracklist']
+  'slow', 'next', 'prev', 'progressBar', 'progress', 'loader', 'tracklist']
 
   elements.forEach(function(el) {
     window[el] = document.querySelector(`[data-player="${el}"]`);
@@ -29,6 +29,7 @@
 
       // Display the title of the first track.
       title.innerHTML = playlist[0].title;
+      stereo.classList.remove('player--loading');
     };
 
     Player.prototype = {
@@ -58,6 +59,7 @@
 
               // Show the pause button
               pause.style.display = 'block';
+              stereo.classList.remove('player--disabled');
             },
             onload: function() {
               loader.style.display = 'none';
@@ -71,8 +73,8 @@
                 });
               }
             },
-            onpause: function() {
-              // ?
+            onunlock: function() {
+              console.log("Unlocked");
             },
             onstop: function() {
               // ?
@@ -149,15 +151,15 @@
         console.log("skipTo");
         var self = this;
 
-        // Stop the current track.
+        // Stop the current track
         if (self.playlist[self.index].howl) {
           self.playlist[self.index].howl.stop();
         }
 
-        // Reset progress.
-        progress.style.width = '0%';
+        // Reset progress
+        progressBar.style.width = '0%';
 
-        // Play the new track.
+        // Play the new track
         self.play(index);
       },
 
@@ -171,8 +173,10 @@
         var sound = self.playlist[self.index].howl;
 
         // Convert the percent into a seek position.
-        if (sound.playing()) {
+        if (sound != null && sound.playing()) {
           sound.seek(sound.duration() * per);
+        } else {
+          console.log("Sound hasn't started playing yet");
         }
       },
 
@@ -184,8 +188,10 @@
         var sound = self.playlist[self.index].howl;
 
         if (sound.rate() === 1) {
+          slow.classList.add('player__slow--active');
           sound.rate(0.5);
         } else {
+          slow.classList.remove('player__slow--active');
           sound.rate(1);
         }
       },
@@ -200,7 +206,7 @@
         // Determine our current seek position.
         var seek = sound.seek() || 0;
         timer.innerHTML = self.formatTime(Math.round(seek));
-        progress.style.width = (((seek / sound.duration()) * 100) || 0) + '%';
+        progressBar.style.width = (((seek / sound.duration()) * 100) || 0) + '%';
 
         // If the sound is still playing, continue stepping.
         if (sound.playing()) {
@@ -218,6 +224,11 @@
         return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
       }
     };
+
+    function seekPercent(e) {
+      var p = progress.getBoundingClientRect();
+      var percent = (e.clientX - p.x) / p.width;
+    }
 
     // Tracklist
     // ---------------------------------------------------------------------------
@@ -395,7 +406,10 @@
         });
       }
     });
-    speed.addEventListener('click', function() {
+    progress.addEventListener('click', function(e) {
+      player.seek(seekPercent(e));
+    });
+    slow.addEventListener('click', function() {
       player.rate(0.5);
     });
 

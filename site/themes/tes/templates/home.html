@@ -9,66 +9,61 @@
     <h1 class="masthead__title"><span>This</span> <span>Evening's</span> <span>Show</span></h1>
   </hgroup>
   <div class="masthead__half masthead__half--player">
-    <p>Listen to CKNWR RADIO!</p>
+    <p class='text--sm case--upper tracking--loosest o-50'>Radio Station</p>
     {{ partial:player }}
-    <a class="subscribe-button button" href="{{ itunes_url }}" target="_blank">
-      <div>{{ site:sprite id="icon-rss" width="16" height="16" }}</div>
-      <div>
-        Subscribe
-        <div class="text--xs case--upper trackling--loose o-50">to the Podcast</div>
-      </div>
-    </a>
+    <div class="m-top-lg">
+      <a class="subscribe-button button" href="{{ itunes_url }}" target="_blank">
+        <div>{{ site:sprite id="icon-rss" width="16" height="16" }}</div>
+        <div>
+          Subscribe
+          <div class="text--xs case--upper trackling--loose o-50">to the Podcast</div>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
-<section class="home__intro">
-  <div class="container container--base">
-
-    <div class="what-is">
-      {{ collection:wiki taxonomy:tags="people" limit="1" sort="random" featured_image:exists="true" article:exists="true" }}
-
-      <a class="what-is__link" href="{{ url }}">
-        <figure class="what-is__image photocopy">
-          <div class="photocopy__bg">
-            <img class="photocopy__image" src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
-          </div>
-          {{ site:sprite id="curved-line" width="64" height="48" class="what-is__line" }}
-        </figure>
-        <span class="text--xs case--upper trackling--loose o-50">Fig. 2 • {{ title }}</span>
-      </a>
-
-      {{ /collection:wiki }}
-      <div class="what-is__content">
-        <h2>What Is TES?</h2>
-        {{ podcast:description }}
-      </div>
+<section class="home__intro p-y-vmin-lg">
+  <div class="what-is container container--base">
+    {{ collection:wiki taxonomy:tags="people" limit="1" sort="random" featured_image:exists="true" article:exists="true" }}
+    <a class="what-is__link" href="{{ url }}">
+      <figure class="what-is__image photocopy">
+        <div class="photocopy__bg">
+          <img class="photocopy__image" src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
+        </div>
+        {{ site:sprite id="curved-line" width="64" height="48" class="what-is__line" }}
+      </figure>
+      <span class="text--xs case--upper trackling--loose o-50">Fig. 2 • {{ title }}</span>
+    </a>
+    {{ /collection:wiki }}
+    <div class="what-is__content">
+      <h2>What Is TES?</h2>
+      <p>{{ podcast:description }}</p>
+      <p class="text--sm o-75">
+        Let me tell you about
+        {{ collection:wiki article:exists="true" limit="3" sort="random" scope="rando" }}
+          {{ if last }}or {{ /if }}
+          <a class="font--duospace" href="{{ rando:url }}">{{ rando:title }}</a>{{ if ! last }},{{ /if }}{{ if last }}.{{ /if }}
+        {{ /collection:wiki }}
+      </p>
     </div>
+  </div>
+</section>
 
-    <div class="recent-grid">
-      {{ collection:episodes sort="release_date:desc" limit="2" }}
-      <a class="recent-grid__item" href="{{ url }}">
-        <time class="">{{ release_date format="j F Y" }}</time>
-        <figure class="">
-        {{ if cover_art }}
-          <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
-        {{ else }}
-          <div class="cover-art cover-art--empty"></div>
-        {{ /if }}
-        </figure>
-      </a>
-      {{ /collection:episodes }}
-      {{ collection:albums sort="release_date:desc" limit="1" }}
-      <a class="recent-grid__item" href="{{ url }}">
-        <time class="">{{ release_date format="j F Y" }}</time>
-        <figure class="">
-        {{ if cover_art }}
-          <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
-        {{ else }}
-          <div class="cover-art cover-art--empty"></div>
-        {{ /if }}
-        </figure>
-      </a>
-      {{ /collection:albums }}
-    </div>
+<section class="container container--base p-y-vmin-lg">
+  <h2 class="text--base weight--normal tracking--loosest case--upper align--center">New Tunes</h2>
+  <div class="recent-grid">
+    {{ collection from="episodes|albums" sort="release_date:desc" limit="3" }}
+    <a class="recent-grid__item" href="{{ url }}">
+      <figure class="">
+      {{ if cover_art }}
+        <img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" />
+      {{ else }}
+        <div class="cover-art cover-art--empty"></div>
+      {{ /if }}
+      </figure>
+      <time class="text--xs font--operator-mono o-50">{{ release_date format="j F Y" }}</time>
+    </a>
+    {{ /collection }}
   </div>
 </section>

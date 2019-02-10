@@ -19,7 +19,6 @@
 .global-nav__item {
   align-items: center;
   display: flex;
-  flex: 1;
   justify-content: center;
   padding: 0 $spacer-sm;
   text-decoration: none;
@@ -42,9 +41,31 @@
   }
 }
 
-.global-nav__item--extra {
-  flex: none;
+.global-nav__section {
+  display: flex;
+}
+
+.global-nav__section--desktop {
+  display: flex;
+
+  &,
+  .global-nav__item {
+    flex: 1;
+  }
+}
+
+.global-nav__item--extra,
+.global-nav__item--search {
   width: $spacer * 3;
+}
+
+.global-nav__mobile-toggle {
+  align-self: center;
+  border-radius: $border-radius-base;
+  display: none;
+  font-size: $font-size-sm;
+  border-width: 1px;
+  font-weight: normal;
 }
 
 // Subnav
@@ -54,6 +75,7 @@
   background-color: $paper;
   border: 2px solid $ink;
   box-shadow: 0 4px 16px rgba($ink, 0.5);
+  display: none; // hide by default
   min-width: 12rem;
   position: absolute;
   right: 0;
@@ -65,13 +87,74 @@
 }
 
 .subnav__item {
+  align-items: center;
   color: $ink;
   display: block;
-  line-height: $global-nav-height;
+  display: flex;
+  min-height: $global-nav-height;
   padding: 0 $spacer;
   text-decoration: none;
 
   &:hover {
     background-color: $lemon;
+  }
+}
+
+// Responsive
+// ----------------------------------------------------------------------------
+
+@media #{$screen-xs-up} {
+  .global-nav__section--desktop {
+    display: flex !important;
+  }
+}
+
+@media #{$screen-xs-down} {
+  .global-nav__section--desktop,
+  .global-nav__item--extra {
+    display: none;
+  }
+
+  .global-nav__section--desktop {
+    position: absolute;
+    top: $global-nav-height;
+    left: 0;
+    width: 100%;
+    background-color: $paper;
+    flex-wrap: wrap;
+
+    .global-nav__item {
+      min-height: $component-size-lg;
+
+      + .global-nav__item {
+        border-left: 1px solid $ink
+      }
+    }
+  }
+
+  .global-nav__section--mobile {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .global-nav__mobile-toggle {
+    display: block;
+  }
+
+  .subnav {
+    display: flex !important;
+    flex-wrap: wrap;
+    position: static;
+    box-shadow: none;
+    border: none;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .subnav__item {
+    border-left: $border-base;
+    border-top: $border-base;
+    flex: 1;
+    min-height: $component-size-lg;
   }
 }

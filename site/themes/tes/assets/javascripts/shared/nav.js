@@ -1,26 +1,34 @@
-var toggle = document.querySelector('[data-toggle-subnav]');
-var subnav = document.querySelector('[data-subnav]');
-var hideClass = 'subnav--hide';
 
-function toggleSubnav() {
-  if (subnav.classList.contains(hideClass)) {
-    subnav.classList.remove(hideClass);
+var subnavToggle = document.querySelector('[data-subnav-toggle]');
+var subnavMenu = document.querySelector('[data-subnav-menu]');
+var mobileToggle = document.querySelector('[data-mobile-toggle]');
+var mobileMenu = document.querySelector('[data-mobile-menu]');
+
+function toggleMenu(el) {
+  if (el.offsetParent === null) {
+    el.style.display = 'flex';
   } else {
-    subnav.classList.add(hideClass);
+    el.style.display = 'none';
   }
 }
 
-toggle.addEventListener('click', function() {
+subnavToggle.addEventListener('click', function() {
   console.log("Toggle subnav");
-  toggleSubnav();
+  toggleMenu(subnavMenu);
 });
 
+mobileToggle.addEventListener('click', function() {
+  console.log("Toggle mobile");
+  toggleMenu(mobileMenu);
+});
+
+// Hide subnav
 document.addEventListener('click', function(e) {
   // Only trigger if the subnav is open
-  if (!subnav.classList.contains(hideClass)) {
-    if (!toggle.contains(e.target)) {
+  if (subnavMenu.offsetParent != null) {
+    if (!subnavToggle.contains(e.target)) {
       console.log("Outside");
-      subnav.classList.add(hideClass);
+      subnavMenu.style.display = 'none';
     }
   }
 });
