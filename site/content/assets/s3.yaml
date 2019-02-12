@@ -4,4 +4,6 @@ key: {env:S3_KEY}
 secret: "{env:S3_SECRET}"
 bucket: thiseveningsshow
 region: us-east-1
-cache: 120
+# cache: 120
+
+# Cache causes the site to crash unless Redis is installed.
