@@ -17,7 +17,7 @@ sections:
         validate: required|active_url
       cover_art:
         display: 'Cover Art'
-        type: assets_organized
+        type: assets
         instructions: 'JPG at least 1400×1400px'
         container: s3
         folder: episodes

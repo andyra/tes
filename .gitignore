@@ -1,9 +1,20 @@
-.DS_Store
+# Private
 .env
+
+# Assets
 .sass-cache/
 node_modules/
 bower_components/
+
+# Cache, logs, etc.
+_cache/*
+_config/users/*
+_content/*
+_logs/*
 local/cache/*
 local/storage/*
 local/temp/*
+
+# Misc
 installer.php
+.DS_Store
