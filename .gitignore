@@ -2,7 +2,7 @@
 .env
 
 # Assets
-.sass-cache/
+.sass-cache/*
 node_modules/
 bower_components/
 
