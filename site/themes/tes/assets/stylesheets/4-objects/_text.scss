@@ -82,10 +82,6 @@
 @include font-face("eurostile", "../fonts/eurostile/eurostileext-black", regular, $exts: woff woff2);
 .font--eurostile { font-family: $font-eurostile; }
 
-// Futura
-@include font-face("futura", "../fonts/futura/futura-bold", regular, $exts: woff woff2);
-.font--futura { font-family: $font-futura; }
-
 // Klang
 @include font-face("klang", "../fonts/klang/klang", regular, $exts: woff);
 .font--klang { font-family: $font-klang; }
@@ -100,10 +96,6 @@
 @include font-face("quattro", "../fonts/quattro/quattro-bold-5", bold, $exts: woff woff2);
 @include font-face("quattro", "../fonts/quattro/quattro-bold-5-italic", bold, italic, $exts: woff woff2);
 .font--quattro { font-family: $font-quattro; }
-
-// Syne
-@include font-face("syne", "../fonts/syne/syne-extra", regular, $exts: woff woff2);
-.font--syne { font-family: $font-syne; }
 
 // Titling Gothic
 @include font-face("titling-gothic", "../fonts/titling-gothic/titling-gothic-wide-black", regular, $exts: woff woff2);
