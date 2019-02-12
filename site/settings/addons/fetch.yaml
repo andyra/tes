@@ -5,3 +5,5 @@ domain_whitelist:
   - 'http://localhost:1234'
   - 'http://thiseveningsshow.com'
   - 'https://thiseveningsshow.com'
+  - 'http://tes.adobeskyscraper.com'
+  - 'https://tes.adobeskyscraper.com'
