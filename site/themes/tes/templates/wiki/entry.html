@@ -27,11 +27,15 @@
     <span class="label">Descriptor:</span>
     {{ if featured_image }}
       <figure class="align--center">
+        {{ if slug == "people" or parent_tag == 'tags/people' }}
         <div class="photocopy">
           <div class="photocopy__bg">
             <img class="wiki-entry__featured-image photocopy__image" src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
           </div>
         </div>
+        {{ else }}
+          <img class="wiki-entry__featured-image" src="{{ glide:featured_image width='300' height='300' }}" alt="{{ title }}" />
+        {{ /if }}
         <figcaption class="text--xs case--upper trackling--loose o-50">Fig. 1</figcaption>
       </figure>
     {{ /if }}

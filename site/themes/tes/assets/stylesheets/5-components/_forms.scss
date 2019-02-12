@@ -19,7 +19,7 @@ $input-border: inset 0 0 0 $border-width-sm $color-primary;
   font-family: inherit;
   font-size: $font-size-base;
   margin: 0;
-  padding: component-size($component-base, $borders: 2) 0.5em;
+  padding: component-size($component-base, $font-size: $font-size-base) 0.5em;
   width: 100%;
 
   // Placeholders

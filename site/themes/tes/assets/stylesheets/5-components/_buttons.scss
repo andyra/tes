@@ -5,17 +5,10 @@
 // Mixins
 // ----------------------------------------------------------------------------
 
-@mixin button-size($component-size) {
-  font-size: map-get($component-size, font-size);
-  height: map-get($component-size, height);
-  padding: 0 0.75em;
-}
-
 // Base
 // ----------------------------------------------------------------------------
 
 .button {
-  @include button-size($component-base);
   align-items: center;
   background-color: $white;
   border: $border-width-lg solid currentColor;
@@ -23,8 +16,10 @@
   cursor: pointer;
   display: inline-flex;
   font-family: inherit;
+  font-size: $font-size-base;
   font-weight: bold;
   line-height: $line-height-base;
+  padding: component-size($component-base, $font-size: $font-size-base) 0.75em;
   position: relative;
   text-align: center;
   text-decoration: none;

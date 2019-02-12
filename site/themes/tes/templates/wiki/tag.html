@@ -54,7 +54,7 @@
 <div class="grid grid--gap-x wiki-articles rando-bg-hover">
 {{ collection:wiki taxonomy="true" paginate="true" as="wikis" }}
   {{ wikis scope="wiki" }}
-    <a class="wiki-articles__item" href="{{ wiki:url }}">
+    <a class="wiki-articles__item{{ if ! wiki:article }} wiki-articles__item--empty{{ /if }}" href="{{ wiki:url }}" title="{{ if ! wiki:article }}Not enough is known.{{ /if }}">
       <span class="wiki-articles__title">{{ wiki:title }}</span>
     </a>
   {{ /wikis }}

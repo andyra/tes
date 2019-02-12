@@ -33,8 +33,11 @@ $border: dotted $border-width-sm $gray-darkest;
 }
 
 .wiki-articles__item--empty {
+  text-decoration: line-through;
+
   &:hover {
     color: $red;
+    background-color: transparent !important;
     border-top: solid $red 1px;
   }
 }
