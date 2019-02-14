@@ -1,18 +1,19 @@
 routes:
-  wiki/tags: wiki/tags
-  wiki/search: wiki/search
+  /wiki/tags: wiki/tags
+  /wiki/search: wiki/search
   /search: search
-  /users: user/index
-  '/users/{username}': user/profile
-  /account: user/account
-  /login: auth/login
-  /register: auth/register
-  /forgot-password: auth/password-forgot
-  /reset-password: auth/password-reset
+  /test: test
   /feed:
     layout: feed
     template: feed
-    content_type: 'application/rss+xml; charset=utf-8'
+    content_type: xml
+  # /users: user/index
+  # '/users/{username}': user/profile
+  # /account: user/account
+  # /login: /office
+  # /register: auth/register
+  # /forgot-password: auth/password-forgot
+  # /reset-password: auth/password-reset
 collections:
   albums: '/albums/{slug}'
   episodes: '/episodes/{slug}'

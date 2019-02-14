@@ -4,7 +4,7 @@ locales:
   en:
     full: en_US
     name: English
-    url: 'http://localhost:1234/'
+    url: "{env:SITE_URL}"
 timezone: UTC
 license_key: "{env:LICENSE_KEY}"
 date_format: 'F jS, Y'
