@@ -1,5 +1,5 @@
 title: '8 1,000 Foot XLR'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/8-1000-ft-xlr.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/8-1000-ft-xlr/8%201%2C000%20Foot%20XLR.mp3'
 description: 'Join us for the annual budget fundraiser! Special guest Ray Spielberg (namer of the Spielberg Bat) helps jangle the phone lines. Also, be pleased to take a tour around the Adobe Skyscraper while Louier and Charlie try out the new extra EXTRA long microphone cables! Travel the elevator and the stairs, from the lobby to the roof, and meet all sorts of folks in-between. It''s This Evening''s Show!'
 release_date: '2015-03-02'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/8-1000-ft-xlr/8-1000-ft-xlr.jpg'

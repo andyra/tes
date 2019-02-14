@@ -1,5 +1,5 @@
 title: '19 Wines of the Pleiodon Valley'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/19-wines-of-the-pleiodon-valley.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/19-wines-of-the-pleiodon-valley/19%20Wines%20of%20the%20Pleiodon%20Valley.mp3'
 description: 'Broadcasting live from the wine region of the Pleiodon Valley, just south of the city of Adobe Skyscraper. Your hosts sample choice wines from the Seven Continents (Minus One) winery and decide which wine is fit for drinking. Also, local historian Whitney Sage suggest methods of keeping werewolves out of vineyards, plus a message from a purported werewolf, and find out about hyper-aggressive birds from an avian expert. All this and more on This Evening‘s Show!'
 release_date: '2015-07-01'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/19-wines-of-the-pleiodon-valley/19-wines-of-the-pleiodon-valley.jpg'

@@ -1,5 +1,5 @@
 title: '25 Under the Mall'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/25-under-the-mall.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/25-under-the-mall/25%20Under%20the%20Mall.mp3'
 description: 'This week: an audio trip down into the seedy underbelly beneath the Yakov Tinkter Mall! Witness dogs embattled in a game of chess, visit a gift shop entirely dedicated to describing itself, and hear the real Bob Robart explains the inner workings of the Bogarth Engine. And as always, a generous helping of music from way far out.'
 release_date: '2016-10-14'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/25-under-the-mall/25-under-the-mall.jpg'

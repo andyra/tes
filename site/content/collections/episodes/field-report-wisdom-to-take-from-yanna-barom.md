@@ -1,5 +1,5 @@
 title: 'Field Report: Wisdom to Take from Yanna Barom'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-wisdom-to-take-from-yanna-barom.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-wisdom-to-take-from-yanna-barom/Field%20Report-%20Wisdom%20to%20Take%20from%20Yanna%20Barom.mp3'
 release_date: '2017-05-19'
 description: '[John Starboard] and the surveyor [Mr. Atol] stumble across desert poet [Yanna Barom] while searching for the [Monorail Station]''s "Center Stone."'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report.jpg'

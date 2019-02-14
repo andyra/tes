@@ -1,5 +1,5 @@
 title: '23 Minotaurs Among Us'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/23-minotaurs-among-us.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/23-minotaurs-among-us/23%20Minotaurs%20Among%20Us.mp3'
 description: 'What''s it like to be detained in the belly of a hovering police robot as it transports you to Minotaur Mountain? What advice is Aneda pedaling to her callers? What new music is Louier Mastadon listening to when he gets off his shift at the dog food factory? All this and more! Listen.'
 release_date: '2016-04-06'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/23-minotaurs-among-us/23-minotaurs-among-us.jpg'

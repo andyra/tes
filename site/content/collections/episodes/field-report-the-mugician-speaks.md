@@ -1,5 +1,5 @@
 title: 'Field Report: The Mugician Speaks!'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-the-mugician-speaks.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-the-mugician-speaks/Field%20Report-%20The%20Mugician%20Speaks%21.mp3'
 description: 'TES Short: The fantastic transporting “Mugician” visits John as he fixes the lighting system in the Monorail Station. He really is fantastic!'
 release_date: '2015-02-15'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report.jpg'

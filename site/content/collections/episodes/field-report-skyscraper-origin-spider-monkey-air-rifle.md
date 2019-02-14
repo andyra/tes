@@ -1,5 +1,5 @@
 title: 'Field Report: Skyscraper Origin Spider Monkey Air Rifle'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-skyscraper-origin-spider-monkey-air-rifle.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-skyscraper-origin-spider-monkey-air-rifle/Field%20Report-%20Skyscraper%20Origin%20Spider%20Monkey%20Air%20Rifle.mp3'
 description: 'TES Short: A rogue spider monkey steals John''s airgun and attacks a local land surveyor, who John encounters in the field. And don''t miss the finger-licking theme song for the Adobe Skyscraper composed by a team of real blind scientists.'
 release_date: '2016-07-25'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report.jpg'

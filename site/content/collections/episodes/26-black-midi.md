@@ -1,5 +1,5 @@
 title: '26 Black MIDI'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/26-black-midi.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/26-black-midi/26%20Black%20MIDI.mp3'
 description: 'This week: a weirdo foray into the mayhem of Black MIDI music, plus an important message from the hit show "The Law Is the Law," hot news tech talks, and another ride on your favorite on-the-way-to-school segment, "The Bus!"'
 release_date: '2017-03-05'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/26-black-midi/26-black-midi.jpg'

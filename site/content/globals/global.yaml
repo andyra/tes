@@ -12,4 +12,4 @@ facebook_url: 'https://www.facebook.com/ThisEveningsShow/'
 css_path: /site/themes/tes/assets/stylesheets
 js_path: /site/themes/tes/assets/javascripts
 id: d9bfc09a-3a90-41d3-8acc-3f551f8432af
-podtrac_prefix: 'http://dts.podtrac.com/redirect.mp3/'
+podtrac_prefix: 'https://dts.podtrac.com/redirect.mp3/'

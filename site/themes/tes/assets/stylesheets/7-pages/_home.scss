@@ -118,7 +118,9 @@ $circle-size: 115vmax;
 // ----------------------------------------------------------------------------
 
 .home__intro {
+  align-items: center;
   background-color: $seashell;
+  display: flex;
 }
 
 .what-is {

@@ -1,5 +1,5 @@
 title: '7 Gorami Mountain Avalanche'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/7-gorami-mountain-avalanche.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/7-gorami-mountain-avalanche/7%20Gorami%20Mountain%20Avalanche.mp3'
 description: 'Revisiting the devastating Gorami Mountain Avalanche of ''83, which trapped hundreds of vacationers in the Gorami Mountain Ski Resort. Listen to never-before-heard secret market research audio tapes and the Gorami Mountain Band. Local celebrities Board Game Guru and Rector Kirby enjoy the musical stylings of The Cool Customers, the real-life cartoon band, from inside the resort. It''s a trip back to 1983 with This Evening''s Show—be ready for snow!'
 release_date: '2015-02-21'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/7-gorami-mountain-avalanche/7-gorami-mountain-avalanche.jpg'

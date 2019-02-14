@@ -1,5 +1,5 @@
 title: 'Field Report: Stew for the Dintos'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-stew-for-the-dintos.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-stew-for-the-dintos/Field%20Report-%20Stew%20for%20the%20Dintos.mp3'
 description: 'TES Short: Mox plays the radio to entertain John while he cooks a stew for the native Dinto population.'
 release_date: '2015-02-17'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report.jpg'

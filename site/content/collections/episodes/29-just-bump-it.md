@@ -1,5 +1,5 @@
 title: '29 Just Bump It!'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/29-just-bump-it.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/29-just-bump-it/29%20Just%20Bump%20It%21.mp3'
 description: 'It''s time to get very excited for this weird weird episode involving a squadron of skateboarding, justice-loving teens, a supercomputer that melted on its way to the core of the earth, and a live Radioball broadcast! Plus, all new music you can dance with your loved one to at the Community Center this Sunday night. All this and much more on This Evening''s Show!'
 release_date: '2018-03-17'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/29-just-bump-it/29-just-bump-it.jpg'

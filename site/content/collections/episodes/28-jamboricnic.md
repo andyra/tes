@@ -1,5 +1,5 @@
 title: '28 Jamboricnic'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/28-jamboricnic.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/28-jamboricnic/28%20Jamboricnic.mp3'
 description: 'Meet the fan club of the city''s hippest carpet salesman, Guy Clark, at his monthly Jamboricnic. Harassed by a hologram? Face your fears! What it takes to register your religion with the Religious Board, and peep in to a stolen conversation about panthercide! Plus, all the music you can handle on this week''s TES!'
 release_date: '2018-02-03'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/28-jamboricnic/28-jamboricnic.jpg'

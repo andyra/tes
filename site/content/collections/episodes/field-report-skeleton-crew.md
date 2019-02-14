@@ -1,5 +1,5 @@
 title: 'Field Report: Skeleton Crew'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-skeleton-crew.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-skeleton-crew/Field%20Report-%20Skeleton%20Crew.mp3'
 description: 'TES Short: John calls a shifty coroner to remove a skeleton from the monorail station.'
 release_date: '2016-02-02'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report.jpg'

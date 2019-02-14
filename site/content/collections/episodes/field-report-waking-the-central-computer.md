@@ -1,5 +1,5 @@
 title: 'Field Report: Waking the Central Computer'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-waking-the-central-computer.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-waking-the-central-computer/Field%20Report-%20Waking%20the%20Central%20Computer.mp3'
 description: 'John activates Mox Leviticus, the monorail station''s central computer, who delivers a valuable lesson on the land of Akabius.'
 release_date: '2016-01-26'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report.jpg'

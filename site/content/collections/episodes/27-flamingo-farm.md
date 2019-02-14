@@ -1,5 +1,5 @@
 title: '27 Flamingo Farm'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/27-flamingo-farm.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/27-flamingo-farm/27%20Flamingo%20Farm.mp3'
 description: 'This week, a demo tape from City Burger manager Sanjay Arrow, get the inside scoop directly from the Senate debate floor, a dip into the wild world of Flamingo Farming, and advice from one pirate to another. All this and, as always, more on TES.'
 release_date: '2017-09-01'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/27-flamingo-farm/27-flamingo-farm.jpg'

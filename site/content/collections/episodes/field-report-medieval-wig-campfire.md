@@ -1,5 +1,5 @@
 title: 'Field Report: Medieval Wig Campfire'
-audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-medieval-wig-campfire.mp3'
+audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report-medieval-wig-campfire/Field%20Report-%20Medieval%20Wig%20Campfire.mp3'
 description: 'TES Short: John discovers the famous jazz-rock band “Medieval Wig” partying around a campfire while on an expedition across the countryside in his GEAP.'
 release_date: '2016-02-24'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/field-report.jpg'
