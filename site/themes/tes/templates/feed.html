@@ -1,13 +1,14 @@
 <channel>
   <title>{{ site_name }}</title>
   <link>{{ site_url }}</link>
+  <atom:link href="{{ feed_url }}" rel="self" type="application/rss+xml" />
   <language>en-us</language>
   {{ collection:episodes limit="1" sort="date:desc" }}
     <pubDate>{{ release_date format="r"}}</pubDate>
     <lastBuildDate>{{ release_date format="r"}}</lastBuildDate>
   {{ /collection:episodes }}
   <copyright>All rights reserved</copyright>
-  <webMaster>{{ podcast:owner_email }}</webMaster>
+  <webMaster>{{ podcast:owner_email }} ({{ podcast:owner_name }})</webMaster>
   <description>{{ podcast:description }}</description>
   <itunes:subtitle>{{ podcast:description | safe_truncate:50:... }}</itunes:subtitle>
   <itunes:author>{{ site_name }}</itunes:author>
@@ -33,7 +34,7 @@
     <itunes:summary>{{ description }}</itunes:summary>
     <itunes:subtitle>{{ description | safe_truncate:50:... }}</itunes:subtitle>
     <description>{{ description }}</description>
-    <enclosure url="{{ audio_file }}" type="audio/mpeg" length="1024"></enclosure>
+    <enclosure url="{{ podtrac_prefix }}{{ audio_file replace='https://|' }}" type="audio/mpeg" length="1024"></enclosure>
     <itunes:author>{{ site_name }}</itunes:author>
     <itunes:duration>00:59:59</itunes:duration>
     <itunes:explicit>no</itunes:explicit>
