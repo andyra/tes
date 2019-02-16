@@ -9,17 +9,9 @@
     <h1 class="masthead__title"><span>This</span> <span>Evening's</span> <span>Show</span></h1>
   </hgroup>
   <div class="masthead__half masthead__half--player">
-    <p class='text--sm case--upper tracking--loosest o-50'>Radio Station</p>
+    <p class='text--sm case--upper tracking--loosest o-50'>CKNWR Radio Station</p>
     {{ partial:player }}
-    <div class="m-top-lg">
-      <a class="subscribe-button button" href="{{ itunes_url }}" target="_blank">
-        <div>{{ site:sprite id="icon-rss" width="16" height="16" }}</div>
-        <div>
-          Subscribe
-          <div class="text--xs case--upper trackling--loose o-50">to the Podcast</div>
-        </div>
-      </a>
-    </div>
+    {{ partial:subscribe }}
   </div>
 </section>
 

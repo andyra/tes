@@ -83,36 +83,13 @@ $circle-size: 115vmax;
   p {
     color: white;
   }
-}
 
-.subscribe-button {
-  background-color: transparent;
-  color: $white;
-  padding-bottom: $spacer-sm;
-  padding-top: $spacer-sm;
-  height: auto;
-  text-align: left;
-
-  &:hover {
-    color: $green;
-    border-color: $green;
-  }
-
-  .sprite {
-    @include size(1em);
-    margin-right: $spacer;
-    fill: currentColor;
+  .subscribe {
+    color: $white;
+    justify-content: center;
+    margin-top: $spacer-lg;
   }
 }
-
-.subscribe-button__caption {
-  font-size: $font-size-xs;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: normal;
-  opacity: 0.5;
-}
-
 
 // Intro
 // ----------------------------------------------------------------------------

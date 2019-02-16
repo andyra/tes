@@ -17,4 +17,8 @@ class Tags extends AbstractTags {
 
 		return $sprite;
 	}
+
+	public function randomYear() {
+		return rand(1950, (int)date("Y"));
+	}
 }
