@@ -13,61 +13,59 @@
 
   <div class="collection__content">
     <span class="label">Listening Device:</span>
-    {{ partial:player playlist_url=soundcloud_url class="player--dark m-bottom-vmin" }}
+    {{ partial:player class="player--dark m-bottom-vmin" }}
 
     <span class="label">Minutes:</span>
-    {{ if tracklist }}
-      <div class="tracklist table text--sm">
-        <div class="table__row">
-          <div class="table__cell table__cell--header align--center">#</div>
-          <div class="table__cell table__cell--header label">Descriptor</div>
-          <div class="table__cell table__cell--header label">Time</div>
-        </div>
-        {{ tracklist scope="track" }}
-        <div
-          class="tracklist__item table__row"
-          {{ if track:soundcloud }}
-            data-url="{{ track:soundcloud_url }}"
-            data-track-state="init"
-          {{ /if }}
-        >
-          <div class="tracklist__count table__cell">
+
+    <ol class="tracklist table text--sm" data-player="tracklist">
+      <li class="table__row">
+        <span class="table__cell table__cell--header align--center">#</span>
+        <span class="table__cell table__cell--header label">Descriptor</span>
+        <span class="table__cell table__cell--header label">Time</span>
+      </li>
+
+      <li class="tracklist__item table__row" data-track="{{ audio_file }}" data-state="init">
+        <span class="tracklist__count table__cell">
+          0
+          <button class="tracklist__button tracklist__button--play button-reset" data-track-button="play">
+            {{ site:sprite id="play" width="32" height="24" }}
+          </button>
+          <button class="tracklist__button tracklist__button--pause button-reset" data-track-button="pause">
+            {{ site:sprite id="pause" width="32" height="24" }}
+          </button>
+        </span>
+        <span class="tracklist__title table__cell" data-track-title>
+          {{ title }}
+        </span>
+        <span class="text--xs table__cell table__cell--shaded table__cell--collapse">&mdash;</span>
+      </li>
+
+      {{ tracklist }}
+        <li class="tracklist__item table__row" data-track="{{ audio_file }}" data-state="init">
+          <span class="tracklist__count table__cell">
             {{ index }}
-            {{ if track:soundcloud_url }}
-              <button class="player__button tracklist__button tracklist__button--play button-reset" data-tracklist="play">
+            {{ if audio_file }}
+              <button class="tracklist__button tracklist__button--play button-reset" data-track-button="play">
                 {{ site:sprite id="play" width="32" height="24" }}
               </button>
-              <button class="player__button tracklist__button tracklist__button--pause button-reset" data-player="pause" aria-title="Pause">
-                {{ site:sprite id="pause" width="28" height="24" }}
+              <button class="tracklist__button tracklist__button--pause button-reset" data-track-button="pause">
+                {{ site:sprite id="pause" width="32" height="24" }}
               </button>
             {{ /if }}
-          </div>
-          {{ if song }}
-            {{ relate:song scope="song" }}
-              <div class="tracklist__title table__cell">
-                <a href="{{ song:url }}">♫ {{ song:title }}</a>
-              </div>
-            {{ /relate:song }}
-          {{ else }}
-            <div class="tracklist__title table__cell">{{ track:segment | wikilinks }}</div>
-          {{ /if }}
-          {{ if track:soundcloud_url }}
-            <div class="text--xs table__cell table__cell--shaded table__cell--collapse align--right">0:00</div>
-          {{ else }}
-            <div class="text--xs table__cell table__cell--shaded table__cell--collapse align--center">
-              <span class="o-33">&mdash;</span>
-            </div>
-          {{ /if }}
-        </div>
-        {{ /tracklist }}
-      </div>
-    {{ else }}
-      <div class="table">
-        <div class="table__row">
-          <div class="table__cell">(Not available)</div>
-        </div>
-      </div>
-    {{ /if }}
+          </span>
+          <span class="tracklist__title table__cell">
+            {{ if song }}
+              {{ relate:song scope="song" }}
+                <a class="tracklist__title" href="{{ song:url }}" data-track-title>♫ {{ song:title }}</a>
+              {{ /relate:song }}
+            {{ else }}
+              {{ track:segment | wikilinks }}
+            {{ /if }}
+          </span>
+          <span class="text--xs table__cell table__cell--shaded table__cell--collapse">&mdash;</span>
+        </li>
+      {{ /tracklist }}
+    </ol>
   </div>
 
   <figure class="collection__cover-art">

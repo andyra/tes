@@ -13,7 +13,7 @@
 
   <div class="collection__content">
     <span class="label">Listening Device:</span>
-    {{ partial:player playlist_url=soundcloud_url class="player--dark m-bottom-vmin" }}
+    {{ partial:player class="player--dark m-bottom-vmin" }}
 
     <span class="label">Tracklist:</span>
 
@@ -27,19 +27,21 @@
       <li class="tracklist__item table__row" data-track="{{ audio_file }}" data-state="init">
         <span class="tracklist__count table__cell">
           {{ index }}
-          <button class="tracklist__button tracklist__button--play button-reset" data-track-button="play">
-            {{ site:sprite id="play" width="32" height="24" }}
-          </button>
-          <button class="tracklist__button tracklist__button--pause button-reset" data-track-button="pause">
-            {{ site:sprite id="pause" width="32" height="24" }}
-          </button>
+          {{ if audio_file }}
+            <button class="tracklist__button tracklist__button--play button-reset" data-track-button="play">
+              {{ site:sprite id="play" width="32" height="24" }}
+            </button>
+            <button class="tracklist__button tracklist__button--pause button-reset" data-track-button="pause">
+              {{ site:sprite id="pause" width="32" height="24" }}
+            </button>
+          {{ /if }}
         </span>
         <span class="table__cell">
           {{ relate:song scope="song" }}
           <a class="tracklist__title" href="{{ song:url }}" data-track-title>{{ song:title }}</a>
           {{ /relate:song }}
         </span>
-        <div class="text--xs table__cell table__cell--shaded table__cell--collapse">0:00</div>
+        <span class="text--xs table__cell table__cell--shaded table__cell--collapse">&mdash;</span>
       </li>
       {{ /tracklist }}
     </ol>
