@@ -27,5 +27,5 @@ podcast_urls:
     icon: spotify
   - google:
     name: 'Google Podcasts'
-    url: ''
+    url: 'https://play.google.com/music/listen?t%3DThis_Evening%27s_Show&u=0#/ps/Itkienynb5oe4dwurejhf3cuuye'
     icon: google-podcast
