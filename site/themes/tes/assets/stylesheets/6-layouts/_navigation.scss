@@ -37,17 +37,16 @@
 }
 
 @mixin nav-style($color, $pos) {
-  &:hover,
   &.active {
-    background: $color url("../images/backgrounds/lino.jpg") 0 $pos repeat-x;
+    background: $color url("../images/nav.jpg") 0 $pos repeat-x;
     color: $white;
   }
 }
 
-.global-nav__item--episodes { @include nav-style(#E77150, 0); }
+.global-nav__item--episodes { @include nav-style(#AB6F41, 0); }
 .global-nav__item--albums   { @include nav-style(#547971, -96px); }
-.global-nav__item--wiki     { @include nav-style(#9C6C84, -48px); }
-.global-nav__item--contact  { @include nav-style(#667A7B, -144px); }
+.global-nav__item--wiki     { @include nav-style(#77949A, -144px); }
+.global-nav__item--contact  { @include nav-style(#9C6C84, -48px); }
 
 .global-nav__section {
   display: flex;

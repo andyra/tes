@@ -1,14 +1,22 @@
 {{ section:container_class }}container--sm{{ /section:container_class }}
-<p class="text--lg">This Evening's Show is recorded from a studio in Abilene, TX, formerly <a class="font--duospace" href="" target="_blank">Castle Sound Productions</a>.</p>
 
-<address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-  <div itemprop="streetAddress">{{ street_address }}</div>
-  <span itemprop="addressLocality">{{ city }}, {{ state }}</span>
-  <span itemprop="postalCode">{{ zip }}</span>
-</address>
+<p class="m-bottom-0 text--lg align--center">
+  This Evening's Show is recorded from a studio in Abilene, TX, formerly
+  <a class="font--duospace" href="http://castlesound.mysite.com/" target="_blank">Castle</a>
+  <a class="font--duospace" href="http://static-21.sinclairstoryline.com/resources/media/1daced1e-52ff-4ec5-beb3-ae929cde076a-large16x9_ImportedfromLakana.jpg?1514554316874" target="_blank">Sound</a>
+  <a class="font--duospace" href="https://www.youtube.com/watch?v=kTNJJ1Bomoc" target="_blank">Productions</a>.
+</p>
 
-<section class="contact-section p-vmin b-base align--center">
+<div class="m-y-vmin p-y-vmin b-top-base b-bottom-base align--center">
   Call-Ins Welcome
   <div class="contact-section__phone font--windsor tracking--loose">{{ phone }}</div>
   <a href="mailto:{{ email }}" target="_blank" class="font--duospace tracking--loose">{{ email }}</a>
-</section>
+  <address class="m-top-base" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <span itemprop="streetAddress">{{ street_address }}</span>
+    •
+    <span itemprop="addressLocality">{{ city }}, {{ state }}</span>
+    <span itemprop="postalCode">{{ zip }}</span>
+  </address>
+</div>
+
+<img class="contact-image" src="{{ images_path }}/mhm.jpg" alt="Michael Henry Martin">

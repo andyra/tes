@@ -53,11 +53,11 @@ $component-xl: (
 );
 
 $component-sizes: (
-  xs:   $component-xs,
-  sm:   $component-sm,
-  base: $component-base,
-  lg:   $component-lg,
-  xl:   $component-xl
+  xs:   $component-size-xs,
+  sm:   $component-size-sm,
+  base: $component-size-base,
+  lg:   $component-size-lg,
+  xl:   $component-size-xl
 );
 
 // Links & Text

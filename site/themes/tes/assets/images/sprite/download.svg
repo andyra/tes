@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>download</title>
+    <desc>Created with Sketch.</desc>
+    <g id="download" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M32,64 C14.326888,64 0,49.673112 0,32 C0,14.326888 14.326888,0 32,0 C49.673112,0 64,14.326888 64,32 C64,49.673112 49.673112,64 32,64 Z M32,60 C47.463973,60 60,47.463973 60,32 C60,16.536027 47.463973,4 32,4 C16.536027,4 4,16.536027 4,32 C4,47.463973 16.536027,60 32,60 Z M34,42.7695526 L43.4558441,33.3137085 L46.2842712,36.1421356 L32.1421356,50.2842712 L29.3137085,47.4558441 L18,36.1421356 L20.8284271,33.3137085 L30,42.4852814 L30,14 L34,14 L34,42.7695526 Z" id="Oval" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg>

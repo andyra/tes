@@ -1,13 +1,11 @@
 // ============================================================================
-// Contact
+// Sprite
 // ============================================================================
 
-.contact-section__phone {
-  font-size: 6vmin;
+.sprite {
+  fill: currentColor;
 }
 
-.contact-image {
-  border-radius: 1rem;
-  max-width: 320px;
-  margin: 0 auto;
+.sprite--icon {
+  @include size(1rem);
 }

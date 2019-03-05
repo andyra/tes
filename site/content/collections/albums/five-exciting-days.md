@@ -1,6 +1,7 @@
 title: 'Five Exciting Days'
 artist: artists/wonderful-land
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/albums/five-exciting-days/five-exciting-days.jpg'
+spotify_url: 'https://open.spotify.com/album/4lJJXO3wzFtDUY030Mg4nE?si=6TfzC_59RzynH-F4HbD2hg'
 release_date: '2013-05-17'
 type: studio
 tracklist:

@@ -1,6 +1,7 @@
 title: 'Six Romantic Nights'
 artist: artists/wonderful-land
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/albums/six-romantic-nights/six-romantic-nights.jpg'
+spotify_url: 'https://open.spotify.com/album/78i3ZgkruFMGiumD763Xvu?si=5yKBv6YrRFu_149slaO5wQ'
 release_date: '2013-05-17'
 type: studio
 tracklist:

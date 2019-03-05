@@ -59,7 +59,10 @@
     </div>
     <div class="m-top-base">
       <div class="label">External SRC:</div>
-      <a href="{{ audio_file }}" target="_blank">↓ Download</a>
+      <a href="{{ audio_file }}" target="_blank">{{ site:sprite id="download" width="32" height="32" class="size--base" }}</a>
+      {{ if spotify_url }}
+        <a href="{{ spotify_url }}" target="_blank">{{ site:sprite id="spotify" width="32" height="32" class="size--base" }}</a>
+      {{ /if }}
     </div>
   </div>
 </section>

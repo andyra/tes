@@ -18,16 +18,26 @@ body {
   position: relative;
   text-rendering: optimizeLegibility;
 
-  &:after {
-    background: transparent url("../images/backgrounds/asfalt-light.png") repeat;
+  &:after,
+  &:before {
     bottom: 0;
     content: "";
     left: 0;
-    opacity: 0.85;
     pointer-events: none;
     position: absolute;
     right: 0;
     top: 0;
     z-index: 1000;
+  }
+
+  &:after {
+    background: url("../images/backgrounds/asfalt-light.png") repeat;
+    opacity: 0.85;
+  }
+
+  &:before {
+    background: url("../images/backgrounds/natural-paper.png") repeat;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
   }
 }

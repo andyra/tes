@@ -1,13 +1,15 @@
 site_name: 'This Evening''s Show'
+asset_path: /site/themes/tes/assets/
 css_path: /site/themes/tes/assets/stylesheets
 js_path: /site/themes/tes/assets/javascripts
+images_path: /site/themes/tes/assets/images
 id: d9bfc09a-3a90-41d3-8acc-3f551f8432af
 
 street_address: '905 N Mockingbird Lane'
 city: Abilene
 state: TX
 zip: '79601'
-phone: 512-731-6063
+phone: 325-701-9997‬
 twitter_url: 'https://twitter.com/thiseveningshow'
 facebook_url: 'https://www.facebook.com/ThisEveningsShow/'
 
