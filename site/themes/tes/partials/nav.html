@@ -2,7 +2,7 @@
   <a class="global-nav__item global-nav__item--home case--upper tracking--looser font--titling-gothic" href="/"><strong>TES</strong></a>
   <div class="global-nav__section global-nav__section--desktop" data-mobile-menu>
     {{ nav from="/" subnav:isnt="true" }}
-      <a class="global-nav__item case--upper tracking--looser text--xs{{ if is_current || is_parent || title == page:active_on }} active{{ /if }}" href="{{ url }}">
+      <a class="global-nav__item global-nav__item--{{ slug }} case--upper tracking--looser text--xs{{ if is_current || is_parent || title == page:active_on }} active{{ /if }}" href="{{ url }}">
         {{ title }}
       </a>
     {{ /nav }}

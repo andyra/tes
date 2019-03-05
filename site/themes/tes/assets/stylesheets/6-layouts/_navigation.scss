@@ -29,17 +29,25 @@
     text-decoration: none;
   }
 
-  &.active {
-    background-color: $ink;
-    color: $white;
-  }
-
   .sprite {
     @include size(1rem);
-    fill: $ink;
+    fill: currentColor;
     pointer-events: none;
   }
 }
+
+@mixin nav-style($color, $pos) {
+  &:hover,
+  &.active {
+    background: $color url("../images/backgrounds/lino.jpg") 0 $pos repeat-x;
+    color: $white;
+  }
+}
+
+.global-nav__item--episodes { @include nav-style(#E77150, 0); }
+.global-nav__item--albums   { @include nav-style(#547971, -96px); }
+.global-nav__item--wiki     { @include nav-style(#9C6C84, -48px); }
+.global-nav__item--contact  { @include nav-style(#667A7B, -144px); }
 
 .global-nav__section {
   display: flex;
@@ -98,6 +106,11 @@
   &:hover {
     background-color: $lemon;
     color: $mustard;
+  }
+
+  &.active {
+    background: $ink url("../images/backgrounds/terrazzo.jpg") 0 -192px repeat-x;
+    color: $white;
   }
 }
 
@@ -158,6 +171,7 @@
     border-left: $border-base;
     border-top: $border-base;
     flex: 0 0 25%;
+    justify-content: center;
     min-height: $component-size-lg;
   }
 }
