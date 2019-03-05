@@ -267,6 +267,7 @@ document.addEventListener('click', function(e) {
     function seekPercent(e) {
       var p = progress.getBoundingClientRect();
       var percent = (e.clientX - p.x) / p.width;
+      return percent;
     }
 
     // Tracklist
@@ -446,6 +447,7 @@ document.addEventListener('click', function(e) {
       }
     });
     progress.addEventListener('click', function(e) {
+      console.log("inside Progress Event");
       player.seek(seekPercent(e));
     });
     slow.addEventListener('click', function() {

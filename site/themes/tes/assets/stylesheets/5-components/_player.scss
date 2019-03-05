@@ -146,6 +146,10 @@ $transition: opacity 250ms ease-out;
   overflow: hidden;
   position: relative;
   width: 100%;
+
+  .player:not(.player--disabled) & {
+    cursor: pointer;
+  }
 }
 
 .player__progress-bar {
