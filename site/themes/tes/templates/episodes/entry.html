@@ -34,17 +34,15 @@
             {{ site:sprite id="pause" width="32" height="24" }}
           </button>
         </span>
-        <span class="tracklist__title table__cell" data-track-title>
-          {{ title }}
-        </span>
+        <span class="tracklist__title table__cell" data-track-title>{{ title }}</span>
         <span class="text--xs table__cell table__cell--shaded table__cell--collapse">&mdash;</span>
       </li>
 
-      {{ tracklist }}
-        <li class="tracklist__item table__row" data-track="{{ audio_file }}" data-state="init">
+      {{ tracklist scope="track" }}
+        <li class="tracklist__item table__row" {{ if track:audio_file }}data-track="{{ track:audio_file }}" data-state="init"{{ /if }}>
           <span class="tracklist__count table__cell">
             {{ index }}
-            {{ if audio_file }}
+            {{ if track:audio_file }}
               <button class="tracklist__button tracklist__button--play button-reset" data-track-button="play">
                 {{ site:sprite id="play" width="32" height="24" }}
               </button>
@@ -54,10 +52,10 @@
             {{ /if }}
           </span>
           <span class="tracklist__title table__cell">
-            {{ if song }}
-              {{ relate:song scope="song" }}
+            {{ if track:song }}
+              {{ relate:track:song scope="song" }}
                 <a class="tracklist__title" href="{{ song:url }}" data-track-title>♫ {{ song:title }}</a>
-              {{ /relate:song }}
+              {{ /relate:track:song }}
             {{ else }}
               {{ track:segment | wikilinks }}
             {{ /if }}

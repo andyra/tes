@@ -12,7 +12,8 @@
   width: $component-size-lg;
 }
 
-.tracklist__title {
+.tracklist__title a,
+a.tracklist__title {
   border-bottom: solid $border-width-sm rgba($aqua, 0.5);
   font-family: $font-duospace;
   text-decoration: none;
