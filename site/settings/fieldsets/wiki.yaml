@@ -11,6 +11,8 @@ sections:
         width: 66
         localizable: true
       article:
+        type: bard
+        display: Content
         buttons:
           - h2
           - h3
@@ -20,6 +22,7 @@ sections:
           - orderedlist
           - quote
           - anchor
+          - removeformat
         style: sans
         spellcheck: true
         allow_source: true
@@ -43,9 +46,7 @@ sections:
                 mode: grid
                 type: assets
                 display: Image
-        type: bard
         width: 66
-        display: Content
       featured_image:
         type: assets
         container: s3

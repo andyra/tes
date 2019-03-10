@@ -6,7 +6,7 @@ fields:
     display: 'Website Name'
     type: text
   street_address:
-    display: Street Address
+    display: 'Street Address'
     type: text
     width: 25
   city:

@@ -10,3 +10,6 @@ widgets:
     type: collection
     collection: wiki
     limit: 5
+  -
+    type: PowerTools
+    width: 33
