@@ -13,6 +13,10 @@
   margin: 0;
 
   @media #{$screen-xs-up} {
-    font-size: 8vmin;
+    font-size: 5vmin;
+  }
+
+  @media #{$screen-xs-down} {
+    font-size: $font-size-lg;
   }
 }
