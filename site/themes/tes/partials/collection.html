@@ -56,7 +56,7 @@
           {{ if track:song }}
             {{ relate:track:song scope="song" }}
               <a class="tracklist__title" href="{{ song:url }}" data-track-title>
-                {{ if collection == "episodes" }}♫{{ /if }}
+                {{ if page:collection == "episodes" }}♫{{ /if }}
                 {{ song:title }}
               </a>
             {{ /relate:track:song }}
