@@ -67,12 +67,13 @@
 }
 
 .global-nav__mobile-toggle {
-  align-self: center;
-  border-radius: $border-radius-base;
+  align-self: stretch;
   display: none;
-  font-size: $font-size-sm;
-  border-width: 1px;
-  font-weight: normal;
+  padding: 0 $spacer;
+
+  .sprite {
+    transform: translateY(2px);
+  }
 }
 
 // Subnav
@@ -139,7 +140,8 @@
 
     .global-nav__item {
       min-height: $component-size-lg;
-      flex-basis: 25%;
+      // flex-basis: 25%;
+      flex: 1;
 
       + .global-nav__item {
         border-left: 1px solid $ink
@@ -169,7 +171,7 @@
   .subnav__item {
     border-left: $border-base;
     border-top: $border-base;
-    flex: 0 0 25%;
+    flex: 1;
     justify-content: center;
     min-height: $component-size-lg;
   }
