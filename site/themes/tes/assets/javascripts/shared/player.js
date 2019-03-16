@@ -156,11 +156,19 @@
           self.playlist[self.index].howl.stop();
         }
 
+        // New: reset playlist
+        Array.prototype.forEach.call(tracklistItems, function(track) {
+          track.setAttribute('data-state', 'init');
+        });
+
         // Reset progress
         progressBar.style.width = '0%';
 
         // Play the new track
         self.play(index);
+        // And update the tracklist
+        var track = Array.from(tracklistItems)[index];
+        track.setAttribute('data-state', 'playing');
       },
 
       // Seek to a new position in the currently playing track.
@@ -233,38 +241,6 @@
 
     // Tracklist
     // ---------------------------------------------------------------------------
-
-    function updateTracklist(e) {
-      // Ensure it's a click on a child
-      if (e.target !== e.currentTarget) {
-        var track = e.target.closest('.tracklist__item');
-        var action = e.target.getAttribute('data-track-button');
-        var playButton = track.querySelector('[data-track-button="play"]');
-        var pauseButton = track.querySelector('[data-track-button="pause"]');
-
-        if (action === 'play') {
-          // Create an array from all the tracklist items and find the index of
-          // the one we clicked on
-          var i = Array.from(tracklistItems).indexOf(track);
-
-          if (i === player.index) {
-            player.play();
-          } else {
-            Array.prototype.forEach.call(tracklistItems, function(track, i) {
-              track.setAttribute('data-state', 'init');
-            });
-            player.skipTo(i);
-          }
-          track.setAttribute('data-state', 'playing');
-        }
-
-        if (action === 'pause') {
-          player.pause();
-          track.setAttribute('data-state', 'paused');
-        }
-      }
-      e.stopPropagation();
-    }
 
     function playlistFromDOM() {
       // Create a playlist from the DOM
@@ -398,7 +374,6 @@
       player.skip('prev');
     });
     next.addEventListener('click', function() {
-      // player.skip('next');
       if (tracklistItems.length) {
         player.skip('next');
       } else {
@@ -417,7 +392,18 @@
 
     if (tracklistItems.length) {
       tracklist.addEventListener('click', function(e) {
-        updateTracklist(e);
+        if (e.target !== e.currentTarget) {
+          var track = e.target.closest('.tracklist__item');
+          var action = e.target.getAttribute('data-track-button');
+
+          if (action === 'play') {
+            var i = Array.from(tracklistItems).indexOf(track);
+            (i === player.index) ? player.play() : player.skipTo(i);
+          } else {
+            player.pause();
+          }
+        }
+        e.stopPropagation();
       }, false);
     }
   }

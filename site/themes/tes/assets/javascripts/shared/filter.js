@@ -65,6 +65,8 @@
     return liveFilter;
   })();
 
-  liveFilter("filter", "list", { selector: "li", filterClass: "filter-hidden" });
+  if (document.getElementById("filter")) {
+    liveFilter("filter", "list", { selector: "li", filterClass: "filter-hidden" });
+  }
 
 })(); // end DOM ready
