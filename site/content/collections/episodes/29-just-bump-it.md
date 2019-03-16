@@ -1,13 +1,13 @@
 title: '29 Just Bump It!'
 audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/29-just-bump-it/29%20Just%20Bump%20It%21.mp3'
-cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/29-just-bump-it/29-just-bump-it.jpg'
+segment: 'It''s time to get very excited for this weird weird episode involving a squadron of skateboarding, justice-loving teens, a supercomputer that melted on its way to the core of the earth, and a live Radioball broadcast! Plus, all new music you can dance with your loved one to at the Community Center this Sunday night. All this and much more on This Evening''s Show!'
 release_date: '2018-03-17'
-description: 'It''s time to get very excited for this weird weird episode involving a squadron of skateboarding, justice-loving teens, a supercomputer that melted on its way to the core of the earth, and a live Radioball broadcast! Plus, all new music you can dance with your loved one to at the Community Center this Sunday night. All this and much more on This Evening''s Show!'
+cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/29-just-bump-it/29-just-bump-it.jpg'
 tracklist:
   -
     wikis:
       - bfd8e196-b3e8-4730-9342-ff1c98c0b6e2
-    segment: '[Bacon Flay] commercial [dlfkjhdlfjkh]'
+    segment: '[Bacon Flay] commercial'
   -
     song: e5b310fe-ee26-4055-a4eb-4dc0fc731922
     wikis:
