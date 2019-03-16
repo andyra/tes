@@ -25,7 +25,6 @@
 
   &:hover {
     background-color: $lemon;
-    color: $mustard;
     text-decoration: none;
   }
 
@@ -43,10 +42,11 @@
   }
 }
 
-.global-nav__item--episodes { @include nav-style(#AB6F41, 0); }
-.global-nav__item--albums   { @include nav-style(#547971, -96px); }
-.global-nav__item--wiki     { @include nav-style(#77949A, -144px); }
-.global-nav__item--contact  { @include nav-style(#9C6C84, -48px); }
+.global-nav__item--episodes { @include nav-style(#8C5A77, 0); }
+.global-nav__item--albums   { @include nav-style(#AD6A3D, -48px); }
+.global-nav__item--songs    { @include nav-style(#628B86, -96px); }
+.global-nav__item--wiki     { @include nav-style(#A58056, -192px); }
+.global-nav__item--contact  { @include nav-style(#839595, -144px); }
 
 .global-nav__section {
   display: flex;
@@ -174,5 +174,16 @@
     flex: 1;
     justify-content: center;
     min-height: $component-size-lg;
+  }
+}
+
+@media (max-width: 360px) {
+  .global-nav__section--desktop .global-nav__item {
+    flex-basis: 33%;
+  }
+
+  .global-nav__item--wiki,
+  .global-nav__item--contact {
+    border-top: $border-base;
   }
 }

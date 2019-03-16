@@ -13,31 +13,55 @@
 </header>
 {{ /section:header }}
 
-<h3>Appears on</h3>
-<section class="grid album-grid">
-{{ collection from="albums|episodes" }}
-  {{ tracklist }}
-    {{ if song == page:id }}
-      <a class="album-grid__item" href="{{ url }}">
-        <div><img class="cover-art" src="{{ glide:cover_art width='300' height='300' }}" alt="{{ title }}" /></div>
-        {{ title }}
-      </a>
-    {{ /if }}
-  {{ /tracklist }}
-{{ /collection }}
-</section>
+<span class="label">Listening Device:</span>
+{{ partial:player class="m-bottom-vmin" }}
 
-  <section class="sidebar__section">
-    <h3>Wikis</h3>
-    {{ if wikis }}
-      <ul class="sidebar__list">
-        {{ relate:wikis }}
-          <li>
-            <a href="{{ url }}">{{ title }}</a>
-          </li>
-        {{ /relate:wikis }}
-      </ul>
-    {{ else }}
-      Nothing to see here
-    {{ /if }}
-  </section>
+<h3>Appears on</h3>
+<ol class="tracklist table text--sm" data-player="tracklist">
+  <li class="table__row">
+    <span class="table__cell table__cell--header align--center">#</span>
+    <span class="table__cell table__cell--header label">Descriptor</span>
+    <span class="table__cell table__cell--header label">Time</span>
+  </li>
+  {{ collection from="albums|episodes" }}
+    {{ tracklist }}
+      {{ if song == page:id }}
+        <li class="tracklist__item table__row" {{ if audio_file }}data-track="{{ audio_file }}" data-state="init"{{ /if }}>
+          <span class="tracklist__count table__cell">
+            #{{ index }}
+            {{ if audio_file }}
+              <button class="tracklist__button tracklist__button--play button-reset" data-track-button="play">
+                {{ site:sprite id="play" width="32" height="24" }}
+              </button>
+              <button class="tracklist__button tracklist__button--pause button-reset" data-track-button="pause">
+                {{ site:sprite id="pause" width="32" height="24" }}
+              </button>
+            {{ /if }}
+          </span>
+          <a class="tracklist__title tracklist__title--album-link table__cell" href="{{ url }}">
+            <div class="flex flex--align-center">
+              <img class="cover-art m-right-sm" src="{{ glide:cover_art width='48' height='48' }}" alt="{{ title }}" />
+              <span data-track-title>{{ page:title }} • {{ title }}</span>
+            </div>
+          </a>
+          <span class="text--xs table__cell table__cell--shaded table__cell--collapse">&mdash;</span>
+        </li>
+      {{ /if }}
+    {{ /tracklist }}
+  {{ /collection }}
+</ol>
+
+<section class="sidebar__section">
+  <h3>Wikis</h3>
+  {{ if wikis }}
+    <ul class="sidebar__list">
+      {{ relate:wikis }}
+        <li>
+          <a href="{{ url }}">{{ title }}</a>
+        </li>
+      {{ /relate:wikis }}
+    </ul>
+  {{ else }}
+    Nothing to see here
+  {{ /if }}
+</section>

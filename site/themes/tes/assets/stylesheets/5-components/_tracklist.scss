@@ -22,7 +22,16 @@ a.tracklist__title {
     border-color: $mustard;
     color: $mustard;
   }
+
+  &.tracklist__title--album-link {
+    border-bottom: none;
+
+    span {
+      border-bottom: solid $border-width-sm rgba($aqua, 0.5);
+    }
+  }
 }
+
 
 // Decorative left border
 .tracklist .table__cell:nth-child(2) {
