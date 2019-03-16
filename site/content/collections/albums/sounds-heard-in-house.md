@@ -57,6 +57,7 @@ tracklist:
     audio_file: 'https://thiseveningsshow.s3.amazonaws.com/albums/sounds-heard-in-house/17%20Sad%20Blind%20Shadows.mp3'
   -
     audio_file: 'https://thiseveningsshow.s3.amazonaws.com/albums/sounds-heard-in-house/18%20Escaped%20Slaves.mp3'
+    song: 97dbeeaf-a93f-4f7a-acdd-6e233bb2828b
   -
     song: 481be993-1469-42df-b773-d4d5c98bbd07
     audio_file: 'https://thiseveningsshow.s3.amazonaws.com/albums/sounds-heard-in-house/19%20What%20I%27m%20Doing%20Now.mp3'

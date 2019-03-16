@@ -440,39 +440,6 @@ document.addEventListener('click', function(e) {
       });
     }
 
-
-
-
-
-    // var randoTrackButton = document.querySelector('#rando-track');
-    // randoTrackButton.addEventListener('click', function() {
-    //   randomTrack();
-    // });
-
-    // OK, maybe this is what we can do...
-    // After the page loads, load all the collections into the array.
-    // Then get a random track and push to the playlist. Remove it from the array.
-    // Now it's ready to play.
-    // When the song ends (`onend`), push another track to the array and `skipto`.
-    // (Same for the "next" button--push a rando track and skip to it)
-    // (Skipping back works like normal)
-    // Normally we run `var player = new Player(playlistFromDOM())`, which crates our playlist from the DOM.
-    // This time we can run `var player = new Player(radioPlaylist)`
-
-    // The next version can include alternative material.
-    // Once we can get the actual track object via AJAX, we should have acess to all its associated wikis.
-    // Then we can fetch the wiki entry for that track and display their titles with links, plus content.
-    //
-    // Playing: "Conversation with Robert Bogarth"
-    // Pictures of: Robert Bogarth, JP Spline, Harold Kellog (click for more) (wikis:people)
-    // Learn about: Bogarth Engines, Morning SPA (wikis:!people)
-    // See All: Radio Shows, Technology, People, Scientists (tags for each wiki)
-
-
-
-
-
-
     // Bind player controls.
     // -------------------------------------------------------------------------
 
@@ -495,7 +462,6 @@ document.addEventListener('click', function(e) {
       }
     });
     progress.addEventListener('click', function(e) {
-      console.log("inside Progress Event");
       player.seek(seekPercent(e));
     });
     slow.addEventListener('click', function() {
