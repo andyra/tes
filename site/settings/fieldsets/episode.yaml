@@ -13,7 +13,7 @@ sections:
       audio_file:
         type: text
         width: 50
-        display: 'Audio File'
+        display: 'Full Episode Audio File'
         validate: required|active_url
       cover_art:
         display: 'Cover Art'
