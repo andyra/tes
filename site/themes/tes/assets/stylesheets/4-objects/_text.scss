@@ -68,6 +68,17 @@
 .tracking--looser   { letter-spacing: 0.1em; }
 .tracking--loosest  { letter-spacing: 0.15em; }
 
+// Code
+// ----------------------------------------------------------------------------
+
+code {
+  background-color: $seashell;
+  font-family: $font-duospace;
+  font-size: 0.85em;
+  border-radius: $border-radius-base;
+  padding: 0 ($unit / 2);
+}
+
 // Fonts
 // ----------------------------------------------------------------------------
 
