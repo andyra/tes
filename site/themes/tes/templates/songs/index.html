@@ -6,8 +6,13 @@
 </header>
 {{ /section:header }}
 
+<form class="form form--filter m-bottom-base" action="/{{ template }}" method="GET">
+  <input class="input" type="text" name="q" value="{{ get:q }}" placeholder="Filter" data-filter="input" id="filter" />
+</form>
+
+
 {{ collection:songs type:is="original" sort="title" as="songs" }}
-  <ol class="song-index rando-bg-hover--pastel text--sm">
+  <ol class="song-index rando-bg-hover--pastel text--sm" data-filter="list" id="list">
     {{ songs }}
       <li class="song-index__item">
         <a class="song-index__link" href="{{ url }}">{{ title }}</a>
