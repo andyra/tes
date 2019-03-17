@@ -1,8 +1,13 @@
 title: '30 Party Mechanic'
 audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/30-party-mechanic/30%20Party%20Mechanic.mp3'
-description: 'In this episode, meet Mike Bluebird the Party Mechanic, listen in on real-time recordings of a genuine Pirate''s Mirror Talking Circle, and dive deep into the cult phenomenon of Gearheart''s Challenge. Interested in a city-wide hidden microphone recording assemblage ? Want to major in Lunch in school? You bet! All this and way more, right here. CKNWR Radio Station. This Evening''s Show. Begins...NOW'
-release_date: '2018-07-18'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/30-party-mechanic/30-party-mechanic.jpg'
+release_date: '2018-07-18'
+description: 'In this episode, meet Mike Bluebird the Party Mechanic, listen in on real-time recordings of a genuine Pirate''s Mirror Talking Circle, and dive deep into the cult phenomenon of Gearheart''s Challenge. Interested in a city-wide hidden microphone recording assemblage ? Want to major in Lunch in school? You bet! All this and way more, right here. CKNWR Radio Station. This Evening''s Show. Begins...NOW'
+ass_grid:
+  -
+    segment: dfsgdfhfdh
+    ass_field:
+      - 'https://thiseveningsshow.s3.amazonaws.com/episodes/30-party-mechanic/img_2008.PNG'
 tracklist:
   -
     segment: '[Ray Wister] complains about Carol hogging the studio''s stationary bike'

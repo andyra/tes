@@ -5,8 +5,7 @@ use Statamic\API\Search;
 use Statamic\API\Content;
 use Statamic\Extend\Modifier;
 
-class WikilinksModifier extends Modifier
-{
+class WikilinksModifier extends Modifier {
     /**
      * Maps to {{ var | wikilinks }}
      *
@@ -15,8 +14,7 @@ class WikilinksModifier extends Modifier
      * @param array  $context  Contextual values
      * @return mixed
      */
-    public function index($value, $params, $context)
-    {
+    public function index($value, $params, $context) {
         // $matches[0] -> with brackets
         // $matches[1] -> without brackets
         preg_match_all("/\[([^\]]*)\]/", $value, $matches);

@@ -38,6 +38,19 @@ sections:
         type: textarea
         width: 50
         validate: required
+      ass_grid:
+        mode: table
+        type: grid
+        fields:
+          segment:
+            type: textarea
+            width: 50
+            display: Segment
+            validate: required
+          ass_field:
+            type: assets_organized
+            container: s3
+            folder: episodes
       tracklist:
         display: Minutes
         instructions: 'Individual tracks for the episode. Either fill out Segment or Song—no need to do both.'

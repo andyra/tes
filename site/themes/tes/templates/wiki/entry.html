@@ -44,7 +44,7 @@
       {{ article }}
         {{ if type == "text" }}
           <div class="text">
-            {{ text }}
+            {{ text | wikilinks }}
           </div>
         {{ elseif type == "image" }}
           <img src="{{ image }}" alt="" >
