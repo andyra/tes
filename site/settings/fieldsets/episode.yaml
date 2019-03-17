@@ -38,19 +38,6 @@ sections:
         type: textarea
         width: 50
         validate: required
-      ass_grid:
-        mode: table
-        type: grid
-        fields:
-          segment:
-            type: textarea
-            width: 50
-            display: Segment
-            validate: required
-          ass_field:
-            type: assets_organized
-            container: s3
-            folder: episodes
       tracklist:
         display: Minutes
         instructions: 'Individual tracks for the episode. Either fill out Segment or Song—no need to do both.'
@@ -61,7 +48,7 @@ sections:
         fields:
           segment:
             type: textarea
-            width: 50
+            width: 25
             display: Segment
             validate: required
           song:
@@ -70,18 +57,18 @@ sections:
               - songs
             mode: tags
             type: collection
-            width: 50
+            width: 25
             display: Song
           wikis:
             collection:
               - wiki
             mode: tags
             type: collection
-            width: 50
+            width: 25
             display: Wikis
           audio_file:
             type: text
-            width: 50
+            width: 25
             display: 'Audio File'
             validate: active_url
       album:

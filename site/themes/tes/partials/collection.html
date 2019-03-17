@@ -26,7 +26,7 @@
       {{ if collection == "episodes" }}
       <li class="tracklist__item table__row" data-track="{{ audio_file }}" data-state="init">
         <span class="tracklist__count table__cell">
-          0
+          ★
           <button class="tracklist__button tracklist__button--play button-reset" data-track-button="play">
             {{ site:sprite id="play" width="32" height="24" }}
           </button>
@@ -34,8 +34,8 @@
             {{ site:sprite id="pause" width="32" height="24" }}
           </button>
         </span>
-        <span class="tracklist__title table__cell" data-track-title>Full Episode</span>
-        <span class="text--xs table__cell table__cell--shaded table__cell--collapse">&mdash;</span>
+        <span class="tracklist__title table__cell" data-track-title>{{ title }} • Full Episode</span>
+        <span class="text--xs table__cell table__cell--shaded table__cell--collapse align--right o-75" data-track-duration></span>
       </li>
       {{ /if }}
 
@@ -64,7 +64,7 @@
             {{ track:segment | wikilinks }}
           {{ /if }}
         </span>
-        <span class="text--xs table__cell table__cell--shaded table__cell--collapse">&mdash;</span>
+        <span class="text--xs table__cell table__cell--shaded table__cell--collapse align--right o-75" data-track-duration></span>
       </li>
       {{ /tracklist }}
     </ol>
