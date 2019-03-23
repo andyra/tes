@@ -4,6 +4,10 @@
 
 .cover-art {
   border-radius: $border-radius-lg;
+
+  &[data-cover-art-expand] {
+    cursor: pointer;
+  }
 }
 
 .cover-art--empty {
@@ -46,5 +50,28 @@ a.cover-art--photocopy:hover {
   img {
     filter: none;
     mix-blend-mode: normal;
+  }
+}
+
+// Overlay
+// ----------------------------------------------------------------------------
+
+.overlay {
+  align-items: center;
+  background: rgba($black, 0.85);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+
+  img {
+    margin: $spacer;
+    max-height: 100vw;
+    max-width: 100vw;
+    pointer-events: none;
   }
 }

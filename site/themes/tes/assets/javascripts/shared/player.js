@@ -262,13 +262,9 @@
         var src = track.getAttribute('data-track');
 
         if (src) {
-          console.log("This track should have a duration");
           var audio = new Audio();
           var duration = track.querySelector('[data-track-duration]');
           audio.src = src;
-
-          console.log(src);
-          console.log(duration);
 
           audio.addEventListener('loadedmetadata', function() {
             var secs = Math.round(audio.duration);
