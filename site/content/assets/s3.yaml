@@ -4,7 +4,7 @@ key: '{env:S3_KEY}'
 secret: '{env:S3_SECRET}'
 bucket: thiseveningsshow
 region: us-east-1
-# cache: 120
 
 # Do not enable cache while on ASmallOrange. Cache causes the site to crash
 # unless Redis is installed (can't be installed on current tier of ASO hosting).
+# cache: 120
