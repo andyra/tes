@@ -12,8 +12,7 @@
   width: $component-size-lg;
 }
 
-.tracklist__title a,
-a.tracklist__title {
+.tracklist__title a {
   border-bottom: solid $border-width-sm rgba($aqua, 0.5);
   font-family: $font-duospace;
   text-decoration: none;
@@ -22,13 +21,13 @@ a.tracklist__title {
     border-color: $mustard;
     color: $mustard;
   }
+}
 
-  &.tracklist__title--album-link {
-    border-bottom: none;
+.tracklist__album-link {
+  text-decoration: none;
 
-    span {
-      border-bottom: solid $border-width-sm rgba($aqua, 0.5);
-    }
+  span {
+    border-bottom: solid $border-width-sm rgba($aqua, 0.5);
   }
 }
 

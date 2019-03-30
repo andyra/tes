@@ -38,12 +38,12 @@
               </button>
             {{ /if }}
           </span>
-          <a class="tracklist__title tracklist__title--album-link table__cell" href="{{ url }}">
-            <div class="flex flex--align-center">
+          <span class="tracklist__title table__cell">
+            <a class="tracklist__album-link flex flex--align-center" href="{{ url }}">
               <img class="cover-art m-right-sm" src="{{ glide:cover_art width='48' height='48' }}" alt="{{ title }}" />
               <span data-track-title>{{ page:title }} • {{ title }}</span>
-            </div>
-          </a>
+            </a>
+          </span>
           <span class="text--xs table__cell table__cell--shaded table__cell--collapse" data-track-duration></span>
         </li>
       {{ /if }}

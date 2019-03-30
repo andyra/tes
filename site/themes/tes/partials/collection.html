@@ -55,13 +55,13 @@
         <span class="tracklist__title table__cell">
           {{ if track:song }}
             {{ relate:track:song scope="song" }}
-              <a class="tracklist__title" href="{{ song:url }}" data-track-title>
+              <a href="{{ song:url }}" data-track-title>
                 {{ if page:collection == "episodes" }}♫{{ /if }}
                 {{ song:title }}
               </a>
             {{ /relate:track:song }}
           {{ else }}
-            {{ track:segment | wikilinks }}
+            <span data-track-title>{{ track:segment | wikilinks }}</span>
           {{ /if }}
         </span>
         <span class="text--xs table__cell table__cell--shaded table__cell--collapse align--right o-75" data-track-duration></span>

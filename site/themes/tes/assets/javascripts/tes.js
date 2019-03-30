@@ -37,23 +37,24 @@ function removeCoverArt() {
 // Event Listeners
 // -------------------------------------------------------------------------
 
-coverArt.addEventListener('click', function() {
-  showCoverArt();
-});
+if (coverArt) {
+  coverArt.addEventListener('click', function() {
+    showCoverArt();
+  });
 
-document.addEventListener('keyup', function (event) {
-  if (event.defaultPrevented) {
-    return;
-  }
+  // If ESC or click is detected anywhere while the thing is open, SHUT ER DOWN.
+  document.addEventListener('keyup', function (event) {
+    if (event.defaultPrevented) {
+      return;
+    }
 
-  var key = event.key || event.keyCode;
+    var key = event.key || event.keyCode;
 
-  if (key === 'Escape' || key === 'Esc' || key === 27) {
-    removeCoverArt();
-  }
-});
-
-// If ESC or click is detected anywhere while the thing is open, SHUT ER DOWN.
+    if (key === 'Escape' || key === 'Esc' || key === 27) {
+      removeCoverArt();
+    }
+  });
+}
 
 // DOM Ready
 (function() {
