@@ -277,6 +277,7 @@
     // Radio
     // -------------------------------------------------------------------------
 
+    // Return a random integer between 0 and a max value
     function randomMax(max) {
       var min = 0;
       return Math.floor(Math.random() * (max - min)) + min;
@@ -289,25 +290,63 @@
     }
 
     function pushRandomTrack() {
+      if (!radioCollections.length) {
+        console.log("No more tracks in the virtual playlist");
+      }
+
+      // Grab a random track from a random collection
+      var c = randomMax(radioCollections.length);
+      var collection = radioCollections[c];
+      var t = randomMax(collection.tracklist.length);
+      var track = collection.tracklist[t];
+
+      // Delete the item from the array so we don't get it again
+      radioCollections[c].tracklist.splice(t, 1);
+      // Delete the collection if it has no more tracks
+      if (radioCollections[c].tracklist.length < 1) {
+        radioCollections.splice(c, 1);
+      }
+
+      // At this point, we have a track with an audio file, but it may be a segment or a song.
+      // Segments have titles, but songs are IDs
       return new Promise(resolve => {
-        var i = randomMax(radioCollections.length);
-        var n = randomMax(radioCollections[i].tracklist.length);
-        var track = radioCollections[i].tracklist[n];
-
-        // Delete the item from the array so we don't get it again
-        radioCollections[i].tracklist.splice(n, 1);
-
-        // Now that we have the ID, we can fetch the song title
-        fetchItems(`/entry/${track.song}`).then(data => {
+        if (track.song) {
+          fetchItems(`/entry/${track.song}`).then(data => {
+            virtualPlaylist.push({
+              title: data.data.title,
+              file: track.audio_file,
+              howl: null
+            });
+          }).then(function() {
+            resolve('SONG PROMISE RESOLVED');
+          });
+        } else if (track.segment) {
           virtualPlaylist.push({
-            title: data.data.title,
+            title: track.segment,
             file: track.audio_file,
             howl: null
           });
-        }).then(function() {
-          resolve('Added random track to the virtual playlist!');
-        });
+          resolve('SEGMENT PROMISE RESOLVED');
+        } else {
+          console.log("Not a track or a segment");
+          resolve('SHOULD BE A TRACK OR SEGMENT');
+        }
       });
+    }
+
+    function sanitizeCollections(collections) {
+      // Remove collections without a tracklist
+      var filteredCollections = collections.filter(collection => collection.tracklist);
+
+      // Filter out tracks without an audio_file
+      filteredCollections.forEach(collection => {
+        collection.tracklist = collection.tracklist.filter(track => track.audio_file);
+      });
+
+      // Remove collections that have tracklists, but no tracks
+      filteredCollections = filteredCollections.filter(collection => collection.tracklist.length);
+
+      return filteredCollections;
     }
 
     async function initVirtualPlaylist() {
@@ -319,9 +358,13 @@
     if (tracklistItems.length) {
       player = new Player(playlistFromDOM());
     } else {
-      fetchItems('/collection/albums').then(data => {
-        radioCollections = data.data;
-        initVirtualPlaylist();
+      fetchItems('/collection/episodes').then(data => {
+        radioCollections = sanitizeCollections(data.data);
+      }).then(function() {
+        fetchItems('/collection/albums').then(data => {
+          radioCollections = radioCollections.concat(sanitizeCollections(data.data));
+          initVirtualPlaylist();
+        });
       });
     }
 

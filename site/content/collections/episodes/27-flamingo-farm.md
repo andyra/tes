@@ -1,8 +1,8 @@
 title: '27 Flamingo Farm'
 audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/27-flamingo-farm/27%20Flamingo%20Farm.mp3'
-description: 'This week, a demo tape from City Burger manager Sanjay Arrow, get the inside scoop directly from the Senate debate floor, a dip into the wild world of Flamingo Farming, and advice from one pirate to another. All this and, as always, more on TES.'
-release_date: '2017-09-01'
 cover_art: 'https://thiseveningsshow.s3.amazonaws.com/episodes/27-flamingo-farm/27-flamingo-farm.jpg'
+release_date: '2017-09-01'
+description: 'This week, a demo tape from City Burger manager Sanjay Arrow, get the inside scoop directly from the Senate debate floor, a dip into the wild world of Flamingo Farming, and advice from one pirate to another. All this and, as always, more on TES.'
 tracklist:
   -
     segment: '[Ray Wister] receives a mysterious musical phone message from the manager of [City Burger], [Sanjay Arrow]'
@@ -10,6 +10,7 @@ tracklist:
       - 0361ef61-5370-44a1-bab3-25ba31271a26
       - ed1b6913-57bc-453a-a6f0-27537e167712
       - 428eac9a-f281-4661-bf36-d1aca4a046bf
+    audio_file: 'https://thiseveningsshow.s3.amazonaws.com/episodes/27-flamingo-farm/_Ray%20Wister%20Introduction%20TES%2027_.mp3'
   -
     segment: 'TES: Live on location at the [Ball Ranch Flamingo Farm].'
     wikis:
@@ -18,6 +19,7 @@ tracklist:
       - ed08f15d-92de-4a36-86e4-244f45e52ffe
   -
     song: d8226605-7fbd-4a3b-9d63-2d04000c6c33
+    audio_file: 'https://thiseveningsshow.s3.amazonaws.com/albums/music-from-tes-27-flamingo-farm/01%20Yousei%20Soo.mp3'
   -
     segment: 'Gameshow: [Name That Noise]'
   -
