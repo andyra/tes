@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f223995b8d80a0dd824b2593e1090c8",
+    "content-hash": "548e8ae0a8992d7705561500036613d9",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -416,23 +416,6 @@
                 "string"
             ],
             "time": "2015-11-06T14:35:42+00:00"
-        },
-        {
-            "name": "edalzell/powertools",
-            "version": "dev-develop",
-            "dist": {
-                "type": "path",
-                "url": "../site/addons/PowerTools",
-                "reference": "17bbcfee6af03b630bc66bbe52e897d1edc0a6cc",
-                "shasum": null
-            },
-            "require": {
-                "rap2hpoutre/laravel-log-viewer": "*"
-            },
-            "type": "library",
-            "transport-options": {
-                "symlink": false
-            }
         },
         {
             "name": "funkjedi/composer-include-files",
@@ -2457,65 +2440,6 @@
             "time": "2016-03-09T05:03:14+00:00"
         },
         {
-            "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "f6acf9779669568e8afce1182e1a5579d5a0ffe5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/f6acf9779669568e8afce1182e1a5579d5a0ffe5",
-                "reference": "f6acf9779669568e8afce1182e1a5579d5a0ffe5",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "4.2.*|5.*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "3.7.*",
-                "phpunit/phpunit": "^7"
-            },
-            "type": "laravel-package",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Rap2hpoutre\\LaravelLogViewer\\LaravelLogViewerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "src/controllers"
-                ],
-                "psr-0": {
-                    "Rap2hpoutre\\LaravelLogViewer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "rap2hpoutre",
-                    "email": "raphaelht@gmail.com"
-                }
-            ],
-            "description": "A Laravel log reader",
-            "keywords": [
-                "laravel",
-                "log",
-                "log-reader",
-                "log-viewer",
-                "logging",
-                "lumen"
-            ],
-            "time": "2019-03-02T15:10:46+00:00"
-        },
-        {
             "name": "socialiteproviders/manager",
             "version": "v2.2.1",
             "source": {
@@ -4349,7 +4273,8 @@
             "authors": [
                 {
                     "name": "Chris Boulton",
-                    "homepage": "http://github.com/chrisboulton"
+                    "homepage": "http://github.com/chrisboulton",
+                    "role": "Original developer"
                 }
             ],
             "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",
@@ -4884,7 +4809,6 @@
                 "mock",
                 "xunit"
             ],
-            "abandoned": true,
             "time": "2016-12-08T20:27:08+00:00"
         },
         {
@@ -5457,8 +5381,7 @@
         "league/flysystem-ziparchive": 20,
         "mustangostang/spyc": 20,
         "michelf/php-smartypants": 20,
-        "netcarver/textile": 20,
-        "edalzell/powertools": 20
+        "netcarver/textile": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
